@@ -43,7 +43,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 " />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>wiki - rapatao.com — </title>
+<title>rapatao.com — a personal wiki</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 </head>
@@ -138,6 +138,8 @@ Error message and password prompt
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/palette</li>
 
 <li>$:/plugins/tiddlywiki/highlight</li>
 
@@ -271,9 +273,13 @@ Error message and password prompt
 
 <li>$:/temp/ServerConnection/http://tiddlywiki.com/library/v5.1.11/index.html</li>
 
+<li>$:/theme</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
 <li>$:/view</li>
 
@@ -292,7 +298,7 @@ Error message and password prompt
 <div created="20160507043251696" modified="20160507043251696" title="$:/config/DefaultSidebarTab">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20160507043315914" modified="20160507043321617" title="$:/config/Navigation/UpdateAddressBar">
+<div created="20160507043315914" modified="20160507044242274" title="$:/config/Navigation/UpdateAddressBar">
 <pre>permalink</pre>
 </div>
 <div created="20160507043325522" modified="20160507043325522" title="$:/config/Navigation/UpdateHistory">
@@ -6368,6 +6374,9 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
+<div created="20160507044413126" modified="20160507044434680" title="$:/palette">
+<pre>$:/palettes/Blue</pre>
+</div>
 <div author="JoaoBolila" core-version="&gt;=5.0.0" dependents="" description="Highlight.js: syntax highlighting" list="readme usage license" plugin-type="plugin" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.11">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -6410,11 +6419,11 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20160507025328793" modified="20160507025328793" title="$:/SiteSubtitle">
-<pre></pre>
+<div created="20160507025328793" modified="20160507044353539" title="$:/SiteSubtitle">
+<pre>a personal wiki</pre>
 </div>
-<div created="20160507025300098" modified="20160507025319108" title="$:/SiteTitle">
-<pre>wiki - rapatao.com</pre>
+<div created="20160507025300098" modified="20160507044258769" title="$:/SiteTitle">
+<pre>rapatao.com</pre>
 </div>
 <div created="20160507030338203" modified="20160507041911482" title="$:/state/showeditpreview">
 <pre>yes</pre>
@@ -6422,22 +6431,22 @@ Error message and password prompt
 <div created="20160507031142692" modified="20160507042301352" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20160507042724661" modified="20160507042738990" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20160507042724661" modified="20160507044457329" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20160507042644385" modified="20160507042644385" title="$:/state/tab--2112689675">
-<pre>$:/core/ui/ControlPanel/Advanced</pre>
+<div created="20160507042644385" modified="20160507044254904" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
 <div created="20160507042649074" modified="20160507042706283" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/TiddlerFields</pre>
 </div>
-<div created="20160507042714972" modified="20160507043222866" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Settings</pre>
+<div created="20160507042714972" modified="20160507044541981" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20160507025402462" modified="20160507043437316" title="$:/state/tab/sidebar--1835078512">
+<div created="20160507025402462" modified="20160507044632274" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[10 dicas de segurança para o Apache Web Server em servidor Unix]]" title="$:/StoryList">
+<div list="" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6760,6 +6769,9 @@ This plugin contains tools to help slice up long texts into individual tiddlers.
 <div created="20160507042750701" modified="20160507042750701" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/http://tiddlywiki.com/library/v5.1.11/index.html" url="http://tiddlywiki.com/library/v5.1.11/index.html">
 <pre>loaded</pre>
 </div>
+<div created="20160507044445570" modified="20160507044450770" title="$:/theme">
+<pre>$:/themes/tiddlywiki/snowwhite</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.11">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -6864,6 +6876,9 @@ This plugin contains tools to help slice up long texts into individual tiddlers.
         }
     }
 }</pre>
+</div>
+<div created="20160507044502963" modified="20160507044509091" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
+<pre>fixed-fluid</pre>
 </div>
 <div created="20160507042416806" modified="20160507042433000" title="$:/view">
 <pre>classic</pre>

@@ -1,0 +1,228 @@
+- 
+  company: Apontador Busca Local
+  logo: apontador.png
+  title:
+    pt: Especialista de Sistemas / Tech Lead
+    en: Senior Software Engineer / Tech Lead
+  period:
+    start:
+      pt: Julho 2016
+      en: July 2016
+    end:
+      pt: Presente
+      en: Present
+  description:
+    pt:
+      - Led the development and adoption of Vert.x as a default tool-kit in all new applications.
+      - Led the re-write and migration of the legacy systems using the Spring 5, gRPC, GraphQL and Kubernetes as a container orchestrator.
+      - Worked in the development and maintenance of the platform reduces the number of bugs in the production environment and managing the framework upgrade of all backend applications.
+      - Created a framework to standardize the frontend applications, reducing the time spent to learn each project architecture and time spent to create new services. 
+      - Participated in the agile software development process using sprint planning and daily scrum to manage tasks.
+      - Implemented the process of code review, continuous delivery to the homologation and deployment process to the production environment.
+    en:
+      - Led the development and adoption of Vert.x as a default tool-kit in all new applications.
+      - Led the re-write and migration of the legacy systems using the Spring 5, gRPC, GraphQL and Kubernetes as a container orchestrator.
+      - Worked in the development and maintenance of the platform reduces the number of bugs in the production environment and managing the framework upgrade of all backend applications.
+      - Created a framework to standardize the frontend applications, reducing the time spent to learn each project architecture and time spent to create new services. 
+      - Participated in the agile software development process using sprint planning and daily scrum to manage tasks.
+      - Implemented the process of code review, continuous delivery to the homologation and deployment process to the production environment.
+  tags:
+    - Java (6, 8, 11)
+    - JavaScript
+    - JMS
+    - REST
+    - Spring (3, 4, 5)
+    - jUnit (4, 5)
+    - AngularJS (1.x)
+    - HornetQ
+    - RabbitMQ
+    - Jenkins
+    - Maven
+    - Vert.x
+    - Node.js
+    - Solr
+    - Redis
+    - Oracle
+    - MongoDB
+    - AWS (EC2, S3)
+    - gRPC
+    - Docker
+    - Kubernetes
+    - Elasticsearch
+
+- 
+  company: Spread Tecnologia
+  logo: spread.png
+  title:
+    pt: Analista de Sistemas Senior / Tech Lead
+    en: Senior Software Engineer / Tech Lead
+  period:
+    start:
+      pt: Novembro 2013
+      en: November 2013
+    end:
+      pt: Julho 2016
+      en: July 2016
+  description:
+    pt:
+      - Worked as an external consultant in the LATAM area on BNP Paribas Cardif Brazil (www.cardif.com.br) with maintenance and development of insurance platform. 
+      - Led the development and architecture definition of an ETL platform that use Javascript to configure the file extractions and transformations.
+      - Travelled to the subsidiaries to implement the software releases and technical training to local developers.
+    en:
+      - Worked as an external consultant in the LATAM area on BNP Paribas Cardif Brazil (www.cardif.com.br) with maintenance and development of insurance platform. 
+      - Led the development and architecture definition of an ETL platform that use Javascript to configure the file extractions and transformations.
+      - Travelled to the subsidiaries to implement the software releases and technical training to local developers.
+  tags:
+    - Java 6
+    - JSP
+    - Servlet
+    - JPA
+    - JMS
+    - JSF
+    - Web Services
+    - Hibernate
+    - Spring (Integration, Batch)
+    - Rhino
+    - GWT
+    - jUnit
+    - JasperReports
+    - Javascript
+    - jQuery
+    - Angular
+    - PL/SQL
+    - IBM Websphere
+    - ActiveMQ
+    - Jenkins
+    - Maven
+    - Liferay Portal
+
+- 
+  company: BRQ
+  logo: brq.png
+  title:
+    pt: Analista de Sistemas Senior
+    en: Senior Software Engineer
+  period:
+    start:
+      pt: Setembro 2011
+      en: September 2011
+    end:
+      pt: Outubro 2013
+      en: October 2013
+  description:
+    pt:
+      - Worked as an external consultant on Ticket (an Edenred Company / www.ticket.com.br).
+      - Technical leader dealing with all stages of development (since conception to the production environment), working in the development of the internal systems and the e-commerce platform that allow the clients to add value or redeem the amount of the benefits cards (transportation card, meal card and others).
+    en:
+      - Worked as an external consultant on Ticket (an Edenred Company / www.ticket.com.br).
+      - Technical leader dealing with all stages of development (since conception to the production environment), working in the development of the internal systems and the e-commerce platform that allow the clients to add value or redeem the amount of the benefits cards (transportation card, meal card and others).
+  tags:
+    - Java 6
+    - JSP
+    - Servlet
+    - JMS
+    - JSF
+    - EJB
+    - Web Services
+    - Hibernate
+    - Spring
+    - DWR
+    - Javascript
+    - jQuery
+    - jUnit
+    - TestNG
+    - JasperReports
+    - PL/SQL
+    - T-SQL
+    - JBoss
+    - Websphere Message Broker
+    - Jenkins
+    - Subversion
+    - Maven
+    - UML
+    - Lumis Portal
+
+- 
+  company: H2M Soluções
+  logo: h2m.png
+  title:
+    pt: Desenvolvedor Java e C#
+    en: Java and C# Developer
+  period:
+    start:
+      pt: Agosto 2011
+      en: August 2011
+    end:
+      pt: Setembro 2011
+      en: September 2011
+  description:
+    pt:
+      - Worked as a consultant dealing with analysis, maintenance, and developments in web applications. 
+    en:
+      - Worked as a consultant dealing with analysis, maintenance, and developments in web applications. 
+  tags:
+    - Java
+    - C#
+    - SQL Server
+
+- 
+  company: Hewlett-Packard (HP)
+  logo: hp.png
+  title:
+    pt: Analista de Sistemas (Desenvolvedor Java)
+    en: System Analyst & Java Developer
+  period:
+    start:
+      pt: Janeiro 2010
+      en: January 2010
+    end:
+      pt: Agosto 2011
+      en: August 2011
+  description:
+    pt:
+      - Worked onsite as outsourced in the billing process of Net Serviços (www.netservicos.com.br) developing new applications to automate the manual processes.
+    en:
+      - Worked onsite as outsourced in the billing process of Net Serviços (www.netservicos.com.br) developing new applications to automate the manual processes.
+  tags:
+    - Java
+    - VB6
+    - PL/SQL
+    - Subversion
+    - Tomcat
+    - Spring
+    - Hibernate
+    - JSF (Primefaces)
+
+- 
+  company: Cast Informática S.A.
+  logo: cast.png
+  title:
+    pt: Desenvolvedor Java
+    en: Java Developer
+  period:
+    start:
+      pt: Abril 2007
+      en: April 2007
+    end:
+      pt: Outubro 2009
+      en: October 2009
+  description:
+    pt:
+      - Worked in the web development using Java and JBoss as the application server, in the development of desktop applications using Java and C# and in the creation of scripts for Subversion customization (code validations) using Python.
+    en:
+      - Worked in the web development using Java and JBoss as the application server, in the development of desktop applications using Java and C# and in the creation of scripts for Subversion customization (code validations) using Python.
+  tags:
+    - Java
+    - Spring
+    - Struts
+    - JSF
+    - Hibernate
+    - GWT
+    - Subversion
+    - Tomcat
+    - jQuery
+    - jUnit
+    - TestNG
+    - JBoss Seam
+    - C#
+    - ECM Onbase

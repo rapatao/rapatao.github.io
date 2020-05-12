@@ -1,0 +1,96 @@
+baseURL = "https://www.rapatao.com/"
+languageCode = "en-us"
+title = "rapatao.com"
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+
+
+[params]
+    author = "Luiz H. Rapatao"
+    #description = "Working as a software engineer and related areas over than 10 years doing business and technical analysis, possessing the ability to work in a highly collaborative environment."
+    keywords = "blog,developer,personal"
+    info = "Software Engineer"
+    avatarurl = "images/avatar.png"
+    #footercontent = "Enter a text here."
+
+    dateformat = "January 2, 2006"
+
+    hideCredits = false
+    hideCopyright = false
+
+    rtl = false
+
+    # Use inverted colors
+    inverted = false
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/rapatao/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 3
+    url = "https://twitter.com/rapatao/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 4
+    url = "https://www.linkedin.com/in/rapatao/"
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [[languages.en.menu.main]]
+        name = "About"
+        weight = 1
+        url = "about/"
+
+#        [[languages.en.menu.main]]
+#        name = "Blog"
+#        weight = 2
+#        url = "posts/"
+
+        [[languages.en.menu.main]]
+        name = "Resume"
+        weight = 5
+        url = "resume/"
+
+
+    [languages.pt]
+       languagename = "Português"
+
+       [languages.pt.params]
+           keywords = "blog,desenvolvedor,pessoal"
+
+       [languages.pt.menu]
+
+           [[languages.pt.menu.main]]
+           name = "Sobre"
+           weight = 1
+           url = "about/"
+
+#           [[languages.pt.menu.main]]
+#           name = "Blog"
+#           weight = 2
+#           url = "posts/"
+
+           [[languages.pt.menu.main]]
+           name = "Experiência"
+           weight = 5
+           url = "resume/"

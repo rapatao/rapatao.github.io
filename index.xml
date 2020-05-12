@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rapatao.com</title>
+    <link>https://www.rapatao.com/</link>
+    <description>Recent content on rapatao.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.rapatao.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://www.rapatao.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.rapatao.com/about/</guid>
+      <description>&lt;p&gt;Working as a software engineer and related areas over than 10 years doing business and technical analysis, possessing the ability to work in a highly collaborative environment.&lt;/p&gt;
+&lt;p&gt;Experienced in full life cycle including analysis, requirement specification, use case and data model, development, testing and implementation.&lt;/p&gt;
+&lt;p&gt;Development team leadership, deployment and transfer of know-how, best practices of programming.&lt;/p&gt;
+&lt;h2 id=&#34;key-skills&#34;&gt;Key Skills&lt;/h2&gt;
+&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring (MVC, Integration, Batch, Security, Data)&lt;/li&gt;
+&lt;li&gt;JSF&lt;/li&gt;
+&lt;li&gt;JPA&lt;/li&gt;
+&lt;li&gt;Hibernate&lt;/li&gt;
+&lt;li&gt;Redis&lt;/li&gt;
+&lt;li&gt;Solr&lt;/li&gt;
+&lt;li&gt;Elasticsearch&lt;/li&gt;
+&lt;li&gt;RabbitMQ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;javascript&#34;&gt;Javascript&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;VueJs&lt;/li&gt;
+&lt;li&gt;AngularJS&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;NodeJs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;database&#34;&gt;Database&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Oracle PL/SQL&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tool-kit-and-others&#34;&gt;Tool-kit and others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vert.x 3&lt;/li&gt;
+&lt;li&gt;Websphere (7, 8 and Liberty Profile)&lt;/li&gt;
+&lt;li&gt;Liferay Portal (6.x)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Resume</title>
+      <link>https://www.rapatao.com/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.rapatao.com/resume/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

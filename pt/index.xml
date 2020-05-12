@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rapatao.com</title>
+    <link>https://www.rapatao.com/pt/</link>
+    <description>Recent content on rapatao.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.rapatao.com/pt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resume</title>
+      <link>https://www.rapatao.com/pt/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.rapatao.com/pt/resume/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sobre</title>
+      <link>https://www.rapatao.com/pt/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.rapatao.com/pt/about/</guid>
+      <description>&lt;p&gt;Trabalhando como engenheiro de software e áreas relacionadas há mais de 10 anos, realizando análises técnicas e de negócios, possuindo a capacidade de trabalhar em um ambiente altamente colaborativo.&lt;/p&gt;
+&lt;p&gt;Experiente no ciclo de vida completo, incluindo análise, especificação de requisitos, caso de uso e modelo de dados, desenvolvimento, teste e implementação.&lt;/p&gt;
+&lt;p&gt;Liderança da equipe de desenvolvimento, implantação e transferência de know-how, melhores práticas de programação.&lt;/p&gt;
+&lt;h2 id=&#34;principais-habilidades&#34;&gt;Principais habilidades&lt;/h2&gt;
+&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring (MVC, Integration, Batch, Security, Data)&lt;/li&gt;
+&lt;li&gt;JSF&lt;/li&gt;
+&lt;li&gt;JPA&lt;/li&gt;
+&lt;li&gt;Hibernate&lt;/li&gt;
+&lt;li&gt;Redis&lt;/li&gt;
+&lt;li&gt;Solr&lt;/li&gt;
+&lt;li&gt;Elasticsearch&lt;/li&gt;
+&lt;li&gt;RabbitMQ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;javascript&#34;&gt;Javascript&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;VueJs&lt;/li&gt;
+&lt;li&gt;AngularJS&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;li&gt;NodeJs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;database&#34;&gt;Database&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Oracle PL/SQL&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;tool-kit-e-outros&#34;&gt;Tool-kit e outros&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Vert.x 3&lt;/li&gt;
+&lt;li&gt;Websphere (7, 8 and Liberty Profile)&lt;/li&gt;
+&lt;li&gt;Liferay Portal (6.x)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

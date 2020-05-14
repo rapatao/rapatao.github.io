@@ -19,4 +19,4 @@ jobs:
       - run: git submodule init
       - run: git submodule update
       - run: hugo -t hugo-coder
-      - run: cd public && git add --all && git commit -m "Publishing..." && git push origin master
+      - run: cd public && git add --all && git commit -m "Publishing..." && git remote add deploy git@github.com:rapatao/rapatao.github.io.git && git push deploy master

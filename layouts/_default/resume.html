@@ -4,10 +4,7 @@
         {{ range $.Site.Data.experience.list }}
         <article>
             <header>
-                <div style="text-align: center;">
-                    {{ $logo := (print "images/resume/" .logo) }}
-                    <img src="{{ $logo | relURL }}">
-                </div>
+
                 <div class="post-title">
                     <h1 class="title">{{ .company }}</h1>
                 </div>

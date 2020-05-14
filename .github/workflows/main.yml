@@ -20,6 +20,7 @@ jobs:
       - run: |
           git clone https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git
           cd rapatao.github.io
+          git checkout develop
           git submodule init
           git submodule update
           hugo -t hugo-coder

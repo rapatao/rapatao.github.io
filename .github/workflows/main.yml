@@ -28,6 +28,5 @@ jobs:
           cd public && git add --all
           pwd
           git commit -m "Publishing..."
-          git push origin master
 
           git push "https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git" HEAD:master --follow-tags

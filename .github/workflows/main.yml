@@ -15,11 +15,11 @@ jobs:
       - run: sudo dpkg -i hugo_0.70.0_Linux-64bit.deb
       - run: rm -rf public
       - run: mkdir public
-      - run: git worktree prune
-      - run: rm -rf .git/worktrees/public/
-      - run: git worktree add -B master public deploy/master
+#      - run: git worktree prune
+#      - run: rm -rf .git/worktrees/public/
+#      - run: git worktree add -B master public deploy/master
       - run: rm -rf public/*
       - run: git submodule init
       - run: git submodule sync
       - run: hugo -t hugo-coder
-      - run: cd public && git add --all && git commit -m "Publishing..."
+#      - run: cd public && git add --all && git commit -m "Publishing..."

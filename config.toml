@@ -15,8 +15,8 @@ disqusShortname = "rapatao-com"
 [params]
     author = "Luiz H. Rapatao"
     #description = "Working as a software engineer and related areas over than 10 years doing business and technical analysis, possessing the ability to work in a highly collaborative environment."
-    keywords = "blog,developer,personal"
-    info = "Software Engineer"
+    keywords = "blog,development,personal"
+    info = "Senior Software Engineer"
     avatarurl = "images/avatar.png"
     #footercontent = "Enter a text here."
 
@@ -63,10 +63,10 @@ disqusShortname = "rapatao-com"
         weight = 1
         url = "about/"
 
-#        [[languages.en.menu.main]]
-#        name = "Blog"
-#        weight = 2
-#        url = "posts/"
+        [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 2
+        url = "pt/posts/"
 
         [[languages.en.menu.main]]
         name = "Resume"
@@ -78,7 +78,7 @@ disqusShortname = "rapatao-com"
        languagename = "Português"
 
        [languages.pt.params]
-           keywords = "blog,desenvolvedor,pessoal"
+           keywords = "blog,desenvolvimento,pessoal"
 
        [languages.pt.menu]
 
@@ -87,10 +87,10 @@ disqusShortname = "rapatao-com"
            weight = 1
            url = "about/"
 
-#           [[languages.pt.menu.main]]
-#           name = "Blog"
-#           weight = 2
-#           url = "posts/"
+           [[languages.pt.menu.main]]
+           name = "Blog"
+           weight = 2
+           url = "posts/"
 
            [[languages.pt.menu.main]]
            name = "Experiência"

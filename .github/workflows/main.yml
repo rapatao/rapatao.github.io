@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - run: git config --global user.email "do-not-reply@rapatao.com"
       - run: git config --global user.name "GH Actions Automated Deploy"
@@ -18,13 +18,16 @@ jobs:
       - run: sudo dpkg -i hugo_0.70.0_Linux-64bit.deb
 
       - run: |
-          git clone https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git
-          cd rapatao.github.io
-          git checkout develop
+          pwd
+
           git submodule init
           git submodule update
+
           hugo -t hugo-coder
+
           cd public && git add --all
           pwd
           git commit -m "Publishing..."
           git push origin master
+
+          git push "https://${GITHUB_ACTOR}:${INPUT_GITHUB_TOKEN}@github.com/${REPOSITORY}.git" HEAD:master --follow-tags

@@ -17,7 +17,7 @@ jobs:
       - run: mkdir public
       - run: git worktree prune
       - run: rm -rf .git/worktrees/public/
-      - run: git worktree add -B master public origin/master
+      - run: git worktree add -B master public master
       - run: rm -rf public/*
       - run: git submodule init
       - run: git submodule sync

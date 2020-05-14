@@ -16,13 +16,11 @@ jobs:
 
       - run: curl -LO https://github.com/gohugoio/hugo/releases/download/v0.70.0/hugo_0.70.0_Linux-64bit.deb
       - run: sudo dpkg -i hugo_0.70.0_Linux-64bit.deb
-      #      - run: rm -rf public
-      #      - run: mkdir public
-      #      - run: git worktree prune
-      #      - run: rm -rf .git/worktrees/public/
-      #      - run: git worktree add -B master public deploy/master
-      #      - run: rm -rf public/*
       - run: git submodule init
       - run: git submodule update
       - run: hugo -t hugo-coder
-      - run: cd public && git add --all && git commit -m "Publishing..." && git push
+      - run: |
+          cd public
+          git add --all
+          git commit -m "Publishing..."
+          git push origin master

@@ -22,6 +22,7 @@ jobs:
 #      - run: cd public && git add --all && git commit -m "Publishing..." && git remote add deploy https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git && git push deploy master
       - run: cd public
       - run: git add --all
+      - run: pwd
       - run: git commit -m "Publishing..."
-#      - run: git remote add deploy https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git
-      - run: git push origin master
+      - run: git remote add deploy https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git
+      - run: git push deploy master

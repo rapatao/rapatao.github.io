@@ -30,4 +30,4 @@ jobs:
           git commit -m "Publishing..."
           git push origin master
 
-          git push "https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${REPOSITORY}.git" HEAD:master --follow-tags
+          git push "https://${{ GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }.git" HEAD:master --follow-tags

@@ -1,4 +1,29 @@
-- 
+-
+  company: Mercado Livre Brasil
+  logo: mercadolivre.png
+  title:
+    pt: Analista de Sistemas Senior
+    en: Senior Software Engineer
+  period:
+    start:
+      pt: Maio 2020
+      en: May 2020
+    end:
+      pt: Presente
+      en: Present
+  description:
+    pt:
+      - Trabalhando no desenvolvimento e manutenção de microsserviços relacionados à CPG.
+    en:
+      - Working in the development and maintenance of CPG related microservices.
+  tags:
+    - Java 8
+    - Spring 5
+    - jUnit 4
+    - Docker
+    - REST
+
+-
   company: Apontador Busca Local
   logo: apontador.png
   title:

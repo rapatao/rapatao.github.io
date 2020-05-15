@@ -16,11 +16,6 @@ Caso não saiba o que é *varargs*, pode-se dizer grosseiramente que é, o "..."
 em métodos, porém, recomendo ler [este artigo](https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/) 
 para melhor entendimento e visualização de exemplos.
 
-`A ideia deste artigo é descrever um cenário de validação em um método que faz uso de *varargs* e propor uma solução 
-utilizando *jUnit* e *Mockito*.`
-
-`Agora que esclarecemos o assunto, vamos ao tópico: validação de métodos com *varargs*...`
-
 Apesar de não ter alta complexidade, nem sempre temos controle sobre como as implementações serão invocadas, 
 principalmente quando utilizamos frameworks que fazem utilização de conceitos como *callbacks* ou mesmo *reflection*, 
 muito utilizado no framework Spring.

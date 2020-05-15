@@ -1,6 +1,7 @@
 ---
 title: "O que vai aparecer por aqui?"
 date: 2020-05-13T00:00:00-03:00
+slug: first-post
 ---
 
 Já tive diversos blogs na vida, de humor, sobre tecnologia e até de assuntos gerais, porém, 

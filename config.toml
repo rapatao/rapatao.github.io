@@ -33,6 +33,8 @@ disqusShortname = "rapatao-com"
     # Series see also post count
     maxSeeAlsoItems = 5
 
+    custom_css = ["css/custom.css"]
+
 [taxonomies]
   category = "categories"
   series = "series"

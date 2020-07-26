@@ -7,6 +7,8 @@ tags:
     - reactive
 ---
 
+![Escolhas](/images/posts/abandoned-antique-architecture-building-277782.jpg#center)
+
 **Devo utilizar?**
 
     Não, mas pode ser que sim!
@@ -30,15 +32,19 @@ Porém, antes de realizarmos qualquer mudança no código, devemos sempre respon
 
 É sempre importante responder estas questões antes de iniciar um projeto com adoção de uma tecnologia diferente da habitual. Isso ajuda a prevenir riscos inesperados e possíveis atrasos nas entregas.
 
-    Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente em nossas tarefas do dia a dia, porém é sempre importante ponderarmos o que isso irá agregar, com dificuldade, curva de aprendizado e riscos inerentes a essa adesão.
+Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente em nossas tarefas do dia a dia, porém é sempre importante ponderarmos o que isso irá agregar, com dificuldade, curva de aprendizado e riscos inerentes a essa adesão.
 
 **Voltando ao assunto principal, *Spring WebFlux*...**
+
+![Voltando ao tópico](/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
 
 Dentre tudo que li e tive oportunidade de ver na prática, achei bem interessante a eficiência das aplicações construídas com *WebFlux*. Foi o famoso “muito com pouco”, porém me chamou atenção a complexidade em se construir testes unitários/integrados bem como a dificuldade na realização de *debug*, visto que o fluxo de chamadas não é mais, por assim dizer, sequencial.
 
 Entre os diversos artigos que li, havia diversos relatos de pessoas que afirmavam categoricamente que o *WebFlux* era melhor pois era possível realizar processamento das requisições em paralelo, enquanto no modelo utilizado pelo *Spring MVC*, somente uma requisição era realizada por vez, o que não é verdadeiro, visto que o paralelismo é criado com *threads* e controlado pelos servidores de aplicação, como por exemplo, *Tomcat* e *Jetty*.
 
 **Enfim, devo utilizar *WebFlux* em meu projeto?**
+
+![Voltando ao tópico](/images/posts/banking-business-checklist-commerce-416322.jpg#center)
 
 Bom, isso depende…
 

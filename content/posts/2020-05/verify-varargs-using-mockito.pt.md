@@ -116,3 +116,5 @@ Assim conseguimos garantir que, quando o *Invoker* receber determinados parâmet
 Apesar de o exemplo aqui não ser de um cenário real, acredito que ele possa ser facilmente adaptado para vários casos, servindo assim como referência.
 
 Caso tenha dúvidas ou sugestões, não hesite em entrar em contato!
+
+<div id="amzn-assoc-ad-2f3f10b2-baaf-4cff-8cc2-33c4df6b514a"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=2f3f10b2-baaf-4cff-8cc2-33c4df6b514a"></script>

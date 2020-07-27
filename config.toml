@@ -11,6 +11,10 @@ canonifyurls = true
 
 disqusShortname = "rapatao-com"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
     author = "Luiz H. Rapatao"

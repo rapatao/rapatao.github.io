@@ -40,3 +40,5 @@ Enfim, escrevi tanto para dizer que:
 * Trabalhar com TI é se adaptar as mudanças, aprendendo e ensinando constantemente.
 
 Este texto é basicamente minha visão sobre como é trabalhar com TI, você pode não concordar, e devemos sempre estar abertos a ouvir diferentes pontos de vistas, por isso, sinta-se a vontade de expor o seu e quem sabe não temos uma excelente conversa sobre o assunto.
+
+<div id="amzn-assoc-ad-26139735-7694-4bd9-9904-8256279eb944"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=26139735-7694-4bd9-9904-8256279eb944"></script>

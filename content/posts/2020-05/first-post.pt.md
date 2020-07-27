@@ -21,3 +21,5 @@ Nesse ponto é que você se torna extremamente importante, seja na confirmação
 funciona, é válido ou mesmo propondo alternativas para o que for descrito por mim.
 
 Por enquanto é isso e nos vemos em breve!
+
+<div id="amzn-assoc-ad-26139735-7694-4bd9-9904-8256279eb944"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=26139735-7694-4bd9-9904-8256279eb944"></script>

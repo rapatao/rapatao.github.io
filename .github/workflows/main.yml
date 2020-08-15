@@ -30,3 +30,5 @@ jobs:
           git commit -m "Publishing..."
 
           git push "https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git" HEAD:master --force
+
+      - run: curl http://www.google.com/ping\?sitemap\=https://www.rapatao.com/sitemap.xml

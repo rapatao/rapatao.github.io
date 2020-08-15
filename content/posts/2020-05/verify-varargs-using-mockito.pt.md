@@ -54,6 +54,8 @@ final class Invoker {
 }
 ```
 
+{{< amazon_ad search_phrase="junit" >}}
+
 Considerando tudo que foi dito acima, segue alguns exemplos de utilização da nossa implementação pela classe *Invoker*:
 
 ```java
@@ -117,4 +119,4 @@ Apesar de o exemplo aqui não ser de um cenário real, acredito que ele possa se
 
 Caso tenha dúvidas ou sugestões, não hesite em entrar em contato!
 
-<div id="amzn-assoc-ad-2f3f10b2-baaf-4cff-8cc2-33c4df6b514a"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=2f3f10b2-baaf-4cff-8cc2-33c4df6b514a"></script>
+{{< amazon_ad search_phrase="mockito" >}}

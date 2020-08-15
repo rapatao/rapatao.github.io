@@ -34,6 +34,8 @@ Porém, antes de realizarmos qualquer mudança no código, devemos sempre respon
 
 Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente em nossas tarefas do dia a dia, porém é sempre importante ponderarmos o que isso irá agregar, com dificuldade, curva de aprendizado e riscos inerentes a essa adesão.
 
+{{< amazon_ad search_phrase="reactive programming" >}}
+
 **Voltando ao assunto principal, *Spring WebFlux*...**
 
 ![Voltando ao tópico](/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
@@ -58,4 +60,4 @@ Enfim, não existe uma formula mágica que irá dizer se devemos ou não utiliza
 
 Pode ser que que uma migração não seja necessária agora, mas no futuro ela pode vir a ser e é sempre bom estarmos preparados.
 
-<div id="amzn-assoc-ad-ea6a7c57-aaba-4991-900d-ebf84a9136ba"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=ea6a7c57-aaba-4991-900d-ebf84a9136ba"></script>
+{{< amazon_ad search_phrase="webflux" >}}

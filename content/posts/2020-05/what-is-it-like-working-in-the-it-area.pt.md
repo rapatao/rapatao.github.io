@@ -23,6 +23,8 @@ Pois é, TI é tão abrangente e com tantas áreas internas que fica até compli
 
 Porém, é extremamente errado dizer que existem apenas estas duas áreas, mas prefiro dizer que estes são os pilares de todas as outras, pois no meu ponto de vista, áreas como segurança da informação, suporte técnico, programação, qualidade de software, bancos de dados e *cloud computing*, são oriundos de um, quando não de ambos os tópicos acima.
 
+{{< amazon_ad search_phrase="computação" >}}
+
 Então, como é trabalhar com TI?
 
 Não utilizando minha resposta padrão, mas tentando generalizar todas as áreas que citei acima e possivelmente outras não mencionadas, trabalhar com TI é ter que pesquisar e estudar o tempo todo, seja para solucionar problemas que estão ocorrendo na aplicação, estes que podem ser relacionados ao código/infraestrutura ou então para adquirir conhecimento sobre as atuais ou novas tecnologias.
@@ -41,4 +43,4 @@ Enfim, escrevi tanto para dizer que:
 
 Este texto é basicamente minha visão sobre como é trabalhar com TI, você pode não concordar, e devemos sempre estar abertos a ouvir diferentes pontos de vistas, por isso, sinta-se a vontade de expor o seu e quem sabe não temos uma excelente conversa sobre o assunto.
 
-<div id="amzn-assoc-ad-26139735-7694-4bd9-9904-8256279eb944"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=26139735-7694-4bd9-9904-8256279eb944"></script>
+{{< amazon_ad search_phrase="devops" >}}

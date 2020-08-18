@@ -19,7 +19,7 @@ disqusShortname = "rapatao-com"
 
 [params]
   enableCDN             = false
-  cssFiles              = ["default", "css/custom.css"]
+  cssFiles              = ["default"]
   jsFiles               = ["default"]
   highlightjs           = true
   highlightjsTheme      = ""

@@ -23,7 +23,7 @@ jobs:
           git submodule init
           git submodule update
 
-          hugo --minify
+          hugo --minify -t hugo-future-imperfect-slim
 
           cd public && git add --all
           pwd

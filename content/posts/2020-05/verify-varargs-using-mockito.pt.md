@@ -1,11 +1,15 @@
 ---
 title: "Verificação de varargs utilizando Mockito"
 date: 2020-05-14T00:00:00-03:00
-slug: verify-varargs-using-mockito
 tags:
     - java
     - mockito
     - junit
+images: 
+  - src: "/images/posts/pexels-christina-morillo-1181244.jpg"
+    alt: "java code"
+    stretch: "vertical"
+url: "/pt/posts/2020-05/verify-varargs-using-mockito/"    
 ---
 
 Construir testes é uma das tarefas mais rotineiras de um desenvolvedor e normalmente, com frameworks como jUnit e Mockito, esta tarefa tende a ser realizada sem grandes dificuldades. Apesar disso, existem certas validações, que costumam ter maior complexidade, como exemplo, verificação de chamadas a métodos com parâmetros to tipo *varargs*.

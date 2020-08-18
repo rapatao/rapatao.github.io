@@ -4,6 +4,11 @@ date: 2020-08-15T15:00:00-03:00
 tags:
     - dotfiles
     - yadm
+images: 
+  - src: "/images/posts/pexels-pixabay-207580.jpg"
+    alt: "dotfiles"
+    stretch: "vertical"
+url: "/pt/posts/2020-08/your-dotfiles-under-control/"
 ---
 
 Muitos desenvolvedores ao longo de sua carreira acaba criando diversos *scripts*, *aliases* e customizações em seus ambientes de desenvolvimento. Essas configurações, normalmente ficam em arquivos e, quando este usuário muda seu ambiente, por vezes, faz uma cópia desses arquivos para o novo ambiente. Esse processo tende a ser feito copiando seus arquivos de um ambiente para outro.

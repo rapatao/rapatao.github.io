@@ -1,7 +1,11 @@
 ---
 title: "Como é trabalhar com TI?"
 date: 2020-05-20T00:00:00-03:00
-slug: what-is-it-like-working-in-the-it-area
+images: 
+  - src: "/images/posts/pexels-fox-1595385.jpg"
+    alt: "colaboração"
+    stretch: "vertical"
+url: "/pt/posts/2020-05/what-is-it-like-working-in-the-it-area/"
 ---
 
 Recentemente tive contato com uma pessoa que está iniciando na área, solicitando alguns tipos de orientações a seguir para se tornar um bom profissional.

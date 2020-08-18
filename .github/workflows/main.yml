@@ -23,7 +23,7 @@ jobs:
           git submodule init
           git submodule update
 
-          hugo -t hugo-coder
+          hugo --minify
 
           cd public && git add --all
           pwd
@@ -32,3 +32,5 @@ jobs:
           git push "https://rapatao:${{ secrets.GITHUB_TOKEN }}@github.com/rapatao/rapatao.github.io.git" HEAD:master --force
 
       - run: curl http://www.google.com/ping\?sitemap\=https://www.rapatao.com/sitemap.xml
+      - run: curl http://www.google.com/ping\?sitemap\=https://www.rapatao.com/pt/sitemap.xml
+      - run: curl http://www.google.com/ping\?sitemap\=https://www.rapatao.com/en/sitemap.xml

@@ -1,0 +1,60 @@
+{{ range $.Site.Data.experience.list }}
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>{{ .company }}</h2>
+            <p>
+            {{range $key, $value := .title}} 
+                {{if eq (string $key) ($.Get "lang" )}}
+                    {{$value}}
+                {{end}}
+            {{end}}
+            </p>
+        </div>
+        <div class="meta">
+            <p>
+            <i class="fas fa-map-marker-alt"></i>
+                {{range $key, $value := .location}} 
+                    {{if eq (string $key) ($.Get "lang" )}}
+                        {{$value}}
+                    {{end}}
+                {{end}}
+            </p>
+            <p>
+                <i class="fas fa-calendar"></i> 
+                {{range $key, $value := .period.start}} 
+                    {{if eq ($key) ($.Get "lang")}}
+                        {{$value}}
+                    {{end}}
+                {{end}}
+                - 
+                {{range $key, $value := .period.end}} 
+                    {{if eq (string $key) ($.Get "lang")}}
+                        {{$value}}
+                    {{end}}
+                {{end}}
+            </p>
+        </div>
+    </header>
+    
+    <div class="content">
+        {{range $key, $value := .description}} 
+            {{if eq (string $key) ($.Get "lang")}}
+                {{ range $value }}
+                    <p>{{ . }}</p>
+                {{ end }}
+            {{end}}
+        {{end}}
+    </div>
+
+    <footer>
+        <div class="stats">
+            <ul>
+                {{range .tags}}
+                    <li>{{ . }}</li>
+                {{end}}
+            </ul>
+        </div>
+    </footer>
+</article>
+{{ end }}

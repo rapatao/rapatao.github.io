@@ -1,19 +1,22 @@
 -
   company: Mercado Livre Brasil
 #  logo: mercadolivre.png
+  location:
+    en: Sao Paulo, SP
+    pt: São Paulo, SP
   title:
-    pt: Analista de Sistemas Senior
+    pt: Senior Software Engineer
     en: Senior Software Engineer
   period:
     start:
-      pt: Maio 2020
+      pt: Mai 2020
       en: May 2020
     end:
       pt: Presente
       en: Present
   description:
     pt:
-      - Trabalhando no desenvolvimento e manutenção de microsserviços relacionados à CPG.
+      - Working in the development and maintenance of CPG related microservices.
     en:
       - Working in the development and maintenance of CPG related microservices.
   tags:
@@ -26,16 +29,19 @@
 -
   company: Apontador Busca Local
   logo: apontador.png
+  location:
+    en: Sao Paulo, SP
+    pt: São Paulo, SP
   title:
-    pt: Especialista de Sistemas / Tech Lead
+    pt: Senior Software Engineer / Tech Lead
     en: Senior Software Engineer / Tech Lead
   period:
     start:
-      pt: Julho 2016
-      en: July 2016
+      pt: Jul 2016
+      en: Jul 2016
     end:
-      pt: Abril 2020
-      en: April 2020
+      pt: Abr 2020
+      en: Apr 2020
   description:
     pt:
       - Led the development and adoption of Vert.x as a default tool-kit in all new applications.
@@ -78,16 +84,19 @@
 - 
   company: Spread Tecnologia
   logo: spread.png
+  location:
+    en: Sao Paulo, SP
+    pt: São Paulo, SP
   title:
-    pt: Analista de Sistemas Senior / Tech Lead
+    pt: Senior Software Engineer / Tech Lead
     en: Senior Software Engineer / Tech Lead
   period:
     start:
-      pt: Novembro 2013
-      en: November 2013
+      pt: Nov 2013
+      en: Nov 2013
     end:
-      pt: Julho 2016
-      en: July 2016
+      pt: Jul 2016
+      en: Jul 2016
   description:
     pt:
       - Worked as an external consultant in the LATAM area on BNP Paribas Cardif Brazil (www.cardif.com.br) with maintenance and development of insurance platform. 
@@ -124,16 +133,19 @@
 - 
   company: BRQ
   logo: brq.png
+  location:
+    en: Sao Paulo, SP
+    pt: São Paulo, SP
   title:
-    pt: Analista de Sistemas Senior
+    pt: Senior Software Engineer
     en: Senior Software Engineer
   period:
     start:
-      pt: Setembro 2011
-      en: September 2011
+      pt: Set 2011
+      en: Sep 2011
     end:
-      pt: Outubro 2013
-      en: October 2013
+      pt: Out 2013
+      en: Oct 2013
   description:
     pt:
       - Worked as an external consultant on Ticket (an Edenred Company / www.ticket.com.br).
@@ -170,16 +182,19 @@
 - 
   company: H2M Soluções
   logo: h2m.png
+  location:
+    en: Sao Paulo, SP
+    pt: São Paulo, SP
   title:
-    pt: Desenvolvedor Java e C#
+    pt: Java and C# Developer
     en: Java and C# Developer
   period:
     start:
-      pt: Agosto 2011
-      en: August 2011
+      pt: Ago 2011
+      en: Aug 2011
     end:
-      pt: Setembro 2011
-      en: September 2011
+      pt: Set 2011
+      en: Sep 2011
   description:
     pt:
       - Worked as a consultant dealing with analysis, maintenance, and developments in web applications. 
@@ -193,16 +208,19 @@
 - 
   company: Hewlett-Packard (HP)
   logo: hp.png
+  location:
+    en: Araraquara, SP
+    pt: Araraquara, SP
   title:
-    pt: Analista de Sistemas (Desenvolvedor Java)
-    en: System Analyst & Java Developer
+    pt: Java Developer
+    en: Java Developer
   period:
     start:
-      pt: Janeiro 2010
-      en: January 2010
+      pt: Jan 2010
+      en: Jan 2010
     end:
-      pt: Agosto 2011
-      en: August 2011
+      pt: Ago 2011
+      en: Aug 2011
   description:
     pt:
       - Worked onsite as outsourced in the billing process of Net Serviços (www.netservicos.com.br) developing new applications to automate the manual processes.
@@ -221,16 +239,19 @@
 - 
   company: Cast Informática S.A.
   logo: cast.png
+  location:
+    en: Araraquara, SP
+    pt: Araraquara, SP
   title:
-    pt: Desenvolvedor Java
+    pt: Java Developer
     en: Java Developer
   period:
     start:
-      pt: Abril 2007
-      en: April 2007
+      pt: Abr 2007
+      en: Apr 2007
     end:
-      pt: Outubro 2009
-      en: October 2009
+      pt: Out 2009
+      en: Oct 2009
   description:
     pt:
       - Worked in the web development using Java and JBoss as the application server, in the development of desktop applications using Java and C# and in the creation of scripts for Subversion customization (code validations) using Python.

@@ -1,104 +1,137 @@
 baseURL = "https://www.rapatao.com/"
 languageCode = "en-us"
 title = "rapatao.com"
-theme = "hugo-coder"
+theme = "hugo-future-imperfect-slim"
 
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
+paginate = 3
 canonifyurls = true
 
 disqusShortname = "rapatao-com"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = false
+[markup.goldmark.renderer]
+  unsafe                = true
+
+[outputs]
+  home                  = ["html", "json"]
 
 [params]
-    author = "Luiz H. Rapatao"
-    #description = "Working as a software engineer and related areas over than 10 years doing business and technical analysis, possessing the ability to work in a highly collaborative environment."
-    keywords = "blog,development,personal"
-    info = "Senior Software Engineer"
-    avatarurl = "images/avatar.png"
-    #footercontent = "Enter a text here."
+  enableCDN             = false
+  cssFiles              = ["default", "css/custom.css"]
+  jsFiles               = ["default"]
+  highlightjs           = true
+  highlightjsTheme      = ""
+  highlightjsLang       = []
+  viewMorePostsLink     = "/posts/"
+  readingTime           = true
+  imageStretch          = ""
+  removeBlur            = false
+  socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+  hideEmptyStats        = true
 
-    dateformat = "January 2, 2006"
+  summary = 10
 
-    hideCredits = false
-    hideCopyright = false
+  [params.meta]
+    description         = "My personal website containing my resume and some insights I have related to the technology area."
+    author              = "Luiz H. Rapatão"
+    favicon             = false
+    svg                 = true
+    faviconVersion      = "1"
+    msColor             = "#ffffff"
+    iOSColor            = "#ffffff"
 
-    rtl = false
+  [params.header]
+    navbarTitle         = "rapatao.com"
+    dynamicTitles       = false
+    searchMenu          = true
+    shareMenu           = true
+    languageMenu        = true
 
-    # Use inverted colors
-    inverted = false
+  [params.intro]
+    header                = "Luiz H. Rapatão"
+    paragraph             = "Senior Software Engineer"
+    rssIntro              = true
+    socialIntro           = true
+    hideWhenSingleColumn  = false
+    alwaysOnHomepage      = true
 
-    # Series see also post count
-    maxSeeAlsoItems = 5
+    [params.intro.pic]
+      src                 = "images/avatar.png"
+      shape               = "circle"
+      width               = ""
+      alt                 = "Luiz H. Rapatão"
 
-    custom_css = ["css/custom.css"]
+  [params.sidebar]
+    #about               = "This theme was developed for Hugo static site generator."
+    postAmount          = 3
+    categories          = false
+    categoriesByCount   = false
+
+  [params.footer]
+    rssFooter           = true
+    socialFooter        = true
 
 [taxonomies]
   category = "categories"
   series = "series"
   tag = "tags"
 
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github"
-    weight = 1
-    url = "https://github.com/rapatao/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter"
-    weight = 3
-    url = "https://twitter.com/rapatao/"
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin"
-    weight = 4
-    url = "https://www.linkedin.com/in/rapatao/"
+[social]
+  github = "rapatao"
+  twitter = "rapatao"
+  linkedin = "rapatao"
+  #medium = "rapatao"
+  instagram = "luizrapatao"
+  skype = "rapatao"
+  email = "rapatao@rapatao.com"
 
 [languages]
     [languages.en]
-        languagename = "English"
+      languagename = "English"
 
-        [[languages.en.menu.main]]
-        name = "About"
-        weight = 1
-        url = "about/"
+      [[languages.en.menu.main]]
+      name = "About"
+      weight = 1
+      url = "about/"
+      pre = "<i class='far fa-id-card'></i>"
 
-        [[languages.en.menu.main]]
-        name = "Blog"
-        weight = 2
-        url = "pt/posts/"
+      [[languages.en.menu.main]]
+      name = "Blog"
+      weight = 2
+      url = "pt/posts/"
+      pre = "<i class='far fa-newspaper'></i>"
 
-        [[languages.en.menu.main]]
-        name = "Resume"
-        weight = 5
-        url = "resume/"
+      [[languages.en.menu.main]]
+      name = "Resume"
+      weight = 5
+      url = "resume/"
+      pre = "<i class='far fa-file-alt'></i>"
 
 
     [languages.pt]
-       languagename = "Português"
+      languagename = "Português"
 
-       [languages.pt.params]
-           keywords = "blog,desenvolvimento,pessoal"
+      [languages.pt.params]
+          keywords = "blog,desenvolvimento,pessoal"
 
-       [languages.pt.menu]
+      [languages.pt.menu]
 
-           [[languages.pt.menu.main]]
-           name = "Sobre"
-           weight = 1
-           url = "about/"
+          [[languages.pt.menu.main]]
+          name = "Sobre"
+          weight = 1
+          url = "about/"
+          pre = "<i class='far fa-id-card'></i>"
 
-           [[languages.pt.menu.main]]
-           name = "Blog"
-           weight = 2
-           url = "posts/"
+          [[languages.pt.menu.main]]
+          name = "Blog"
+          weight = 2
+          url = "posts/"
+          pre = "<i class='far fa-newspaper'></i>"
 
-           [[languages.pt.menu.main]]
-           name = "Experiência"
-           weight = 5
-           url = "resume/"
+          [[languages.pt.menu.main]]
+          name = "Experiência"
+          weight = 5
+          url = "resume/"
+          pre = "<i class='far fa-file-alt'></i>"

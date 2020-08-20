@@ -5,7 +5,7 @@ tags:
     - dotfiles
     - yadm
 images: 
-  - src: "/images/posts/pexels-pixabay-207580.jpg"
+  - src: "/images/posts/pexels-pixabay-207580.webp"
     alt: "dotfiles"
     stretch: "vertical"
 url: "/pt/posts/2020-08/your-dotfiles-under-control/"

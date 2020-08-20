@@ -4,7 +4,7 @@ date: 2020-08-18T22:00:00-03:00
 tags:
     - database
 images: 
-  - src: "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
+  - src: "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.webp"
     alt: "dotfiles"
     stretch: "vertical"
 url: "/pt/posts/2020-08/acid-transactions/"

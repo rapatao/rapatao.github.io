@@ -4,6 +4,7 @@ date: 2020-08-15T15:00:00-03:00
 tags:
     - dotfiles
     - yadm
+    - shell
 images: 
   - src: "/images/posts/pexels-pixabay-207580.webp"
     alt: "dotfiles"

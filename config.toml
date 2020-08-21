@@ -36,9 +36,9 @@ disqusShortname = "rapatao-com"
   [params.meta]
     description         = "My personal website containing my resume and some insights I have related to the technology area."
     author              = "Luiz H. Rapatão"
-    favicon             = false
+    favicon             = true
     svg                 = true
-    faviconVersion      = "1"
+    #faviconVersion      = "1"
     msColor             = "#ffffff"
     iOSColor            = "#ffffff"
 

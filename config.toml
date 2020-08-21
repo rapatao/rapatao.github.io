@@ -58,7 +58,7 @@ disqusShortname = "rapatao-com"
     alwaysOnHomepage      = true
 
     [params.intro.pic]
-      src                 = "images/avatar.png"
+      src                 = "images/avatar.jpg"
       shape               = "circle"
       width               = ""
       alt                 = "Luiz H. Rapatão"

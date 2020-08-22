@@ -25,8 +25,10 @@ Existem diversas outras listas deste tipo, basta buscar no GitHub e provavelment
 
 Essas listas são bem uteis e servem de base para encontrarmos soluções e ferramentas para resolver possíveis problemas que estamos enfrentando ou simplesmente facilitar alguma de nossas atividades diárias.
 
-Com isso, resolvi criar o repositório **[awesome-brazil](https://github.com/awesome-brazil/awesome-brazil)** onde pretendo reunir projetos, não relacionados com um tópico específico, mas sim projetos que, obrigatoriamente foram iniciados por brasileiros, mas não necessariamente sejam mantidos apenas por brasileiros atualmente.
+[Claudison, o Filho da Nuvem](https://twitter.com/filhodanuvem) me apresentou o repositório do [Felipe Fialho](https://twitter.com/felipefialho_) com o propósito de agrupar projetos brasileiros.
 
-- Veja a lista: [https://github.com/awesome-brazil/awesome-brazil](https://github.com/awesome-brazil/awesome-brazil)
+- Veja a lista: [awesome-made-by-brazilians](https://github.com/felipefialho/awesome-made-by-brazilians)
 
-Fica aqui meu convite, se conhece projetos brasileiros e acredita que eles mereçam destaque, sinta-se a vontade em abrir um *PR* ou mesmo um *issue* informando o repositório, que terei o prazer de analisar e incluir na listagem.
+Fica aqui meu convite, se conhecer projetos brasileiros e acredita que eles mereçam destaque, sinta-se a vontade em abrir seu *PR* no repositório do Felipe, acredito que ele não se incomodará com isso!
+
+> Edit: Eu havia criado um repositório para esse fim, mas não existem motivos para termos duas listas com o mesmo fim! Vamos colaborar com a que já existe!

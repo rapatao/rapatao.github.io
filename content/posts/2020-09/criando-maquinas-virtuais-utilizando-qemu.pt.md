@@ -7,7 +7,7 @@ images:
   - src: "/images/posts/qemu.jpg"
     alt: "QEMU"
     stretch: "vertical"
-url: "/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-o-qemu/"
+url: "/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"
 ---
 
 Recentemente precisei realizar alguns testes simples de uma aplicação que somente funcionavam  no Windows e como não possuo esse ambiente, decidi criar uma VM com Windows 10. Minha primeira ideia foi utilizar o [VirtualBox](https://www.virtualbox.org/), porém por algum motivo, não conseguia de forma alguma inicializar o instalador, sempre gerando um erro aleatório ou então a tela ficava estilo o chiado de uma TV, porém colorido e sem som.

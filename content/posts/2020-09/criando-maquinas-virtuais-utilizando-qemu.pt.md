@@ -2,7 +2,7 @@
 title: "Criando maquinas virtuais (VM's) utilizando QEMU"
 date: 2020-09-06T21:00:00-03:00
 tags:
-    - virtualisation
+    - virtualization
 images: 
   - src: "/images/posts/qemu.jpg"
     alt: "QEMU"

@@ -1,0 +1,1 @@
+criando-maquinas-virtuais-utilizando-qemu.pt.md

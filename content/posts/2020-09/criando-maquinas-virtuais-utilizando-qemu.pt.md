@@ -16,11 +16,11 @@ Esse problema, impedia que eu prosseguisse com a instalação e quase me fez des
 
 Apesar de existirem interfaces (GUI) para realizar configurações de VM's para o QEMU, não encontrei no Homebrew nenhuma das alternativas que conheço ([aqemu](https://github.com/tobimensch/aqemu), [virt-manager](https://virt-manager.org/)) e para realizar meu teste, decidi fazer o procedimento de forma manual.
 
-## O que é QEMU?
+## O que é QEMU
 
 Pode se dizer que o QEMU é um aplicativo de código aberto, multiplataforma, que serve para emular máquinas (VM) e virtualizar instruções de outras plataformas, como, por exemplo, emular instruções ARM e PowerPC em ambientes x86.
 
-## Instalando o QEMU:
+## Instalando o QEMU
 
 A instalação pode ser feita de diversas formas, e todas elas podem ser encontradas [aqui](https://www.qemu.org/download/). Neste texto, irei descrever como é feito a instalação no macOS utilizando-se do Homebrew e sistemas Linux que são baseados em Debian/Ubuntu.
 
@@ -32,7 +32,7 @@ brew install qemu
 apt-get install qemu
 ```
 
-## Criando um disco para instalação do sistema operacional:
+## Criando um disco para instalação do sistema operacional
 
 Utilizamos para tal o comando `qemu-img` como, por exemplo:
 
@@ -42,7 +42,7 @@ qemu-img create -f qcow2 windows10.qcow2 30G
 
 No comando acima, estamos criando um arquivo, chamado `windows10.qcow2` com 30G. Esse arquivos será utilizado para instalarmos o Windows 10.
 
-## Instalando o sistema operacional no disco criado:
+## Instalando o sistema operacional no disco criado
 
 Neste ponto, devemos nos atentar ao sistema que será virtualizado, sendo necessário executar o comando de acordo. Por exemplo, se a instalação for do Windows 10 64 bits, o comando deverá ser o `qemu-system-x86_64`, para o caso do ambiente ser baseado em ARM, o comando seria: `qemu-system-arm`.
 
@@ -54,7 +54,7 @@ qemu-system-x86_64 -hda windows10.qcow2 -m 4G -cdrom ~/Downloads/tibia/Win10_200
 
 No comando acima, o QEMU irá simular um ambiente 64 bits, com 4G de memória RAM, utilizando o arquivo criado anteriormente como disco e o arquivo ISO, [baixado do site da Microsoft](https://www.microsoft.com/pt-br/software-download/windows10ISO), que contem a imagem de instalação, será apresentado ao sistema como se fosse um CD.
 
-## Iniciando o sistema instalado:
+## Iniciando o sistema instalado
 
 Após todo o procedimento, caso você não encerre o QEMU, você irá acessar normalmente sua máquina virtual, porém, após encerrado, caso deseje acessar outra vez, basta executar o seguinte comando:
 

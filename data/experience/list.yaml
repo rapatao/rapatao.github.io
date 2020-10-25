@@ -16,15 +16,25 @@
       en: Present
   description:
     pt:
-      - Working in the development and maintenance of CPG related microservices.
+      - Working in the team responsible for the supermarket product, developing and maintaining services used to identify, listing and connect buyers to that products.
+      - Working together with teams in different countries to build and increase engagement of the customers. 
+      - Worked in the development of the solution that gives free shipping for the customer based on rules like, minimum amount and shipping address.
     en:
-      - Working in the development and maintenance of CPG related microservices.
+      - Working in the team responsible for the supermarket product, developing and maintaining services used to identify, listing and connect buyers to that products.
+      - Working together with teams in different countries to build and increase engagement of the customers. 
+      - Worked in the development of the solution that gives free shipping for the customer based on rules like, minimum amount and shipping address.
   tags:
-    - Java 8
-    - Spring 5
-    - jUnit 4
+    - Java (8, 11)
+    - Kotlin
+    - SpringBoot
+    - WebFlux
+    - Micronaut
+    - jUnit (4, 5)
+    - Gradle
+    - Maven
+    - MySQL
     - Docker
-    - REST
+    - Jenkins
 
 -
   company: Apontador Busca Local

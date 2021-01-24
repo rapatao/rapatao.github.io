@@ -20,8 +20,6 @@ Apesar de existirem interfaces (GUI) para realizar configurações de VM's para 
 
 Pode se dizer que o QEMU é um aplicativo de código aberto, multiplataforma, que serve para emular máquinas (VM) e virtualizar instruções de outras plataformas, como, por exemplo, emular instruções ARM e PowerPC em ambientes x86.
 
-{{< amazon_ad search_phrase="qemu" >}}
-
 ## Instalando o QEMU
 
 A instalação pode ser feita de diversas formas, e todas elas podem ser encontradas [aqui](https://www.qemu.org/download/). Neste texto, irei descrever como é feito a instalação no macOS utilizando-se do Homebrew e sistemas Linux que são baseados em Debian/Ubuntu.
@@ -69,5 +67,3 @@ qemu-system-x86_64 -m 4G -hda windows10.qcow2
 Como visto, relacionado a virtualização, existe uma alternativa gratuita ao VirtualBox que pode muitas vezes suprir nossas necessidades de criação e execução de máquinas virtuais. Apesar de uma complexidade maior, conhecer o QEMU pode ser útil para situações na qual não temos uma solução mais amigável para criarmos nossas VMs.
 
 Para saber mais sobre o QEMU, recomendo olhar o Wiki oficial: [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page)
-
-{{< amazon_ad search_phrase="virtualization" >}}

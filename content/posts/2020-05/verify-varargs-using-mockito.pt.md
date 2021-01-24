@@ -58,8 +58,6 @@ final class Invoker {
 }
 ```
 
-{{< amazon_ad search_phrase="junit" >}}
-
 Considerando tudo que foi dito acima, segue alguns exemplos de utilização da nossa implementação pela classe *Invoker*:
 
 ```java
@@ -122,5 +120,3 @@ Assim conseguimos garantir que, quando o *Invoker* receber determinados parâmet
 Apesar de o exemplo aqui não ser de um cenário real, acredito que ele possa ser facilmente adaptado para vários casos, servindo assim como referência.
 
 Caso tenha dúvidas ou sugestões, não hesite em entrar em contato!
-
-{{< amazon_ad search_phrase="mockito" >}}

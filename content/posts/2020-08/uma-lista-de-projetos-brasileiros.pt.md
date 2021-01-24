@@ -32,5 +32,3 @@ Essas listas são bem uteis e servem de base para encontrarmos soluções e ferr
 Fica aqui meu convite, se conhecer projetos brasileiros e acredita que eles mereçam destaque, sinta-se a vontade em abrir seu *PR* no repositório do Felipe, acredito que ele não se incomodará com isso!
 
 > Edit: Eu havia criado um repositório para esse fim, mas não existem motivos para termos duas listas com o mesmo fim! Vamos colaborar com a que já existe!
-
-{{< amazon_ad search_phrase="github" >}}

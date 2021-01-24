@@ -6,7 +6,7 @@ theme = "hugo-future-imperfect-slim"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 3
+paginate = 5
 canonifyurls = true
 
 disqusShortname = "rapatao-com"

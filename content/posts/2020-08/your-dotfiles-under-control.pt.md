@@ -31,8 +31,6 @@ Exemplos de arquivos e pastas inciados com ponto (.):
 
 Isso não quer dizer que seus arquivos precisam iniciar com ponto (.) e de fato existem diversas pessoas que não o definem assim, separando em pastas com nomes condizentes, como, por exemplo “*$HOME/etc”*. Particularmente, prefiro manter tais arquivos dentro de uma pasta iniciando com o ponto (.), especificamente “*$HOME/.dotifiles.d*”, pois esta pasta não é listada por padrão, logo não será notada na maioria das vezes, o que gera em mim uma sensação de organização.
 
-{{< amazon_ad search_phrase="linux shell" >}}
-
 ## Um gerenciador para dotfiles
 
 Como dito anteriormente, existem diversas maneiras para gerenciar seus *dotfiles*, seja ele de forma manual ou automatizada com auxílio de aplicativos. Utilizar um controlador de versões, como o *git* é uma forma interessante fazer, porém, ainda precisaremos realizar os vínculos de forma manual em cada ambiente instalado.
@@ -123,8 +121,6 @@ $ yadm remote add origin <url>
 $ yadm push -u origin master
 ```
 
-{{< amazon_ad search_phrase="git" >}}
-
 ## Suas configurações em um novo ambiente
 
 Com o advento do repositório descentralizado, para instalar seus arquivos em um novo ambiente, basta executar o seguinte comando:
@@ -180,5 +176,3 @@ Além dos recursos citados acima, existem outros e apesar de não os descrever n
 - [Bootstrap](https://yadm.io/docs/bootstrap): Um *script* que pode ser executado ao clonar um repositório. Útil para instalar aplicativos normalmente utilizados e/ou necessários para correto funcionamento de seu ambiente.
 
 Acredito ter falado sobre os principais tópicos sobre dotfiles e como gerencia-los utilizando o *yadm*. Para maiores detalhes, recomendo olhar o site oficial [yadm.io](https://yadm.io/), mas fique a vontade em me perguntar diretamente algo sobre o assunto.
-
-{{< amazon_ad search_phrase="linux" >}}

@@ -14,8 +14,6 @@ url: "/pt/posts/2020-08/acid-transactions/"
 
 Acrônimo de **A**tomicidade, **C**onsistência, **I**solamento e **D**urabilidade é um conjunto de propriedades de uma transação de bancos de dados que visam garantir a integridade e validade de dados, mesmo após falhas sistêmicas ou até falhas de energia elétrica.
 
-{{< amazon_ad search_phrase="database" >}}
-
 ### Atomicidade
 
 Trata como unidade, todas as operações realizadas para uma tarefa, ou seja, todas as instruções serão efetivadas com sucesso ou então, nenhuma delas deverá ser efetivada. Por exemplo, em uma transferência bancária, em caso de falha em qualquer uma das etapas, todo o processo deve ser desfeito e os valores retornados ao original.
@@ -35,5 +33,3 @@ Garante que um dado, ao ser persistido, estará disponível mesmo após alguma f
 ## Conclusão
 
 Basicamente, ACID visa garantir que as transações realizadas em um sistema, sejam sempre realizados de forma íntegra, garantindo a disponibilidade dos dados mesmo após falhas criticas, como falta de energia elétrica. Visa também garantir que em um sistema de alta concorrência, os valores consultados sejam sempre condizentes com os valores persistidos na base, evitando as chamadas leituras sujas, onde um dado é retornado com um valor pré-efetivação de uma escrita, que pode ou não ocorrer com sucesso.
-
-{{< amazon_ad search_phrase="oracle,mysql" >}}

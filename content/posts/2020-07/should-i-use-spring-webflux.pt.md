@@ -37,8 +37,6 @@ Porém, antes de realizarmos qualquer mudança no código, devemos sempre respon
 
 Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente em nossas tarefas do dia a dia, porém é sempre importante ponderarmos o que isso irá agregar, com dificuldade, curva de aprendizado e riscos inerentes a essa adesão.
 
-{{< amazon_ad search_phrase="reactive programming" >}}
-
 **Voltando ao assunto principal, *Spring WebFlux*...**
 
 ![Voltando ao tópico](/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
@@ -62,5 +60,3 @@ Porém, se a aplicação estiver com problemas relacionado a quantidade de *thre
 Enfim, não existe uma formula mágica que irá dizer se devemos ou não utilizar *WebFlux* ou *MVC* em nossos projetos. Sempre será necessário analisarmos o cenário que temos e comparar com as opções que temos disponíveis, mas é sempre importante entendermos as vantagens e desvantagens destas e outras tecnologias.
 
 Pode ser que que uma migração não seja necessária agora, mas no futuro ela pode vir a ser e é sempre bom estarmos preparados.
-
-{{< amazon_ad search_phrase="webflux" >}}

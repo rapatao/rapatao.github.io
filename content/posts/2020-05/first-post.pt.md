@@ -25,5 +25,3 @@ Nesse ponto é que você se torna extremamente importante, seja na confirmação
 funciona, é válido ou mesmo propondo alternativas para o que for descrito por mim.
 
 Por enquanto é isso e nos vemos em breve!
-
-{{< amazon_ad search_phrase="computação" >}}

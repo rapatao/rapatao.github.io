@@ -1,0 +1,1 @@
+pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut.pt.md

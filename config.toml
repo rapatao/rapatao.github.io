@@ -30,6 +30,7 @@ disqusShortname = "rapatao-com"
   removeBlur            = false
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
   hideEmptyStats        = true
+  images                = ["/images/avatar.jpg"]
 
   [params.social]
     twitter             = "@rapatao"

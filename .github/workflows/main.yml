@@ -14,8 +14,8 @@ jobs:
       - run: git config --global user.email "do-not-reply@rapatao.com"
       - run: git config --global user.name "GH Actions Automated Deploy"
 
-      - run: curl -LO https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.deb
-      - run: sudo dpkg -i hugo_extended_0.84.0_Linux-64bit.deb
+      - run: curl -LO https://github.com/gohugoio/hugo/releases/download/v0.84.1/hugo_extended_0.84.1_Linux-64bit.deb
+      - run: sudo dpkg -i hugo_extended_0.84.1_Linux-64bit.deb
 
       - run: |
           pwd

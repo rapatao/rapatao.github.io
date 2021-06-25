@@ -31,6 +31,9 @@ disqusShortname = "rapatao-com"
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
   hideEmptyStats        = true
 
+  [params.social]
+    twitter             = "@rapatao"
+
   summary = 10
 
   [params.meta]

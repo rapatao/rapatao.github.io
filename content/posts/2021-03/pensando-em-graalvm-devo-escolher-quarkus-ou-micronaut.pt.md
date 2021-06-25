@@ -5,10 +5,9 @@ tags:
     - quarkus
     - micronaut
     - architecture
-images: 
-  - src: "/images/posts/quarkus-micronaut.png"
-    alt: "Quarkus vs Micronaut"
-    stretch: "vertical"
+featured: "/posts/quarkus-micronaut.png"
+featuredalt: "Quarkus vs Micronaut"
+featuredstretch: "vertical"
 url: "/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/"
 ---
 

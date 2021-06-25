@@ -5,10 +5,9 @@ tags:
     - java
     - mockito
     - junit
-images: 
-  - src: "/images/posts/pexels-christina-morillo-1181244.jpg"
-    alt: "java code"
-    stretch: "vertical"
+featured: "/posts/pexels-christina-morillo-1181244.jpg"
+featuredalt: "java code"
+featuredstretch: "vertical"
 url: "/pt/posts/2020-05/verify-varargs-using-mockito/"    
 ---
 

@@ -4,10 +4,9 @@ date: 2020-08-21T21:00:00-03:00
 tags:
     - github
     - awesome
-images: 
-  - src: "/images/posts/awesome-brazil.jpg"
-    alt: "awesome brazil"
-    stretch: "vertical"
+featured: "/posts/awesome-brazil.jpg"
+featuredalt: "awesome brazil"
+featuredstretch: "vertical"
 url: "/pt/posts/2020-08/uma-lista-de-projetos-brasileiros/"
 ---
 

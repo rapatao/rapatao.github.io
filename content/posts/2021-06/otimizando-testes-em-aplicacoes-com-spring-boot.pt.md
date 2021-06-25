@@ -5,9 +5,8 @@ tags:
     - springboot
     - java
     - tests
-images: 
-  - src: "/images/posts/spring-boot-test-performance.png"
-    alt: "Spring Boot Test Performance"
+featured: "/posts/spring-boot-test-performance.png"
+featuredalt: "Spring Boot Test Performance"
 url: "/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
 ---
 

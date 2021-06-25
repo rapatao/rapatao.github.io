@@ -3,10 +3,9 @@ title: "Transações ACID"
 date: 2020-08-18T22:00:00-03:00
 tags:
     - database
-images: 
-  - src: "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
-    alt: "dotfiles"
-    stretch: "vertical"
+featured: "/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
+featuredalt: "dotfiles"
+featuredstretch: "vertical"
 url: "/pt/posts/2020-08/acid-transactions/"
 ---
 

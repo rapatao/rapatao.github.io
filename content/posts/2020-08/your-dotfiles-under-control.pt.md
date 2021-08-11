@@ -5,9 +5,10 @@ tags:
     - dotfiles
     - yadm
     - shell
-featured: "/posts/pexels-pixabay-207580.jpg"
-featuredalt: "dotfiles"
-featuredstretch: "vertical"
+images: 
+  - src: "/img/posts/pexels-pixabay-207580.jpg"
+    alt: "dotfiles"
+    stretch: "vertical"
 url: "/pt/posts/2020-08/your-dotfiles-under-control/"
 ---
 

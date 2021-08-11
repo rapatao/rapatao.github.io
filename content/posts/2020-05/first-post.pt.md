@@ -1,9 +1,10 @@
 ---
 title: "O que vai aparecer por aqui?"
 date: 2020-05-13T00:00:00-03:00
-featured: "/posts/pexels-dom-j-45718.jpg"
-featuredalt: "iniciando"
-featuredstretch: "vertical"
+images: 
+  - src: "/img/posts/pexels-dom-j-45718.jpg"
+    alt: "iniciando"
+    stretch: "vertical"
 url: "/pt/posts/2020-05/first-post/"
 ---
 

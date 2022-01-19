@@ -2,6 +2,7 @@
 title: "Programação reativa com Spring WebFlux, devo utilizar?"
 date: 2020-07-26T19:33:23-03:00
 tags:
+    - spring
     - spring mvc
     - spring webflux
     - reactive

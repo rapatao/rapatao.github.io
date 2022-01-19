@@ -5,6 +5,7 @@ tags:
     - java
     - mockito
     - junit
+    - tests
 images: 
   - src: "/img/posts/pexels-christina-morillo-1181244.jpg"
     alt: "java code"

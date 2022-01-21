@@ -14,7 +14,7 @@ url: "/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
 
 A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.
 
-[JUnit](https://junit.org/junit5/) é um dos frameworks mais utilizados na construção de testes em [Kotlin](https://kotlinlang.org/) e [MockK](https://mockk.io/) para construção de *mocks.*
+[JUnit](https://junit.org/junit5/) é um dos frameworks mais utilizados na construção de testes em [Kotlin](https://kotlinlang.org/) e [MockK](https://mockk.io/) para construção de *mocks*, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
 
 <aside>
 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
@@ -138,7 +138,7 @@ Apesar de simples, esses testes demonstram como é realizado a construção de t
 
 ## Reduzindo código duplicado nos testes
 
-Como pode ser notado, ambos cenários realizam a construção de uma instância da classe a ser testa e, consequentemente de suas dependências. Com o *JUnit*, casos assim, poderiam ser construído declarando uma função anotações especificas, que são executadas antes ou depois de um ou todos os cenários de testes declarados.
+Como pode ser notado, ambos cenários realizam a construção de uma instância da classe a ser testada e, consequentemente de suas dependências. Com o *JUnit*, casos assim, poderiam ser construído declarando uma função anotações especificas, que são executadas antes ou depois de um ou todos os cenários de testes declarados.
 
 Essas anotações são utilizadas quando precisamos preparar ou remover dados antes ou depois da execução dos cenários de testes, como por exemplo, realizar inserção de dados em uma base de dados, ou apagar informações inseridas nesta mesma base.
 

@@ -1,0 +1,251 @@
+<!doctype html><html lang=pt>
+<head>
+<meta charset=utf-8>
+<title>Pensando em GraalVM? Devo escolher Quarkus ou Micronaut? - rapatao.com</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=apple-touch-icon sizes=180x180 href=https://www.rapatao.com/favicon/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://www.rapatao.com/favicon/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://www.rapatao.com/favicon/favicon-16x16.png>
+<link rel=manifest href=https://www.rapatao.com/favicon/site.webmanifest>
+<link rel=mask-icon href=https://www.rapatao.com/favicon/safari-pinned-tab.svg color=#ffffff>
+<link rel="shortcut icon" href=https://www.rapatao.com/favicon/favicon.ico>
+<meta name=msapplication-config content="/favicon/browserconfig.xml">
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=theme-color content="#ffffff">
+<meta name=generator content="Hugo 0.92.1"><meta itemprop=name content="Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?">
+<meta itemprop=description content="Recentemente no trabalho, pretendíamos utilizar GraalVM em uma nova aplicação. Buscando soluções compatíveis, vimos que Quarkus e Micronaut pareciam promissores e decidimos analisa-los.
+ Nota: Quando essa analise foi realizada, Spring possuía um suporte muito limitado ao GraalVM e foi desconsiderado.
+ Dentre as opções citadas, diversos benchmarks disponíveis na Internet foram consultados, além de verificado a compatibilidade com ferramentas e bibliotecas normalmente utilizadas nos projetos da empresa. Outros fatores foram analisados, como facilidade e qualidade da documentação e curva de aprendizado nessas tecnologias."><meta itemprop=datePublished content="2021-03-24T21:00:00-03:00">
+<meta itemprop=dateModified content="2021-03-24T21:00:00-03:00">
+<meta itemprop=wordCount content="1148"><meta itemprop=image content>
+<meta itemprop=keywords content="quarkus,micronaut,architecture,">
+<meta property="og:title" content="Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?">
+<meta property="og:description" content="Recentemente no trabalho, pretendíamos utilizar GraalVM em uma nova aplicação. Buscando soluções compatíveis, vimos que Quarkus e Micronaut pareciam promissores e decidimos analisa-los.
+ Nota: Quando essa analise foi realizada, Spring possuía um suporte muito limitado ao GraalVM e foi desconsiderado.
+ Dentre as opções citadas, diversos benchmarks disponíveis na Internet foram consultados, além de verificado a compatibilidade com ferramentas e bibliotecas normalmente utilizadas nos projetos da empresa. Outros fatores foram analisados, como facilidade e qualidade da documentação e curva de aprendizado nessas tecnologias.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/"><meta property="og:image" content="https://www.rapatao.com/img/posts/quarkus-micronaut.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-03-24T21:00:00-03:00">
+<meta property="article:modified_time" content="2021-03-24T21:00:00-03:00">
+<meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.rapatao.com/img/posts/quarkus-micronaut.png">
+<meta name=twitter:title content="Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?">
+<meta name=twitter:description content="Recentemente no trabalho, pretendíamos utilizar GraalVM em uma nova aplicação. Buscando soluções compatíveis, vimos que Quarkus e Micronaut pareciam promissores e decidimos analisa-los.
+ Nota: Quando essa analise foi realizada, Spring possuía um suporte muito limitado ao GraalVM e foi desconsiderado.
+ Dentre as opções citadas, diversos benchmarks disponíveis na Internet foram consultados, além de verificado a compatibilidade com ferramentas e bibliotecas normalmente utilizadas nos projetos da empresa. Outros fatores foram analisados, como facilidade e qualidade da documentação e curva de aprendizado nessas tecnologias.">
+<meta name=twitter:site content="@rapatao">
+<link rel=stylesheet href=https://www.rapatao.com/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel=stylesheet href=https://www.rapatao.com/css/add-on.css>
+</head>
+<body>
+<header id=site-header>
+<nav id=site-nav>
+<h1 class=nav-title>
+<a href=https://www.rapatao.com/pt/ class=nav>
+rapatao.com
+</a>
+</h1>
+<menu id=site-nav-menu class="flyout-menu menu">
+<a href=https://www.rapatao.com/pt/about/ class="nav link"><i class="far fa-id-card"></i> Sobre</a>
+<a href=https://www.rapatao.com/pt/posts/ class="nav link"><i class="far fa-newspaper"></i> Blog</a>
+<a href=https://www.rapatao.com/pt/resume/ class="nav link"><i class="far fa-file-alt"></i> Experiência</a>
+<a href=#share-menu class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+<a href=#search-input class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+</menu>
+<a href=#search-input class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+<a href=#share-menu class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+<a href=#lang-menu class="nav lang-toggle" lang=pt>pt</a>
+<a href=#site-nav class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+</nav>
+<menu id=search class=menu><input id=search-input class="search-input menu"></input><div id=search-results class="search-results menu"></div></menu>
+<menu id=lang-menu class="flyout-menu menu">
+<a href=# lang=pt class="nav link active">Português (pt)</a>
+<a href=https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/ lang=en class="nav link">English (en)</a>
+</menu>
+<menu id=share-menu class="flyout-menu menu">
+<h1>Share Post</h1>
+<a href="//twitter.com/share?text=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank rel=noopener class="nav share-btn twitter">
+<p>Twitter</p>
+</a>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank rel=noopener class="nav share-btn facebook">
+<p>Facebook</p>
+</a>
+<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&title=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn reddit">
+<p>Reddit</p>
+</a>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&title=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn linkedin">
+<p>LinkedIn</p>
+</a>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&description=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn pinterest">
+<p>Pinterest</p>
+</a>
+<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
+<p>Email</p>
+</a>
+</menu>
+</header>
+<div id=wrapper>
+<section id=site-intro>
+<a href=https://www.rapatao.com/pt/><img src=https://www.rapatao.com/images/avatar.jpg class=circle width=100 alt="Luiz H. Rapatão"></a>
+<header>
+<h1>Luiz H. Rapatão</h1>
+</header>
+<main>
+<p>Senior Software Engineer</p>
+</main>
+<footer>
+<ul class=socnet-icons>
+<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
+<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
+<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
+<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
+<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
+<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
+</ul>
+</footer>
+</section>
+<main id=site-main>
+<article class=post>
+<header>
+<div class=title>
+<h2><a href=https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/>Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?</a></h2>
+</div>
+<div class=meta>
+<time datetime="2021-03-24 21:00:00 -0300 -03">24 de March, 2021</time>
+<p>6 Minutos De Leitura</p>
+</div>
+</header>
+<div id=socnet-share>
+<a href="//twitter.com/share?text=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank rel=noopener class="nav share-btn twitter">
+<p>Twitter</p>
+</a>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank rel=noopener class="nav share-btn facebook">
+<p>Facebook</p>
+</a>
+<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&title=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn reddit">
+<p>Reddit</p>
+</a>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&title=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn linkedin">
+<p>LinkedIn</p>
+</a>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f&description=Pensando%20em%20GraalVM%3f%20Devo%20escolher%20Quarkus%20ou%20Micronaut%3f" target=_blank rel=noopener class="nav share-btn pinterest">
+<p>Pinterest</p>
+</a>
+<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-03%2fpensando-em-graalvm-devo-escolher-quarkus-ou-micronaut%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
+<p>Email</p>
+</a>
+</div>
+<div class=content>
+<a href=https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/quarkus-micronaut.png')">
+<img class=stretchV src=https://www.rapatao.com/img/posts/quarkus-micronaut.png alt="Quarkus vs Micronaut">
+</a>
+<p>Recentemente no trabalho, pretendíamos utilizar <em>GraalVM</em> em uma nova aplicação. Buscando soluções compatíveis, vimos que <em>Quarkus</em> e <em>Micronaut</em> pareciam promissores e decidimos analisa-los.</p>
+<blockquote>
+<p>Nota: Quando essa analise foi realizada, <em>Spring</em> possuía um suporte muito limitado ao <em>GraalVM</em> e foi desconsiderado.</p>
+</blockquote>
+<p>Dentre as opções citadas, diversos <em>benchmarks</em> disponíveis na Internet foram consultados, além de verificado a <strong>compatibilidade</strong> com ferramentas e bibliotecas normalmente utilizadas nos projetos da empresa. Outros fatores foram analisados, como facilidade e qualidade da <strong>documentação</strong> e <strong>curva de aprendizado</strong> nessas tecnologias.</p>
+<h2 id=curva-de-aprendizado>Curva de aprendizado</h2>
+<p><img src=https://www.rapatao.com/img/posts/pexels-energepiccom-313690.jpg#center alt="Curva de aprendizado"></p>
+<p>Apesar de muitas vezes ser desconsiderado em análises por parte das pessoas de tecnologia, a complexidade em aprender e, de fato, entender o funcionamento de uma tecnologia afeta muito a qualidade e produtividade da equipe em um projeto. Considerando ainda que pretendíamos utilizar <em>GraalVM</em>, era extremamente prudente levar esse tópico em consideração, visto que não seria apenas uma tecnologia &ldquo;nova&rdquo; a ser implementada no mesmo projeto.</p>
+<p>Os membros da equipe também possuíam um bom conhecimento de <em>Spring</em>, sendo esse o que normalmente é utilizado nos projetos desenvolvidos, seja utilizando o tradicional <em>MVC</em> ou o reativo <em>WebFlux</em>.</p>
+<p>Dentre os projetos que normalmente desenvolvemos, raramente temos uma complexidade elevada, no sentido de integração ao <em>framework</em>, sendo que normalmente apenas disponibilizamos uma <em>API Rest</em> que, pode consumir outras <em>APIs</em> e um ou mais bases de dados, ou seja, nossa complexidade tende a estar nas regras de negócio.</p>
+<p>Tendo em mente os pontos citados, tanto <em>Quarkus</em>, como o <em>Micronaut</em> possuem diversas similaridades com o <em>Spring</em>, e facilitariam muitos dos nossos casos de usos, porém a forma como tudo é declarado no <em>Micronaut</em> (<em>beans</em>, <em>configurations</em>, etc) pareceu ser bem mais semelhante com o <em>Spring</em>, o que poderia auxiliar no processo de assimilação da ferramenta.</p>
+<p>Outro ponto que também trouxe certa facilidade com o <em>Micronaut</em>, foi o suporte que este possuí a declaração de <em>queries</em> de forma declarativa, semelhante à forma como ao disponível no <em>Spring Data</em> ou no <em>GORM</em> do <em>Grails.</em></p>
+<p>Durante essa analise, confirmamos que o <em>Quarkus</em> tende a seguir ou priorizar o uso de especificações, como <em>JAX-RS,</em> por exemplo*,* o que tende a não ser o normal de quem está no universo do <em>Spring</em>.</p>
+<h2 id=compatibilidade>Compatibilidade</h2>
+<p><img src=https://www.rapatao.com/img/posts/pexels-castorly-stock-3639031.jpg#center alt=Compatibilidade></p>
+<p>Como dito anteriormente, nossos casos de usos raramente possuem grande complexidade e foi limitado a análise nos cenários mais comuns, ou seja, disponibilização e consumo de uma <em>APIs Rest, além de</em> acesso a bases de dados, normalmente <em>MySQL</em>.</p>
+<p>A disponibilização de <em>endpoints</em>, ambas ferramentas possuem similaridades, com foco no fato do <em>Quarkus</em> utilizar por padrão anotações <em>JAX-RS</em>, enquanto o <em>Micronaut</em>, apesar de possuir suporte a elas, utilizar anotações próprias, porém estas são bem intuitivas. Um ponto importante, e muito negligenciado quando falamos de <em>APIs</em>, seria sua documentação e neste assunto, ambos possuem suporte nativo para <em>OpenAPI</em>, permitindo que seja gerado uma documentação com base na declaração de <em>endpoints</em> existentes no código (<em>code first</em>).</p>
+<p>Assim como é simples para disponibilizar um <em>endpoint</em>, criar um cliente HTTP também é semelhante em ambos <em>frameworks</em>, no qual <em>o</em> cliente é construído apenas com a criação de uma interface anotada, explicitando em seus métodos, o verbo, o caminho, seus parâmetros, seus cabeçalhos e o corpo da requisição, muito semelhante aos já conhecidos <em><a href=https://github.com/OpenFeign/feign>Feign</a></em> e <em><a href=https://square.github.io/retrofit/>Retrofit</a>.</em></p>
+<p>Um ponto que pode ser considerado interessante no <em>Micronaut</em> é em relação às configurações de (des)serialização, onde estas podem ser definidas no arquivo de configuração, sem necessidade de codificação. Através desse arquivo é possível definir desde qual estratégia de nomes utilizar (<em>camel case, snake case, etc)</em>, até como os dados devem ser convertidos enquanto no <em>Quarkus</em>, isso somente pode ser realizado através de codificação, o que eleva a quantidade de código produzido/contido no projeto.</p>
+<p>O acesso a bases de dados é similar, com ambos possuindo suporte ao <em>Hibernate</em> e a suporte nativo a diversas bases. A questão está na forma como serão declaradas as consultas que serão realizadas, com o <em>Micronaut</em> suportando declarações por interfaces e métodos descritivos, enquanto o <em>Quarkus</em>, até onde consegui identificar realiza de uma maneira mais declarativa e, consequentemente, verbosa.</p>
+<p>Nesse projeto em questão, precisávamos realizar uma espécie de versionamento de todas as entidades que fossem alteradas na base de dados, porém, o histórico é armazenado em um serviço externo a aplicação. A maneira mais simples de se realizar essa integração seria através de um <em>interceptor</em> no <em>Hibernate.</em> Com o <em>Micronaut</em>, essa integração é extremamente simples, bastando disponibilizar no contexto um <em>bean</em> deste tipo, que este é automaticamente utilizado. Em relação ao <em>Quarkus</em>, eu não consegui identificar como seria realizado essa integração e tampouco consegui encontrar, seja na internet, seja em sua documentação oficial.</p>
+<h2 id=documentação>Documentação</h2>
+<p><img src=https://www.rapatao.com/img/posts/pexels-anastasia-zhenina-93519.jpg#center alt=Compatibilidade></p>
+<p>Considero este um dos tópicos mais importantes a ser analisado, pois, a documentação é e deve ser sempre utilizada como referência para analisar ou construir eventuais casos de usos, ou apenas para entendimento das funcionalidades disponibilizadas por uma ferramenta.</p>
+<p>Neste ponto, acredito que o <em>Quarkus</em> deixa muito a desejar, pois, sua documentação é baseada em guias práticos e, particularmente, considero isso muito ruim para um projeto de longa duração, mas são excelentes para quem gostaria de realizar testes de alguma integração ou funcionalidade. Ou seja, no decorrer do desenvolvimento de um projeto, a tendência é que as pesquisas relacionadas a tecnologia deixem de ser o &ldquo;como fazer algo&rdquo; para os &ldquo;porquês de algo acontecer&rdquo;. Com a separação por guias, essa pesquisa se torna difícil e cansativa, o que faria com que as pessoas buscassem outros meios, como <em>Stack Overflow</em>, por exemplo. Como exemplo, posso mencionar a necessidade citada acima, de criar um <em>Interceptor</em>, e eu não consegui encontrar nos guias exemplos de utilização e mesmo em mecanismos de pesquisa, não consegui encontrar nada relacionado a isso.</p>
+<p>Por outro lado, com o <em>Micronaut</em>, sua documentação é bem mais detalhada e completa, acredito que falte muito para chegar no nível de conteúdo que a documentação do <em>Spring</em> possui, mas nela é possível encontrar praticamente tudo relacionado a um tópico de forma centralizada ou em documentações específicas de uma extensão, reduzindo em muito a necessidade de abrir e ler diversos guias de um mesmo assunto para encontrar algo específico.</p>
+<h2 id=conclusão>Conclusão</h2>
+<p>Ambos <em>frameworks</em> possuem suporte e compatibilidade com os cenários que analisamos e poderiam ser adotados de forma tranquila em qualquer um de nossos projetos. Porém, a curva de aprendizado do <em>Micronaut</em> demonstrou ser bem mais tranquila, com bastante similaridades com o já utilizado <em>Spring</em> como, por exemplo, suporte ao acesso a bases de dados através da declaração de interfaces e métodos descritivos.</p>
+<p>Porém, o fator que acredito que teve um maior peso na decisão foi a documentação, que apesar de acreditar que ainda possa ser evoluída, no <em>Micronaut</em> é muito mais completo e de fácil localização do que a encontrada com os guias disponibilizados pelo <em>Quarkus.</em></p>
+<p>Com tudo dito, se fosse para sair do universo <em>Spring</em>, seja para adoção ou não do <em>GraalVM</em>, hoje escolheria <em>Micronaut</em>, sem grandes receios nessa decisão.</p>
+<p>Agradeço a leitura e sinta-se a vontade de realizar qualquer questionamento sobre o assunto.</p>
+</div>
+<footer>
+<div class=stats>
+<ul class=tags>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/quarkus/>quarkus</a></li>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/micronaut/>micronaut</a></li>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/architecture/>architecture</a></li>
+</ul>
+</div>
+</footer>
+</article>
+<article class=post>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//rapatao-com.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+<div class=pagination>
+<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class="button left"><span>Otimizando testes em aplicações com Spring Boot</span></a>
+<a href=https://www.rapatao.com/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/ class="button right"><span>Criando maquinas virtuais (VM's) utilizando QEMU</span></a>
+</div>
+</main>
+<section id=site-sidebar>
+<section id=recent-posts>
+<header>
+<h1>Posts Recentes</h1>
+</header>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg')">
+<img src=https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg alt="Load Balancing: O que é um balanceador de carga?">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/>Load Balancing: O que é um balanceador de carga?</a></h2>
+<time class=published datetime="2022-02-05 20:00:00 -0300 -03">5 de February, 2022</time>
+</header>
+</article>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg')">
+<img src=https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg alt="Construindo testes com Kotlin, JUnit e MockK">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/>Construindo testes com Kotlin, JUnit e MockK</a></h2>
+<time class=published datetime="2022-01-19 22:00:00 -0300 -03">19 de January, 2022</time>
+</header>
+</article>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/spring-boot-test-performance.png')">
+<img src=https://www.rapatao.com/img/posts/spring-boot-test-performance.png alt="Spring Boot Test Performance">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/>Otimizando testes em aplicações com Spring Boot</a></h2>
+<time class=published datetime="2021-06-24 22:00:00 -0300 -03">24 de June, 2021</time>
+</header>
+</article>
+<footer>
+<a href=https://www.rapatao.com/pt/posts/ class=button>Veja Mais</a>
+</footer>
+</section>
+</section>
+<footer id=site-footer>
+<ul class=socnet-icons>
+<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
+<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
+<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
+<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
+<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
+<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
+</ul>
+<p class=copyright>
+© 2022 rapatao.com
+<br>
+Tema: <a href=https://themes.gohugo.io/hugo-future-imperfect-slim/ target=_blank rel=noopener>Hugo Future Imperfect</a><br>Adaptado de <a href=https://html5up.net/future-imperfect target=_blank rel=noopener>HTML5 UP</a> | Disponibilizado pelo <a href=https://gohugo.io/ title=0.92.1 target=_blank rel=noopener>Hugo</a>
+</p>
+</footer>
+<a id=back-to-top href=# class="fas fa-arrow-up fa-2x"></a>
+<script src=https://www.rapatao.com/js/highlight.js></script>
+<script>hljs.initHighlightingOnLoad()</script><script src=https://www.rapatao.com/js/bundle.min.ac7914d38f0f99e8b54651f89670f7fcc087a50300e3ae4b1d76e7efc335e50a.js integrity="sha256-rHkU048Pmei1RlH4lnD3/MCHpQMA465LHXbn78M15Qo="></script>
+<script src=https://www.rapatao.com/js/add-on.js></script>
+</div>
+</body>
+</html>

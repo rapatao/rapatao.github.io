@@ -1,0 +1,427 @@
+<!doctype html><html lang=pt>
+<head>
+<meta charset=utf-8>
+<title>Construindo testes com Kotlin, JUnit e MockK - rapatao.com</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=apple-touch-icon sizes=180x180 href=https://www.rapatao.com/favicon/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=https://www.rapatao.com/favicon/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=https://www.rapatao.com/favicon/favicon-16x16.png>
+<link rel=manifest href=https://www.rapatao.com/favicon/site.webmanifest>
+<link rel=mask-icon href=https://www.rapatao.com/favicon/safari-pinned-tab.svg color=#ffffff>
+<link rel="shortcut icon" href=https://www.rapatao.com/favicon/favicon.ico>
+<meta name=msapplication-config content="/favicon/browserconfig.xml">
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=theme-color content="#ffffff">
+<meta name=generator content="Hugo 0.92.1"><meta itemprop=name content="Construindo testes com Kotlin, JUnit e MockK">
+<meta itemprop=description content="A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.
+JUnit é um dos frameworks mais utilizados na construção de testes em Kotlin e MockK para construção de mocks, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
+ 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github."><meta itemprop=datePublished content="2022-01-19T22:00:00-03:00">
+<meta itemprop=dateModified content="2022-01-19T22:00:00-03:00">
+<meta itemprop=wordCount content="1343"><meta itemprop=image content>
+<meta itemprop=keywords content="kotlin,junit,mockk,tests,">
+<meta property="og:title" content="Construindo testes com Kotlin, JUnit e MockK">
+<meta property="og:description" content="A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.
+JUnit é um dos frameworks mais utilizados na construção de testes em Kotlin e MockK para construção de mocks, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
+ 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"><meta property="og:image" content="https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-01-19T22:00:00-03:00">
+<meta property="article:modified_time" content="2022-01-19T22:00:00-03:00">
+<meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg">
+<meta name=twitter:title content="Construindo testes com Kotlin, JUnit e MockK">
+<meta name=twitter:description content="A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.
+JUnit é um dos frameworks mais utilizados na construção de testes em Kotlin e MockK para construção de mocks, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
+ 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.">
+<meta name=twitter:site content="@rapatao">
+<link rel=stylesheet href=https://www.rapatao.com/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel=stylesheet href=https://www.rapatao.com/css/add-on.css>
+</head>
+<body>
+<header id=site-header>
+<nav id=site-nav>
+<h1 class=nav-title>
+<a href=https://www.rapatao.com/pt/ class=nav>
+rapatao.com
+</a>
+</h1>
+<menu id=site-nav-menu class="flyout-menu menu">
+<a href=https://www.rapatao.com/pt/about/ class="nav link"><i class="far fa-id-card"></i> Sobre</a>
+<a href=https://www.rapatao.com/pt/posts/ class="nav link"><i class="far fa-newspaper"></i> Blog</a>
+<a href=https://www.rapatao.com/pt/resume/ class="nav link"><i class="far fa-file-alt"></i> Experiência</a>
+<a href=#share-menu class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+<a href=#search-input class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+</menu>
+<a href=#search-input class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+<a href=#share-menu class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+<a href=#lang-menu class="nav lang-toggle" lang=pt>pt</a>
+<a href=#site-nav class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+</nav>
+<menu id=search class=menu><input id=search-input class="search-input menu"></input><div id=search-results class="search-results menu"></div></menu>
+<menu id=lang-menu class="flyout-menu menu">
+<a href=# lang=pt class="nav link active">Português (pt)</a>
+<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ lang=en class="nav link">English (en)</a>
+</menu>
+<menu id=share-menu class="flyout-menu menu">
+<h1>Share Post</h1>
+<a href="//twitter.com/share?text=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank rel=noopener class="nav share-btn twitter">
+<p>Twitter</p>
+</a>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank rel=noopener class="nav share-btn facebook">
+<p>Facebook</p>
+</a>
+<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&title=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn reddit">
+<p>Reddit</p>
+</a>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&title=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn linkedin">
+<p>LinkedIn</p>
+</a>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&description=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn pinterest">
+<p>Pinterest</p>
+</a>
+<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
+<p>Email</p>
+</a>
+</menu>
+</header>
+<div id=wrapper>
+<section id=site-intro>
+<a href=https://www.rapatao.com/pt/><img src=https://www.rapatao.com/images/avatar.jpg class=circle width=100 alt="Luiz H. Rapatão"></a>
+<header>
+<h1>Luiz H. Rapatão</h1>
+</header>
+<main>
+<p>Senior Software Engineer</p>
+</main>
+<footer>
+<ul class=socnet-icons>
+<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
+<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
+<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
+<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
+<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
+<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
+</ul>
+</footer>
+</section>
+<main id=site-main>
+<article class=post>
+<header>
+<div class=title>
+<h2><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/>Construindo testes com Kotlin, JUnit e MockK</a></h2>
+</div>
+<div class=meta>
+<time datetime="2022-01-19 22:00:00 -0300 -03">19 de January, 2022</time>
+<p>7 Minutos De Leitura</p>
+</div>
+</header>
+<div id=socnet-share>
+<a href="//twitter.com/share?text=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank rel=noopener class="nav share-btn twitter">
+<p>Twitter</p>
+</a>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank rel=noopener class="nav share-btn facebook">
+<p>Facebook</p>
+</a>
+<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&title=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn reddit">
+<p>Reddit</p>
+</a>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&title=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn linkedin">
+<p>LinkedIn</p>
+</a>
+<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f&description=Construindo%20testes%20com%20Kotlin%2c%20JUnit%20e%20MockK" target=_blank rel=noopener class="nav share-btn pinterest">
+<p>Pinterest</p>
+</a>
+<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2022-01%2fconstruindo-testes-com-kotlin-junit-mockk%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
+<p>Email</p>
+</a>
+</div>
+<div class=content>
+<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg')">
+<img src=https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg alt="Construindo testes com Kotlin, JUnit e MockK">
+</a>
+<p>A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.</p>
+<p><a href=https://junit.org/junit5/>JUnit</a> é um dos frameworks mais utilizados na construção de testes em <a href=https://kotlinlang.org/>Kotlin</a> e <a href=https://mockk.io/>MockK</a> para construção de <em>mocks</em>, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.</p>
+<aside>
+💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
+</aside>
+<h2 id=dependências-utilizadas>Dependências utilizadas</h2>
+<p>É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste texto. No exemplo abaixo, será apresentado apenas uma delas, que é basicamente como o <em><a href=https://www.jetbrains.com/idea/>IntelliJ IDEA</a></em> inicializa projetos em <em>Kotlin</em> + <em><a href=https://gradle.org/>Gradle</a></em>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-groovy data-lang=groovy>plugins <span style=color:#f92672>{</span>
+    id <span style=color:#e6db74>&#34;org.jetbrains.kotlin.jvm&#34;</span> version <span style=color:#e6db74>&#34;1.6.10&#34;</span>
+<span style=color:#f92672>}</span>
+<span style=color:#f92672>...</span>
+dependencies <span style=color:#f92672>{</span>
+    implementation<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;org.jetbrains.kotlin:kotlin-stdlib&#34;</span><span style=color:#f92672>)</span>
+    testImplementation<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;org.junit.jupiter:junit-jupiter:5.8.2&#34;</span><span style=color:#f92672>)</span>
+    testImplementation<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;io.mockk:mockk:1.12.2&#34;</span><span style=color:#f92672>)</span>
+<span style=color:#f92672>}</span>
+<span style=color:#f92672>...</span>
+test <span style=color:#f92672>{</span>
+    useJUnitPlatform<span style=color:#f92672>()</span>
+<span style=color:#f92672>}</span>
+</code></pre></div><p>Antes de adicionar essas configurações ao seu projeto, é sempre importante verificar se as mesmas já não estão presentes em seu projeto. Isso pode ser feito através da <em>task</em> <code>:dependencies</code>, tanto através de alguma IDE como por terminal, com o seguinte comando:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ gradle dependencies
+</code></pre></div><p>Com o resultado do comando, basta procurar pelas dependências, se as encontrar, sua configuração está correta.</p>
+<h2 id=o-código-a-ser-testado>O código a ser testado</h2>
+<p>Como a ideia principal é demonstrar a construção de testes utilizando <em>Kotlin</em>, <em>JUnit</em> e <em>MockK</em>, o código utilizado é extremamente simples, porém através dele será possível demonstrar não só a criação de testes utilizando <em>JUnit</em>, como a construção de <em>mocks</em> através de <em>MockK, entr</em>e outros detalhes que iremos detalhar no decorrer do texto.</p>
+<p><em><strong>CalculatorService.kt</strong></em></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CalculatorService</span> {
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>sum</span>(a: Int, b: Int) = a + b
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>multi</span>(a: Int, b: Int) = a * b
+}
+</code></pre></div><p><em><strong>OpType.kt</strong></em></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>enum</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>OpType</span> {
+    SUM, MULTI
+}
+</code></pre></div><p><em><strong>MainService.kt</strong></em></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MainService</span>(
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>val</span> calculatorService: CalculatorService
+) {
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>execute</span>(a: Int, b: Int, op: OpType) =
+        <span style=color:#66d9ef>when</span> (op) {
+            OpType.SUM <span style=color:#f92672>-&gt;</span> calculatorService.sum(a, b)
+            OpType.MULTI <span style=color:#f92672>-&gt;</span> calculatorService.multi(a, b)
+        }
+}
+</code></pre></div><h2 id=o-primeiro-teste>O primeiro teste</h2>
+<p>A declaração de testes com <em>JUnit</em> é feito através da anotação <code>org.junit.jupiter.api.Test</code>adicionada em uma função que descreve o cenário a ser executado, conforme exemplo:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ClassTest</span> {
+
+    <span style=color:#a6e22e>@Test</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>test</span>() {
+        <span style=color:#75715e>// test block
+</span><span style=color:#75715e></span>    }
+
+}
+</code></pre></div><p>De maneira geral, todo teste verifica se algo ocorreu conforme esperado. Existem diversas formas se fazer isso, mas normalmente são feitas através dos métodos existentes na classe <code>org.junit.jupiter.api.Assertions</code>, como por exemplo, o <code>assertEquals</code>. Outros métodos existem, e podem ser verificados <a href=https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html>aqui</a>.</p>
+<p>Com base no código apresentado anteriormente, podemos criar alguns cenários de testes, porém irei descrever apenas dois, que irão basicamente realizar testes simples com as operações <code>SUM</code> e <code>MULTI</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> org.junit.jupiter.api.Assertions.assertEquals
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SimpleTest</span> {
+
+    <span style=color:#a6e22e>@Test</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>`o resultado de 2+3 deve ser 5`</span>() {
+        <span style=color:#66d9ef>val</span> calculatorService = CalculatorService()
+        <span style=color:#66d9ef>val</span> mainService = MainService(calculatorService)
+
+        <span style=color:#66d9ef>val</span> result = mainService.execute(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, OpType.SUM)
+
+        assertEquals(<span style=color:#ae81ff>5</span>, result)
+    }
+
+    <span style=color:#a6e22e>@Test</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>`o resultado de 2*3 deve ser 6`</span>() {
+        <span style=color:#66d9ef>val</span> calculatorService = CalculatorService()
+        <span style=color:#66d9ef>val</span> mainService = MainService(calculatorService)
+
+        <span style=color:#66d9ef>val</span> result = mainService.execute(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, OpType.MULTI)
+
+        assertEquals(<span style=color:#ae81ff>6</span>, result)
+    }
+
+}
+</code></pre></div><p>Apesar de simples, esses testes demonstram como é realizado a construção de testes, que basicamente consiste em, criar as instâncias necessárias, invocar a função a ser testada e comparado seu resultado.</p>
+<h2 id=reduzindo-código-duplicado-nos-testes>Reduzindo código duplicado nos testes</h2>
+<p>Como pode ser notado, ambos cenários realizam a construção de uma instância da classe a ser testada e, consequentemente de suas dependências. Com o <em>JUnit</em>, casos assim, poderiam ser construído declarando uma função anotações especificas, que são executadas antes ou depois de um ou todos os cenários de testes declarados.</p>
+<p>Essas anotações são utilizadas quando precisamos preparar ou remover dados antes ou depois da execução dos cenários de testes, como por exemplo, realizar inserção de dados em uma base de dados, ou apagar informações inseridas nesta mesma base.</p>
+<p>As anotações existentes e seus comportamentos são descritos a seguir:</p>
+<ul>
+<li><code>org.junit.jupiter.api.BeforeAll</code>: Executa <strong>antes</strong> de <strong>todos</strong> os cenários de teste</li>
+<li><code>org.junit.jupiter.api.AfterEach</code>: Executa <strong>antes</strong> de <strong>cada</strong> cenário de teste</li>
+<li><code>org.junit.jupiter.api.AfterEach</code>: Executa <strong>depois</strong> de <strong>cada</strong> cenário de teste</li>
+<li><code>org.junit.jupiter.api.AfterAll</code>: Executa <strong>depois</strong> de <strong>todos</strong> os cenários de testes</li>
+</ul>
+<p>Conhecendo essas anotações, podemos reescrever os cenários anteriores da seguinte maneira:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> org.junit.jupiter.api.Assertions
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.BeforeEach
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WithBeforeTest</span> {
+
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> calculatorService: CalculatorService
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> mainService: MainService
+
+    <span style=color:#a6e22e>@BeforeEach</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>setup</span>() {
+        calculatorService = CalculatorService()
+        mainService = MainService(calculatorService)
+    }
+    <span style=color:#f92672>..</span>.
+}
+</code></pre></div><h2 id=simulando-chamadas-em-outras-classes>Simulando chamadas em outras classes</h2>
+<p>Muitos testes podem ser construídos com utilização de dependências &ldquo;reais&rdquo;, ou seja, com suas instâncias, porém, alguns casos isso pode não ser possível, uma vez que essas instâncias podem necessitar ou acessar recursos que não estão disponíveis durante a execução dos testes.</p>
+<p>Nesses casos, utilizamos ferramentas que criam <em>mocks</em>, que podem ser entendidos como instâncias que simulam o comportamento de uma instância real. Essa simulação é normalmente declarada explicitamente e seria algo como: &ldquo;quando o método A for invocado com determinados parâmetros, B deverá ser retornado&rdquo;.</p>
+<p>Utilizando nossas classes de exemplo, podemos escrever os testes da seguinte maneira:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> io.mockk.every
+<span style=color:#66d9ef>import</span> io.mockk.mockk
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Assertions
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.BeforeEach
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WithBeforeTest</span> {
+
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> calculatorService: CalculatorService
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> mainService: MainService
+
+    <span style=color:#a6e22e>@BeforeEach</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>setup</span>() {
+        calculatorService = mockk()
+        mainService = MainService(calculatorService)
+    }
+
+    <span style=color:#a6e22e>@Test</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>`o resultado de 2+3 deve ser 5`</span>() {
+        every { calculatorService.sum(any(), any()) } returns <span style=color:#ae81ff>5</span>
+
+        <span style=color:#66d9ef>val</span> result = mainService.execute(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, OpType.SUM)
+
+        Assertions.assertEquals(<span style=color:#ae81ff>5</span>, result)
+    }
+
+    <span style=color:#a6e22e>@Test</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>`o resultado de 2*3 deve ser 6`</span>() {
+        every { calculatorService.multi(any(), any()) } returns <span style=color:#ae81ff>6</span>
+
+        <span style=color:#66d9ef>val</span> result = mainService.execute(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, OpType.MULTI)
+
+        Assertions.assertEquals(<span style=color:#ae81ff>6</span>, result)
+    }
+}
+</code></pre></div><p>Note que, agora antes de invocar o método <code>execute</code>, dizemos como o <em>mock</em> deve se comportar ao ser consumido. Apesar de não tem muito sentido em nosso exemplo, considerado a simplicidade de nosso código, isso pode ser extremamente útil quando precisamos simular o uso de um <em>SDK</em> terceiro que não fornece meios para criação de testes, o que poderia impossibilitar a criação de testes, caso não seja utilizado <em>mocks.</em></p>
+<h2 id=criando-mocks-com-anotações>Criando mocks com anotações</h2>
+<p>O framework <em>MockK</em>, fornece um conjunto de anotações que podem ser utilizadas para criação dos <em>mocks</em> e os injetar na classe a ser testada, sem que esse processo seja explicitamente realizado. Esse recurso é útil quando necessitamos criar diversos <em>mocks</em> para construção dos testes e sua construção é feita através da adição de anotações <code>io.mockk.impl.annotations.MockK</code> e <code>io.mockk.impl.annotations.InjectMockKs</code> nas variáveis declaradas na classe de teste.</p>
+<p>Após isso, devemos alterar no método <code>setup</code> para inicializar essas variáveis, como podemos ver seguir:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> io.mockk.MockKAnnotations
+<span style=color:#66d9ef>import</span> io.mockk.every
+<span style=color:#66d9ef>import</span> io.mockk.impl.annotations.InjectMockKs
+<span style=color:#66d9ef>import</span> io.mockk.impl.annotations.MockK
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Assertions
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.BeforeEach
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WithMockKAnnotationTest</span> {
+
+    <span style=color:#a6e22e>@MockK</span>
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> calculatorService: CalculatorService
+
+    <span style=color:#a6e22e>@InjectMockKs</span>
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> mainService: MainService
+
+    <span style=color:#a6e22e>@BeforeEach</span>
+    <span style=color:#66d9ef>fun</span> <span style=color:#a6e22e>setup</span>() {
+        MockKAnnotations.<span style=color:#66d9ef>init</span>(<span style=color:#66d9ef>this</span>)
+    }
+    <span style=color:#f92672>..</span>.
+}
+</code></pre></div><h2 id=reduzindo-código-na-criação-de-mocks>Reduzindo código na criação de mocks</h2>
+<p>O JUnit oferece um recurso interessante que é chamado de <em><a href=https://junit.org/junit5/docs/current/user-guide/#extensions>Extensions</a></em>. Com esse recurso, podemos extender o comportamento do framework de testes, delegando diversos comportamentos que possa ser necessário para a execução dos cenários de testes.</p>
+<p>Frameworks populares como <em>Spring</em>, através da <code>@SpringBootTest</code> e <em>Micronaut</em>, com <code>@MicronautTest</code>fazem uso desse recurso para inicializar o contexto antes da execução dos cenários.</p>
+<p>O framework <em>MockK</em> também oferece suporte a esse recurso, porém, não utilizando uma anotação especifica, mas sim, através de uma declaração explicita do recurso do JUnit, que consiste em adicionar a seguinte anotação a classe dos testes:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#a6e22e>@org</span>.junit.jupiter.api.extension.ExtendWith(MockKExtension<span style=color:#f92672>::</span><span style=color:#66d9ef>class</span>)
+</code></pre></div><p>Com sua utilização, não precisamos mais, em nossa classe de teste, não precisamos mais declara o método <code>setup</code>, deixando nossa classe de teste da seguinte maneira:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kotlin data-lang=kotlin><span style=color:#66d9ef>import</span> io.mockk.every
+<span style=color:#66d9ef>import</span> io.mockk.impl.annotations.InjectMockKs
+<span style=color:#66d9ef>import</span> io.mockk.impl.annotations.MockK
+<span style=color:#66d9ef>import</span> io.mockk.junit5.MockKExtension
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Assertions
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.Test
+<span style=color:#66d9ef>import</span> org.junit.jupiter.api.extension.ExtendWith
+
+<span style=color:#a6e22e>@ExtendWith</span>(MockKExtension<span style=color:#f92672>::</span><span style=color:#66d9ef>class</span>)
+<span style=color:#66d9ef>internal</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WithMockKExtensionTest</span> {
+
+    <span style=color:#a6e22e>@MockK</span>
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> calculatorService: CalculatorService
+
+    <span style=color:#a6e22e>@InjectMockKs</span>
+    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>lateinit</span> <span style=color:#66d9ef>var</span> mainService: MainService
+
+    <span style=color:#f92672>..</span>.
+}
+</code></pre></div><h2 id=conclusão>Conclusão</h2>
+<p>Nesse texto abordamos as dependências necessárias para construção de testes com Kotlin, utilizando as ferramentas JUnit e MockK. Descrevemos também como construir métodos que são executados antes e depois dos casos de testes, bem como a criação de <em>mocks</em> para casos onde não podemos utilizar uma implementação real.</p>
+<p>Espero que tenha ajudado a compreender como construir testes utilizando essas ferramentas, bem como a otimizar sua construção, demonstrando como reduzir a quantidade de código necessário para construção dos casos de testes.</p>
+<p>Agradeço a leitura e sinta-se a vontade em questionar sobre o assunto.</p>
+</div>
+<footer>
+<div class=stats>
+<ul class=tags>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/kotlin/>kotlin</a></li>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/junit/>junit</a></li>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/mockk/>mockk</a></li>
+<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/tests/>tests</a></li>
+</ul>
+</div>
+</footer>
+</article>
+<article class=post>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//rapatao-com.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+<div class=pagination>
+<a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/ class="button left"><span>Load Balancing: O que é um balanceador de carga?</span></a>
+<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class="button right"><span>Otimizando testes em aplicações com Spring Boot</span></a>
+</div>
+</main>
+<section id=site-sidebar>
+<section id=recent-posts>
+<header>
+<h1>Posts Recentes</h1>
+</header>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg')">
+<img src=https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg alt="Load Balancing: O que é um balanceador de carga?">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/>Load Balancing: O que é um balanceador de carga?</a></h2>
+<time class=published datetime="2022-02-05 20:00:00 -0300 -03">5 de February, 2022</time>
+</header>
+</article>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg')">
+<img src=https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg alt="Construindo testes com Kotlin, JUnit e MockK">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/>Construindo testes com Kotlin, JUnit e MockK</a></h2>
+<time class=published datetime="2022-01-19 22:00:00 -0300 -03">19 de January, 2022</time>
+</header>
+</article>
+<article class=mini-post>
+<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/spring-boot-test-performance.png')">
+<img src=https://www.rapatao.com/img/posts/spring-boot-test-performance.png alt="Spring Boot Test Performance">
+</a>
+<header>
+<h2><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/>Otimizando testes em aplicações com Spring Boot</a></h2>
+<time class=published datetime="2021-06-24 22:00:00 -0300 -03">24 de June, 2021</time>
+</header>
+</article>
+<footer>
+<a href=https://www.rapatao.com/pt/posts/ class=button>Veja Mais</a>
+</footer>
+</section>
+</section>
+<footer id=site-footer>
+<ul class=socnet-icons>
+<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
+<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
+<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
+<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
+<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
+<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
+</ul>
+<p class=copyright>
+© 2022 rapatao.com
+<br>
+Tema: <a href=https://themes.gohugo.io/hugo-future-imperfect-slim/ target=_blank rel=noopener>Hugo Future Imperfect</a><br>Adaptado de <a href=https://html5up.net/future-imperfect target=_blank rel=noopener>HTML5 UP</a> | Disponibilizado pelo <a href=https://gohugo.io/ title=0.92.1 target=_blank rel=noopener>Hugo</a>
+</p>
+</footer>
+<a id=back-to-top href=# class="fas fa-arrow-up fa-2x"></a>
+<script src=https://www.rapatao.com/js/highlight.js></script>
+<script>hljs.initHighlightingOnLoad()</script><script src=https://www.rapatao.com/js/bundle.min.ac7914d38f0f99e8b54651f89670f7fcc087a50300e3ae4b1d76e7efc335e50a.js integrity="sha256-rHkU048Pmei1RlH4lnD3/MCHpQMA465LHXbn78M15Qo="></script>
+<script src=https://www.rapatao.com/js/add-on.js></script>
+</div>
+</body>
+</html>

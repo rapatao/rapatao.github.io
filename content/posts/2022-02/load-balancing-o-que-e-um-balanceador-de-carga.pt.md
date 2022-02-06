@@ -7,7 +7,9 @@ tags:
 images: 
   - src: "/img/posts/pexels-brett-sayles-7146867.jpg"
     alt: "Load Balancing: O que é um balanceador de carga?"
-url: "/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/"
+url: "/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/"
+aliases:
+  - "/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/"
 ---
 
 Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (*load balancer*) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.

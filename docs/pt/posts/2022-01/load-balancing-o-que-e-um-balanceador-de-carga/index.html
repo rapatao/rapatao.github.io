@@ -13,14 +13,14 @@
 <meta name=msapplication-TileColor content="#ffffff">
 <meta name=theme-color content="#ffffff">
 <meta name=generator content="Hugo 0.92.1"><meta itemprop=name content="Load Balancing: O que é um balanceador de carga?">
-<meta itemprop=description content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceado de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
+<meta itemprop=description content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
 Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “softwares”.
 Benefícios Independente do modelo a ser implementado, eles visam distribuir o processamento de uma aplicação entre as instâncias disponíveis, onde se busca otimizar o uso de recursos computacionais, como rede, processamento (CPU), uso de memória, entre outros."><meta itemprop=datePublished content="2022-02-05T20:00:00-03:00">
 <meta itemprop=dateModified content="2022-02-05T20:00:00-03:00">
-<meta itemprop=wordCount content="1183"><meta itemprop=image content>
+<meta itemprop=wordCount content="1185"><meta itemprop=image content>
 <meta itemprop=keywords content="architecture,network,">
 <meta property="og:title" content="Load Balancing: O que é um balanceador de carga?">
-<meta property="og:description" content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceado de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
+<meta property="og:description" content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
 Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “softwares”.
 Benefícios Independente do modelo a ser implementado, eles visam distribuir o processamento de uma aplicação entre as instâncias disponíveis, onde se busca otimizar o uso de recursos computacionais, como rede, processamento (CPU), uso de memória, entre outros.">
 <meta property="og:type" content="article">
@@ -29,7 +29,7 @@ Benefícios Independente do modelo a ser implementado, eles visam distribuir o p
 <meta property="article:modified_time" content="2022-02-05T20:00:00-03:00">
 <meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg">
 <meta name=twitter:title content="Load Balancing: O que é um balanceador de carga?">
-<meta name=twitter:description content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceado de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
+<meta name=twitter:description content="Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (load balancer) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
 Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “softwares”.
 Benefícios Independente do modelo a ser implementado, eles visam distribuir o processamento de uma aplicação entre as instâncias disponíveis, onde se busca otimizar o uso de recursos computacionais, como rede, processamento (CPU), uso de memória, entre outros.">
 <meta name=twitter:site content="@rapatao">
@@ -137,7 +137,7 @@ rapatao.com
 <a href=https://www.rapatao.com/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg')">
 <img src=https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg alt="Load Balancing: O que é um balanceador de carga?">
 </a>
-<p>Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceado de carga (<em>load balancer</em>) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.</p>
+<p>Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (<em>load balancer</em>) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.</p>
 <p>Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “<em>softwares</em>”.</p>
 <h2 id=benefícios>Benefícios</h2>
 <p>Independente do modelo a ser implementado, eles visam distribuir o processamento de uma aplicação entre as instâncias disponíveis, onde se busca otimizar o uso de recursos computacionais, como rede, processamento (<em>CPU</em>), uso de memória, entre outros.</p>
@@ -150,9 +150,9 @@ rapatao.com
 </aside>
 <h3 id=camada-4-transporte>Camada 4: Transporte</h3>
 <p>Esse modelo de balanceamento trabalha na camada de transporte, ou seja, as decisões de roteamento são baseadas em dados disponíveis nela, ou seja, informações de protocolos, como <em>TCP</em> ou <em>UDP</em>, endereçamento <em>IP</em> destino e origem. Com base nessa informação é realizado o encaminhamento do pacote através de um recurso chamado <a href=https://pt.wikipedia.org/wiki/Network_address_translation><em>NAT</em></a>.</p>
-<p>É importante se atentar que balanceamento nessa camada é feito puramente com essas informações, ou seja, o conteúdo do pacote não é interceptado e/ou analisado durante encaminhamento, o que pode dificultar ou mesmo incapacitar a criação de regras que garantem que um mesmo usuário tenha suas requisições sempre direcionadas para uma mesma instância de uma aplicação, o que pode ser problemático quando, por exemplo, há necessidade de controle de sessão do usuário.</p>
+<p>É importante se atentar que balanceamento nessa camada é feito puramente com essas informações, ou seja, o conteúdo do pacote não é interceptado e/ou analisado durante o encaminhamento, o que pode dificultar ou mesmo incapacitar a criação de regras que garantem que um mesmo usuário tenha suas requisições sempre direcionadas para uma mesma instância de uma aplicação, o que pode ser problemático quando, por exemplo, há necessidade de controle de sessão do usuário.</p>
 <h3 id=camada-7-aplicação>Camada 7: Aplicação</h3>
-<p>Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo <em>OSI</em>. Por estar nessa camada, é possível não analisar as informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir qual instância será encaminhado a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no <em>header</em> para decidir o servidor destino, isso não permite controlarmos a distribuição no uso dos recursos, como também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.</p>
+<p>Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo OSI. Por estar nessa camada, é possível analisar além das informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir para qual instância será encaminhada a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no header para decidir o servidor destino, isso não permite controlarmos a distribuição no uso dos recursos, como também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.</p>
 <h2 id=estratégias-de-balanceamento>Estratégias de balanceamento</h2>
 <p>O princípio de uma balanceador de carga é distribuir as requisições entre os servidores disponíveis para processamento da requisição, porém, em praticamente todas as implementações, temos como definir como essas requisições serão distribuídas entre as instâncias de nossa aplicação. Essa decisão é feita por algoritmos pré definidos, mas normalmente também é possível criar regras customizadas.</p>
 <p>Neste texto descreverei dois dos algoritmos que acredito serem os mais utilizados, porém, diversos outros existem e é sempre recomendável avalia-los antes de eleger qual utilizar em sua aplicação.</p>

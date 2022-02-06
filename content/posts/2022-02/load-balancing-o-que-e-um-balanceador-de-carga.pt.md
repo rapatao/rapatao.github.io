@@ -89,6 +89,6 @@ Espero que este texto tenha ajudado a entender o que é um balanceador de carga 
 
 ## Referências
 
-- [https://www.nginx.com/resources/glossary/layer-4-load-balancing/](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
-- [https://www.citrix.com/en-in/solutions/app-delivery-and-security/load-balancing/what-is-load-balancing.html](https://www.citrix.com/en-in/solutions/app-delivery-and-security/load-balancing/what-is-load-balancing.html)
-- [https://en.wikipedia.org/wiki/Load_balancing_(computing)#Round-robin_DNS](https://en.wikipedia.org/wiki/Load_balancing_(computing)#Round-robin_DNS)
+- [What Is Layer 4 Load Balancing?](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+- [What is a Load Balancer? Load Balancing Definition](https://www.citrix.com/en-in/solutions/app-delivery-and-security/load-balancing/what-is-load-balancing.html)
+- [Load balancing (computing)](https://en.wikipedia.org/wiki/Load_balancing_(computing))

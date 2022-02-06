@@ -40,11 +40,11 @@ Esse modelo de balanceamento trabalha na camada de transporte, ou seja, as decis
 
 ### Camada 7: Aplicação
 
-Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo OSI. Por estar nessa camada, é possível analisar além das informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir para qual instância será encaminhada a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no header para decidir o servidor destino, isso não permite controlarmos a distribuição no uso dos recursos, como também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.
+Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo OSI. Por estar nessa camada, é possível analisar além das informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir para qual instância será encaminhada a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no header para decidir o servidor destino, isso nos permite controlar a distribuição no uso dos recursos, mas também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.
 
 ## Estratégias de balanceamento
 
-O princípio de uma balanceador de carga é distribuir as requisições entre os servidores disponíveis para processamento da requisição, porém, em praticamente todas as implementações, temos como definir como essas requisições serão distribuídas entre as instâncias de nossa aplicação. Essa decisão é feita por algoritmos pré definidos, mas normalmente também é possível criar regras customizadas.
+O princípio de um balanceador de carga é distribuir as requisições entre os servidores disponíveis para processamento da requisição, porém, em praticamente todas as implementações, temos como definir como essas requisições serão distribuídas entre as instâncias de nossa aplicação. Essa decisão é feita por algoritmos pré definidos, mas normalmente também é possível criar regras customizadas.
 
 Neste texto descreverei dois dos algoritmos que acredito serem os mais utilizados, porém, diversos outros existem e é sempre recomendável avalia-los antes de eleger qual utilizar em sua aplicação.
 

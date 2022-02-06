@@ -1,6 +1,3 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/rapatao/rapatao.github.io.git
 [submodule "themes/hugo-future-imperfect-slim"]
 	path = themes/hugo-future-imperfect-slim
 	url = https://github.com/pacollins/hugo-future-imperfect-slim.git

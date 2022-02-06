@@ -10,7 +10,7 @@ images:
 url: "/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/"
 ---
 
-Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceado de carga (*load balancer*) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
+Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (*load balancer*) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
 
 Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “*softwares*”. 
 
@@ -34,11 +34,11 @@ Um balanceador de carga pode operar em duas camadas de rede do modelo [*OSI*](ht
 
 Esse modelo de balanceamento trabalha na camada de transporte, ou seja, as decisões de roteamento são baseadas em dados disponíveis nela, ou seja, informações de protocolos, como *TCP* ou *UDP*, endereçamento *IP* destino e origem. Com base nessa informação é realizado o encaminhamento do pacote através de um recurso chamado [*NAT*](https://pt.wikipedia.org/wiki/Network_address_translation).
 
-É importante se atentar que balanceamento nessa camada é feito puramente com essas informações, ou seja, o conteúdo do pacote não é interceptado e/ou analisado durante encaminhamento, o que pode dificultar ou mesmo incapacitar a criação de regras que garantem que um mesmo usuário tenha suas requisições sempre direcionadas para uma mesma instância de uma aplicação, o que pode ser problemático quando, por exemplo, há necessidade de controle de sessão do usuário.
+É importante se atentar que balanceamento nessa camada é feito puramente com essas informações, ou seja, o conteúdo do pacote não é interceptado e/ou analisado durante o encaminhamento, o que pode dificultar ou mesmo incapacitar a criação de regras que garantem que um mesmo usuário tenha suas requisições sempre direcionadas para uma mesma instância de uma aplicação, o que pode ser problemático quando, por exemplo, há necessidade de controle de sessão do usuário.
 
 ### Camada 7: Aplicação
 
-Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo *OSI*. Por estar nessa camada, é possível não analisar as informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir qual instância será encaminhado a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no *header* para decidir o servidor destino, isso não permite controlarmos a distribuição no uso dos recursos, como também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.
+Este modelo de balanceamento oferece maior quantidade de recursos para decisões de balanceamento e isso se deve ao fato de atuar na mais alta camada do modelo OSI. Por estar nessa camada, é possível analisar além das informações existentes na camada 4, como também outros relacionados a requisição recebida para decidir para qual instância será encaminhada a requisição. Por exemplo, em um balanceamento de requisições HTTP, podemos verificar informações contidas no header para decidir o servidor destino, isso não permite controlarmos a distribuição no uso dos recursos, como também permite garantir outros controles, como, por exemplo, garantir que todas as requisições de um determinado usuário sejam sempre processadas por mesma instância da aplicação.
 
 ## Estratégias de balanceamento
 

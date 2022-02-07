@@ -77,7 +77,7 @@ No mundo *Open Source*, existem diversas soluções criadas para esse fim, cada 
 Segue uma lista com as que acredito serem as principais soluções atualmente e suas respectivas camadas de atuação:
 
 - [HAProxy](https://github.com/haproxy/haproxy) (camada 4 e 7)
-- [nginx](https://github.com/nginx/nginx) (camada 7)
+- [nginx](https://github.com/nginx/nginx) (camada 4 e 7)
 - [Seesaw](https://github.com/google/seesaw) (camada 4)
 - [Traefik](https://github.com/traefik/traefik) (camada 7)
 

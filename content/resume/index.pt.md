@@ -5,4 +5,6 @@ type: "simple"
 layout: "resume"
 ---
 
-{{< resume lang="pt" >}}
+## Já trabalhei com:
+
+{{< stackshare >}}

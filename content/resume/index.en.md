@@ -1,10 +1,11 @@
 ---
-title: "Resume"
-slug: "resume"
+title: "Experiences"
+slug: "experiences"
 type: "simple"
-layout: "resume"
+layout: "simple"
+aliases:
+ - "resume"
+ - "about"
 ---
-
-## Already worked with:
 
 {{< stackshare >}}

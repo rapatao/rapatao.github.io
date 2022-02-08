@@ -1,8 +1,11 @@
 ---
-title: "Resume"
-slug: "resume"
+title: "Conhecimentos"
+slug: "experiences"
 type: "simple"
-layout: "resume"
+layout: "simple"
+aliases:
+- "/pt/resume"
+- "/pt/about"
 ---
 
-{{< resume lang="pt" >}}
+{{< stackshare >}}

@@ -1,7 +1,7 @@
 baseURL = "https://www.rapatao.com/"
 languageCode = "en-us"
 title = "rapatao.com"
-theme = "hugo-future-imperfect-slim"
+theme = "rapatao.com"
 
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -10,132 +10,134 @@ paginate = 5
 canonifyurls = true
 
 disqusShortname = "rapatao-com"
+summary = 10
+
+googleAnalytics = "UA-41287936-1"
 
 [markup.goldmark.renderer]
-  unsafe                = true
+unsafe = true
 
 [outputs]
-  home                  = ["html", "json"]
+home = ["html", "json"]
 
 [params]
-  enableCDN             = false
-  cssFiles              = ["default"]
-  jsFiles               = ["default"]
-  highlightjs           = true
-  highlightjsTheme      = ""
-  highlightjsLang       = []
-  viewMorePostsLink     = "/posts/"
-  readingTime           = true
-  imageStretch          = ""
-  removeBlur            = false
-  socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
-  hideEmptyStats        = true
-  images                = ["/images/avatar.jpg"]
+enableCDN = false
+cssFiles = ["default"]
+jsFiles = ["default"]
+highlightjs = true
+highlightjsTheme = ""
+highlightjsLang = []
+viewMorePostsLink = "/posts/"
+readingTime = true
+imageStretch = ""
+removeBlur = false
+socialShare = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+hideEmptyStats = true
+images = ["/images/avatar.jpg"]
 
-  [params.social]
-    twitter             = "@rapatao"
+[params.social]
+twitter = "@rapatao"
 
-  summary = 10
+[params.meta]
+description = "My personal website containing my resume and some insights I have related to the technology area."
+author = "Luiz H. Rapatão"
+favicon = true
+svg = true
+#faviconVersion      = "1"
+msColor = "#ffffff"
+iOSColor = "#ffffff"
 
-  [params.meta]
-    description         = "My personal website containing my resume and some insights I have related to the technology area."
-    author              = "Luiz H. Rapatão"
-    favicon             = true
-    svg                 = true
-    #faviconVersion      = "1"
-    msColor             = "#ffffff"
-    iOSColor            = "#ffffff"
+[params.header]
+navbarTitle = "rapatao.com"
+dynamicTitles = false
+searchMenu = true
+shareMenu = true
+languageMenu = true
 
-  [params.header]
-    navbarTitle         = "rapatao.com"
-    dynamicTitles       = false
-    searchMenu          = true
-    shareMenu           = true
-    languageMenu        = true
+[params.intro]
+header = "Luiz H. Rapatão"
+paragraph = "Senior Software Engineer"
+rssIntro = true
+socialIntro = true
+hideWhenSingleColumn = false
+alwaysOnHomepage = true
 
-  [params.intro]
-    header                = "Luiz H. Rapatão"
-    paragraph             = "Senior Software Engineer"
-    rssIntro              = true
-    socialIntro           = true
-    hideWhenSingleColumn  = false
-    alwaysOnHomepage      = true
+[params.intro.pic]
+src = "images/avatar.jpg"
+shape = "circle"
+width = ""
+alt = "Luiz H. Rapatão"
 
-    [params.intro.pic]
-      src                 = "images/avatar.jpg"
-      shape               = "circle"
-      width               = ""
-      alt                 = "Luiz H. Rapatão"
+[params.sidebar]
+#about               = "This theme was developed for Hugo static site generator."
+postAmount = 3
+categories = false
+categoriesByCount = false
 
-  [params.sidebar]
-    #about               = "This theme was developed for Hugo static site generator."
-    postAmount          = 3
-    categories          = false
-    categoriesByCount   = false
-
-  [params.footer]
-    rssFooter           = true
-    socialFooter        = true
+[params.footer]
+rssFooter = true
+socialFooter = true
 
 [taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
+category = "categories"
+series = "series"
+tag = "tags"
 
 [social]
-  github = "rapatao"
-  twitter = "rapatao"
-  linkedin = "rapatao"
-  #medium = "rapatao"
-  instagram = "luizrapatao"
-  skype = "rapatao"
-  email = "rapatao@rapatao.com"
+github = "rapatao"
+twitter = "rapatao"
+linkedin = "rapatao"
+#medium = "rapatao"
+instagram = "luizrapatao"
+skype = "rapatao"
+email = "rapatao@rapatao.com"
 
 [languages]
-    [languages.en]
-      languagename = "English"
+[languages.en]
+languagename = "English"
 
-      [[languages.en.menu.main]]
-      name = "About"
-      weight = 1
-      url = "about/"
-      pre = "<i class='far fa-id-card'></i>"
+#[[languages.en.menu.main]]
+#name = "About"
+#weight = 1
+#url = "about/"
+#pre = "<i class='far fa-id-card'></i>"
 
-      [[languages.en.menu.main]]
-      name = "Blog"
-      weight = 2
-      url = "pt/posts/"
-      pre = "<i class='far fa-newspaper'></i>"
+[[languages.en.menu.main]]
+name = "Blog"
+weight = 2
+url = "pt/posts/"
+pre = "<i class='far fa-newspaper'></i>"
 
-      [[languages.en.menu.main]]
-      name = "Resume"
-      weight = 5
-      url = "resume/"
-      pre = "<i class='far fa-file-alt'></i>"
+[[languages.en.menu.main]]
+name = "Resume"
+weight = 5
+url = "resume/"
+pre = "<i class='far fa-file-alt'></i>"
 
+[languages.pt]
+languagename = "Português"
 
-    [languages.pt]
-      languagename = "Português"
+#[[languages.pt.menu.main]]
+#name = "Sobre"
+#weight = 1
+#url = "about/"
+#pre = "<i class='far fa-id-card'></i>"
 
-      [languages.pt.params]
-          keywords = "blog,desenvolvimento,pessoal"
+[[languages.pt.menu.main]]
+name = "Blog"
+weight = 2
+url = "posts/"
+pre = "<i class='far fa-newspaper'></i>"
 
-      [languages.pt.menu]
+[[languages.pt.menu.main]]
+name = "Experiência"
+weight = 5
+url = "resume/"
+pre = "<i class='far fa-file-alt'></i>"
 
-          [[languages.pt.menu.main]]
-          name = "Sobre"
-          weight = 1
-          url = "about/"
-          pre = "<i class='far fa-id-card'></i>"
-
-          [[languages.pt.menu.main]]
-          name = "Blog"
-          weight = 2
-          url = "posts/"
-          pre = "<i class='far fa-newspaper'></i>"
-
-          [[languages.pt.menu.main]]
-          name = "Experiência"
-          weight = 5
-          url = "resume/"
-          pre = "<i class='far fa-file-alt'></i>"
+[privacy]
+[privacy.GoogleAnalytics]
+anonymizeIP = true
+disable = false
+respectDoNotTrack = true
+useSessionStorage = false

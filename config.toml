@@ -12,6 +12,8 @@ canonifyurls = true
 disqusShortname = "rapatao-com"
 summary = 10
 
+googleAnalytics = "UA-41287936-1"
+
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -94,11 +96,11 @@ email = "rapatao@rapatao.com"
 [languages.en]
 languagename = "English"
 
-[[languages.en.menu.main]]
-name = "About"
-weight = 1
-url = "about/"
-pre = "<i class='far fa-id-card'></i>"
+#[[languages.en.menu.main]]
+#name = "About"
+#weight = 1
+#url = "about/"
+#pre = "<i class='far fa-id-card'></i>"
 
 [[languages.en.menu.main]]
 name = "Blog"
@@ -112,20 +114,14 @@ weight = 5
 url = "resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
-
 [languages.pt]
 languagename = "Português"
 
-[languages.pt.params]
-keywords = "blog,desenvolvimento,pessoal"
-
-[languages.pt.menu]
-
-[[languages.pt.menu.main]]
-name = "Sobre"
-weight = 1
-url = "about/"
-pre = "<i class='far fa-id-card'></i>"
+#[[languages.pt.menu.main]]
+#name = "Sobre"
+#weight = 1
+#url = "about/"
+#pre = "<i class='far fa-id-card'></i>"
 
 [[languages.pt.menu.main]]
 name = "Blog"

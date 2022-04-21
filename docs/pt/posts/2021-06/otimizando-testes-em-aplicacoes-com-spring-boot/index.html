@@ -1,276 +1,58 @@
-<!doctype html><html lang=pt>
-<head>
-<meta charset=utf-8>
-<title>Otimizando testes em aplicações com Spring Boot - rapatao.com</title>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=apple-touch-icon sizes=180x180 href=https://www.rapatao.com/favicon/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=https://www.rapatao.com/favicon/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=https://www.rapatao.com/favicon/favicon-16x16.png>
-<link rel=manifest href=https://www.rapatao.com/favicon/site.webmanifest>
-<link rel=mask-icon href=https://www.rapatao.com/favicon/safari-pinned-tab.svg color=#ffffff>
-<link rel="shortcut icon" href=https://www.rapatao.com/favicon/favicon.ico>
-<meta name=msapplication-config content="/favicon/browserconfig.xml">
-<meta name=msapplication-TileColor content="#ffffff">
-<meta name=theme-color content="#ffffff">
-<meta name=generator content="Hugo 0.92.1"><meta itemprop=name content="Otimizando testes em aplicações com Spring Boot">
-<meta itemprop=description content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
+<!doctype html><html lang=pt><head><meta charset=utf-8><title>Otimizando testes em aplicações com Spring Boot - rapatao.com</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=apple-touch-icon sizes=180x180 href=https://www.rapatao.com/favicon/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.rapatao.com/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.rapatao.com/favicon/favicon-16x16.png><link rel=manifest href=https://www.rapatao.com/favicon/site.webmanifest><link rel=mask-icon href=https://www.rapatao.com/favicon/safari-pinned-tab.svg color=#ffffff><link rel="shortcut icon" href=https://www.rapatao.com/favicon/favicon.ico><meta name=msapplication-config content="/favicon/browserconfig.xml"><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><meta name=generator content="Hugo 0.97.3"><meta itemprop=name content="Otimizando testes em aplicações com Spring Boot"><meta itemprop=description content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
 Você provavelmente deve ter pensado que essa anotação serve para a construção de testes, mas você sabe o que isso representa, o que acontece quando ela é utilizada?
-Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados."><meta itemprop=datePublished content="2021-06-24T22:00:00-03:00">
-<meta itemprop=dateModified content="2021-06-24T22:00:00-03:00">
-<meta itemprop=wordCount content="692"><meta itemprop=image content>
-<meta itemprop=keywords content="spring,springboot,java,tests,">
-<meta property="og:title" content="Otimizando testes em aplicações com Spring Boot">
-<meta property="og:description" content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
+Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados."><meta itemprop=datePublished content="2021-06-24T22:00:00-03:00"><meta itemprop=dateModified content="2021-06-24T22:00:00-03:00"><meta itemprop=wordCount content="692"><meta itemprop=image content><meta itemprop=keywords content="spring,springboot,java,tests,"><meta property="og:title" content="Otimizando testes em aplicações com Spring Boot"><meta property="og:description" content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
 Você provavelmente deve ter pensado que essa anotação serve para a construção de testes, mas você sabe o que isso representa, o que acontece quando ela é utilizada?
-Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"><meta property="og:image" content="https://www.rapatao.com/img/posts/spring-boot-test-performance.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-06-24T22:00:00-03:00">
-<meta property="article:modified_time" content="2021-06-24T22:00:00-03:00">
-<meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.rapatao.com/img/posts/spring-boot-test-performance.png">
-<meta name=twitter:title content="Otimizando testes em aplicações com Spring Boot">
-<meta name=twitter:description content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
+Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados."><meta property="og:type" content="article"><meta property="og:url" content="https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"><meta property="og:image" content="https://www.rapatao.com/img/posts/spring-boot-test-performance.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-06-24T22:00:00-03:00"><meta property="article:modified_time" content="2021-06-24T22:00:00-03:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.rapatao.com/img/posts/spring-boot-test-performance.png"><meta name=twitter:title content="Otimizando testes em aplicações com Spring Boot"><meta name=twitter:description content="É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com @SpringBootTest, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
 Você provavelmente deve ter pensado que essa anotação serve para a construção de testes, mas você sabe o que isso representa, o que acontece quando ela é utilizada?
-Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados.">
-<meta name=twitter:site content="@rapatao">
-<link rel=stylesheet href=https://www.rapatao.com/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel=stylesheet href=https://www.rapatao.com/css/add-on.css>
-</head>
-<body>
-<header id=site-header>
-<nav id=site-nav>
-<h1 class=nav-title>
-<a href=https://www.rapatao.com/pt/ class=nav>
-rapatao.com
-</a>
-</h1>
-<menu id=site-nav-menu class="flyout-menu menu">
-<a href=https://www.rapatao.com/pt/posts/ class="nav link"><i class="far fa-newspaper"></i> Blog</a>
+Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao JUnit que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados."><meta name=twitter:site content="@rapatao"><link rel=stylesheet href=https://www.rapatao.com/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel=stylesheet href=https://www.rapatao.com/css/add-on.css></head><body><header id=site-header><nav id=site-nav><h1 class=nav-title><a href=https://www.rapatao.com/pt/ class=nav>rapatao.com</a></h1><menu id=site-nav-menu class="flyout-menu menu"><a href=https://www.rapatao.com/pt/posts/ class="nav link"><i class="far fa-newspaper"></i> Blog</a>
 <a href=https://www.rapatao.com/pt/resume/ class="nav link"><i class="far fa-file-alt"></i> Experiência</a>
 <a href=#share-menu class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
-<a href=#search-input class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
-</menu>
+<a href=#search-input class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a></menu>
 <a href=#search-input class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
 <a href=#share-menu class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
 <a href=#lang-menu class="nav lang-toggle" lang=pt>pt</a>
-<a href=#site-nav class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
-</nav>
-<menu id=search class=menu><input id=search-input class="search-input menu"></input><div id=search-results class="search-results menu"></div></menu>
-<menu id=lang-menu class="flyout-menu menu">
-<a href=# lang=pt class="nav link active">Português (pt)</a>
-<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ lang=en class="nav link">English (en)</a>
-</menu>
-<menu id=share-menu class="flyout-menu menu">
-<h1>Share Post</h1>
-<a href="//twitter.com/share?text=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn twitter">
-<p>Twitter</p>
-</a>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn facebook">
-<p>Facebook</p>
-</a>
-<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn reddit">
-<p>Reddit</p>
-</a>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn linkedin">
-<p>LinkedIn</p>
-</a>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&description=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn pinterest">
-<p>Pinterest</p>
-</a>
-<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
-<p>Email</p>
-</a>
-</menu>
-</header>
-<div id=wrapper>
-<section id=site-intro>
-<a href=https://www.rapatao.com/pt/><img src=https://www.rapatao.com/images/avatar.jpg class=circle width=100 alt="Luiz H. Rapatão"></a>
-<header>
-<h1>Luiz H. Rapatão</h1>
-</header>
-<main>
-<p>Senior Software Engineer</p>
-</main>
-<footer>
-<ul class=socnet-icons>
-<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
-<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
-<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
-<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
-<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
-<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
-</ul>
-</footer>
-</section>
-<main id=site-main>
-<article class=post>
-<header>
-<div class=title>
-<h2><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/>Otimizando testes em aplicações com Spring Boot</a></h2>
-</div>
-<div class=meta>
-<time datetime="2021-06-24 22:00:00 -0300 -03">24 de June, 2021</time>
-<p>4 Minutos De Leitura</p>
-</div>
-</header>
-<div id=socnet-share>
-<a href="//twitter.com/share?text=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn twitter">
-<p>Twitter</p>
-</a>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn facebook">
-<p>Facebook</p>
-</a>
-<a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn reddit">
-<p>Reddit</p>
-</a>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn linkedin">
-<p>LinkedIn</p>
-</a>
-<a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&description=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn pinterest">
-<p>Pinterest</p>
-</a>
-<a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank class="nav share-btn email" data-proofer-ignore>
-<p>Email</p>
-</a>
-</div>
-<div class=content>
-<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/spring-boot-test-performance.png')">
-<img src=https://www.rapatao.com/img/posts/spring-boot-test-performance.png alt="Spring Boot Test Performance">
-</a>
-<p>É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com <code>@SpringBootTest</code>, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.</p>
-<p>Você provavelmente deve ter pensado que essa anotação serve para a construção de testes, mas você sabe o que isso representa, o que acontece quando ela é utilizada?</p>
-<p>Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao <a href=https://junit.org/junit5/docs/current/user-guide/#extensions>JUnit</a> que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados. Com sua utilização, antes de uma classe de teste ser executada, é realizado uma busca na aplicação pela classe anotada com <code>@SpringBootApplication</code> para identificar possíveis customizações, carregado as configurações para o perfil de teste (quando não sobrescrito) e somente após o contexto ser inicializado, temos o método com o cenário executado.</p>
-<p>Com isso em mente, é interessante saber identificar os possíveis impactos que sua utilização pode trazer aos projetos.</p>
-<h2 id=o-impacto-da-anotação-springboottest>O impacto da anotação @SpringBootTest</h2>
-<p>Podemos considerar essa anotação um facilitador para a criação de testes, porém, sua utilização indiscriminada pode adicionar um tempo de execução considerável, pois, conforme descrito anteriormente, diversas operações são realizadas antes da execução dos testes.</p>
-<p>Quando uma aplicação possui poucos cenários de testes, normalmente esse tempo não será notado, mas conforme as aplicações e complexidades das aplicações crescem, diversos novos cenários de testes tendem a serem incluídos, fazendo com que o tempo de execução seja cada vez mais impactante.</p>
-<p>Para se ter como referência, foi criado uma aplicação com apenas um componente chamado **que retornará um texto fixo ao ter o método consumido. Essa aplicação pode ser resumida nas seguintes classes:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#a6e22e>@SpringBootApplication</span>
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplication</span> <span style=color:#f92672>{</span>
-
-    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-        SpringApplication<span style=color:#f92672>.</span><span style=color:#a6e22e>run</span><span style=color:#f92672>(</span>TempApplication<span style=color:#f92672>.</span><span style=color:#a6e22e>class</span><span style=color:#f92672>,</span> args<span style=color:#f92672>);</span>
-    <span style=color:#f92672>}</span>
-
-<span style=color:#f92672>}</span>
-
-<span style=color:#a6e22e>@Service</span>
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempService</span> <span style=color:#f92672>{</span>
-
-    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>get</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>;</span>
-    <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
-</code></pre></div><p>Normalmente, os testes para a classe <code>TempService</code> seria implementado da seguinte maneira:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#a6e22e>@SpringBootTest</span>
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplicationTests</span> <span style=color:#f92672>{</span>
-
-    <span style=color:#a6e22e>@Autowired</span>
-    <span style=color:#66d9ef>private</span> TempService service<span style=color:#f92672>;</span>
-
-    <span style=color:#a6e22e>@Test</span>
-    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-        assertEquals<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>,</span> service<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>());</span>
-    <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
-</code></pre></div><p>Como o uso da anotação <code>@SpringBootTest</code>, temos o contexto do <em>Spring</em> inicializado em cada teste e esse cenário simples é executado em <code>233ms</code>. Esse número pode parecer pouco, mas estamos considerando apenas uma classe de teste com apenas um cenário construído e devemos sempre lembrar que aplicações reais tendem a possuir dezenas de classes com centenas de cenários de testes, o que, teoricamente faria com que o tempo total de execução seja a multiplicação dessa quantidade.</p>
-<h2 id=como-podemos-otimizar-os-testes>Como podemos otimizar os testes?</h2>
-<p>Como podemos notar, o teste anterior não utiliza nenhum recurso do <em>Spring</em>, estávamos utilizando apenas para nos fornecer uma instância da classe <code>TempService</code>, algo que poderíamos tranquilamente resolver. Para esse caso em específico, podemos simplesmente remover todas as anotações do Spring e instanciar nossa classe manualmente, onde teríamos a seguinte classe de teste:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplicationTests</span> <span style=color:#f92672>{</span>
-
-    <span style=color:#66d9ef>private</span> TempService service <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TempService<span style=color:#f92672>();</span>
-
-    <span style=color:#a6e22e>@Test</span>
-    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-        assertEquals<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>,</span> service<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>());</span>
-    <span style=color:#f92672>}</span>
-
-<span style=color:#f92672>}</span>
-</code></pre></div><p>Com essa alteração, conseguimos obter a mesma cobertura de teste, porém nosso teste é concluído com apenas <code>15ms</code>, o que representa um tempo de execução 15 vezes menor que quando utilizamos as anotações.</p>
-<h2 id=conclusão>Conclusão</h2>
-<p>Como podemos notar, cenários simples, onde apenas utilizamos o Spring para injetar nossos componentes, podemos facilmente substituir a utilização das anotações de teste por recursos nativos do Java. Com isso podemos reduzir drasticamente o tempo de execução de nossos testes e quando escalamos isso para aplicações reais, com diversos cenários, poderemos notar uma queda significativa no tempo total de execução dos testes.</p>
-<p>Porém, é importante esclarecer que isso não é uma solução que deve ser aplicada para todos os casos, pois sua aplicação pode e provavelmente deve possuir cenários em que seria necessário a utilização do contexto para a construção e execução dos testes. Como exemplo para esses casos, podemos citar testes que visam identificar se todas as dependências para as nossas classes foram providas, testes de mapeamentos e requisições HTTP ou mesmo conexões com bancos de dados.</p>
-<p>Enfim, essa abordagem não deve ser seguida para todos os casos, porém com certeza pode ser aplicada em diversos deles e consequentemente traria redução no tempo total de execução dos testes.</p>
-</div>
-<footer>
-<div class=stats>
-<ul class=tags>
-<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/spring/>spring</a></li>
-<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/springboot/>springboot</a></li>
-<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/java/>java</a></li>
-<li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/tests/>tests</a></li>
-</ul>
-</div>
-</footer>
-</article>
-<article class=post>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//rapatao-com.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-<div class=pagination>
-<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class="button left"><span>Construindo testes com Kotlin, JUnit e MockK</span></a>
-<a href=https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/ class="button right"><span>Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?</span></a>
-</div>
-</main>
-<section id=site-sidebar>
-<section id=recent-posts>
-<header>
-<h1>Posts Recentes</h1>
-</header>
-<article class=mini-post>
-<a href=https://www.rapatao.com/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg')">
-<img src=https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg alt="Load Balancing: O que é um balanceador de carga?">
-</a>
-<header>
-<h2><a href=https://www.rapatao.com/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/>Load Balancing: O que é um balanceador de carga?</a></h2>
-<time class=published datetime="2022-02-05 20:00:00 -0300 -03">5 de February, 2022</time>
-</header>
-</article>
-<article class=mini-post>
-<a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg')">
-<img src=https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg alt="Construindo testes com Kotlin, JUnit e MockK">
-</a>
-<header>
-<h2><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/>Construindo testes com Kotlin, JUnit e MockK</a></h2>
-<time class=published datetime="2022-01-19 22:00:00 -0300 -03">19 de January, 2022</time>
-</header>
-</article>
-<article class=mini-post>
-<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/spring-boot-test-performance.png')">
-<img src=https://www.rapatao.com/img/posts/spring-boot-test-performance.png alt="Spring Boot Test Performance">
-</a>
-<header>
-<h2><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/>Otimizando testes em aplicações com Spring Boot</a></h2>
-<time class=published datetime="2021-06-24 22:00:00 -0300 -03">24 de June, 2021</time>
-</header>
-</article>
-<footer>
-<a href=https://www.rapatao.com/pt/posts/ class=button>Veja Mais</a>
-</footer>
-</section>
-</section>
-<footer id=site-footer>
-<ul class=socnet-icons>
-<li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li>
-<li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li>
-<li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li>
-<li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li>
-<li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li>
-<li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li>
-</ul>
-<p class=copyright>
-© 2022 rapatao.com
-<br>
-Tema: <a href=https://themes.gohugo.io/hugo-future-imperfect-slim/ target=_blank rel=noopener>Hugo Future Imperfect</a><br>Adaptado de <a href=https://html5up.net/future-imperfect target=_blank rel=noopener>HTML5 UP</a> | Disponibilizado pelo <a href=https://gohugo.io/ title=0.92.1 target=_blank rel=noopener>Hugo</a>
-</p>
-</footer>
-<a id=back-to-top href=# class="fas fa-arrow-up fa-2x"></a>
+<a href=#site-nav class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a></nav><menu id=search class=menu><input id=search-input class="search-input menu"></input><div id=search-results class="search-results menu"></div></menu><menu id=lang-menu class="flyout-menu menu"><a href=# lang=pt class="nav link active">Português (pt)</a>
+<a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ lang=en class="nav link">English (en)</a></menu>
+<menu id=share-menu class="flyout-menu menu"><h1>Share Post</h1><a href="//twitter.com/share?text=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn twitter"><p>Twitter</p></a><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn facebook"><p>Facebook</p></a><a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn reddit"><p>Reddit</p></a><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn linkedin"><p>LinkedIn</p></a><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&description=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn pinterest"><p>Pinterest</p></a><a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank class="nav share-btn email" data-proofer-ignore><p>Email</p></a></menu></header><div id=wrapper><section id=site-intro><a href=https://www.rapatao.com/pt/><img src=https://www.rapatao.com/images/avatar.jpg class=circle width=100 alt="Luiz H. Rapatão"></a><header><h1>Luiz H. Rapatão</h1></header><main><p>Senior Software Engineer</p></main><footer><ul class=socnet-icons><li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li><li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li><li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li><li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li><li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li><li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li></ul></footer></section><main id=site-main><article class=post><header><div class=title><h2><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/>Otimizando testes em aplicações com Spring Boot</a></h2></div><div class=meta><time datetime="2021-06-24 22:00:00 -0300 -03">24 de June, 2021</time><p>4 Minutos De Leitura</p></div></header><div id=socnet-share><a href="//twitter.com/share?text=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot&url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn twitter"><p>Twitter</p></a><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank rel=noopener class="nav share-btn facebook"><p>Facebook</p></a><a href="//www.reddit.com/submit?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn reddit"><p>Reddit</p></a><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&title=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn linkedin"><p>LinkedIn</p></a><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f&description=Otimizando%20testes%20em%20aplica%c3%a7%c3%b5es%20com%20Spring%20Boot" target=_blank rel=noopener class="nav share-btn pinterest"><p>Pinterest</p></a><a href="mailto:?subject=Confira%20esta%20postagem%20por %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&body=https%3a%2f%2fwww.rapatao.com%2fpt%2fposts%2f2021-06%2fotimizando-testes-em-aplicacoes-com-spring-boot%2f" target=_blank class="nav share-btn email" data-proofer-ignore><p>Email</p></a></div><div class=content><a href=https://www.rapatao.com/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/spring-boot-test-performance.png')"><img src=https://www.rapatao.com/img/posts/spring-boot-test-performance.png alt="Spring Boot Test Performance"></a><p>É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com <code>@SpringBootTest</code>, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.</p><p>Você provavelmente deve ter pensado que essa anotação serve para a construção de testes, mas você sabe o que isso representa, o que acontece quando ela é utilizada?</p><p>Simploriamente, essa anotação é uma forma simplificada de adicionar uma extensão ao <a href=https://junit.org/junit5/docs/current/user-guide/#extensions>JUnit</a> que visa inicializar o contexto do Spring antes da execução dos cenários de testes declarados. Com sua utilização, antes de uma classe de teste ser executada, é realizado uma busca na aplicação pela classe anotada com <code>@SpringBootApplication</code> para identificar possíveis customizações, carregado as configurações para o perfil de teste (quando não sobrescrito) e somente após o contexto ser inicializado, temos o método com o cenário executado.</p><p>Com isso em mente, é interessante saber identificar os possíveis impactos que sua utilização pode trazer aos projetos.</p><h2 id=o-impacto-da-anotação-springboottest>O impacto da anotação @SpringBootTest</h2><p>Podemos considerar essa anotação um facilitador para a criação de testes, porém, sua utilização indiscriminada pode adicionar um tempo de execução considerável, pois, conforme descrito anteriormente, diversas operações são realizadas antes da execução dos testes.</p><p>Quando uma aplicação possui poucos cenários de testes, normalmente esse tempo não será notado, mas conforme as aplicações e complexidades das aplicações crescem, diversos novos cenários de testes tendem a serem incluídos, fazendo com que o tempo de execução seja cada vez mais impactante.</p><p>Para se ter como referência, foi criado uma aplicação com apenas um componente chamado **que retornará um texto fixo ao ter o método consumido. Essa aplicação pode ser resumida nas seguintes classes:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@SpringBootApplication</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplication</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        SpringApplication<span style=color:#f92672>.</span><span style=color:#a6e22e>run</span><span style=color:#f92672>(</span>TempApplication<span style=color:#f92672>.</span><span style=color:#a6e22e>class</span><span style=color:#f92672>,</span> args<span style=color:#f92672>);</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempService</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>get</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Normalmente, os testes para a classe <code>TempService</code> seria implementado da seguinte maneira:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@SpringBootTest</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplicationTests</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Autowired</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> TempService service<span style=color:#f92672>;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Test</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        assertEquals<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>,</span> service<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>());</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Como o uso da anotação <code>@SpringBootTest</code>, temos o contexto do <em>Spring</em> inicializado em cada teste e esse cenário simples é executado em <code>233ms</code>. Esse número pode parecer pouco, mas estamos considerando apenas uma classe de teste com apenas um cenário construído e devemos sempre lembrar que aplicações reais tendem a possuir dezenas de classes com centenas de cenários de testes, o que, teoricamente faria com que o tempo total de execução seja a multiplicação dessa quantidade.</p><h2 id=como-podemos-otimizar-os-testes>Como podemos otimizar os testes?</h2><p>Como podemos notar, o teste anterior não utiliza nenhum recurso do <em>Spring</em>, estávamos utilizando apenas para nos fornecer uma instância da classe <code>TempService</code>, algo que poderíamos tranquilamente resolver. Para esse caso em específico, podemos simplesmente remover todas as anotações do Spring e instanciar nossa classe manualmente, onde teríamos a seguinte classe de teste:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TempApplicationTests</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> TempService service <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TempService<span style=color:#f92672>();</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Test</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        assertEquals<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nothing&#34;</span><span style=color:#f92672>,</span> service<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>());</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>Com essa alteração, conseguimos obter a mesma cobertura de teste, porém nosso teste é concluído com apenas <code>15ms</code>, o que representa um tempo de execução 15 vezes menor que quando utilizamos as anotações.</p><h2 id=conclusão>Conclusão</h2><p>Como podemos notar, cenários simples, onde apenas utilizamos o Spring para injetar nossos componentes, podemos facilmente substituir a utilização das anotações de teste por recursos nativos do Java. Com isso podemos reduzir drasticamente o tempo de execução de nossos testes e quando escalamos isso para aplicações reais, com diversos cenários, poderemos notar uma queda significativa no tempo total de execução dos testes.</p><p>Porém, é importante esclarecer que isso não é uma solução que deve ser aplicada para todos os casos, pois sua aplicação pode e provavelmente deve possuir cenários em que seria necessário a utilização do contexto para a construção e execução dos testes. Como exemplo para esses casos, podemos citar testes que visam identificar se todas as dependências para as nossas classes foram providas, testes de mapeamentos e requisições HTTP ou mesmo conexões com bancos de dados.</p><p>Enfim, essa abordagem não deve ser seguida para todos os casos, porém com certeza pode ser aplicada em diversos deles e consequentemente traria redução no tempo total de execução dos testes.</p></div><footer><div class=stats><ul class=tags><li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/spring/>spring</a></li><li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/springboot/>springboot</a></li><li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/java/>java</a></li><li><a class=article-terms-link href=https://www.rapatao.com/pt/tags/tests/>tests</a></li></ul></div></footer></article><article class=post><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//rapatao-com.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article><div class=pagination><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class="button left"><span>Construindo testes com Kotlin, JUnit e MockK</span></a>
+<a href=https://www.rapatao.com/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/ class="button right"><span>Pensando em GraalVM? Devo escolher Quarkus ou Micronaut?</span></a></div></main><section id=site-sidebar><section id=recent-posts><header><h1>Posts Recentes</h1></header><article class=mini-post><a href=https://www.rapatao.com/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163064.jpeg')"><img src=https://www.rapatao.com/img/posts/pexels-pixabay-163064.jpeg alt="O que é uma CDN (Content Delivery Network)?"></a><header><h2><a href=https://www.rapatao.com/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/>O que é uma CDN (Content Delivery Network)?</a></h2><time class=published datetime="2022-04-21 19:00:00 -0300 -03">21 de April, 2022</time></header></article><article class=mini-post><a href=https://www.rapatao.com/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg')"><img src=https://www.rapatao.com/img/posts/pexels-brett-sayles-7146867.jpg alt="Load Balancing: O que é um balanceador de carga?"></a><header><h2><a href=https://www.rapatao.com/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/>Load Balancing: O que é um balanceador de carga?</a></h2><time class=published datetime="2022-02-05 20:00:00 -0300 -03">5 de February, 2022</time></header></article><article class=mini-post><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/ class=image style="--bg-image:url('https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg')"><img src=https://www.rapatao.com/img/posts/pexels-pixabay-163016.jpg alt="Construindo testes com Kotlin, JUnit e MockK"></a><header><h2><a href=https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/>Construindo testes com Kotlin, JUnit e MockK</a></h2><time class=published datetime="2022-01-19 22:00:00 -0300 -03">19 de January, 2022</time></header></article><footer><a href=https://www.rapatao.com/pt/posts/ class=button>Veja Mais</a></footer></section></section><footer id=site-footer><ul class=socnet-icons><li><a href=//github.com/rapatao target=_blank rel=noopener title=GitHub class="fab fa-github"></a></li><li><a href=//linkedin.com/in/rapatao target=_blank rel=noopener title=LinkedIn class="fab fa-linkedin"></a></li><li><a href=//instagram.com/luizrapatao target=_blank rel=noopener title=Instagram class="fab fa-instagram"></a></li><li><a href=//twitter.com/rapatao target=_blank rel=noopener title=Twitter class="fab fa-twitter"></a></li><li><a href=skype:rapatao?userinfo target=_blank rel=noopener title=Skype class="fab fa-skype"></a></li><li><a href=mailto:rapatao@rapatao.com target=_blank title=Email class="far fa-envelope"></a></li></ul><p class=copyright>© 2022 rapatao.com<br>Tema: <a href=https://themes.gohugo.io/hugo-future-imperfect-slim/ target=_blank rel=noopener>Hugo Future Imperfect</a><br>Adaptado de <a href=https://html5up.net/future-imperfect target=_blank rel=noopener>HTML5 UP</a> | Disponibilizado pelo <a href=https://gohugo.io/ title=0.97.3 target=_blank rel=noopener>Hugo</a></p></footer><a id=back-to-top href=# class="fas fa-arrow-up fa-2x"></a>
 <script src=https://www.rapatao.com/js/highlight.js></script>
-<script>hljs.initHighlightingOnLoad()</script><script src=https://www.rapatao.com/js/bundle.min.ac7914d38f0f99e8b54651f89670f7fcc087a50300e3ae4b1d76e7efc335e50a.js integrity="sha256-rHkU048Pmei1RlH4lnD3/MCHpQMA465LHXbn78M15Qo="></script>
+<script>hljs.initHighlightingOnLoad()</script><script src=https://www.rapatao.com/js/bundle.min.85117296c3b4ea8d48c6578459d3c98219c6498a0f91f5a2fee501949ac8d64c.js integrity="sha256-hRFylsO06o1IxleEWdPJghnGSYoPkfWi/uUBlJrI1kw="></script>
 <script src=https://www.rapatao.com/js/add-on.js></script>
-<script type=application/javascript>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-41287936-1','auto'),ga('set','anonymizeIp',!0),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</div>
-</body>
-</html>
+<script type=application/javascript>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-41287936-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></div></body></html>

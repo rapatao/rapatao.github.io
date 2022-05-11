@@ -3,5 +3,9 @@ Allow: /
 Allow: /sitemap.xml
 Allow: /*/sitemap.xml
 Disallow: /*.xml$
+Disallow: /series/*
+Disallow: /*/series/*
+Disallow: /categories/*
+Disallow: /*/categories/*
 
 Sitemap: https://www.rapatao.com/sitemap.xml

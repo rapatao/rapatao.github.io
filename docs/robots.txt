@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /*/sitemap.xml
 Disallow: /*.xml$
 
 Sitemap: https://www.rapatao.com/sitemap.xml

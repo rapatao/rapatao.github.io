@@ -1,17 +1,32 @@
 {{ define "main" }}
-  <ul class="posts">
-    <header>
-      <h1>{{ i18n .Data.Plural }}</h1>
-    </header>
-    {{ range .Data.Terms.ByCount }}
-      <li>
-        <article>
-          <header>
-            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}<span style="float:right;">{{ .Count }}</span></a>
-          </header>
-        </article>
-      </li>
-    {{ end }}
-  </ul>
+  {{ range .Data.Terms.ByCount }}
+    <article class="post">
+    
+      <div class="title">
+        <h1 class="review-title">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </h1>
+      </div>
+
+      <section id="preview-posts">
+        {{ range first 2 .Page.Data.Pages }}
+          <article class="preview-post">
+            {{ .Render "featured" }}
+            <header>
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <time class="published" datetime="{{ .Date }}">{{ .Render "date" }}</time>
+            </header>
+          </article>
+        {{ end }}
+      </section>
+
+      {{ if gt .Page.Data.Pages 2 }}
+        <a href="{{ .Page.Permalink }}" class="button">
+          <span>{{ i18n "see_more" }}</span>
+        </a>
+      {{ end }}
+
+    </article>
+  {{ end }}
   {{ $.Scratch.Set "showCategories" false }}
 {{ end }}

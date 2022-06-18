@@ -1076,6 +1076,29 @@ figcaption {
   }
 }
 
+.review-title {
+  @extend .title;
+  overflow: hidden;
+}
+
+#preview-posts {
+  @include display-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center
+}
+
+.preview-post {
+  @extend .mini-post;
+  @include for-laptop-up {
+    width: 40%;
+  }
+  @include for-desktop-up {
+    width: 40%;
+  }
+}
+
 .count {
   float: right;
 }

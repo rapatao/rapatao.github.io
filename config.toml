@@ -33,7 +33,7 @@ imageStretch = ""
 removeBlur = false
 socialShare = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
 hideEmptyStats = true
-images = ["/images/avatar.jpg"]
+images = ["/images/avatar-pixel.gif"]
 
 [params.social]
 twitter = "@rapatao"
@@ -63,8 +63,8 @@ hideWhenSingleColumn = false
 alwaysOnHomepage = true
 
 [params.intro.pic]
-src = "images/avatar.jpg"
-shape = "circle"
+src = "/images/avatar-pixel.gif"
+shape = "square"
 width = ""
 alt = "Luiz H. Rapatão"
 

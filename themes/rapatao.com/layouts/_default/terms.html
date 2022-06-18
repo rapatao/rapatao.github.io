@@ -18,13 +18,13 @@
             </header>
           </article>
         {{ end }}
-      </section>
 
-      {{ if gt .Page.Data.Pages 2 }}
-        <a href="{{ .Page.Permalink }}" class="button">
-          <span>{{ i18n "see_more" }}</span>
-        </a>
-      {{ end }}
+        {{ if gt .Page.Data.Pages 2 }}
+          <a href="{{ .Page.Permalink }}" class="button">
+            <span>{{ i18n "see_more" }}</span>
+          </a>
+        {{ end }}
+      </section>
 
     </article>
   {{ end }}

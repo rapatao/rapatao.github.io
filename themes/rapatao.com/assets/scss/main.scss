@@ -1085,17 +1085,18 @@ figcaption {
   @include display-flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 10px;
+  gap: 2%;
   justify-content: center
+  
 }
 
 .preview-post {
   @extend .mini-post;
   @include for-laptop-up {
-    width: 40%;
+    width: 49%;
   }
   @include for-desktop-up {
-    width: 40%;
+    width: 49%;
   }
 }
 

@@ -1,0 +1,87 @@
+<div>
+    <form onsubmit="return doOnSubmit(true)" onreset="doOnReset()">
+        <a id="json-status"><span id="json-result-status"></span></a>
+        <label for="json-original">JSON:</label>
+        <textarea id="json-original" rows="5" autofocus required oninput="autoGrow(this);"></textarea>
+        <button type="submit" class="button button-blue">format</button>
+        <button type="button" class="button" onclick="doOnSubmit(false)">minify</button>
+        <button type="reset" class="button">clear</button>
+    </form>
+</div>
+
+<script>
+    const elSourceJson = document.getElementById("json-original");
+    elSourceJson.style = "height:auto";
+
+    const elTargetStatus = document.getElementById("json-result-status");
+
+    document.addEventListener("parseJson", function (e) {
+        const content = (e.detail || {}).content || "";
+        const hasInput = content.trim().length > 0;
+
+        const format = (e.detail || {}).format != undefined ? e.detail.format : true;
+
+        var json;
+        var valid = hasInput;
+        var rows = 5;
+        if (hasInput) {
+            try {
+                const jsonAsObj = JSON.parse(content);
+                json = JSON.stringify(jsonAsObj, undefined, format ? 2 : 0);
+                rows = json.split("\n").length;
+            } catch (e) {
+                json = e.message;
+                valid = false;
+            }
+        }
+        if (rows < 5) rows = 5;
+
+        if (hasInput) {
+            document.dispatchEvent(new CustomEvent("printJson", {
+                detail: {
+                    json,
+                    valid,
+                    rows
+                }
+            }));
+        }
+    });
+
+    document.addEventListener("printJson", function (e) {
+        const content = e.detail;
+
+        elTargetStatus.innerText = "";
+        if (content.valid) {
+            elTargetStatus.innerText = "JSON is valid";
+            elTargetStatus.style.color = "green";
+            elSourceJson.value = content.json;
+        } else {
+            elTargetStatus.innerText = "JSON is invalid: " + content.json;
+            elTargetStatus.style.color = "red";
+        }
+        elSourceJson.rows = content.rows;
+
+        elSourceJson.setSelectionRange(0, 0);
+        elSourceJson.focus();
+    });
+
+    function doOnSubmit(formatJson) {
+        document.dispatchEvent(new CustomEvent("parseJson", {
+            detail: {
+                content: elSourceJson.value,
+                format: formatJson
+            }
+        }));
+        return false;
+    }
+
+    function doOnReset() {
+        elTargetStatus.innerText = "";
+    }
+
+    function autoGrow(textArea) {
+        const rows = textArea.value.split("\n").length
+
+        textArea.rows = Math.min(Math.max(5, rows), 100);
+    }
+</script>

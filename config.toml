@@ -114,6 +114,12 @@ weight = 5
 url = "resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
+[[languages.en.menu.main]]
+name = "JSON Formatter & Minifier"
+weight = 10
+url = "json/"
+pre = "<i class='far fa-file-code'></i>"
+
 [languages.pt]
 languagename = "Português"
 
@@ -134,6 +140,12 @@ name = "Experiência"
 weight = 5
 url = "resume/"
 pre = "<i class='far fa-file-alt'></i>"
+
+[[languages.pt.menu.main]]
+name = "JSON Formatter & Minifier"
+weight = 10
+url = "json/"
+pre = "<i class='far fa-file-code'></i>"
 
 [privacy]
 [privacy.GoogleAnalytics]

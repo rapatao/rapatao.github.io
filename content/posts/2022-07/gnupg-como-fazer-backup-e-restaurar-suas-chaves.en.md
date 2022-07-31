@@ -1,0 +1,1 @@
+gnupg-como-fazer-backup-e-restaurar-suas-chaves.pt.md

@@ -6,7 +6,7 @@ tags:
     - micronaut
     - architecture
 images: 
-  - src: "/img/posts/quarkus-micronaut.png"
+  - src: "/images/posts/quarkus-micronaut.png"
     alt: "Quarkus vs Micronaut"
     stretch: "vertical"
 url: "/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/"
@@ -20,7 +20,7 @@ Dentre as opções citadas, diversos *benchmarks* disponíveis na Internet foram
 
 ## Curva de aprendizado
 
-![Curva de aprendizado](/img/posts/pexels-energepiccom-313690.jpg#center)
+![Curva de aprendizado](/images/posts/pexels-energepiccom-313690.jpg#center)
 
 Apesar de muitas vezes ser desconsiderado em análises por parte das pessoas de tecnologia, a complexidade em aprender e, de fato, entender o funcionamento de uma tecnologia afeta muito a qualidade e produtividade da equipe em um projeto. Considerando ainda que pretendíamos utilizar *GraalVM*, era extremamente prudente levar esse tópico em consideração, visto que não seria apenas uma tecnologia "nova" a ser implementada no mesmo projeto.
 
@@ -36,7 +36,7 @@ Durante essa analise, confirmamos que o *Quarkus* tende a seguir ou priorizar o 
 
 ## Compatibilidade
 
-![Compatibilidade](/img/posts/pexels-castorly-stock-3639031.jpg#center)
+![Compatibilidade](/images/posts/pexels-castorly-stock-3639031.jpg#center)
 
 Como dito anteriormente, nossos casos de usos raramente possuem grande complexidade e foi limitado a análise nos cenários mais comuns, ou seja, disponibilização e consumo de uma *APIs Rest, além de* acesso a bases de dados, normalmente *MySQL*.
 
@@ -52,7 +52,7 @@ Nesse projeto em questão, precisávamos realizar uma espécie de versionamento 
 
 ## Documentação
 
-![Compatibilidade](/img/posts/pexels-anastasia-zhenina-93519.jpg#center)
+![Compatibilidade](/images/posts/pexels-anastasia-zhenina-93519.jpg#center)
 
 Considero este um dos tópicos mais importantes a ser analisado, pois, a documentação é e deve ser sempre utilizada como referência para analisar ou construir eventuais casos de usos, ou apenas para entendimento das funcionalidades disponibilizadas por uma ferramenta.
 

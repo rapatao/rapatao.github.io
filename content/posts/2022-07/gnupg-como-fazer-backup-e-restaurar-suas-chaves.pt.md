@@ -5,7 +5,7 @@ tags:
     - security
     - encryption
 images: 
-  - src: "/img/posts/pexels-lucas-seebacher-5599449.jpeg"
+  - src: "/images/posts/pexels-lucas-seebacher-5599449.jpeg"
     alt: "GnuPG: como fazer backup e restaurar suas chaves?"
 url: "/pt/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
 aliases:

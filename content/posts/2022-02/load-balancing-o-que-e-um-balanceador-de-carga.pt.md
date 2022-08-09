@@ -5,7 +5,7 @@ tags:
     - architecture
     - network
 images: 
-  - src: "/img/posts/pexels-brett-sayles-7146867.jpg"
+  - src: "/images/posts/pexels-brett-sayles-7146867.jpg"
     alt: "Load Balancing: O que é um balanceador de carga?"
 url: "/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/"
 aliases:

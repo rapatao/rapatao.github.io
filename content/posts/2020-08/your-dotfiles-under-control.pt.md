@@ -6,7 +6,7 @@ tags:
     - yadm
     - shell
 images: 
-  - src: "/img/posts/pexels-pixabay-207580.jpg"
+  - src: "/images/posts/pexels-pixabay-207580.jpg"
     alt: "dotfiles"
     stretch: "vertical"
 url: "/pt/posts/2020-08/your-dotfiles-under-control/"

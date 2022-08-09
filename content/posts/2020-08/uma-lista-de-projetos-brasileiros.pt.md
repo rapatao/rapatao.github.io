@@ -5,7 +5,7 @@ tags:
     - github
     - awesome
 images: 
-  - src: "/img/posts/awesome-brazil.jpg"
+  - src: "/images/posts/awesome-brazil.jpg"
     alt: "awesome brazil"
     stretch: "vertical"
 url: "/pt/posts/2020-08/uma-lista-de-projetos-brasileiros/"

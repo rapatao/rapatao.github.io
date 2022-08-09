@@ -7,7 +7,7 @@ tags:
     - spring webflux
     - reactive
 images: 
-  - src: "/img/posts/abandoned-antique-architecture-building-277782.jpg"
+  - src: "/images/posts/abandoned-antique-architecture-building-277782.jpg"
     alt: "Webflux ou MVC?"
     stretch: "vertical"
 url: "/pt/posts/2020-07/should-i-use-spring-webflux/"
@@ -40,7 +40,7 @@ Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente
 
 **Voltando ao assunto principal, *Spring WebFlux*...**
 
-![Voltando ao tópico](/img/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
+![Voltando ao tópico](/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
 
 Dentre tudo que li e tive oportunidade de ver na prática, achei bem interessante a eficiência das aplicações construídas com *WebFlux*. Foi o famoso “muito com pouco”, porém me chamou atenção a complexidade em se construir testes unitários/integrados bem como a dificuldade na realização de *debug*, visto que o fluxo de chamadas não é mais, por assim dizer, sequencial.
 
@@ -48,7 +48,7 @@ Entre os diversos artigos que li, havia diversos relatos de pessoas que afirmava
 
 **Enfim, devo utilizar *WebFlux* em meu projeto?**
 
-![Voltando ao tópico](/img/posts/banking-business-checklist-commerce-416322.jpg#center)
+![Voltando ao tópico](/images/posts/banking-business-checklist-commerce-416322.jpg#center)
 
 Bom, isso depende…
 

@@ -4,7 +4,7 @@ date: 2020-09-06T21:00:00-03:00
 tags:
     - virtualization
 images: 
-  - src: "/img/posts/qemu.jpg"
+  - src: "/images/posts/qemu.jpg"
     alt: "QEMU"
     stretch: "vertical"
 url: "/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"

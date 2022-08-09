@@ -5,7 +5,7 @@ tags:
     - architecture
     - network
 images: 
-  - src: "/img/posts/pexels-pixabay-163064.jpeg"
+  - src: "/images/posts/pexels-pixabay-163064.jpeg"
     alt: "O que é uma CDN (Content Delivery Network)?"
 url: "/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 aliases:
@@ -35,7 +35,7 @@ Devido à natureza distribuída de uma CDN, o conteúdo a ser provido por ela pr
 
 Neste modelo, sempre que um conteúdo for requisitado pelo usuário, a CDN verifica se já possuí o conteúdo em seus servidores, caso não, faz uma solicitação ao servidor origem, armazena os dados em sua rede (cache) para então retornar ao usuário os dados solicitados.
 
-![Exemplo de CDN (modelo PULL)](/img/posts/20220421-cdn-pull.png#center)
+![Exemplo de CDN (modelo PULL)](/images/posts/20220421-cdn-pull.png#center)
   Exemplo de CDN (modelo PULL)
 
 A principal vantagem deste modelo está em sua baixa complexidade de implementação, pois não é necessário disponibilizar o conteúdo a ser provido pela CDN antes da primeira solicitação do usuário, pois ela se encarregará de recuperar este conteúdo conforme necessário, ou seja, conforme for sendo requisitado pelos usuários. Em contrapartida, como o conteúdo não estará presente nos servidores da CDN durante as primeiras requisições, estas terão um tempo maior de resposta, dado a necessidade de recuperação destes conteúdos dos servidores de origem.
@@ -44,7 +44,7 @@ A principal vantagem deste modelo está em sua baixa complexidade de implementa�
 
 Diferente do modelo *PULL*, aqui o conteúdo a ser disponibilizado precisa obrigatoriamente estar disponível nos servidores da CDN antes de as requisições serem realizadas, ou seja, a CDN não será responsável por recuperar o conteúdo de uma origem, mas sim o desenvolvedor ou aplicação deve armazenar estes conteúdos de maneira manual ou por processos automatizados.
 
-![Exemplo de CDN (modelo PUSH)](/img/posts/20220421-cdn-push.png#center)
+![Exemplo de CDN (modelo PUSH)](/images/posts/20220421-cdn-push.png#center)
   Exemplo de CDN (modelo PUSH)
 
 Nesse modelo, temos uma complexidade maior em sua implementação, pois, o conteúdo precisa ser submetido aos servidores da CDN previamente, sejam por processos automatizados ou manuais. A automatização destes processos pode ser bastante complexa e ser necessário processos diferentes para cada aplicação existente, o que pode fazer com que, a automatização seja um processo extremamente complexo e custoso. Quando realizado de forma manual, falhas humanas podem ocorrer, como, por exemplo, esquecer de submeter algum conteúdo importante, causando uma falha inesperada na execução da aplicação.

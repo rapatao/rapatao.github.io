@@ -7,7 +7,7 @@ tags:
     - junit
     - tests
 images: 
-  - src: "/img/posts/pexels-christina-morillo-1181244.jpg"
+  - src: "/images/posts/pexels-christina-morillo-1181244.jpg"
     alt: "java code"
     stretch: "vertical"
 url: "/pt/posts/2020-05/verify-varargs-using-mockito/"    

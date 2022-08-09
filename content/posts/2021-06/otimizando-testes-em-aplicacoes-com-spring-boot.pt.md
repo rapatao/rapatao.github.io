@@ -7,7 +7,7 @@ tags:
     - java
     - tests
 images: 
-  - src: "/img/posts/spring-boot-test-performance.png"
+  - src: "/images/posts/spring-boot-test-performance.png"
     alt: "Spring Boot Test Performance"
 url: "/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
 ---

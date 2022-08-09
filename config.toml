@@ -150,6 +150,6 @@ pre = "<i class='far fa-file-code'></i>"
 [privacy]
 [privacy.GoogleAnalytics]
 anonymizeIP = true
-disable = false
+disable = true
 respectDoNotTrack = true
 useSessionStorage = false

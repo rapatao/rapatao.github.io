@@ -5,4 +5,4 @@ hugo --gc -d docs --minify
 
 echo
 echo "resizing images"
-find static/images -type f -name "*.jpg" -exec convert -strip {} {} \;
+find docs/images -type f -name "*" -exec convert -verbose -strip {} {} \;

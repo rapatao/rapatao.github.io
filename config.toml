@@ -12,7 +12,7 @@ canonifyurls = true
 disqusShortname = "rapatao-com"
 summary = 10
 
-googleAnalytics = "UA-41287936-1"
+googleAnalytics = "G-LDJ57WEQPH"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -150,6 +150,6 @@ pre = "<i class='far fa-file-code'></i>"
 [privacy]
 [privacy.GoogleAnalytics]
 anonymizeIP = true
-disable = true
+disable = false
 respectDoNotTrack = true
 useSessionStorage = false

@@ -8,8 +8,6 @@ images:
   - src: "/images/posts/pexels-pixabay-163064.jpeg"
     alt: "O que é uma CDN (Content Delivery Network)?"
 url: "/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
-aliases:
-  - "/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 ---
 
 Uma rede de distribuição de conteúdo, do inglês *Content Delivery Network*, pode ser descrita como um conjunto de servidores, distribuídos globalmente, com finalidade de prover conteúdo aos usuários de maneira otimizada e no menor tempo possível.
@@ -29,7 +27,7 @@ Apesar de exemplificado alguns arquivos acima, outros formatos podem ser distrib
 
 ## Distribuição e replicação do conteúdo
 
-Devido à natureza distribuída de uma CDN, o conteúdo a ser provido por ela precisa estar disponível para todas as instâncias dessa rede e, basicamente, existem duas maneiras de realizar a distribuição deste conteúdo. Elas são conhecidas como ***PULL*** e ***PUSH**,* onde as principais diferenças entre elas está na maneira como os dados são disponibilizados na CDN.
+Devido à natureza distribuída de uma CDN, o conteúdo a ser provido por ela precisa estar disponível para todas as instâncias dessa rede e, basicamente, existem duas maneiras de realizar a distribuição deste conteúdo. Elas são conhecidas como ***PULL*** e ***PUSH*** onde as principais diferenças entre elas está na maneira como os dados são disponibilizados na CDN.
 
 ### Modelo *PULL*
 
@@ -55,7 +53,7 @@ Outra vantagem neste modo, é a capacidade de disponibilizar sistemas sem a nece
 
 ## Conclusão
 
-De maneira geral, apesar de agregar um certo nível de complexidade as aplicações, seu uso é normalmente válido e recomendável, pois, dado a proximidade dos servidores de um provedor de CDN com os usuários de sua aplicação, os dados solicitados por eles, são normalmente entregues com tempo baixo, independentemente de sua localização geográfica, sem a necessidade de adicionar servidores de sua aplicação ao redor do mundo, o que permite escalar sua aplicação/serviço sem necessariamente aumentar o custo operacional.
+De maneira geral, apesar de agregar um certo nível de complexidade as aplicações, seu uso é normalmente válido e recomendável, pois, dado a proximidade dos servidores de um provedor de CDN com os usuários de sua aplicação, os dados solicitados por eles, são normalmente entregues com tempo baixo, independentemente de sua localização geográfica, sem a necessidade de adicionar servidores de sua aplicação ao redor do mundo, permitindo escalar sua aplicação/serviço sem necessariamente aumentar o custo operacional.
 
 É importante dizer que o intuído do texto foi descrever o que é uma CDN e não detalhar serviços específicos de provedores específicos, como, por exemplo, a AWS, que permite disponibilizar conteúdos dinâmicos. Cada provedor tende a possuir características distintas, sejam disponibilizando funcionalidades novas, como disponibilidade geográfica e, é sempre recomendável identificá-las e validar a mais aderente as suas necessidades.
 

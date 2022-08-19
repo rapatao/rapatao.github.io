@@ -12,9 +12,9 @@ aliases:
   - "/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 ---
 
-A content delivery network, *Content Delivery Network*, can be described as a set of servers, distributed globally, with the purpose of providing content to users in an optimized way and in the shortest possible time.
+A *Content Delivery Network*, can be described as a set of servers, distributed globally, with the purpose of providing content to users in an optimized way and in the shortest possible time.
 
-As the CDN servers are distributed in several locations, some of these servers tend to be located closer to the destination user than the origin server, which makes the distance that the data travel (physically) is smaller, consequently, delivered more fast.
+The CDN servers are distributed in several locations, some of these servers tend to be located closer to the destination user than the origin server, which makes the distance that the data travel (physically) is smaller, consequently, delivered more fast.
 
 ## What can be distributed and stored
 

@@ -8,6 +8,8 @@ images:
   - src: "/images/posts/pexels-pixabay-163064.jpeg"
     alt: "O que é uma CDN (Content Delivery Network)?"
 url: "/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
+aliases:
+  - "/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 ---
 
 Uma rede de distribuição de conteúdo, do inglês *Content Delivery Network*, pode ser descrita como um conjunto de servidores, distribuídos globalmente, com finalidade de prover conteúdo aos usuários de maneira otimizada e no menor tempo possível.

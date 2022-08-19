@@ -9,6 +9,8 @@ images:
     alt: "awesome brazil"
     stretch: "vertical"
 url: "/pt/posts/2020-08/uma-lista-de-projetos-brasileiros/"
+aliases:
+  - "/posts/2020-08/uma-lista-de-projetos-brasileiros/"
 ---
 
 Todo desenvolvedor, ao menos uma vez, já deve ter se deparado com as chamadas **awesome lists**. Essas listas tentam juntar em um local projetos relacionados a um tema ou bibliotecas aos quais foram desenvolvidas.

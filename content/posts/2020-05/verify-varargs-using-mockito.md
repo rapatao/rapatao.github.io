@@ -1,1 +1,0 @@
-verify-varargs-using-mockito.pt.md

@@ -8,8 +8,6 @@ images:
   - src: "/images/posts/pexels-pixabay-163064.jpeg"
     alt: "What is a CDN (Content Delivery Network)?"
 url: "/posts/2022-04/what-is-a-cdn-cdn-content-delivery-network/"
-aliases:
-  - "/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 ---
 
 A *Content Delivery Network*, can be described as a set of servers, distributed globally, with the purpose of providing content to users in an optimized way and in the shortest possible time.

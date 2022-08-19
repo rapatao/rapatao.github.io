@@ -5,7 +5,7 @@ tags:
     - database
 images: 
   - src: "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
-    alt: "dotfiles"
+    alt: "Transações ACID"
     stretch: "vertical"
 url: "/pt/posts/2020-08/acid-transactions/"
 ---

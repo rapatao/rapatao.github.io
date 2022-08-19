@@ -8,8 +8,6 @@ images:
   - src: "/images/posts/pexels-lucas-seebacher-5599449.jpeg"
     alt: "GnuPG: how to backup and restore your keys?"
 url: "/posts/2022-07/gnupg-how-to-backup-and-restore-your-keys/"
-aliases:
-  - "/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
 ---
 
 Recently, I had to transfer my private keys to a different computer. Since this looks like a trivial task (it was my first time doing it), I have decided to search for a "how-to" blog post that details the steps required for this task. After a few minutes, I got shocked that it seems to be a task that people don't usually do, they seem to transfer only one key at once, never the whole key-ring.

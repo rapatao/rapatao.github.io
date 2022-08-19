@@ -12,13 +12,13 @@ images:
 url: "/pt/posts/2020-08/your-dotfiles-under-control/"
 ---
 
-Muitos desenvolvedores ao longo de sua carreira acaba criando diversos *scripts*, *aliases* e customizações em seus ambientes de desenvolvimento. Essas configurações, normalmente ficam em arquivos e, quando este usuário muda seu ambiente, por vezes, faz uma cópia desses arquivos para o novo ambiente. Esse processo tende a ser feito copiando seus arquivos de um ambiente para outro.
+Muitos desenvolvedores ao longo de sua carreira acaba criando diversos *scripts*, *aliases* e customizações em seus ambientes de desenvolvimento. Essas configurações, normalmente, ficam em arquivos e, quando este usuário muda seu ambiente, por vezes, faz uma cópia desses arquivos para o novo ambiente. Esse processo tende a ser feito copiando seus arquivos de um ambiente para outro.
 
 Apesar de funcionar, existe maneira mais prática para gerenciar esses arquivos, realizando as devidas associações conforme necessários, inclusive suportando perfis diferentes. Ou seja, é possível criar um *dotfile* com diversos perfis, definindo configurações diferentes de acordo com sua necessidade. Um exemplo desta utilização, seria construir um perfil para seu ambiente pessoal, outro para seu ambiente profissional, alterando chaves de acesso a servidores e configurações de assinatura de *commits* no *git*.
 
 ## O que são dotfiles
 
-Em sistemas baseados em Unix, é comum as configurações serem mantidas em arquivos iniciados com ponto (.). Estes arquivos ou pastas, são considerados como “ocultos” e normalmente não são listados utilizando-se comandos como *ls*, exceto quando especificado para que sejam exibidos.
+Em sistemas baseados em Unix, é comum as configurações serem mantidas em arquivos iniciados com ponto (.). Estes arquivos ou pastas, são considerados como “ocultos” e normalmente não são listados utilizando-se comandos como *ls*, exceto quando especificado para serem exibidos.
 
 Exemplos de arquivos e pastas inciados com ponto (.):
 
@@ -29,7 +29,7 @@ Exemplos de arquivos e pastas inciados com ponto (.):
 .zshrc
 ```
 
-Isso não quer dizer que seus arquivos precisam iniciar com ponto (.) e de fato existem diversas pessoas que não o definem assim, separando em pastas com nomes condizentes, como, por exemplo “*$HOME/etc”*. Particularmente, prefiro manter tais arquivos dentro de uma pasta iniciando com o ponto (.), especificamente “*$HOME/.dotifiles.d*”, pois esta pasta não é listada por padrão, logo não será notada na maioria das vezes, o que gera em mim uma sensação de organização.
+Isso não quer dizer que seus arquivos precisam iniciar com ponto (.) e de fato existem diversas pessoas que não o definem assim, separando em pastas com nomes condizentes, como, por exemplo, “*$HOME/etc”*. Particularmente, prefiro manter tais arquivos dentro de uma pasta iniciando com o ponto (.), especificamente “*$HOME/.dotifiles.d*”, pois esta pasta não é listada por padrão, logo não será notada na maioria das vezes, gerando em mim uma sensação de organização.
 
 ## Um gerenciador para dotfiles
 
@@ -114,7 +114,7 @@ fatal: unable to auto-detect email address (got 'rapatao@89122a756847.(none)')
 
 Uma das vantagens do *Git* é que você pode ter um repositório local e uma cópia deste repositório remotamente. Isso é extremamente útil para garantir que seus arquivos possam ser acessados praticamente de qualquer lugar.
 
-Para enviar seus arquivos para um repositório remoto, você pode utilizar serviços disponíveis na Internet, como GitHub, BitBucket ou GitLab. O procedimento é similar ao realizado com o comando *Git*, sendo necessário apenas que um repositório remoto exista. Exemplo:
+Para enviar seus arquivos para um repositório remoto, você pode utilizar serviços disponíveis na Internet, como GitHub, BitBucket ou GitLab. O procedimento é similar ao realizado com o comando *Git*, necessário apenas que um repositório remoto exista. Exemplo:
 
 ```bash
 $ yadm remote add origin <url>
@@ -164,7 +164,7 @@ lrwxrwxrwx 1 rapatao rapatao 20 Aug 15 17:25 .gitconfig -> .gitconfig##os.Linux
 -rw-rw-r-- 1 rapatao rapatao 57 Aug 15 17:18 .gitconfig##os.Linux
 ```
 
-Como podemos notar, ao adicionarmos o arquivo o *yadm* criou automaticamente um link simbólico apontando de "*.gitconfig"* para "*.gitconfig##os.Linux".*
+Como podemos notar, ao adicionarmos o arquivo, o *yadm* criou automaticamente um link simbólico apontando de "*.gitconfig"* para "*.gitconfig##os.Linux".*
 
 ## Conclusão
 

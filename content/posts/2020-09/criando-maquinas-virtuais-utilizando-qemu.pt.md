@@ -8,6 +8,8 @@ images:
     alt: "QEMU"
     stretch: "vertical"
 url: "/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"
+aliases:
+  - "/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"
 ---
 
 Recentemente precisei realizar alguns testes simples de uma aplicação que somente funcionavam  no Windows e como não possuo esse ambiente, decidi criar uma VM com Windows 10. Minha primeira ideia foi utilizar o [VirtualBox](https://www.virtualbox.org/), porém por algum motivo, não conseguia de forma alguma inicializar o instalador, sempre gerando um erro aleatório ou então a tela ficava estilo o chiado de uma TV, porém colorido e sem som.
@@ -22,7 +24,7 @@ Pode se dizer que o QEMU é um aplicativo de código aberto, multiplataforma, qu
 
 ## Instalando o QEMU
 
-A instalação pode ser feita de diversas formas, e todas elas podem ser encontradas [aqui](https://www.qemu.org/download/). Neste texto, irei descrever como é feito a instalação no macOS utilizando-se do Homebrew e sistemas Linux que são baseados em Debian/Ubuntu.
+A instalação pode ser feita de diversas formas, e todas elas podem ser encontradas [aqui](https://www.qemu.org/download/). Neste texto, irei descrever como é feito a instalação no macOS utilizando-se do Homebrew e sistemas Linux, que, são baseados em Debian/Ubuntu.
 
 ```bash
 # macOS
@@ -40,7 +42,7 @@ Utilizamos para tal o comando `qemu-img` como, por exemplo:
 qemu-img create -f qcow2 windows10.qcow2 30G
 ```
 
-No comando acima, estamos criando um arquivo, chamado `windows10.qcow2` com 30G. Esse arquivos será utilizado para instalarmos o Windows 10.
+No comando acima, estamos criando um arquivo, chamado `windows10.qcow2` com 30G. Esse arquivo será utilizado para instalarmos o Windows 10.
 
 ## Instalando o sistema operacional no disco criado
 
@@ -64,6 +66,6 @@ qemu-system-x86_64 -m 4G -hda windows10.qcow2
 
 ## Conclusão
 
-Como visto, relacionado a virtualização, existe uma alternativa gratuita ao VirtualBox que pode muitas vezes suprir nossas necessidades de criação e execução de máquinas virtuais. Apesar de uma complexidade maior, conhecer o QEMU pode ser útil para situações na qual não temos uma solução mais amigável para criarmos nossas VMs.
+Como visto, relacionado a virtualização, existe uma alternativa gratuita ao VirtualBox que pode muitas vezes suprir nossas necessidades de criação e execução de máquinas virtuais. Apesar de uma complexidade maior, conhecer o QEMU pode ser útil para situações onde não temos uma solução mais amigável para criarmos nossas VMs.
 
 Para saber mais sobre o QEMU, recomendo olhar o Wiki oficial: [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page)

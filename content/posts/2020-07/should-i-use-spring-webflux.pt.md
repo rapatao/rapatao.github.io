@@ -44,7 +44,7 @@ Nós desenvolvedores temos muitas vezes o desejo de utilizar algo novo/diferente
 
 Dentre tudo que li e tive oportunidade de ver na prática, achei bem interessante a eficiência das aplicações construídas com *WebFlux*. Foi o famoso “muito com pouco”, porém me chamou atenção a complexidade em se construir testes unitários/integrados bem como a dificuldade na realização de *debug*, visto que o fluxo de chamadas não é mais, por assim dizer, sequencial.
 
-Entre os diversos artigos que li, havia diversos relatos de pessoas que afirmavam categoricamente que o *WebFlux* era melhor pois era possível realizar processamento das requisições em paralelo, enquanto no modelo utilizado pelo *Spring MVC*, somente uma requisição era realizada por vez, o que não é verdadeiro, visto que o paralelismo é criado com *threads* e controlado pelos servidores de aplicação, como por exemplo, *Tomcat* e *Jetty*.
+Entre os diversos artigos que li, havia diversos relatos de pessoas que afirmavam categoricamente que o *WebFlux* era melhor, pois era possível realizar processamento das requisições em paralelo, enquanto no modelo utilizado pelo *Spring MVC*, somente uma requisição era realizada por vez, o que é falso, visto que o paralelismo é criado com *threads* e controlado pelos servidores de aplicação, como, por exemplo, *Tomcat* e *Jetty*.
 
 **Enfim, devo utilizar *WebFlux* em meu projeto?**
 
@@ -52,12 +52,12 @@ Entre os diversos artigos que li, havia diversos relatos de pessoas que afirmava
 
 Bom, isso depende…
 
-O fato da aplicação ser construída utilizando um paradigma reativo (*WebFlux*) não faz com que ela tenha uma performance superior ao modelo imperativo (*Spring MVC*). Muitas vezes o problema na performance pode estar simplesmente na maneira como as coisas foram implementadas ou até mesmo por consumo de serviços que bloqueiam por tempo demais uma transação. Existem outros cenários que poderiam melhorar a performance de uma aplicação sem antes considerar uma migração de tecnologia, como por exemplo, parametrização da *JVM*.
+O fato da aplicação ser construída utilizando um paradigma reativo (*WebFlux*) não faz com que ela tenha uma performance superior ao modelo imperativo (*Spring MVC*). Muitas vezes o problema na performance pode estar simplesmente na maneira como as coisas foram implementadas ou até mesmo por consumo de serviços que bloqueiam por tempo demais uma transação. Existem outros cenários que poderiam melhorar a performance de uma aplicação sem antes considerar uma migração de tecnologia, como, por exemplo, parametrização da *JVM*.
 
-Resumidamente, se hoje uma aplicação funcionar bem utilizando *Spring MVC*, não "existem" motivos reais para que seja realizado uma migração para *WebFlux*, além do fato que, dependendo do problema, pode existir outra formas de resolve-lo, sem antes considerar uma migração de tecnologia.
+Resumidamente, se hoje uma aplicação funcionar bem utilizando *Spring MVC*, não "existem" motivos reais para ser realizado uma migração para *WebFlux*, além do fato que, dependendo do problema, pode existir outra forma de resolve-lo, sem antes considerar uma migração de tecnologia.
 
-Porém, se a aplicação estiver com problemas relacionado a quantidade de *threads*, ou fizer uso de *streaming* de dados ou mesmo ter como prioridade um uso eficiente de recursos de *hardware*, talvez a utilização de *WebFlux* seja uma saída.
+Porém, se a aplicação estiver com problemas relacionados a quantidade de *threads*, ou usar *streaming* de dados, ou mesmo ter como prioridade um uso eficiente de recursos de *hardware*, talvez a utilização de *WebFlux* seja uma saída.
 
-Enfim, não existe uma formula mágica que irá dizer se devemos ou não utilizar *WebFlux* ou *MVC* em nossos projetos. Sempre será necessário analisarmos o cenário que temos e comparar com as opções que temos disponíveis, mas é sempre importante entendermos as vantagens e desvantagens destas e outras tecnologias.
+Enfim, não existe uma fórmula mágica que irá dizer se devemos ou não utilizar *WebFlux*, ou *MVC* em nossos projetos. Sempre será necessário analisarmos o cenário que temos e comparar com as opções que temos disponíveis, mas é sempre importante entendermos as vantagens e desvantagens destas e outras tecnologias.
 
-Pode ser que que uma migração não seja necessária agora, mas no futuro ela pode vir a ser e é sempre bom estarmos preparados.
+Pode ser que uma migração não seja necessária agora, mas no futuro ela pode ser e é sempre bom estarmos preparados.

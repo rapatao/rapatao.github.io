@@ -9,7 +9,7 @@ images:
     alt: "GnuPG: como fazer backup e restaurar suas chaves?"
 url: "/pt/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
 aliases:
-  - "/pt/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
+  - "/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
 ---
 
 Recentemente precisei transferir minhas chaves privadas de um computador para outro e, acreditando que isso fosse algo rotineiro, decidi buscar na Internet os comandos necessários para essa tarefa. Minha surpresa foi, que aparentemente, as pessoas somente exportam uma chave por vez, me dando a sensação de nunca precisarem exportar ou importar todas as chaves existentes.

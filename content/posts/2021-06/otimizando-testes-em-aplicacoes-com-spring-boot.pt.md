@@ -10,6 +10,8 @@ images:
   - src: "/images/posts/spring-boot-test-performance.png"
     alt: "Spring Boot Test Performance"
 url: "/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
+aliases:
+    - "/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
 ---
 
 É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com `@SpringBootTest`, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.
@@ -63,7 +65,7 @@ class TempApplicationTests {
 }
 ```
 
-Como o uso da anotação `@SpringBootTest`, temos o contexto do *Spring* inicializado em cada teste e esse cenário simples é executado em `233ms`. Esse número pode parecer pouco, mas estamos considerando apenas uma classe de teste com apenas um cenário construído e devemos sempre lembrar que aplicações reais tendem a possuir dezenas de classes com centenas de cenários de testes, o que, teoricamente faria com que o tempo total de execução seja a multiplicação dessa quantidade.
+Como o uso da anotação `@SpringBootTest`, temos o contexto do *Spring* inicializado em cada teste e esse cenário simples é executado em `233ms`. Esse número pode parecer pouco, mas estamos considerando apenas uma classe de teste com apenas um cenário construído e devemos sempre lembrar que aplicações reais tendem a possuir dezenas de classes com centenas de cenários de testes, o que, teoricamente, faria com que o tempo total de execução seja a multiplicação dessa quantidade.
 
 ## Como podemos otimizar os testes?
 
@@ -82,7 +84,7 @@ class TempApplicationTests {
 }
 ```
 
-Com essa alteração, conseguimos obter a mesma cobertura de teste, porém nosso teste é concluído com apenas `15ms`, o que representa um tempo de execução 15 vezes menor que quando utilizamos as anotações.
+Com essa alteração, conseguimos obter a mesma cobertura de teste, porém nosso teste é concluído com apenas `15ms`, representando um tempo de execução 15 vezes menor que quando utilizamos as anotações.
 
 ## Conclusão
 

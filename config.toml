@@ -9,7 +9,7 @@ defaultcontentlanguage = "en"
 paginate = 5
 canonifyurls = true
 
-disqusShortname = "rapatao-com"
+#disqusShortname = "rapatao-com"
 summary = 10
 
 googleAnalytics = "G-LDJ57WEQPH"
@@ -150,6 +150,9 @@ pre = "<i class='far fa-file-code'></i>"
 [privacy]
 [privacy.GoogleAnalytics]
 anonymizeIP = true
-disable = false
+disable = true
 respectDoNotTrack = true
 useSessionStorage = false
+
+[params.Reaktions]
+enabled = true

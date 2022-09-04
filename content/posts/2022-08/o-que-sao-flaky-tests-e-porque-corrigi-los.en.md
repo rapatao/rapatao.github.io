@@ -6,7 +6,9 @@ tags:
 images: 
   - src: "/images/posts/flaky-pipeline.png"
     alt: "What are Flaky Tests and why fix them!"
-url: "/pt/posts/2022-08/what-are-flaky-tests-and-why-fix-them/"
+url: "/posts/2022-08/what-are-flaky-tests-and-why-fix-them/"
+aliases:
+  - "/pt/posts/2022-08/what-are-flaky-tests-and-why-fix-them/"
 ---
 
 Building tests is surely one of the most difficult and time-consuming tasks for a developer, in addition to usually generating more lines of code than the added functionality. This is due to the various scenarios that need, or should, be verified.

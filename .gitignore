@@ -128,3 +128,6 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/hugo,macos,webstorm+all
+
+#reaktions
+static/js/reaktions.js

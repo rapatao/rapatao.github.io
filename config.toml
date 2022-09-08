@@ -156,3 +156,4 @@ useSessionStorage = false
 
 [params.Reaktions]
 enabled = true
+enableDevelop = false

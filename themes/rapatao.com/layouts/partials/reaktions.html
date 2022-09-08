@@ -1,10 +1,13 @@
 {{ if .Site.Params.Reaktions.enabled }}
 
 <article class="post">
-    <div id="reaktions"></div>
-    <script lang="application/javascript" type="module" src="{{ "/js/reaktions.js" | relURL }}"></script>
-    <!-- <script lang="application/javascript" type="module" src="https://reaktions.fly.dev/reaktions.js"></script> -->
-    <!-- <script lang="application/javascript" type="module" src="http://localhost:8080/reaktions.js"></script> -->
+    <div id="reaktions" data-path="{{ .Page.Permalink }}"></div>
+    {{ if not .Site.Params.Reaktions.enableDevelop }}
+    <script lang="application/javascript" type="module" src="{{ "/js/reaktions.js" | relURL }}"></script>    
+    {{ else }}
+    <script lang="application/javascript" type="module" src="http://localhost:8080/reaktions.js"></script>
+    {{ end }}
+    
     <noscript>Please enable JavaScript to react with this post</noscript>
 </article>
 

@@ -60,4 +60,14 @@
   {{- else -}}
     {{- .Scratch.Set "Author" .Author -}}
   {{ end }}
+
+
+  {{ if .IsTranslated -}}
+    <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}"/>
+    {{ range .Translations }}
+      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}"/>
+    {{ end }}
+  {{ end }}
+
+
 </head>

@@ -7,6 +7,8 @@ images:
   - src: "/images/posts/flaky-pipeline.png"
     alt: "O que são Flaky Tests e, porque corrigi-los!"
 url: "/pt/posts/2022-08/o-que-sao-flaky-tests-e-porque-corrigi-los/"
+aliases:
+  - "/posts/2022-08/o-que-sao-flaky-tests-e-porque-corrigi-los/"
 ---
 
 Construir testes é, seguramente, uma das tarefas mais difíceis e que mais consomem o tempo de um desenvolvedor, além de normalmente gerarem mais linhas de código que a funcionalidade adicionada. Isso ocorre devido aos diversos cenários que precisam, ou deveriam, ser verificados.

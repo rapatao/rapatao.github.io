@@ -1,8 +1,11 @@
 ---
 title: "JSON Formatter & Minifier"
 slug: "json"
-type: "simple"
-layout: "simple"
+type: "singular"
+layout: "singular"
+
+disable_time: true
+disable_share: true
 ---
 
 JSON Formatter & Minifier is a tool to validate, format or minify a string JSON.

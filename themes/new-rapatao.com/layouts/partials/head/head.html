@@ -1,0 +1,25 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+
+    <title>rapatao.com</title>
+    <!--{ { - $mainCSSOptions := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") - } } -->
+    {{- $mainCSSOptions := (dict "targetPath" "css/main.min.css" "outputStyle" "normal") -}}
+    {{- $main := resources.Get "scss/main.scss" | resources.ToCSS $mainCSSOptions | resources.Fingerprint -}}
+    <link rel="preload" href="{{ $main.RelPermalink }}" as="style" type="text/css">
+    <link rel="stylesheet" href="{{ $main.RelPermalink }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+          integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+
+    {{- template "_internal/schema.html" . -}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+
+    {{ if .IsTranslated -}}
+    <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}"/>
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}"/>
+    {{ end }}
+    {{ end }}
+</head>

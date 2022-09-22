@@ -1,0 +1,33 @@
+<header class="site-intro">
+    {{ with .Site.Params.intro }}
+
+    {{ with .pic }}
+    <a href="{{ "/" | relLangURL}}">
+        <img src="{{ .src | absURL }}" alt="{{ .alt }}" class="avatar"/>
+    </a>
+    {{ end }}
+
+    <header>
+        <h1>{{ .header }}</h1>
+    </header>
+    <main>
+        <p>{{ .paragraph }}</p>
+    </main>
+
+    {{ end }}
+    <footer>
+        <ul class="socnet-icons">
+            <li><a href="https://github.com/rapatao" target="_blank" rel="noopener" title="GitHub"
+                   class="fa fa-github"></a></li>
+            <li><a href="https://linkedin.com/in/rapatao" target="_blank" rel="noopener" title="LinkedIn"
+                   class="fa fa-linkedin"></a></li>
+            <li><a href="https://instagram.com/luizrapatao" target="_blank" rel="noopener" title="Instagram"
+                   class="fa fa-instagram"></a></li>
+            <li><a href="https://twitter.com/rapatao" target="_blank" rel="noopener" title="Twitter"
+                   class="fa fa-twitter"></a></li>
+            <li><a href="https://calendly.com/rapatao" target="_blank" rel="noopener" title="Twitter"
+                   class="fa fa-calendar"></a></li>
+            <li><a href="mailto:rapatao@rapatao.com" target="_blank" title="Email" class="fa fa-envelope"></a></li>
+        </ul>
+    </footer>
+</header>

@@ -1,0 +1,38 @@
+.site-intro {
+  text-align: center;
+  margin-bottom: 10px;
+
+  img.avatar {
+    width: 100px;
+  }
+
+  .socnet-icons {
+    display: inline-block;
+    font-size: 32px;
+
+    li {
+      display: inline;
+    }
+
+    a:link {
+      color: black;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: black;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: darkgrey;
+      text-decoration: none;
+    }
+
+    a:active {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+}

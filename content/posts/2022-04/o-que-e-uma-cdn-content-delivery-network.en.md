@@ -20,9 +20,7 @@ The main objective is to store static content, that is, all content that, once g
 
 Although some files are exemplified above, other formats can be distributed without major limitations, such as videos, PDF, TXT, etc.
 
-<aside>
-💡 It is important to say that some providers, such as [AWS](https://aws.amazon.com/caching/cdn/), offer solutions that allow you to make dynamically generated content available on your CDN, however, these are usually not stored on its servers, only trafficked through the "internal" network, functioning as an intermediary (*proxy*) between source (server) and destination (user).
-</aside>
+> 💡 It is important to say that some providers, such as [AWS](https://aws.amazon.com/caching/cdn/), offer solutions that allow you to make dynamically generated content available on your CDN, however, these are usually not stored on its servers, only trafficked through the "internal" network, functioning as an intermediary (*proxy*) between source (server) and destination (user).
 
 ## Content distribution and replication
 

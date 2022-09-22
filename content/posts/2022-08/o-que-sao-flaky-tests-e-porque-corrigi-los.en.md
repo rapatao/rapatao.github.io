@@ -85,9 +85,7 @@ Of course, most of these tests could be converted to tests that use tools that w
 
 In general, these tests are very time consuming in execution and require another considerable time of analysis to confirm if it was a problem introduced in the change or some kind of external intermittence. Reducing the amount of this type of test, I believe, is one of the best solutions to minimize the occurrence of unexpected failures.
 
-<aside>
-⚠️ Reducing is not removing! The process of reducing these tests normally consists of adapting these cases to the use of *mocks* and in certain cases, their removal, but this should only be done if another existing test is covering this specific case.
-</aside>
+> ⚠️ Reducing is not removing! The process of reducing these tests normally consists of adapting these cases to the use of *mocks* and in certain cases, their removal, but this should only be done if another existing test is covering this specific case.
 
 ## Why fix?
 

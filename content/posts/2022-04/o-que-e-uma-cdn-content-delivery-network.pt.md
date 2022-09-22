@@ -22,10 +22,7 @@ O principal objetivo é armazenar conteúdos estáticos, ou seja, todo conteúdo
 
 Apesar de exemplificado alguns arquivos acima, outros formatos podem ser distribuídos sem grandes limitações, como vídeos, PDF, TXT, etc.
 
-<aside>
-💡 É importante dizer que alguns provedores, como a [AWS](https://aws.amazon.com/caching/cdn/), oferecem soluções que permitem disponibilizar conteúdos dinamicamente gerados em sua CDN, porém, estes, normalmente não ficam armazenados em seus servidores, apenas trafegados através da rede "interna", funcionando como um intermediador (*proxy*) entre origem (servidor) e destino (usuário).
-
-</aside>
+> 💡 É importante dizer que alguns provedores, como a [AWS](https://aws.amazon.com/caching/cdn/), oferecem soluções que permitem disponibilizar conteúdos dinamicamente gerados em sua CDN, porém, estes, normalmente não ficam armazenados em seus servidores, apenas trafegados através da rede "interna", funcionando como um intermediador (*proxy*) entre origem (servidor) e destino (usuário).
 
 ## Distribuição e replicação do conteúdo
 

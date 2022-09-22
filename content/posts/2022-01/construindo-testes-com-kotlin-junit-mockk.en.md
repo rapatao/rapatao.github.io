@@ -16,9 +16,7 @@ The main objective of building code tests in an application is to certify what w
 
 [JUnit](https://junit.org/junit5/) is one of the most used frameworks for building tests in [Kotlin](https://kotlinlang.org/) and [MockK](https://mockk. io/) to build *mocks*, which would be like doubles of an object and have the function of simulating the behavior of a component.
 
-<aside>
-💡 The codes used in this text are available on GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
-</aside>
+> 💡 The codes used in this text are available on GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
 
 ## Dependências utilizadas
 

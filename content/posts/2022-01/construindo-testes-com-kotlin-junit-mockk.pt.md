@@ -18,10 +18,7 @@ A construção de testes de código em uma aplicação tem como principal objeti
 
 [JUnit](https://junit.org/junit5/) é um dos frameworks mais utilizados na construção de testes em [Kotlin](https://kotlinlang.org/) e [MockK](https://mockk.io/) para construção de *mocks*, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
 
-<aside>
-💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
-
-</aside>
+> 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
 
 ## Dependências utilizadas
 

@@ -28,9 +28,7 @@ Outro benefício que advém da utilização de balanceamento da carga é, o incr
 
 Um balanceador de carga pode operar em duas camadas de rede do modelo [*OSI*](https://pt.wikipedia.org/wiki/Modelo_OSI), na camada 4 (transporte) e na camada 7 (aplicação). Balanceadores construídos na camada de transporte tendem a requerer menor poder de processamento para realização da tarefa, contudo, possuem acesso a menos informações da requisição que implantações da camada de aplicação. Apesar mais custosos, em relação à necessidade de processamento, implantações na camada 7 tendem a trazer muitos benefícios e com custos cada vez mais acessíveis, sua adoção tem crescido muito nos últimos anos.
 
-<aside>
-💡 É importante se atentar que existem casos em que um balanceador em camada de aplicação não se justificaria (custo x benefício), pois, as requisições a serem processadas nunca requerem controle que não seja obtido com implantações em camada de transporte.
-</aside>
+> 💡 É importante se atentar que existem casos em que um balanceador em camada de aplicação não se justificaria (custo x benefício), pois, as requisições a serem processadas nunca requerem controle que não seja obtido com implantações em camada de transporte.
 
 ### Camada 4: Transporte
 
@@ -52,9 +50,7 @@ Neste texto descreverei dois dos algoritmos que acredito serem os mais utilizado
 
 Esse algoritmo é normalmente o padrão utilizado por muitas soluções de balanceamento existentes no mercado. Nele, cada requisição é encaminhada para uma instância diferente dentre as disponíveis, seguindo uma ordem padronizada e continua.
 
-<aside>
-💡 Exemplo: Considerando 3 servidores destinos, a primeira requisição será encaminhada para o primeiro servidor, a segunda para o segundo servidor e a terceira para o terceiro servidor. A partir da quarta requisição, a lista de servidores é reiniciada, ou seja, ela seria encaminhada para o primeiro servidor, a próxima para o segundo e assim sucessivamente.
-</aside>
+> 💡 Exemplo: Considerando 3 servidores destinos, a primeira requisição será encaminhada para o primeiro servidor, a segunda para o segundo servidor e a terceira para o terceiro servidor. A partir da quarta requisição, a lista de servidores é reiniciada, ou seja, ela seria encaminhada para o primeiro servidor, a próxima para o segundo e assim sucessivamente.
 
 Apesar de efetivo para a maioria dos casos, esse algoritmo pode causar sobrecarga em um dos servidores, pois ele não considera as requisições pendentes para encaminhar ou não uma requisição. Ou seja, ele pode ser problemático para casos onde a maioria das requisições processadas pela aplicação tiverem tempos muito diferentes entre elas e requererem uso intensivo de processamento para conclusão, o que faz com que um dos servidores possa ter mais requisições sendo processadas em determinado momento que outros, consequentemente, degradando o desempenho da aplicação.
 
@@ -62,9 +58,7 @@ Apesar de efetivo para a maioria dos casos, esse algoritmo pode causar sobrecarg
 
 Esse algoritmo faz o encaminhamento aos servidores utilizando um modelo simples de análise, que consiste em verificar qual servidor dentre os disponíveis têm menor quantidade de requisições no momento.
 
-<aside>
-💡 Exemplo: Considerando 3 servidores destinos, onde atualmente temos o primeiro com 5 conexões, o segundo com 3 e o terceiro com 4, nesse modelo, a próxima requisição seria encaminhada para o segundo servidor, por ser o que possuí menor conexões ativas no momento e essa lógica seria aplicada para todas as novas requisições.
-</aside>
+> 💡 Exemplo: Considerando 3 servidores destinos, onde atualmente temos o primeiro com 5 conexões, o segundo com 3 e o terceiro com 4, nesse modelo, a próxima requisição seria encaminhada para o segundo servidor, por ser o que possuí menor conexões ativas no momento e essa lógica seria aplicada para todas as novas requisições.
 
 Ou seja, é um modelo muito eficaz em relação à distribuição de carga e normalmente superior em desempenho, pois o servidor com menor quantidade de requisições será sempre o eleito a receber uma próxima requisição. Contudo, ele ainda pode ser impactado com distribuição de requisições, onde um servidor apesar de possuir menor quantidade de conexões, todas requerem elevado poder de processamento, degradando assim todas as requisições ativas neste servidor.
 

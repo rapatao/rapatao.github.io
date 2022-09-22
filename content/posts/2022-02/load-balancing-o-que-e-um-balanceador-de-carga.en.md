@@ -26,9 +26,7 @@ Another benefit that comes from using load balancing is the increase in availabi
 
 A load balancer can operate in two network layers of the [*OSI*](https://pt.wikipedia.org/wiki/Modelo_OSI) model, layer 4 (transport) and layer 7 (application). Balancers built in the transport layer tend to require less processing power to perform the task, however, they have access to less request information than application layer implementations. Although more expensive, in relation to the need for processing, layer 7 deployments tend to bring many benefits and with increasingly affordable costs, its adoption has grown a lot in recent years.
 
-<aside>
-💡 It is important to note that there are cases where an application layer balancer would not be justified (cost x benefit), as the requests to be processed never require control that is not obtained with transport layer deployments.
-</aside>
+> 💡 It is important to note that there are cases where an application layer balancer would not be justified (cost x benefit), as the requests to be processed never require control that is not obtained with transport layer deployments.
 
 ### Layer 4: Transport
 
@@ -50,9 +48,7 @@ In this text I will describe two of the algorithms that I believe to be the most
 
 This algorithm is normally the standard used by many balancing solutions on the market. In it, each request is forwarded to a different instance among the available ones, following a standardized and continuous order.
 
-<aside>
-💡 Example: Considering 3 destination servers, the first request will be forwarded to the first server, the second to the second server and the third to the third server. From the fourth request, the list of servers is restarted, that is, it would be forwarded to the first server, the next to the second and so on.
-</aside>
+> 💡 Example: Considering 3 destination servers, the first request will be forwarded to the first server, the second to the second server and the third to the third server. From the fourth request, the list of servers is restarted, that is, it would be forwarded to the first server, the next to the second and so on.
 
 Although effective for most cases, this algorithm can cause overload on one of the servers, as it does not consider pending requests to forward a request or not. That is, it can be problematic for cases where most requests processed by the application have very different times between them and require intensive use of processing to complete, which means that one of the servers may have more requests being processed at a given moment than others, consequently degrading application performance.
 
@@ -60,9 +56,7 @@ Although effective for most cases, this algorithm can cause overload on one of t
 
 This algorithm forwards to servers using a simple analysis model, which consists of verifying which server among those available has the least amount of requests at the moment.
 
-<aside>
-💡 Example: Considering 3 destination servers, where we currently have the first with 5 connections, the second with 3 and the third with 4, in this model, the next request would be forwarded to the second server, as it is the one with the fewest active connections at the moment and that logic would be applied to all new requests.
-</aside>
+> 💡 Example: Considering 3 destination servers, where we currently have the first with 5 connections, the second with 3 and the third with 4, in this model, the next request would be forwarded to the second server, as it is the one with the fewest active connections at the moment and that logic would be applied to all new requests.
 
 In other words, it is a very efficient model in relation to load distribution and usually superior in performance, as the server with the lowest number of requests will always be the one chosen to receive the next request. However, it can still be impacted by the distribution of requests, where a server, despite having fewer connections, all require high processing power, thus degrading all active requests on this server.
 

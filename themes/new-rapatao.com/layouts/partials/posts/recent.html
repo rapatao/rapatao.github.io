@@ -1,0 +1,20 @@
+{{ if gt .Site.Params.recents.postAmount 0 }}
+<section class="recent-posts">
+    <header>
+        <h2>Recent posts</h2>
+    </header>
+    {{ range first (.Site.Params.recents.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    <article class="mini-post">
+        <header>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <time class="published" datetime="{{ .Date }}">{{ .Render "date" }}</time>
+        </header>
+    </article>
+    {{ end }}
+    {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.recents.postAmount | default 5) }}
+    <footer>
+        <a href="{{ "/posts/" | relLangURL }}" class="button">{{ i18n "see_more" }}</a>
+    </footer>
+    {{ end }}
+</section>
+{{ end }}

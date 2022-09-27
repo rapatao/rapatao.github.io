@@ -1,0 +1,10 @@
+<div class="post-pagination">
+    {{ if .NextInSection }}
+    <a href="{{ .NextInSection.RelPermalink }}" class="button"><span
+            title="{{ .NextInSection.Title }}"> &lt; </span></a>
+    {{ end }}
+    {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.RelPermalink }}" class="button"><span
+            title="{{ .PrevInSection.Title }}"> &gt; </span></a>
+    {{ end }}
+</div>

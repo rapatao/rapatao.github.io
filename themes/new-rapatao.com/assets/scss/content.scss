@@ -2,9 +2,6 @@
 @import "partials/posts/post";
 
 .content {
-  article.post {
-    @extend %post;
-  }
-
+  @import "partials/posts/post";
   @import "partials/pagination";
 }

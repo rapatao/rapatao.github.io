@@ -17,8 +17,9 @@ body {
 
 .wrapper {
   width: 90%;
-}
 
-@import "site-intro";
-@import "content";
-@import "recent-posts";
+  @import "partials/titles";
+  @import "site-intro";
+  @import "content";
+  @import "recent-posts";
+}

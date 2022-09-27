@@ -1,15 +1,12 @@
-//.recent-posts {
-//  /* margin: 10px 0 10px 0; */
-//  padding-bottom: 10px;
-//  /* border: 1px solid orangered; */
-//  article {
-//    .mini-post {
-//      background-color: whitesmoke;
-//      margin: 10px 0 10px 0;
-//      padding: 10px;
-//      border-radius: 10px;
-//      border: 1px solid black;
-//      text-align: justify;
-//    }
-//  }
-//}
+@import "defaults";
+
+section.recent-posts {
+
+  article.mini-post {
+    background-color: $post_background_color;
+    margin: $spacing 0 $spacing 0;
+    padding: $spacing;
+    border-radius: $spacing;
+    border: $border;
+  }
+}

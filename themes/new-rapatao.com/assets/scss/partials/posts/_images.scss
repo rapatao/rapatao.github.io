@@ -1,18 +1,20 @@
+@import "../../defaults";
+
 img {
   max-width: 100%;
 
   &[src$='#center'] {
     display: block;
-    margin: 0.7rem auto;
+    margin: $spacing auto;
   }
 
   &[src$='#floatleft'] {
     float: left;
-    margin: 0.7rem;
+    margin-right: $spacing;
   }
 
   &[src$='#floatright'] {
     float: right;
-    margin: 0.7rem;
+    margin-left: $spacing;
   }
 }

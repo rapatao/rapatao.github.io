@@ -1,20 +1,4 @@
 {{ define "main" }}
-<article class="post">
-    <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-
-    {{ .Content }}
-
-    {{ partial "reaktions/reaktions" . }}
-
-</article>
-
-<div class="post-pagination">
-    {{ if .NextInSection }}
-    <a href="{{ .NextInSection.RelPermalink }}" class="button"><span title="{{ .NextInSection.Title }}"> &lt; </span></a>
-    {{ end }}
-    {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.RelPermalink }}" class="button"><span title="{{ .PrevInSection.Title }}"> &gt; </span></a>
-    {{ end }}
-</div>
-
+{{ partial "posts/post" . }}
+{{ partial "posts/pagination" . }}
 {{ end }}

@@ -2,11 +2,7 @@
 @import "link";
 
 .post-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
-
+  text-align: center;
   margin-bottom: 10px;
 
   a.button {

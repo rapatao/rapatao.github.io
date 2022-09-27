@@ -14,13 +14,13 @@ url: "/posts/2022-01/build-tests-using-kotlin-junit-mockk/"
 
 The main objective of building code tests in an application is to certify what was coded, that is, to guarantee that a given piece of code does what it should do.
 
-[JUnit](https://junit.org/junit5/) is one of the most used frameworks for building tests in [Kotlin](https://kotlinlang.org/) and [MockK](https://mockk. io/) to build *mocks*, which would be like doubles of an object and have the function of simulating the behavior of a component.
+[JUnit](https://junit.org/junit5/) is one of the most used frameworks for building tests in [Kotlin](https://kotlinlang.org/) and [MockK](https://mockk.io/) to build *mocks*, which would be like doubles of an object and have the function of simulating the behavior of a component.
 
 > 💡 The codes used in this text are available on GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
 
 ## Dependências utilizadas
 
-It is important to say that there are several ways to add support to the language and frameworks that we will use in this text. In the example below, only one of them will be presented, being basically how *[IntelliJ IDEA](https://www.jetbrains.com/idea/)* initializes projects in *Kotlin* + *[Gradle](https:// gradle.org/)*.
+It is important to say that there are several ways to add support to the language and frameworks that we will use in this text. In the example below, only one of them will be presented, being basically how *[IntelliJ IDEA](https://www.jetbrains.com/idea/)* initializes projects in *Kotlin* + *[Gradle](https://gradle.org/)*.
 
 ```groovy
 plugins {

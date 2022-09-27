@@ -1,6 +1,8 @@
 <article class="post">
     <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
 
+    {{ partial "posts/featured" . }}
+
     {{ .Content }}
 
     {{ partial "reaktions/reaktions" . }}

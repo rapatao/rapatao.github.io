@@ -18,3 +18,67 @@ img {
     margin-left: $spacing;
   }
 }
+
+
+@mixin prefix($property, $value, $vendors:null ) {
+  $prefixes: ('webkit', 'moz', 'ms', 'o');
+  @if ($vendors) {
+    @each $vendor in $vendors {
+      @if index($prefixes, $vendor) {
+        -#{$vendor}-#{$property}: #{$value};
+      }
+    }
+    #{$property}: #{$value};
+  } @else {
+    @each $prefix in $prefixes {
+      -#{$prefix}-#{$property}: #{$value};
+    }
+    #{$property}: #{$value};
+  }
+}
+
+.image {
+  border: 0;
+  display: grid;
+  place-items: center;
+  //margin: 0 -1em 1em -1em;
+  margin: $spacing;
+  overflow: hidden;
+  padding-bottom: 33%;
+  @include prefix(transform, perspective(1000px), (webkit, ms));
+
+  img {
+    position: absolute;
+    max-height: 100%;
+    //transition: transform $hover-slow;
+    &.stretchV {
+      height: 100%;
+    }
+
+    &.stretchH {
+      width: 100%;
+    }
+
+    &.cover {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &[style]::before {
+    content: "";
+    position: absolute;
+    background-image: var(--bg-image);
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    @include prefix(filter, blur(8px), webkit);
+    @include prefix(transform, scale(1.1), (webkit, ms));
+  }
+
+  &:hover {
+    img {
+      @include prefix(transform, scale(1.05), (webkit, ms));
+    }
+  }
+}

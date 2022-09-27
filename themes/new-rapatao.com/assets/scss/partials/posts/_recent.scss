@@ -1,0 +1,11 @@
+@import "../../defaults";
+
+article.mini-post {
+  background-color: $post_background_color;
+  margin: $spacing 0 $spacing 0;
+  padding: $spacing;
+  border-radius: $spacing;
+  border: $border;
+
+  @import "images";
+}

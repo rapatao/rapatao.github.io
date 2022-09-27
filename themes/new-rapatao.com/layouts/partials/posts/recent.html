@@ -6,6 +6,7 @@
     {{ range first (.Site.Params.recents.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
     <article class="mini-post">
         <header>
+            {{ partial "posts/featured" . }}
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
             <time class="published" datetime="{{ .Date }}">{{ .Render "date" }}</time>
         </header>

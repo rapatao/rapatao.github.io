@@ -1,0 +1,14 @@
+<article class="post">
+
+  <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+
+  <div class="content">
+    {{ partial "posts/featured" . }}
+    {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 1) "") | truncate (default 500 .Site.Params.summary_length) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+    {{ $.Scratch.Get "summary" }}
+  </div>
+  <footer class="post-read-more">
+    <a href="{{ .RelPermalink }}">read more &#8595</a>
+    {{ .Render "stats" }}
+  </footer>
+</article>

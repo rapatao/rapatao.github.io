@@ -1,5 +1,7 @@
 <article class="post">
-    <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+    <header>
+        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+    </header>
 
     {{ partial "posts/featured" . }}
 

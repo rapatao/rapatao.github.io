@@ -1,0 +1,17 @@
+@import "../../defaults";
+@import "../link";
+
+.post-read-more {
+  border-top: $border;
+  padding: $spacing;
+  text-align: center;
+
+  a {
+    @extend %link;
+
+    &:hover{
+      text-decoration: underline !important;
+    }
+  }
+}
+

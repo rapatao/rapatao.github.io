@@ -1,0 +1,17 @@
+@import "../../defaults";
+
+blockquote {
+  padding: $spacing;
+  border-left: $border_size dashed $border_color;
+  border-top: $border_size dashed $border_color;
+  border-bottom: $border_size dashed $border_color;
+  border-right: $border_size dashed $border_color;
+  border-radius: $spacing;
+  background-color: $post_highlight_background_color;
+  margin-bottom: $spacing;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}

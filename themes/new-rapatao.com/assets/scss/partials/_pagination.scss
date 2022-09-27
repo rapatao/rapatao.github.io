@@ -1,0 +1,31 @@
+@import "../defaults";
+@import "link";
+
+.post-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+
+  margin-bottom: 10px;
+
+  a.button {
+    @extend %link;
+
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+    height: 30px;
+    text-decoration: none;
+    font-size: $text_font_size*1.5;
+
+    span {
+      background-color: $post_background_color;
+      border: $border;
+
+      border-radius: $spacing;
+      overflow: hidden;
+      display: block;
+    }
+  }
+}

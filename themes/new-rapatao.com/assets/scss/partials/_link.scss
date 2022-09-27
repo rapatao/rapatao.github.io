@@ -1,0 +1,24 @@
+@import "../defaults";
+
+%link {
+
+  &:link {
+    color: $link_color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $link_color;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $link_hover_color;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $link_color;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../defaults";
+
+.highlight {
+  overflow-x: scroll;
+  border: $border;
+  padding: $spacing;
+  background-color: $post_highlight_background_color;
+  border-radius: $spacing;
+  margin-bottom: $spacing;
+  font-family: $code_font_family;
+
+  @import "../../helpers/highlight";
+
+  pre {
+    font-family: $code_font_family;
+
+    code {
+      display: inline-block;
+      margin-right: $spacing;
+    }
+  }
+}

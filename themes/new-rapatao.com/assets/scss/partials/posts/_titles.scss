@@ -1,0 +1,35 @@
+@import "../../defaults";
+@import "../link";
+
+h1, h2, h3, h4, h5, h6 {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+
+  a {
+    @extend %link
+  }
+}
+
+h1 {
+  font-size: $text_font_size * 1.6;
+}
+
+h2 {
+  font-size: $text_font_size * 1.5;
+}
+
+h3 {
+  font-size: $text_font_size * 1.4;
+}
+
+h4 {
+  font-size: $text_font_size * 1.3;
+}
+
+h5 {
+  font-size: $text_font_size * 1.2;
+}
+
+h6 {
+  font-size: $text_font_size * 1.1;
+}

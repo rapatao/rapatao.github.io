@@ -1,0 +1,27 @@
+@import "../link";
+
+%post {
+  background-color: $post_background_color;
+  margin: $spacing 0 $spacing 0;
+  padding: $spacing;
+  border-radius: $spacing;
+  border: $border;
+
+  @import "titles";
+
+  p,ul {
+    padding-bottom: $spacing;
+
+    a {
+      @extend %link;
+
+      text-decoration: underline !important;
+    }
+  }
+
+  @import "images";
+  @import "highlight";
+  @import "blockquote";
+  @import "actions";
+  @import "code";
+}

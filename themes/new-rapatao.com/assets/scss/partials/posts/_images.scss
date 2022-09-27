@@ -1,0 +1,18 @@
+img {
+  max-width: 100%;
+
+  &[src$='#center'] {
+    display: block;
+    margin: 0.7rem auto;
+  }
+
+  &[src$='#floatleft'] {
+    float: left;
+    margin: 0.7rem;
+  }
+
+  &[src$='#floatright'] {
+    float: right;
+    margin: 0.7rem;
+  }
+}

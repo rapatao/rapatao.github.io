@@ -81,7 +81,7 @@ Precisely because it integrates with other systems, we have several factors invo
 
 As said before, there is not much to do in these cases, building a resilient application, with retries can minimize these problems, however, it is not a guarantee, depending on the cause of the problem. This is exactly why, in these cases, it is always important to analyze the problem to identify if it is something new, that is, due to a code change, or something external that we have no way to control.
 
-Of course, most of these tests could be converted to tests that use tools that would give us control over the scenarios, allowing us to create simulations to test some specific/necessary case. Often, the use of a real database could be replaced by an in-memory database or an integration to a *REST API* could be done for a *mock* created using *[WireMock](https://wiremock.org /)* instead of the "real" *endpoint*.
+Of course, most of these tests could be converted to tests that use tools that would give us control over the scenarios, allowing us to create simulations to test some specific/necessary case. Often, the use of a real database could be replaced by an in-memory database or an integration to a *REST API* could be done for a *mock* created using *[WireMock](https://wiremock.org/)* instead of the "real" *endpoint*.
 
 In general, these tests are very time consuming in execution and require another considerable time of analysis to confirm if it was a problem introduced in the change or some kind of external intermittence. Reducing the amount of this type of test, I believe, is one of the best solutions to minimize the occurrence of unexpected failures.
 

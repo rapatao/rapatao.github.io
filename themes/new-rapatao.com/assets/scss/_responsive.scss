@@ -1,24 +1,27 @@
 @import "defaults";
 
-@media (min-width: 720px) {
+@media (min-width: $side_width + $content_min_width + ($spacing*3)) {
   .wrapper {
-    max-width: $spacing + 300px + $spacing + 720px + $spacing;
+    max-width: $wrapper_width;
+    min-width: $side_width + $content_min_width + ($spacing*3);
 
-    gap: $spacing;
-    display: flex;
-    flex-flow: column wrap;
-    height: 100%;
-    min-height: 100%;
+    display: grid;
+    grid-gap: $spacing;
+  }
 
-    .site-intro, .recent-posts {
-      width: 300px;
-      flex: 1;
-    }
+  .site-intro, .recent-posts {
+    width: $side_width;
+  }
+  .site-intro {
+    grid-area: 1/1/1/1;
+  }
+  .recent-posts {
+    grid-area: 2/1/2/1;
+  }
 
-    .content {
-      max-width: 720px;
-      flex: 1;
-      order: 2;
-    }
+  .content {
+    grid-area: 1/2/4/4;
+    min-width: $content_min_width;
+    max-width: $content_max_width;
   }
 }

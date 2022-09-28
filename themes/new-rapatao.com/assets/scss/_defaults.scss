@@ -1,10 +1,9 @@
-//$background_color: #605856;
 $background_color: #D0CCD0;
 
 $spacing: 10px;
 
 $text_color: #2E4052;
-$text_font_size: 18px;
+$text_font_size: 14px;
 $text_font_family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 $link_color: #274156;
@@ -21,3 +20,8 @@ $post_background_color: #FBFCFF;
 $post_highlight_background_color: #FFFFFF;
 
 $code_font_family: courier new, monospace;
+
+$side_width: 250px;
+$content_min_width: 300px;
+$content_max_width: 720px;
+$wrapper_width: $spacing + $side_width + $spacing + $content_max_width + $spacing;

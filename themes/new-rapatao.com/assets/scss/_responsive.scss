@@ -1,0 +1,24 @@
+@import "defaults";
+
+@media (min-width: 720px) {
+  .wrapper {
+    max-width: $spacing + 300px + $spacing + 720px + $spacing;
+
+    gap: $spacing;
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    min-height: 100%;
+
+    .site-intro, .recent-posts {
+      width: 300px;
+      flex: 1;
+    }
+
+    .content {
+      max-width: 720px;
+      flex: 1;
+      order: 2;
+    }
+  }
+}

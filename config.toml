@@ -1,7 +1,8 @@
 baseURL = "https://www.rapatao.com/"
 languageCode = "en-us"
 title = "rapatao.com"
-theme = "rapatao.com"
+theme = "new-rapatao.com"
+#theme = "rapatao.com"
 
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -14,69 +15,85 @@ summary = 10
 
 googleAnalytics = "G-LDJ57WEQPH"
 
+[markup]
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNos = false
+lineNumbersInTable = false
+noClasses = false
+noHl = false
+style = 'pastie'
+tabWidth = 2
+
+
 [outputs]
-home = ["html", "json"]
+home = ["html"]
 
-[params]
-enableCDN = false
-cssFiles = ["default"]
-jsFiles = ["default"]
-highlightjs = true
-highlightjsTheme = ""
-highlightjsLang = []
-viewMorePostsLink = "/posts/"
-readingTime = true
-imageStretch = ""
-removeBlur = false
-socialShare = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
-hideEmptyStats = true
-images = ["/images/avatar-pixel.gif"]
+#[params]
+#enableCDN = false
+#cssFiles = ["default"]
+#jsFiles = ["default"]
+#highlightjs = true
+#highlightjsTheme = ""
+#highlightjsLang = []
+#viewMorePostsLink = "/posts/"
+#readingTime = true
+#imageStretch = ""
+#removeBlur = false
+#socialShare = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+#hideEmptyStats = true
+#images = ["/images/avatar-pixel.gif"]
 
-[params.social]
-twitter = "@rapatao"
+#[params.social]
+#twitter = "@rapatao"
 
-[params.meta]
-description = "My personal website containing my resume and some insights I have related to the technology area."
-author = "Luiz H. Rapatão"
-favicon = true
-svg = true
+#[params.meta]
+#description = "My personal website containing my resume and some insights I have related to the technology area."
+#author = "Luiz H. Rapatão"
+#favicon = true
+#svg = true
 #faviconVersion      = "1"
-msColor = "#ffffff"
-iOSColor = "#ffffff"
+#msColor = "#ffffff"
+#iOSColor = "#ffffff"
 
-[params.header]
-navbarTitle = "rapatao.com"
-dynamicTitles = false
-searchMenu = true
-shareMenu = true
-languageMenu = true
+#[params.header]
+#navbarTitle = "rapatao.com"
+#dynamicTitles = false
+#searchMenu = true
+#shareMenu = true
+#languageMenu = true
 
 [params.intro]
 header = "Luiz H. Rapatão"
 paragraph = "Senior Software Engineer"
-rssIntro = true
-socialIntro = true
-hideWhenSingleColumn = false
-alwaysOnHomepage = true
+#rssIntro = true
+#socialIntro = true
+#hideWhenSingleColumn = false
+#alwaysOnHomepage = true
 
 [params.intro.pic]
 src = "/images/avatar-pixel.gif"
-shape = "square"
-width = ""
 alt = "Luiz H. Rapatão"
 
-[params.sidebar]
-#about               = "This theme was developed for Hugo static site generator."
+[params.recents]
 postAmount = 3
-categories = false
-categoriesByCount = false
+#[params.sidebar]
+#about               = "This theme was developed for Hugo static site generator."
+#postAmount = 3
+#categories = false
+#categoriesByCount = false
 
-[params.footer]
-rssFooter = true
-socialFooter = true
+#[params.footer]
+#rssFooter = true
+#socialFooter = true
 
 [taxonomies]
 category = "categories"
@@ -96,61 +113,49 @@ email = "rapatao@rapatao.com"
 [languages.en]
 languagename = "English"
 
-#[[languages.en.menu.main]]
-#name = "About"
-#weight = 1
-#url = "about/"
-#pre = "<i class='far fa-id-card'></i>"
-
 [[languages.en.menu.main]]
 name = "Blog"
 weight = 2
 url = "pt/posts/"
-pre = "<i class='far fa-newspaper'></i>"
+pre = "<i class='fa fa-newspaper'></i>"
 
 [[languages.en.menu.main]]
 name = "Resume"
 weight = 5
 url = "resume/"
-pre = "<i class='far fa-file-alt'></i>"
+pre = "<i class='fa fa-file-alt'></i>"
 
 [[languages.en.menu.main]]
 name = "JSON Formatter & Minifier"
 weight = 10
 url = "json/"
-pre = "<i class='far fa-file-code'></i>"
+pre = "<i class='fa fa-file-code'></i>"
 
 [languages.pt]
 languagename = "Português"
-
-#[[languages.pt.menu.main]]
-#name = "Sobre"
-#weight = 1
-#url = "about/"
-#pre = "<i class='far fa-id-card'></i>"
 
 [[languages.pt.menu.main]]
 name = "Blog"
 weight = 2
 url = "posts/"
-pre = "<i class='far fa-newspaper'></i>"
+pre = "<i class='fa fa-newspaper'></i>"
 
 [[languages.pt.menu.main]]
 name = "Experiência"
 weight = 5
 url = "resume/"
-pre = "<i class='far fa-file-alt'></i>"
+pre = "<i class='fa fa-file-alt'></i>"
 
 [[languages.pt.menu.main]]
 name = "JSON Formatter & Minifier"
 weight = 10
 url = "json/"
-pre = "<i class='far fa-file-code'></i>"
+pre = "<i class='fa fa-file-code'></i>"
 
 [privacy]
 [privacy.GoogleAnalytics]
 anonymizeIP = true
-disable = false
+disable = true
 respectDoNotTrack = true
 useSessionStorage = false
 

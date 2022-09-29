@@ -1,4 +1,4 @@
-@import "../../defaults";
+@import "../helpers/defaults";
 
 .highlight {
   overflow-x: scroll;
@@ -9,10 +9,10 @@
   margin-bottom: $spacing;
   font-family: $code_font_family;
 
-  @import "../../helpers/highlight";
+  @import "../externals/highlight";
 
   pre {
-    font-family: $code_font_family;
+    width: $content_min_width; // FIXME: this doesn't make sense, but works
 
     code {
       display: inline-block;

@@ -1,4 +1,4 @@
-@import "partials/link";
+@import "../helpers/defaults";
 
 .site-intro {
   text-align: center;
@@ -11,16 +11,12 @@
   }
 
   .socnet-icons {
-    display: inline-block;
+    display: flex;
+    flex-flow: row;
+    gap: $spacing;
+    align-items: center;
+    justify-content: center;
     font-size: 32px;
-
-    li {
-      display: inline;
-    }
-
-    a {
-      @extend %link
-    }
+    margin: $spacing;
   }
-
 }

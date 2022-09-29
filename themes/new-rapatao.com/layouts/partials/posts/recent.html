@@ -13,8 +13,8 @@
     </article>
     {{ end }}
     {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.recents.postAmount | default 5) }}
-    <footer class="post-read-more">
-        <a href="{{ "/posts/" | relLangURL }}">view all &#8595</a>
+    <footer class="action centered">
+        <a href="{{ "/posts/" | relLangURL }}" class="underline">view all &#8595</a>
     </footer>
     {{ end }}
 </section>

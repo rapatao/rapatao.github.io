@@ -1,13 +1,10 @@
-@import "../defaults";
-@import "link";
+@import "../helpers/defaults";
 
-.post-pagination {
+.pagination {
   text-align: center;
   margin-bottom: 10px;
 
-  a.button {
-    @extend %link;
-
+  a {
     display: inline-block;
     text-align: center;
     width: 40%;

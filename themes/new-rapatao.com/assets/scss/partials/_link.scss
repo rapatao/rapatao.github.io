@@ -1,7 +1,6 @@
-@import "../defaults";
+@import "../helpers/defaults";
 
-%link {
-
+a {
   &:link {
     color: $link_color;
     text-decoration: none;

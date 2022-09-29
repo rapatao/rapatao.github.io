@@ -1,11 +1,17 @@
-@import "../../defaults";
+@import "../helpers/defaults";
 
-article.mini-post {
+article.post {
   background-color: $post_background_color;
   margin: $spacing 0 $spacing 0;
   padding: $spacing;
   border-radius: $spacing;
   border: $border;
 
-  @import "images";
+  p, ul {
+    padding-bottom: $spacing;
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }

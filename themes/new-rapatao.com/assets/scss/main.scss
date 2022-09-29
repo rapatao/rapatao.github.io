@@ -1,5 +1,5 @@
-@import "defaults";
-@import "reset";
+@import "helpers/defaults";
+@import "helpers/reset";
 
 body {
   font-family: $text_font_family;
@@ -17,11 +17,21 @@ body {
 .wrapper {
   margin: $spacing;
   max-width: 590px;
-
-  @import "partials/titles";
-  @import "site-intro";
-  @import "content";
-  @import "recent-posts";
 }
 
-@import "responsive";
+@import "partials/titles";
+@import "partials/link";
+
+@import "partials/site-intro";
+@import "partials/post";
+@import "partials/recent";
+
+@import "partials/images";
+@import "partials/pagination";
+@import "partials/actions";
+
+@import "partials/blockquote";
+@import "partials/code";
+@import "partials/highlight";
+
+@import "helpers/responsive";

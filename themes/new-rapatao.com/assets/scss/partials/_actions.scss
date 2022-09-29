@@ -1,0 +1,15 @@
+@import "../helpers/defaults";
+
+.action {
+  border-top: $border;
+  padding: $spacing;
+
+  &.centered {
+    text-align: center;
+  }
+
+  a.underline:hover {
+    text-decoration: underline;
+  }
+
+}

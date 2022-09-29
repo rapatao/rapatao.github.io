@@ -1,0 +1,25 @@
+<div class="socnet-icons">
+    {{ if .Site.Social.github }}
+    <a href="https://github.com/{{ .Site.Social.github }}" target="_blank" rel="noopener" title="GitHub"
+       class="fa fa-github"></a>
+    {{ end }}
+    {{ if .Site.Social.linkedin }}
+    <a href="https://linkedin.com/in/{{ .Site.Social.linkedin }}" target="_blank" rel="noopener" title="LinkedIn"
+       class="fa fa-linkedin"></a>
+    {{ end }}
+    {{ if .Site.Social.instagram }}
+    <a href="https://instagram.com/{{ .Site.Social.instagram }}" target="_blank" rel="noopener" title="Instagram"
+       class="fa fa-instagram"></a>
+    {{ end }}
+    {{ if .Site.Social.twitter }}
+    <a href="https://twitter.com/{{ .Site.Social.twitter }}" target="_blank" rel="noopener" title="Twitter"
+       class="fa fa-twitter"></a>
+    {{ end }}
+    {{ if .Site.Social.calendly }}
+    <a href="https://calendly.com/{{ .Site.Social.calendly }}" target="_blank" rel="noopener" title="Meet with me!"
+       class="fa fa-calendar"></a>
+    {{ end }}
+    {{ if .Site.Social.github }}
+    <a href="mailto:rapatao@rapatao.com" target="_blank" title="Email" class="fa fa-envelope"></a>
+    {{ end }}
+</div>

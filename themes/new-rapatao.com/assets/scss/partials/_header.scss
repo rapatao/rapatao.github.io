@@ -1,0 +1,10 @@
+@import "../helpers/defaults";
+
+.site-header {
+  border-style: $border_style;
+  border-color: $text_color;
+  border-radius: 0 0 $spacing $spacing;
+  padding: $spacing;
+  background-color: $text_color;
+  color: $post_background_color;
+}

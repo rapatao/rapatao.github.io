@@ -15,13 +15,14 @@ body {
 }
 
 .wrapper {
-  margin: $spacing;
+  margin: 0 $spacing;
   max-width: 590px;
 }
 
 @import "partials/titles";
 @import "partials/link";
 
+@import "partials/header";
 @import "partials/site-intro";
 @import "partials/post";
 @import "partials/recent";

@@ -1,11 +1,12 @@
 {{ if .Site.Params.Reaktions.enabled }}
-<footer class="post-action">
-    <div id="reaktions" data-path="{{ .Page.Permalink }}"></div>
-    {{ if not .Site.Params.Reaktions.enableDevelop }}
-    <script lang="application/javascript" type="module" defer src="{{ "/js/reaktions.js" | relURL }}"></script>
-    {{ else }}
-    <script lang="application/javascript" type="module" defer src="http://localhost:8080/reaktions.js"></script>
+<footer class="action">
+    <div id="reaktions"></div>
+    {{ $reaktionsScript := .Site.Params.Reaktions.script }}
+    {{ if not .Site.Params.Reaktions.script }}
+    {{ $reaktionsScript = "/js/reaktions.js" | relURL }}
     {{ end }}
+
+    <script lang="application/javascript" defer src="{{ $reaktionsScript }}"></script>
 
     <noscript>Please enable JavaScript to react with this post</noscript>
 </footer>

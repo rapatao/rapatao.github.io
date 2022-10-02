@@ -4,7 +4,89 @@
   border-style: $border_style;
   border-color: $text_color;
   border-radius: 0 0 $spacing $spacing;
-  padding: $spacing;
   background-color: $text_color;
   color: $post_background_color;
+  padding: $spacing;
+
+  display: grid;
+
+  h1 {
+    padding: 0 0 0 $spacing;
+    margin: 0;
+    text-align: left;
+
+    grid-area: 1/1/1/1;
+
+    a {
+      color: $post_background_color;
+    }
+  }
+
+  .navigation {
+    text-align: right;
+    padding: 0 $spacing 0 0;
+
+    grid-area: 1/2/1/2;
+    font-size: $text_font_size * 1.6;
+
+    label {
+      border-left: $background_color $border_style $border_size;
+      width: $text_font_size * 4;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .navigation-items {
+    grid-area: 2/1/2/3;
+  }
+
+  #navigation-menu {
+    display: none;
+
+    &:checked ~ .navigation-items {
+      display: block;
+    }
+  }
+
+  .navigation-items {
+    display: none;
+    text-align: right;
+    padding: 0 $spacing 0 $spacing;
+
+    a {
+      padding: $spacing;
+      display: block;
+      background-color: $post_background_color;
+      color: $text_color;
+      font-size: $text_font_size;
+      border-bottom: $border_color;
+      border-style: $border_style;
+
+      &:hover {
+        background-color: $background_color;
+      }
+    }
+
+    menu {
+      margin-top: $spacing;
+    }
+
+    div {
+      cursor: pointer;
+      text-align: center;
+
+      .navigation-handler-close {
+        cursor: pointer;
+        padding: $spacing;
+        font-size: $text_font_size * 1.6;
+        display: block;
+      }
+    }
+
+  }
 }

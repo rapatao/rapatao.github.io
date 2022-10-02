@@ -1,3 +1,40 @@
 <header class="site-header">
-    <h1>rapatao.com</h1>
+    <h1><a href="{{ "/" | relLangURL }}">{{ .Site.Params.header.title }}</a></h1>
+    <div class="navigation">
+        <label for="navigation-menu" class="navigation-handler-open fa fa-angle-down"></label>
+    </div>
+    <input id="navigation-menu" type="checkbox">
+    <nav class="navigation-items">
+
+        <menu>
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL | relLangURL }}">{{ .Name }} {{ .Pre | safeHTML}}</a>
+            {{ end }}
+        </menu>
+
+        <menu>
+            <!--            <a href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">-->
+            <!--                {{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})-->
+            <!--            </a>-->
+            {{ if .IsTranslated -}}
+            {{ range .Translations }}
+            <a href="{{ .Permalink }}" lang="{{ .Lang }}">
+                {{ .Language.LanguageName }} ({{ .Site.Language.Lang }})
+            </a>
+            {{ end }}
+            {{ else }}
+            {{ range .Site.Languages }}
+            {{ if not (eq .Lang $.Site.Language.Lang) }}
+            <a href="{{ relURL .Lang }}" lang="{{ .Lang }}">
+                {{ .LanguageName }} ({{ .Lang }})
+            </a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </menu>
+
+        <div>
+            <label for="navigation-menu" class="navigation-handler-close fa fa-angle-up"></label>
+        </div>
+    </nav>
 </header>

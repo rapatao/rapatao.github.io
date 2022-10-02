@@ -64,20 +64,12 @@ home = ["html"]
 #msColor = "#ffffff"
 #iOSColor = "#ffffff"
 
-#[params.header]
-#navbarTitle = "rapatao.com"
-#dynamicTitles = false
-#searchMenu = true
-#shareMenu = true
-#languageMenu = true
+[params.header]
+title = "rapatao.com"
 
 [params.intro]
 header = "Luiz H. Rapatão"
 paragraph = "Senior Software Engineer"
-#rssIntro = true
-#socialIntro = true
-#hideWhenSingleColumn = false
-#alwaysOnHomepage = true
 
 [params.intro.pic]
 src = "/images/avatar-pixel.gif"
@@ -85,11 +77,6 @@ alt = "Luiz H. Rapatão"
 
 [params.recents]
 postAmount = 3
-#[params.sidebar]
-#about               = "This theme was developed for Hugo static site generator."
-#postAmount = 3
-#categories = false
-#categoriesByCount = false
 
 #[params.footer]
 #rssFooter = true
@@ -117,20 +104,20 @@ languagename = "English"
 [[languages.en.menu.main]]
 name = "Blog"
 weight = 2
-url = "pt/posts/"
-pre = "<i class='fa fa-newspaper'></i>"
+url = "posts/"
+pre = "<i class='fa fa-newspaper-o'></i>"
 
 [[languages.en.menu.main]]
 name = "Resume"
 weight = 5
 url = "resume/"
-pre = "<i class='fa fa-file-alt'></i>"
+pre = "<i class='fa fa-file-text-o'></i>"
 
 [[languages.en.menu.main]]
 name = "JSON Formatter & Minifier"
 weight = 10
 url = "json/"
-pre = "<i class='fa fa-file-code'></i>"
+pre = "<i class='fa fa-code'></i>"
 
 [languages.pt]
 languagename = "Português"
@@ -138,20 +125,20 @@ languagename = "Português"
 [[languages.pt.menu.main]]
 name = "Blog"
 weight = 2
-url = "posts/"
-pre = "<i class='fa fa-newspaper'></i>"
+url = "pt/posts/"
+pre = "<i class='fa fa-newspaper-o'></i>"
 
 [[languages.pt.menu.main]]
 name = "Experiência"
 weight = 5
-url = "resume/"
-pre = "<i class='fa fa-file-alt'></i>"
+url = "pt/resume/"
+pre = "<i class='fa fa-file-text-o'></i>"
 
 [[languages.pt.menu.main]]
 name = "JSON Formatter & Minifier"
 weight = 10
-url = "json/"
-pre = "<i class='fa fa-file-code'></i>"
+url = "pt/json/"
+pre = "<i class='fa fa-code'></i>"
 
 [privacy]
 [privacy.GoogleAnalytics]
@@ -161,5 +148,6 @@ respectDoNotTrack = true
 useSessionStorage = false
 
 [params.Reaktions]
+#script = "http://localhost:8080/reaktions.js"
+script = "https://reaktions.rapatao.com/reaktions.js"
 enabled = true
-enableDevelop = false

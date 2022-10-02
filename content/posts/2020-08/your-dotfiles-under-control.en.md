@@ -35,7 +35,7 @@ This doesn't mean that your files need to start with a period (.) and in fact th
 
 As said before, there are several ways to manage your *dotfiles*, either manually or automatically with the help of applications. Using a version controller, such as *git* is an interesting way to do it, however, we will still need to perform the links manually in each installed environment.
 
-Although it is possible to version your *$HOME*, by doing this, by default, your list of ignored files would be extremely long, in addition to the risk of adding inappropriate files to our repository. Using the versatility that *git* offers us, but without the difficulty of having to add several files and directories to our *gitignore*, *[yadm (Yet Another Dotfiles Manager)](https://yadm.io /)* helps us in the task of managing our settings, with a number of interesting additional features.
+Although it is possible to version your *$HOME*, by doing this, by default, your list of ignored files would be extremely long, in addition to the risk of adding inappropriate files to our repository. Using the versatility that *git* offers us, but without the difficulty of having to add several files and directories to our *gitignore*, *[yadm (Yet Another Dotfiles Manager)](https://yadm.io/)* helps us in the task of managing our settings, with a number of interesting additional features.
 
 As a kind of "shell" of *Git*, with *yadm* you will be able to version your *$HOME* in a simplified way, with the ability to add encryption to sensitive files, such as access key, use alternative files according to the environment which your *dotfiles* are being used, in addition to knowing exactly what has changed before updating your settings repository.
 

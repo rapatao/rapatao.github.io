@@ -42,7 +42,7 @@ As mentioned before, our use cases are rarely very complex, being limited to ana
 
 The availability of *endpoints*, both tools have similarities, focusing on the fact that *Quarkus* uses by default *JAX-RS* annotations, while *Micronaut*, despite having support for them, uses its own annotations, but these are very intuitive. An important point, and much neglected when we talk about *APIs*, would be their documentation and in this matter, both have native support for *OpenAPI*, allowing a documentation to be generated based on the declaration of *endpoints* existing in the code (*code first*).
 
-Just as it is simple to provide an *endpoint*, creating an HTTP client is also similar in both *frameworks*, in which *the* client is built only with the creation of an annotated interface, making explicit in its methods, the verb, the path, its parameters, its headers and the request body, very similar to the already known *[Feign](https://github.com/OpenFeign/feign)* and *[Retrofit](https://square.github. io/retrofit/)*.
+Just as it is simple to provide an *endpoint*, creating an HTTP client is also similar in both *frameworks*, in which *the* client is built only with the creation of an annotated interface, making explicit in its methods, the verb, the path, its parameters, its headers and the request body, very similar to the already known *[Feign](https://github.com/OpenFeign/feign)* and *[Retrofit](https://square.github.io/retrofit/)*.
 
 A point that can be considered interesting in *Micronaut* is in relation to the (de)serialization settings, where they can be defined in the configuration file, without the need for coding. Through this file it is possible to define from which naming strategy to use (*camel case, snake case, etc)*, to how the data should be converted while in *Quarkus*, this can only be done by encoding, increasing the amount of code produced/contained in the project.
 
@@ -66,6 +66,6 @@ Both *frameworks* have support and compatibility with the scenarios we analyzed 
 
 However, the factor that I believe had a greater weight in the decision was the documentation, which despite believing that it can still be evolved, in *Micronaut* it is much more complete and easier to find than the one found with the guides provided by *Quarkus .*
 
-With all that said, if I were to leave the *Spring* universe, whether or not to adopt *GraalVM*, today I would choose *Micronaut*, without any great fears in this decision.
+With all that said, if I were to leave the *Spring* universe, whether to adopt *GraalVM*, today I would choose *Micronaut*, without any great fears in this decision.
 
 Thanks for reading and feel free to ask any questions you may have.

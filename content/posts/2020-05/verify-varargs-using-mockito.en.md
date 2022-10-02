@@ -15,7 +15,7 @@ url: "/posts/2020-05/verify-varargs-using-mockito/"
 
 Building tests is one of the most routine tasks for a developer and normally, with frameworks like jUnit and Mockito, this task tends to be carried out without great difficulties. Despite this, there are certain validations, which tend to be more complex, such as checking calls to methods with parameters of type *varargs*.
 
-If you don't know what *varargs* is, you can roughly say that it is, the "..." used in parameter declarations in methods, however, I recommend reading [this article](https://www.geeksforgeeks.org /variable-arguments-varargs-in-java/) for better understanding and viewing examples.
+If you don't know what *varargs* is, you can roughly say that it is, the "..." used in parameter declarations in methods, however, I recommend reading [this article](https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/) for better understanding and viewing examples.
 
 Despite not being highly complex, we do not always have control over how implementations will be invoked, especially when we use frameworks that make use of concepts such as *callbacks* or even *reflection*, widely used in the Spring framework.
 

@@ -14,7 +14,7 @@ url: "/posts/2022-01/build-tests-using-kotlin-junit-mockk/"
 
 The main objective of building code tests in an application is to certify what was coded, that is, to guarantee that a given piece of code does what it should do.
 
-[JUnit](https://junit.org/junit5/) is one of the most used frameworks for building tests in [Kotlin](https://kotlinlang.org/) and [MockK](https://mockk. io/) to build *mocks*, which would be like doubles of an object and have the function of simulating the behavior of a component.
+[JUnit](https://junit.org/junit5/) is one of the most used frameworks for building tests in [Kotlin](https://kotlinlang.org/) and [MockK](https://mockk.io/) to build *mocks*, which would be like doubles of an object and have the function of simulating the behavior of a component.
 
 <aside>
 💡 The codes used in this text are available on GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
@@ -22,7 +22,7 @@ The main objective of building code tests in an application is to certify what w
 
 ## Dependências utilizadas
 
-It is important to say that there are several ways to add support to the language and frameworks that we will use in this text. In the example below, only one of them will be presented, being basically how *[IntelliJ IDEA](https://www.jetbrains.com/idea/)* initializes projects in *Kotlin* + *[Gradle](https:// gradle.org/)*.
+It is important to say that there are several ways to add support to the language and frameworks that we will use in this text. In the example below, only one of them will be presented, being basically how *[IntelliJ IDEA](https://www.jetbrains.com/idea/)* initializes projects in *Kotlin* + *[Gradle](https://gradle.org/)*.
 
 ```groovy
 plugins {
@@ -50,7 +50,7 @@ With the output of the command, just look for the dependencies, if you find them
 
 ## The code to be tested
 
-As the main idea is to demonstrate the construction of tests using *Kotlin*, *JUnit* and *MockK*, the code used is extremely simple, but through it it will be possible to demonstrate not only the creation of tests using *JUnit*, but also the construction *mocks* through *MockK*, among other details that we will detail throughout the text.
+As the main idea is to demonstrate the construction of tests using *Kotlin*, *JUnit* and *MockK*, the code used is extremely simple, but through it will be possible to demonstrate not only the creation of tests using *JUnit*, but also the construction *mocks* through *MockK*, among other details that we will detail throughout the text.
 
 ***CalculatorService.kt***
 

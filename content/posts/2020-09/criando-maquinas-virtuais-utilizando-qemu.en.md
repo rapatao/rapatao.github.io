@@ -14,7 +14,7 @@ Recently I needed to perform some simple tests of an application that only worke
 
 This problem prevented me from proceeding with the installation and almost made me give up on the test I was going to perform, however, I decided to test create a VM using [QEMU](https://www.qemu.org/).
 
-Although there are interfaces (GUI) to configure VM's for QEMU, I didn't find any of the alternatives I know in Homebrew ([aqemu](https://github.com/tobimensch/aqemu), [virt-manager](https ://virt-manager.org/)) and to carry out my test, I decided to do the procedure manually.
+Although there are interfaces (GUI) to configure VM's for QEMU, I didn't find any of the alternatives I know in Homebrew ([aqemu](https://github.com/tobimensch/aqemu), [virt-manager](https://virt-manager.org/)) and to carry out my test, I decided to do the procedure manually.
 
 ## What is QEMU
 
@@ -52,7 +52,7 @@ For my scenario, I will install Windows 10 64-bit, so the command I will run wil
 qemu-system-x86_64 -hda windows10.qcow2 -m 4G -cdrom ~/Downloads/tibia/Win10_2004_EnglishInternational_x64.iso -boot c
 ```
 
-In the above command, QEMU will simulate a 64-bit environment, with 4G of RAM, using the file created previously as a disk and the ISO file, [downloaded from Microsoft's website](https://www.microsoft.com/pt -br/software-download/windows10ISO), which contains the installation image, will be presented to the system as if it were a CD.
+In the above command, QEMU will simulate a 64-bit environment, with 4G of RAM, using the file created previously as a disk and the ISO file, [downloaded from Microsoft's website](https://www.microsoft.com/pt-br/software-download/windows10ISO), which contains the installation image, will be presented to the system as if it were a CD.
 
 ## Booting the installed system
 

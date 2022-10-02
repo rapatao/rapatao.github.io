@@ -1,1 +1,0 @@
-what-is-it-like-working-in-the-it-area.pt.md

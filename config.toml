@@ -89,18 +89,12 @@ twitter = "rapatao"
 linkedin = "rapatao"
 #medium = "rapatao"
 instagram = "luizrapatao"
-skype = "rapatao"
+#skype = "rapatao"
 email = "rapatao@rapatao.com"
 
 [languages]
 [languages.en]
 languagename = "English"
-
-#[[languages.en.menu.main]]
-#name = "About"
-#weight = 1
-#url = "about/"
-#pre = "<i class='far fa-id-card'></i>"
 
 [[languages.en.menu.main]]
 name = "Blog"
@@ -123,28 +117,22 @@ pre = "<i class='far fa-file-code'></i>"
 [languages.pt]
 languagename = "Português"
 
-#[[languages.pt.menu.main]]
-#name = "Sobre"
-#weight = 1
-#url = "about/"
-#pre = "<i class='far fa-id-card'></i>"
-
 [[languages.pt.menu.main]]
 name = "Blog"
 weight = 2
-url = "posts/"
+url = "pt/posts/"
 pre = "<i class='far fa-newspaper'></i>"
 
 [[languages.pt.menu.main]]
 name = "Experiência"
 weight = 5
-url = "resume/"
+url = "pt/resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
 [[languages.pt.menu.main]]
 name = "JSON Formatter & Minifier"
 weight = 10
-url = "json/"
+url = "pt/json/"
 pre = "<i class='far fa-file-code'></i>"
 
 [privacy]
@@ -155,5 +143,6 @@ respectDoNotTrack = true
 useSessionStorage = false
 
 [params.Reaktions]
+#script = "http://localhost:8080/reaktions.js"
+script = "https://reaktions.rapatao.com/reaktions.js"
 enabled = true
-enableDevelop = false

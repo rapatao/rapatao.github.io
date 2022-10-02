@@ -17,6 +17,20 @@ googleAnalytics = "G-LDJ57WEQPH"
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+noHl = false
+style = "monokai"
+tabWidth = 2
+
 [outputs]
 home = ["html", "json"]
 
@@ -24,14 +38,14 @@ home = ["html", "json"]
 enableCDN = false
 cssFiles = ["default"]
 jsFiles = ["default"]
-highlightjs = true
-highlightjsTheme = ""
+highlightjs = false
+highlightjsTheme = "monokai"
 highlightjsLang = []
 viewMorePostsLink = "/posts/"
 readingTime = true
 imageStretch = ""
 removeBlur = false
-socialShare = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+socialShare = ["twitter", "facebook", "reddit", "linkedin", "email"]
 hideEmptyStats = true
 images = ["/images/avatar-pixel.gif"]
 

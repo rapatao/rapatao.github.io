@@ -11,30 +11,36 @@
 
 <script>
     const elSourceJson = document.getElementById("json-original");
-    elSourceJson.style = "height:auto";
+    elSourceJson.style.height = "auto";
 
     const elTargetStatus = document.getElementById("json-result-status");
+
+    function getNumRows(text) {
+        const rows = (text || "").split("\n").length;
+        return Math.min(Math.max(rows, 5), 10)
+    }
 
     document.addEventListener("parseJson", function (e) {
         const content = (e.detail || {}).content || "";
         const hasInput = content.trim().length > 0;
 
-        const format = (e.detail || {}).format != undefined ? e.detail.format : true;
+        const format = (e.detail || {}).format !== undefined ? e.detail.format : true;
 
-        var json;
-        var valid = hasInput;
-        var rows = 5;
+        let json;
+        let valid = hasInput;
+
         if (hasInput) {
             try {
                 const jsonAsObj = JSON.parse(content);
                 json = JSON.stringify(jsonAsObj, undefined, format ? 2 : 0);
-                rows = json.split("\n").length;
+                // rows = json.split("\n").length;
             } catch (e) {
                 json = e.message;
                 valid = false;
             }
         }
-        if (rows < 5) rows = 5;
+
+        const rows = getNumRows(json);
 
         if (hasInput) {
             document.dispatchEvent(new CustomEvent("printJson", {
@@ -77,12 +83,12 @@
 
     function doOnReset() {
         elTargetStatus.innerText = "";
+        elSourceJson.rows = getNumRows(elSourceJson.value)
+        elSourceJson.setSelectionRange(0, 0);
         elSourceJson.focus();
     }
 
     function autoGrow(textArea) {
-        const rows = textArea.value.split("\n").length
-
-        textArea.rows = Math.min(Math.max(5, rows), 100);
+        textArea.rows = getNumRows(textArea.value);
     }
 </script>

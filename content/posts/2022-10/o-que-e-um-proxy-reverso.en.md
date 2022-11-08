@@ -7,7 +7,9 @@ tags:
 images: 
   - src: "/images/posts/gate-g2919ae08c_640.jpg"
     alt: "What is a Reverse Proxy?"
-url: "/pt/posts/2022-10/what-is-a-reverse-proxy/"
+url: "/posts/2022-10/what-is-a-reverse-proxy/"
+aliases:
+  - "/pt/posts/2022-10/what-is-a-reverse-proxy/"
 ---
 
 A reverse proxy is a server that has as its main functionality to receive requests from an external network, usually the Internet, and forward them to servers on an internal network.

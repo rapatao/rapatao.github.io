@@ -12,7 +12,7 @@ canonifyurls = true
 #disqusShortname = "rapatao-com"
 summary = 10
 
-googleAnalytics = "G-LDJ57WEQPH"
+#googleAnalytics = "G-LDJ57WEQPH"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -149,12 +149,12 @@ weight = 10
 url = "pt/json/"
 pre = "<i class='far fa-file-code'></i>"
 
-[privacy]
-[privacy.GoogleAnalytics]
-anonymizeIP = true
-disable = false
-respectDoNotTrack = true
-useSessionStorage = false
+#[privacy]
+#[privacy.GoogleAnalytics]
+#anonymizeIP = true
+#disable = false
+#respectDoNotTrack = true
+#useSessionStorage = false
 
 [params.Reaktions]
 #script = "http://localhost:8080/reaktions.js"

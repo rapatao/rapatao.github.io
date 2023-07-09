@@ -113,7 +113,7 @@ languagename = "English"
 [[languages.en.menu.main]]
 name = "Blog"
 weight = 2
-url = "pt/posts/"
+url = "posts/"
 pre = "<i class='far fa-newspaper'></i>"
 
 [[languages.en.menu.main]]

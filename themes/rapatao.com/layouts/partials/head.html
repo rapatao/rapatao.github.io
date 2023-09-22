@@ -55,12 +55,6 @@
   {{- end -}}
   {{- .Scratch.Set "Permalink" .Permalink -}}
   {{- .Scratch.Set "Title" .Title -}}
-  {{- if .Params.Author -}}
-    {{- .Scratch.Set "Author" .Params.Author -}}
-  {{- else -}}
-    {{- .Scratch.Set "Author" .Author -}}
-  {{ end }}
-
 
   {{ if .IsTranslated -}}
     <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}"/>

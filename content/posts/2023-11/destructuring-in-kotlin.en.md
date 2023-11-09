@@ -1,6 +1,6 @@
 ---
 title: "Destructuring in Kotlin"
-date: 2023-11-07T09:00:00Z
+date: 2023-11-09T21:00:00Z
 tags:
   - kotlin
 images:
@@ -9,7 +9,7 @@ images:
 url: "/posts/2023-11/destructuring-in-kotlin/"
 ---
 
-`Destructuring` is a programming concept that entails breaking down a complex data structure into its individual components and assigning these components to individual variables directly in a single statement.
+**Destructuring** is a programming concept that entails breaking down a complex data structure into its individual components and assigning these components to individual variables directly in a single statement.
 
 As many other modern languages support it, but `Kotlin`, at least when compared to `JavaScript`, has a different behavior when used on data classes.
 
@@ -50,7 +50,7 @@ As it was possible to notice on the `array` example, it isn't mandatory to have 
 
 ## The Order Matters
 
-The most significant difference between `destructuring` in `Kotlin`, when compared to `JavaScript` is that the ordering of the elements is important.
+The most significant difference between **destructuring** in `Kotlin`, when compared to `JavaScript` is that the ordering of the elements is important.
 
 In `JavaScript`, as it is in `Kotlin`, destructuring a collection is order-based, which means that the first variable declaration will be assigned to the first element of the collection, the second variable to the second element, and so on…
 
@@ -105,7 +105,7 @@ As you can imagine, it didn't prevent all cases because if these two fields have
 
 Enforcing data type only brings to your code another validation, which can be useful and, usually, easier to identify the exact part of the code that got impacted by a change.
 
-## Using Destructuring Declarations Wisely
+## Using it wisely
 
 While destructuring declarations can make code more brief and expressive, avoid overusing them. Overuse can make the code harder to understand, especially for those not familiar with the feature.
 

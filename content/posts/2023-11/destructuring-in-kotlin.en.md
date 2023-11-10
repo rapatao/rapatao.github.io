@@ -1,6 +1,6 @@
 ---
 title: "Destructuring in Kotlin"
-date: 2023-11-09T21:00:00Z
+date: 2023-11-10T17:00:00Z
 tags:
   - kotlin
 images:

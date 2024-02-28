@@ -25,7 +25,7 @@ Destructuring permite decompor um objeto em um conjunto de variáveis. Por exemp
 ```kotlin
 data class Item(val name: String, val price: Double)
 
-val rice = User("Rice", 2.13)
+val rice = Item("Rice", 2.13)
 val (name, price) = rice
 ```
 
@@ -82,7 +82,7 @@ Em `Kotlin`, tendo o objeto `Rice`:
 
 ```kotlin
 data class Item(val name: String, val price: Double)
-val rice = User("Rice", 2.13)
+val rice = Item("Rice", 2.13)
 ```
 
 A ordem da declaração é importante ao desestrutura-la:

@@ -1,9 +1,9 @@
 #! /usr/bin/env sh
 
-curl -o static/js/reaktions.js https://reaktions.rapatao.com/reaktions.js
+curl -s -o static/js/reaktions.js https://reaktions.rapatao.com/reaktions.js
 
 echo "building blog to docs/"
-hugo --gc -d docs --minify --cleanDestinationDir
+docker run --rm -v .:/src hugomods/hugo:exts-0.120.4 hugo --gc -d docs --minify --cleanDestinationDir
 
 echo
 echo "resizing images"

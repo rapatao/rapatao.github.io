@@ -25,7 +25,7 @@ Destructuring allows you to decompose an object into a set of variables. For exa
 ```kotlin
 data class Item(val name: String, val price: Double)
 
-val rice = User("Rice", 2.13)
+val rice = Item("Rice", 2.13)
 val (name, price) = rice
 ```
 
@@ -82,7 +82,7 @@ In `Kotlin`, by having the `Rice` object:
 
 ```kotlin
 data class Item(val name: String, val price: Double)
-val rice = User("Rice", 2.13)
+val rice = Item("Rice", 2.13)
 ```
 
 The declaration order matters when destructuring it:

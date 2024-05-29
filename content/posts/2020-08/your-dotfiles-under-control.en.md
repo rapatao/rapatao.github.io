@@ -2,13 +2,11 @@
 title: "Your dotfiles under control"
 date: 2020-08-15T15:00:00-03:00
 tags:
-    - dotfiles
-    - yadm
-    - shell
-images: 
-  - src: "/images/posts/pexels-pixabay-207580.jpg"
-    alt: "dotfiles"
-    stretch: "vertical"
+  - dotfiles
+  - yadm
+  - shell
+images:
+  - "/images/posts/pexels-pixabay-207580.jpg"
 url: "/posts/2020-08/your-dotfiles-under-control/"
 ---
 

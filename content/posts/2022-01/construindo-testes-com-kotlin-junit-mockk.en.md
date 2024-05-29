@@ -2,13 +2,12 @@
 title: "Build tests using Kotlin, JUnit and MockK"
 date: 2022-01-19T22:00:00-03:00
 tags:
-    - kotlin
-    - junit
-    - mockk
-    - tests
-images: 
-  - src: "/images/posts/pexels-pixabay-163016.jpg"
-    alt: "Build tests using Kotlin, JUnit and MockK"
+  - kotlin
+  - junit
+  - mockk
+  - tests
+images:
+  - "/images/posts/pexels-pixabay-163016.jpg"
 url: "/posts/2022-01/build-tests-using-kotlin-junit-mockk/"
 ---
 

@@ -2,14 +2,12 @@
 title: "Verify vararg methods using Mockito"
 date: 2020-05-14T00:00:00-03:00
 tags:
-    - java
-    - mockito
-    - junit
-    - tests
-images: 
-  - src: "/images/posts/pexels-christina-morillo-1181244.jpg"
-    alt: "java code"
-    stretch: "vertical"
+  - java
+  - mockito
+  - junit
+  - tests
+images:
+  - "/images/posts/pexels-christina-morillo-1181244.jpg"
 url: "/posts/2020-05/verify-varargs-using-mockito/"    
 ---
 

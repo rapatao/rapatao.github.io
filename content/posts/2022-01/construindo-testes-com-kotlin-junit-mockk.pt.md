@@ -2,16 +2,15 @@
 title: "Construindo testes com Kotlin, JUnit e MockK"
 date: 2022-01-19T22:00:00-03:00
 tags:
-    - kotlin
-    - junit
-    - mockk
-    - tests
-images: 
-  - src: "/images/posts/pexels-pixabay-163016.jpg"
-    alt: "Construindo testes com Kotlin, JUnit e MockK"
+  - kotlin
+  - junit
+  - mockk
+  - tests
+images:
+  - "/images/posts/pexels-pixabay-163016.jpg"
 url: "/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
 aliases:
-    - "/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
+  - "/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
 ---
 
 A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.

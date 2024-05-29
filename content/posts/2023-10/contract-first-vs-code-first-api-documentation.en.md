@@ -4,8 +4,7 @@ date: 2023-10-08T09:00:00Z
 tags:
   - api design
 images:
-  - src: "/images/posts/pexels-rdne-stock-project-7841410.jpg"
-    alt: "Contract-First VS Code-First API Documentation"
+  - "/images/posts/pexels-rdne-stock-project-7841410.jpg"
 url: "/posts/2023-10/contract-first-vs-code-first-api-documentation/"
 ---
 

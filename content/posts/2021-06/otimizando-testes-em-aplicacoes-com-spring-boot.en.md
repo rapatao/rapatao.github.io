@@ -2,13 +2,12 @@
 title: "Optimizing tests in Spring Boot applications"
 date: 2021-06-24T22:00:00-03:00
 tags:
-    - spring
-    - springboot
-    - java
-    - tests
-images: 
-  - src: "/images/posts/spring-boot-test-performance.png"
-    alt: "Spring Boot Test Performance"
+  - spring
+  - springboot
+  - java
+  - tests
+images:
+  - "/images/posts/spring-boot-test-performance.png"
 url: "/posts/2021-06/optimizing-tests-in-spring-boot-applications/"
 ---
 

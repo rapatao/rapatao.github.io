@@ -2,10 +2,9 @@
 title: "Instalando e utilizando o minikube"
 date: 2023-07-09T09:00:00Z
 tags:
-    - kubernetes
-images: 
-  - src: "/images/posts/pexels-emmanuel-codden-16853020.jpg"
-    alt: "Kubernetes local: Instalando e utilizando o minikube"
+  - kubernetes
+images:
+  - "/images/posts/pexels-emmanuel-codden-16853020.jpg"
 url: "/pt/posts/2023-07/instalando-e-utilizando-o-minikube/"
 ---
 

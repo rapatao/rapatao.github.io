@@ -2,11 +2,10 @@
 title: "What is a Reverse Proxy?"
 date: 2022-10-22T12:00:00-03:00
 tags:
-    - architecture
-    - network
-images: 
-  - src: "/images/posts/gate-g2919ae08c_640.jpg"
-    alt: "What is a Reverse Proxy?"
+  - architecture
+  - network
+images:
+  - "/images/posts/gate-g2919ae08c_640.jpg"
 url: "/posts/2022-10/what-is-a-reverse-proxy/"
 aliases:
   - "/pt/posts/2022-10/what-is-a-reverse-proxy/"

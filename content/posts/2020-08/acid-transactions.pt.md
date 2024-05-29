@@ -2,11 +2,9 @@
 title: "Transações ACID"
 date: 2020-08-18T22:00:00-03:00
 tags:
-    - database
-images: 
-  - src: "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
-    alt: "Transações ACID"
-    stretch: "vertical"
+  - database
+images:
+  - "/images/posts/campaign-creators-IKHvOlZFCOg-unsplash.jpg"
 url: "/pt/posts/2020-08/acid-transactions/"
 ---
 

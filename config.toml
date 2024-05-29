@@ -70,7 +70,7 @@ languageMenu = true
 
 [params.intro]
 header = "Luiz H. Rapatão"
-paragraph = "Senior Software Engineer"
+paragraph = "Staff Software Engineer"
 rssIntro = true
 socialIntro = true
 hideWhenSingleColumn = false

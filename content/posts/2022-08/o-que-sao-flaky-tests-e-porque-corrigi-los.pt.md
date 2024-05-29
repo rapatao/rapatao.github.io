@@ -2,10 +2,9 @@
 title: "O que são Flaky Tests e, porque corrigi-los!"
 date: 2022-08-28T12:00:00-03:00
 tags:
-    - tests
-images: 
-  - src: "/images/posts/flaky-pipeline.png"
-    alt: "O que são Flaky Tests e, porque corrigi-los!"
+  - tests
+images:
+  - "/images/posts/flaky-pipeline.png"
 url: "/pt/posts/2022-08/o-que-sao-flaky-tests-e-porque-corrigi-los/"
 aliases:
   - "/posts/2022-08/o-que-sao-flaky-tests-e-porque-corrigi-los/"

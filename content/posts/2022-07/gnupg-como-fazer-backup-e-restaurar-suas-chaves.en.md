@@ -2,11 +2,10 @@
 title: "GnuPG: how to backup and restore your keys?"
 date: 2022-07-31T12:00:00-03:00
 tags:
-    - security
-    - encryption
-images: 
-  - src: "/images/posts/pexels-lucas-seebacher-5599449.jpeg"
-    alt: "GnuPG: how to backup and restore your keys?"
+  - security
+  - encryption
+images:
+  - "/images/posts/pexels-lucas-seebacher-5599449.jpeg"
 url: "/posts/2022-07/gnupg-how-to-backup-and-restore-your-keys/"
 ---
 

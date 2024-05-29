@@ -5,11 +5,9 @@ tags:
   - database
   - system design
 images:
-  - src: "/images/posts/light-bulds.jpg"
-    alt: "CAP theorem"
+  - "/images/posts/light-bulds.jpg"
 url: "/pt/posts/2023-09/teorema-cap/"
 ---
-
 
 # Teorema CAP
 

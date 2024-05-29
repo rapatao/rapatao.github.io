@@ -43,7 +43,7 @@ highlightjsTheme = "monokai"
 highlightjsLang = []
 viewMorePostsLink = "/posts/"
 readingTime = true
-imageStretch = ""
+imageStretch = "vertical"
 removeBlur = false
 socialShare = ["twitter", "facebook", "reddit", "linkedin", "email"]
 hideEmptyStats = true
@@ -70,7 +70,7 @@ languageMenu = true
 
 [params.intro]
 header = "Luiz H. Rapatão"
-paragraph = "Senior Software Engineer"
+paragraph = "Staff Software Engineer"
 rssIntro = true
 socialIntro = true
 hideWhenSingleColumn = false

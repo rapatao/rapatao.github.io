@@ -1,10 +1,8 @@
 ---
 title: "Como é trabalhar com TI?"
 date: 2020-05-20T00:00:00-03:00
-images: 
-  - src: "/images/posts/pexels-fox-1595385.jpg"
-    alt: "colaboração"
-    stretch: "vertical"
+images:
+  - "/images/posts/pexels-fox-1595385.jpg"
 url: "/pt/posts/2020-05/what-is-it-like-working-in-the-it-area/"
 ---
 

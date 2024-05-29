@@ -2,16 +2,15 @@
 title: "Otimizando testes em aplicações com Spring Boot"
 date: 2021-06-24T22:00:00-03:00
 tags:
-    - spring
-    - springboot
-    - java
-    - tests
-images: 
-  - src: "/images/posts/spring-boot-test-performance.png"
-    alt: "Spring Boot Test Performance"
+  - spring
+  - springboot
+  - java
+  - tests
+images:
+  - "/images/posts/spring-boot-test-performance.png"
 url: "/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
 aliases:
-    - "/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
+  - "/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"
 ---
 
 É extremamente comum aplicações construídas com Spring Boot possuir todos seus testes anotados com `@SpringBootTest`, porém é raro encontrar pessoas que sabem a funcionalidade dessa anotação, quando é necessária sua utilização e seu impacto na execução dos testes de uma aplicação.

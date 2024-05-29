@@ -2,11 +2,10 @@
 title: "O que é uma CDN (Content Delivery Network)?"
 date: 2022-04-21T19:00:00-03:00
 tags:
-    - architecture
-    - network
-images: 
-  - src: "/images/posts/pexels-pixabay-163064.jpeg"
-    alt: "O que é uma CDN (Content Delivery Network)?"
+  - architecture
+  - network
+images:
+  - "/images/posts/pexels-pixabay-163064.jpeg"
 url: "/pt/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"
 aliases:
   - "/posts/2022-04/o-que-e-uma-cdn-content-delivery-network/"

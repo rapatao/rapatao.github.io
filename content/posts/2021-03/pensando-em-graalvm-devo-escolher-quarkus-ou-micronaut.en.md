@@ -2,13 +2,11 @@
 title: "Thinking in GraalVM? Should I use Quarkus or Micronaut?"
 date: 2021-03-24T21:00:00-03:00
 tags:
-    - quarkus
-    - micronaut
-    - architecture
-images: 
-  - src: "/images/posts/quarkus-micronaut.png"
-    alt: "Quarkus vs Micronaut"
-    stretch: "vertical"
+  - quarkus
+  - micronaut
+  - architecture
+images:
+  - "/images/posts/quarkus-micronaut.png"
 url: "/posts/2021-03/thinking-in-graalvm-should-i-use-quarkus-or-micronaut/"
 ---
 

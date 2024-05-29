@@ -1,3 +1,4 @@
+{{- $title := .Params.title -}}
 {{- if or .Params.images .Params.featured -}}
   {{- $src := "" -}}
   {{- $alt := "" -}}
@@ -10,11 +11,8 @@
     {{- end -}}
   {{- else if .Params.images -}}
     {{- range first 1 .Params.images -}}
-      {{- $src = .src | absURL -}}
-      {{- $alt = .alt -}}
-      {{- with .stretch -}}
-        {{- $stretch = . -}}
-      {{- end -}}
+      {{- $src = . | absURL -}}
+      {{- $alt = $title -}}
     {{- end -}}
   {{- end -}}
   <a href="{{ $.Page.RelPermalink }}" class="image"{{ if not (.Params.removeBlur | default .Site.Params.removeBlur) }} style="--bg-image: url('{{ $src }}');"{{ end }}>

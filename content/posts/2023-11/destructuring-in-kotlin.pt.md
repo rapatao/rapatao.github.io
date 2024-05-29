@@ -4,8 +4,7 @@ date: 2023-11-10T17:00:00Z
 tags:
   - kotlin
 images:
-  - src: "/images/posts/pexels-cottonbro-studio-3944307.jpg"
-    alt: "Destructuring em Kotlin"
+  - "/images/posts/pexels-cottonbro-studio-3944307.jpg"
 url: "/pt/posts/2023-11/destructuring-em-kotlin/"
 ---
 

@@ -10,6 +10,7 @@
 </div>
 
 <script>
+    const elJsonStatus = document.getElementById("json-status");
     const elSourceJson = document.getElementById("json-original");
     elSourceJson.style.height = "auto";
 
@@ -17,7 +18,12 @@
 
     function getNumRows(text) {
         const rows = (text || "").split("\n").length;
-        return Math.min(Math.max(rows, 5), 10)
+        return Math.min(Math.max(rows, 5), 15)
+    }
+
+    function changeFocus() {
+        elJsonStatus.focus();
+        elSourceJson.focus();
     }
 
     document.addEventListener("parseJson", function (e) {
@@ -33,21 +39,17 @@
             try {
                 const jsonAsObj = JSON.parse(content);
                 json = JSON.stringify(jsonAsObj, undefined, format ? 2 : 0);
-                // rows = json.split("\n").length;
             } catch (e) {
                 json = e.message;
                 valid = false;
             }
         }
 
-        const rows = getNumRows(json);
-
         if (hasInput) {
             document.dispatchEvent(new CustomEvent("printJson", {
                 detail: {
                     json,
                     valid,
-                    rows
                 }
             }));
         }
@@ -65,10 +67,10 @@
             elTargetStatus.innerText = "JSON is invalid: " + content.json;
             elTargetStatus.style.color = "red";
         }
-        elSourceJson.rows = content.rows;
+        elSourceJson.rows = getNumRows(content.json);
 
         elSourceJson.setSelectionRange(0, 0);
-        elSourceJson.focus();
+        changeFocus();
     });
 
     function doOnSubmit(formatJson) {
@@ -85,7 +87,7 @@
         elTargetStatus.innerText = "";
         elSourceJson.rows = getNumRows(elSourceJson.value)
         elSourceJson.setSelectionRange(0, 0);
-        elSourceJson.focus();
+        changeFocus()
     }
 
     function autoGrow(textArea) {

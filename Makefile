@@ -2,6 +2,9 @@ image := hugomods/hugo:exts-0.126.1
 
 all: libs build images
 
+serve:
+	hugo serve
+
 build:
 	@docker run --rm -v .:/src ${image} hugo --gc -d docs --minify --cleanDestinationDir
 
@@ -10,9 +13,6 @@ libs:
 
 images:
 	@find docs/images -type f -name "*" -exec convert -verbose -strip {} {} \;
-
-clean:
-
 
 sitemaps:
 	@curl -s "https://www.google.com/ping\?sitemap\=https://www.rapatao.com/sitemap.xml"

@@ -1,4 +1,4 @@
-image := hugomods/hugo:exts-0.126.1
+image := hugomods/hugo:exts-0.128.1
 
 all: libs build images
 

@@ -6,9 +6,7 @@
       </ul>
   {{ end }}
   <p class="copyright">
-    {{ (.Site.Copyright | safeHTML) | default (print "\u00A9 " .Site.LastChange.Year " " (.Site.Params.author | default .Site.Title)) }}
-      <br>
-    {{ i18n "attribution" . | safeHTML }}
+    {{ (.Site.Copyright | safeHTML) | default (print "\u00A9 " .Site.Lastmod.Year " " (.Site.Params.author | default .Site.Title)) }}
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>

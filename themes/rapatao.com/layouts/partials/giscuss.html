@@ -1,0 +1,19 @@
+{{ if .Site.Params.Giscuss.enabled }}
+<article class="post">
+    <script src="https://giscus.app/client.js"
+            data-repo="{{ .Site.Params.Giscuss.repo }}"
+            data-repo-id="{{ .Site.Params.Giscuss.repo_id }}"
+            data-category="{{ .Site.Params.Giscuss.category }}"
+            data-category-id="{{ .Site.Params.Giscuss.category_id }}"
+            data-mapping="{{ .Site.Params.Giscuss.mapping }}"
+            data-strict="{{ .Site.Params.Giscuss.strict }}"
+            data-reactions-enabled="{{ .Site.Params.Giscuss.reactions_enabled }}"
+            data-emit-metadata="{{ .Site.Params.Giscuss.metadata }}"
+            data-input-position="{{ .Site.Params.Giscuss.input_position }}"
+            data-theme="{{ .Site.Params.Giscuss.theme }}"
+            data-lang="{{ .Site.Language.Lang }}"
+            crossorigin="anonymous"
+            async>
+    </script>
+</article>
+{{ end }}

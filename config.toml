@@ -160,3 +160,16 @@ pre = "<i class='far fa-file-code'></i>"
 #script = "http://localhost:8080/reaktions.js"
 script = "https://reaktions.rapatao.com/reaktions.js"
 enabled = true
+
+[params.Giscuss]
+repo = "rapatao/rapatao.github.io"
+repo_id = "MDEwOlJlcG9zaXRvcnk1NjIwMDMzMQ=="
+category = "Post Discussions"
+category_id = "DIC_kwDOA1mMi84CjFm8"
+mapping = "pathname"
+strict = "0"
+reactions_enabled = "0"
+emit_metadata = "0"
+input_position = "bottom"
+theme = "noborder_light"
+enabled = true

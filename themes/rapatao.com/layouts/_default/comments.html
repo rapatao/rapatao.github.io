@@ -1,5 +1,7 @@
 {{ partial "reaktions" . }}
 
+{{ partial "giscuss" . }}
+
 {{ if .Site.Config.Services.Disqus.Shortname }}
   <article class="post">
     {{ template "_internal/disqus.html" . }}

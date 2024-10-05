@@ -3,10 +3,15 @@ individuais e atribuir esses componentes a variáveis individuais diretamente em
 &lt;p>Como muitas outras linguagens modernas suportam, mas &lt;code>Kotlin&lt;/code>, pelo menos quando comparado a &lt;code>JavaScript&lt;/code>, tem um
 comportamento diferente quando usado em classes de dados.&lt;/p>
 &lt;p>O objetivo deste texto é falar sobre essa diferença, e como prevenir, o mais cedo possível, erros que seu uso possa
-causar ao seu código.&lt;/p></description></item><item><title>Construindo testes com Kotlin, JUnit e MockK</title><link>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</guid><description>&lt;p>A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.&lt;/p>
-&lt;p>&lt;a href="https://junit.org/junit5/">JUnit&lt;/a> é um dos frameworks mais utilizados na construção de testes em &lt;a href="https://kotlinlang.org/">Kotlin&lt;/a> e &lt;a href="https://mockk.io/">MockK&lt;/a> para construção de &lt;em>mocks&lt;/em>, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.&lt;/p>
+causar ao seu código.&lt;/p></description></item><item><title>Construindo testes com Kotlin, JUnit e MockK</title><link>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</guid><description>&lt;p>A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja,
+garantir que um determinado trecho de código faz o que deveria fazer.&lt;/p>
+&lt;p>&lt;a href="https://junit.org/junit5/">JUnit&lt;/a> é um dos frameworks mais utilizados na construção de testes
+em &lt;a href="https://kotlinlang.org/">Kotlin&lt;/a> e &lt;a href="https://mockk.io/">MockK&lt;/a> para construção de &lt;em>mocks&lt;/em>, que seriam como dublês de
+um objeto e tem como função simular o comportamento de um componente.&lt;/p>
 &lt;aside>
 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
 &lt;/aside>
 &lt;h2 id="dependências-utilizadas">Dependências utilizadas&lt;/h2>
-&lt;p>É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste texto. No exemplo abaixo, será apresentado apenas uma delas, sendo basicamente como o &lt;em>&lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a>&lt;/em> inicializa projetos em &lt;em>Kotlin&lt;/em> + &lt;em>&lt;a href="https://gradle.org/">Gradle&lt;/a>&lt;/em>.&lt;/p></description></item></channel></rss>
+&lt;p>É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste
+texto. No exemplo abaixo, será apresentado apenas uma delas, sendo basicamente como o
+&lt;em>&lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a>&lt;/em> inicializa projetos em &lt;em>Kotlin&lt;/em> + &lt;em>&lt;a href="https://gradle.org/">Gradle&lt;/a>&lt;/em>.&lt;/p></description></item></channel></rss>

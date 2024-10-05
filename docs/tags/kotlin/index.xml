@@ -3,10 +3,15 @@ components and assigning these components to individual variables directly in a 
 &lt;p>As many other modern languages support it, but &lt;code>Kotlin&lt;/code>, at least when compared to &lt;code>JavaScript&lt;/code>, has a different
 behavior when used on data classes.&lt;/p>
 &lt;p>The purpose of this text is to talk about this difference, and how to prevent, as earlier as possible, mistakes that its
-usage could cause to your code.&lt;/p></description></item><item><title>Build tests using Kotlin, JUnit and MockK</title><link>https://www.rapatao.com/posts/2022-01/build-tests-using-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/posts/2022-01/build-tests-using-kotlin-junit-mockk/</guid><description>&lt;p>The main objective of building code tests in an application is to certify what was coded, that is, to guarantee that a given piece of code does what it should do.&lt;/p>
-&lt;p>&lt;a href="https://junit.org/junit5/">JUnit&lt;/a> is one of the most used frameworks for building tests in &lt;a href="https://kotlinlang.org/">Kotlin&lt;/a> and &lt;a href="https://mockk.io/">MockK&lt;/a> to build &lt;em>mocks&lt;/em>, which would be like doubles of an object and have the function of simulating the behavior of a component.&lt;/p>
+usage could cause to your code.&lt;/p></description></item><item><title>Build tests using Kotlin, JUnit and MockK</title><link>https://www.rapatao.com/posts/2022-01/build-tests-using-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/posts/2022-01/build-tests-using-kotlin-junit-mockk/</guid><description>&lt;p>The main objective of building code tests in an application is to certify what was coded, that is, to guarantee that a
+given piece of code does what it should do.&lt;/p>
+&lt;p>&lt;a href="https://junit.org/junit5/">JUnit&lt;/a> is one of the most used frameworks for building tests
+in &lt;a href="https://kotlinlang.org/">Kotlin&lt;/a> and &lt;a href="https://mockk.io/">MockK&lt;/a> to build &lt;em>mocks&lt;/em>, which would be like doubles of an
+object and have the function of simulating the behavior of a component.&lt;/p>
 &lt;aside>
 💡 The codes used in this text are available on GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
 &lt;/aside>
 &lt;h2 id="dependências-utilizadas">Dependências utilizadas&lt;/h2>
-&lt;p>It is important to say that there are several ways to add support to the language and frameworks that we will use in this text. In the example below, only one of them will be presented, being basically how &lt;em>&lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a>&lt;/em> initializes projects in &lt;em>Kotlin&lt;/em> + &lt;em>&lt;a href="https://gradle.org/">Gradle&lt;/a>&lt;/em>.&lt;/p></description></item></channel></rss>
+&lt;p>It is important to say that there are several ways to add support to the language and frameworks that we will use in
+this text. In the example below, only one of them will be presented, being basically how
+&lt;em>&lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a>&lt;/em> initializes projects in &lt;em>Kotlin&lt;/em> + &lt;em>&lt;a href="https://gradle.org/">Gradle&lt;/a>&lt;/em>.&lt;/p></description></item></channel></rss>

@@ -10,12 +10,15 @@ images:
   - "/images/posts/pexels-pixabay-163016.jpg"
 url: "/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
 aliases:
-  - "/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
+  - "/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"
 ---
 
-A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja, garantir que um determinado trecho de código faz o que deveria fazer.
+A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja,
+garantir que um determinado trecho de código faz o que deveria fazer.
 
-[JUnit](https://junit.org/junit5/) é um dos frameworks mais utilizados na construção de testes em [Kotlin](https://kotlinlang.org/) e [MockK](https://mockk.io/) para construção de *mocks*, que seriam como dublês de um objeto e tem como função simular o comportamento de um componente.
+[JUnit](https://junit.org/junit5/) é um dos frameworks mais utilizados na construção de testes
+em [Kotlin](https://kotlinlang.org/) e [MockK](https://mockk.io/) para construção de *mocks*, que seriam como dublês de
+um objeto e tem como função simular o comportamento de um componente.
 
 <aside>
 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
@@ -24,7 +27,9 @@ A construção de testes de código em uma aplicação tem como principal objeti
 
 ## Dependências utilizadas
 
-É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste texto. No exemplo abaixo, será apresentado apenas uma delas, sendo basicamente como o *[IntelliJ IDEA](https://www.jetbrains.com/idea/)* inicializa projetos em *Kotlin* + *[Gradle](https://gradle.org/)*.
+É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste
+texto. No exemplo abaixo, será apresentado apenas uma delas, sendo basicamente como o
+*[IntelliJ IDEA](https://www.jetbrains.com/idea/)* inicializa projetos em *Kotlin* + *[Gradle](https://gradle.org/)*.
 
 ```groovy
 plugins {
@@ -42,7 +47,9 @@ test {
 }
 ```
 
-Antes de adicionar essas configurações ao seu projeto, é sempre importante verificar se as mesmas já não estão presentes em seu projeto. Isso pode ser feito através da *task* `:dependencies`, tanto através de alguma IDE como por terminal, com o seguinte comando:
+Antes de adicionar essas configurações ao seu projeto, é sempre importante verificar se as mesmas já não estão presentes
+em seu projeto. Isso pode ser feito através da *task* `:dependencies`, tanto através de alguma IDE como por terminal,
+com o seguinte comando:
 
 ```bash
 $ gradle dependencies
@@ -52,7 +59,9 @@ Com o resultado do comando, basta procurar pelas dependências, se as encontrar,
 
 ## O código a ser testado
 
-Como a ideia principal é demonstrar a construção de testes utilizando *Kotlin*, *JUnit* e *MockK*, o código utilizado é extremamente simples, porém através dele será possível demonstrar não só a criação de testes utilizando *JUnit*, como a construção de *mocks* através de *MockK*, entre outros detalhes que iremos detalhar no decorrer do texto.
+Como a ideia principal é demonstrar a construção de testes utilizando *Kotlin*, *JUnit* e *MockK*, o código utilizado é
+extremamente simples, porém através dele será possível demonstrar não só a criação de testes utilizando *JUnit*, como a
+construção de *mocks* através de *MockK*, entre outros detalhes que iremos detalhar no decorrer do texto.
 
 ***CalculatorService.kt***
 
@@ -87,7 +96,8 @@ class MainService(
 
 ## O primeiro teste
 
-A declaração de testes com *JUnit* é feito através da anotação `org.junit.jupiter.api.Test`adicionada em uma função que descreve o cenário a ser executado, conforme exemplo:
+A declaração de testes com *JUnit* é feito através da anotação `org.junit.jupiter.api.Test`adicionada em uma função que
+descreve o cenário a ser executado, conforme exemplo:
 
 ```kotlin
 import org.junit.jupiter.api.Test
@@ -102,9 +112,13 @@ internal class ClassTest {
 }
 ```
 
-De maneira geral, todo teste verifica se algo ocorreu conforme esperado. Existem diversas formas se fazer isso, mas são normalmente feitas através dos métodos existentes na classe `org.junit.jupiter.api.Assertions`, como, por exemplo, o `assertEquals`. Outros métodos existem, e podem ser verificados [aqui](https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html).
+De maneira geral, todo teste verifica se algo ocorreu conforme esperado. Existem diversas formas se fazer isso, mas são
+normalmente feitas através dos métodos existentes na classe `org.junit.jupiter.api.Assertions`, como, por exemplo, o
+`assertEquals`. Outros métodos existem, e podem ser
+verificados [aqui](https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html).
 
-Com base no código apresentado anteriormente, podemos criar alguns cenários de testes, porém irei descrever apenas dois, que irão basicamente realizar testes simples com as operações `SUM` e `MULTI`.
+Com base no código apresentado anteriormente, podemos criar alguns cenários de testes, porém irei descrever apenas dois,
+que irão basicamente realizar testes simples com as operações `SUM` e `MULTI`.
 
 ```kotlin
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -135,13 +149,18 @@ internal class SimpleTest {
 }
 ```
 
-Apesar de simples, esses testes demonstram como é realizado a construção de testes, que basicamente consiste em, criar as instâncias necessárias, invocar a função a ser testada e comparado seu resultado.
+Apesar de simples, esses testes demonstram como é realizado a construção de testes, que basicamente consiste em, criar
+as instâncias necessárias, invocar a função a ser testada e comparado seu resultado.
 
 ## Reduzindo código duplicado nos testes
 
-Como pode ser notado, ambos cenários realizam a construção de uma instância da classe a ser testada e, consequentemente, de suas dependências. Com o *JUnit*, casos assim, poderiam ser construído declarando uma função anotações especificas, executadas antes ou após um, ou todos os cenários de testes declarados.
+Como pode ser notado, ambos cenários realizam a construção de uma instância da classe a ser testada e, consequentemente,
+de suas dependências. Com o *JUnit*, casos assim, poderiam ser construído declarando uma função anotações especificas,
+executadas antes ou após um, ou todos os cenários de testes declarados.
 
-Essas anotações são utilizadas quando precisamos preparar ou remover dados antes ou depois da execução dos cenários de testes, como, por exemplo, realizar inserção de dados em uma base de dados, ou apagar informações inseridas nesta mesma base.
+Essas anotações são utilizadas quando precisamos preparar ou remover dados antes ou depois da execução dos cenários de
+testes, como, por exemplo, realizar inserção de dados em uma base de dados, ou apagar informações inseridas nesta mesma
+base.
 
 As anotações existentes e seus comportamentos são descritos a seguir:
 
@@ -173,9 +192,13 @@ internal class WithBeforeTest {
 
 ## Simulando chamadas em outras classes
 
-Muitos testes podem ser construídos com utilização de dependências "reais", ou seja, com suas instâncias, porém, alguns casos isso pode não ser possível, uma vez que essas instâncias podem necessitar ou acessar recursos que não estão disponíveis durante a execução dos testes.
+Muitos testes podem ser construídos com utilização de dependências "reais", ou seja, com suas instâncias, porém, alguns
+casos isso pode não ser possível, uma vez que essas instâncias podem necessitar ou acessar recursos que não estão
+disponíveis durante a execução dos testes.
 
-Nesses casos, utilizamos ferramentas que criam *mocks*, que podem ser entendidos como instâncias que simulam o comportamento de uma instância real. Essa simulação é normalmente declarada explicitamente e seria algo como: "quando o método A for invocado com determinados parâmetros, B deverá ser retornado".
+Nesses casos, utilizamos ferramentas que criam *mocks*, que podem ser entendidos como instâncias que simulam o
+comportamento de uma instância real. Essa simulação é normalmente declarada explicitamente e seria algo como: "quando o
+método A for invocado com determinados parâmetros, B deverá ser retornado".
 
 Utilizando nossas classes de exemplo, podemos escrever os testes da seguinte maneira:
 
@@ -217,11 +240,18 @@ internal class WithBeforeTest {
 }
 ```
 
-Note que, agora antes de invocar o método `execute`, dizemos como o *mock* deve se comportar ao ser consumido. Apesar de não tem muito sentido em nosso exemplo, considerado a simplicidade de nosso código, isso pode ser extremamente útil quando precisamos simular o uso de um *SDK* terceiro que não fornece meios para criação de testes, o que poderia impossibilitar a criação de testes, caso não seja utilizado *mocks.*
+Note que, agora antes de invocar o método `execute`, dizemos como o *mock* deve se comportar ao ser consumido. Apesar de
+não tem muito sentido em nosso exemplo, considerado a simplicidade de nosso código, isso pode ser extremamente útil
+quando precisamos simular o uso de um *SDK* terceiro que não fornece meios para criação de testes, o que poderia
+impossibilitar a criação de testes, caso não seja utilizado *mocks.*
 
 ## Criando mocks com anotações
 
-O framework *MockK*, fornece um conjunto de anotações que podem ser utilizadas para criação dos *mocks* e os injetar na classe a ser testada, sem que esse processo seja explicitamente realizado. Esse recurso é útil quando necessitamos criar diversos *mocks* para construção dos testes e sua construção é feita através da adição de anotações `io.mockk.impl.annotations.MockK` e `io.mockk.impl.annotations.InjectMockKs` nas variáveis declaradas na classe de teste.
+O framework *MockK*, fornece um conjunto de anotações que podem ser utilizadas para criação dos *mocks* e os injetar na
+classe a ser testada, sem que esse processo seja explicitamente realizado. Esse recurso é útil quando necessitamos criar
+diversos *mocks* para construção dos testes e sua construção é feita através da adição de anotações
+`io.mockk.impl.annotations.MockK` e `io.mockk.impl.annotations.InjectMockKs` nas variáveis declaradas na classe de
+teste.
 
 Após isso, devemos alterar no método `setup` para inicializar essas variáveis, como podemos ver seguir:
 
@@ -252,17 +282,23 @@ internal class WithMockKAnnotationTest {
 
 ## Reduzindo código na criação de mocks
 
-O JUnit oferece um recurso interessante chamado de *[Extensions](https://junit.org/junit5/docs/current/user-guide/#extensions)*. Com esse recurso, podemos estender o comportamento do framework de testes, delegando diversos comportamentos que possa ser necessário para a execução dos cenários de testes.
+O JUnit oferece um recurso interessante chamado de
+*[Extensions](https://junit.org/junit5/docs/current/user-guide/#extensions)*. Com esse recurso, podemos estender o
+comportamento do framework de testes, delegando diversos comportamentos que possa ser necessário para a execução dos
+cenários de testes.
 
-Frameworks populares como *Spring*, através da `@SpringBootTest` e *Micronaut*, com `@MicronautTest`fazem uso desse recurso para inicializar o contexto antes da execução dos cenários.
+Frameworks populares como *Spring*, através da `@SpringBootTest` e *Micronaut*, com `@MicronautTest`fazem uso desse
+recurso para inicializar o contexto antes da execução dos cenários.
 
-O framework *MockK* também oferece suporte a esse recurso, porém, não utilizando uma anotação específica, mas sim, por uma declaração explicita do recurso do JUnit, que consiste em adicionar a seguinte anotação a classe dos testes:
+O framework *MockK* também oferece suporte a esse recurso, porém, não utilizando uma anotação específica, mas sim, por
+uma declaração explicita do recurso do JUnit, que consiste em adicionar a seguinte anotação a classe dos testes:
 
 ```kotlin
 @org.junit.jupiter.api.extension.ExtendWith(MockKExtension::class)
 ```
 
-Com sua utilização, não precisamos mais, em nossa classe de teste, não precisamos mais declara o método `setup`, deixando nossa classe de teste da seguinte maneira:
+Com sua utilização, não precisamos mais, em nossa classe de teste, não precisamos mais declara o método `setup`,
+deixando nossa classe de teste da seguinte maneira:
 
 ```kotlin
 import io.mockk.every
@@ -288,8 +324,11 @@ internal class WithMockKExtensionTest {
 
 ## Conclusão
 
-Nesse texto abordamos as dependências necessárias para construção de testes com Kotlin, utilizando as ferramentas JUnit e MockK. Descrevemos também como construir métodos, executados antes e depois dos casos de testes, bem como a criação de *mocks* para casos onde não podemos utilizar uma implementação real.
+Nesse texto abordamos as dependências necessárias para construção de testes com Kotlin, utilizando as ferramentas JUnit
+e MockK. Descrevemos também como construir métodos, executados antes e depois dos casos de testes, bem como a criação de
+*mocks* para casos onde não podemos utilizar uma implementação real.
 
-Espero que tenha ajudado a compreender como construir testes utilizando essas ferramentas, bem como a otimizar sua construção, demonstrando como reduzir a quantidade de código necessário para construção dos casos de testes.
+Espero que tenha ajudado a compreender como construir testes utilizando essas ferramentas, bem como a otimizar sua
+construção, demonstrando como reduzir a quantidade de código necessário para construção dos casos de testes.
 
 Agradeço a leitura e sinta-se a vontade em questionar sobre o assunto.

@@ -219,7 +219,7 @@ test execution.
 It worked, but I will not cover these changes in the article because, when I was rewriting the solution to have some
 code snippets to add in this text, I ended up finding a better solution.
 
-## Spring Test Configuration
+## Spring Test Configuration was throwing his arm around my shoulders
 
 Similar to the `@Configuration` which is normally used to create beans and expose some other kinds of customizations in
 the productive code, the `@TestConfiguration` does the same, but it is used in the test code.

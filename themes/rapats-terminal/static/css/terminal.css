@@ -389,11 +389,18 @@ button:hover {
     color: var(--bg-color);
 }
 
-.lang-modal h3 {
-    margin-top: 0;
-    color: var(--header-color);
-    border-bottom: 1px dashed var(--prompt-color);
-    padding-bottom: 10px;
+.lang-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    border: 1px solid var(--prompt-color);
+    padding: 20px;
+    z-index: 2000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    min-width: 200px;
 }
 
 .lang-modal ul {

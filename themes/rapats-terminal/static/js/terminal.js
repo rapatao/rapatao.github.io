@@ -163,47 +163,58 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-    // Click trigger for language modal
+// Language Modal Trigger
+document.addEventListener('DOMContentLoaded', () => {
     const langTrigger = document.getElementById('lang-trigger');
+    const modal = document.getElementById('lang-modal');
+    const overlay = document.getElementById('modal-overlay');
+
     if (langTrigger) {
         langTrigger.addEventListener('click', function(e) {
             e.preventDefault();
-            const modal = document.getElementById('lang-modal');
-            const overlay = document.getElementById('modal-overlay');
-            if (modal) {
-                modal.style.display = 'block';
-                overlay.style.display = 'block';
-            }
+            modal.style.display = 'block';
+            overlay.style.display = 'block';
+            
+            const items = Array.from(modal.querySelectorAll('li'));
+            const currentPath = window.location.pathname;
+            items.forEach(i => i.classList.remove('selected'));
+            
+            let targetIdx = items.findIndex(item => {
+                const href = item.querySelector('a').getAttribute('href');
+                return currentPath === href || (href !== '/' && currentPath.startsWith(href));
+            });
+            if (targetIdx === -1) targetIdx = 0;
+            items[targetIdx].classList.add('selected');
         });
     }
 
-    // Modal accessibility: ensure arrow keys navigate modal links
-document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('lang-modal');
-    if (modal && modal.style.display === 'block') {
-        const items = Array.from(modal.querySelectorAll('li'));
-        const activeIdx = items.findIndex(item => item.classList.contains('selected'));
+    // Modal Keyboard Accessibility
+    document.addEventListener('keydown', function(e) {
+        if (modal && modal.style.display === 'block') {
+            const items = Array.from(modal.querySelectorAll('li'));
+            const activeIdx = items.findIndex(item => item.classList.contains('selected'));
 
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % items.length;
-            if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
-            items[nextIdx].classList.add('selected');
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            const prevIdx = (activeIdx <= 0) ? items.length - 1 : activeIdx - 1;
-            if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
-            items[prevIdx].classList.add('selected');
-        } else if (e.key === 'Enter' && activeIdx !== -1) {
-            e.preventDefault();
-            items[activeIdx].querySelector('a').click();
-        } else if (e.key === 'Escape') {
-            e.preventDefault();
-            document.getElementById('lang-trigger').focus();
-            document.getElementById('lang-modal').style.display = 'none';
-            document.getElementById('modal-overlay').style.display = 'none';
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % items.length;
+                if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+                items[nextIdx].classList.add('selected');
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIdx = (activeIdx <= 0) ? items.length - 1 : activeIdx - 1;
+                if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+                items[prevIdx].classList.add('selected');
+            } else if (e.key === 'Enter' && activeIdx !== -1) {
+                e.preventDefault();
+                items[activeIdx].querySelector('a').click();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                langTrigger.focus();
+                modal.style.display = 'none';
+                overlay.style.display = 'none';
+            }
         }
-    }
+    });
 });
 
 window.addEventListener('DOMContentLoaded', () => {

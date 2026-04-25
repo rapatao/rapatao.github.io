@@ -190,14 +190,41 @@ nav a:hover, .pagination a:hover {
     height: 20px;
 }
 
-.socnet-icons a:hover {
-    color: var(--header-color);
+.post-tags {
+    margin: 5px 0 10px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
-.post-summary {
-    font-size: 14px;
-    color: var(--text-color);
-    margin-top: 5px;
-    line-height: 1.4;
+
+.post-tags a {
+    color: var(--dim-text);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: var(--font-family);
+    padding: 2px 6px;
+    transition: all 0.2s;
+}
+
+/* Tag bracket style */
+.post-tags a::before {
+    content: "[";
+    color: var(--dim-text);
+}
+
+.post-tags a::after {
+    content: "]";
+    color: var(--dim-text);
+}
+
+.post-tags a:hover {
+    color: var(--prompt-color);
+}
+
+.post-tags a:hover::before,
+.post-tags a:hover::after {
+    color: var(--prompt-color);
 }
 
 .post-summary a, .post-summary a:visited {

@@ -72,7 +72,6 @@ body {
 .terminal-avatar {
     width: 150px;
     height: 150px;
-    border: 1px solid var(--dim-text);
     padding: 4px;
     flex-shrink: 0;
     filter: sepia(0.2) contrast(1.1);

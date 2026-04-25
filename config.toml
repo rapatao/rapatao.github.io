@@ -50,7 +50,11 @@ hideEmptyStats = true
 images = ["/images/avatar-pixel.gif"]
 
 [params.social]
-twitter = "@rapatao"
+github = "rapatao"
+twitter = "rapatao"
+linkedin = "rapatao"
+email = "rapatao@rapatao.com"
+
 
 [params.meta]
 description = "My personal website containing my resume and some insights I have related to the technology area."
@@ -70,7 +74,7 @@ languageMenu = true
 
 [params.intro]
 header = "Luiz H. Rapatão"
-paragraph = "Staff Software Engineer"
+#paragraph = "Staff Software Engineer"
 rssIntro = true
 socialIntro = true
 hideWhenSingleColumn = false
@@ -96,15 +100,6 @@ socialFooter = true
 category = "categories"
 series = "series"
 tag = "tags"
-
-[social]
-github = "rapatao"
-twitter = "rapatao"
-linkedin = "rapatao"
-#medium = "rapatao"
-instagram = "luizrapatao"
-#skype = "rapatao"
-email = "rapatao@rapatao.com"
 
 [languages]
 [languages.en]

@@ -23,12 +23,16 @@
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="{{ .Site.BaseURL }}">(H)OME</a></li>
-                            <li><a href="{{ "resume/" | relURL }}">(R)ESUME</a></li>
-                            <li><a href="#" id="lang-trigger">(L)ANGUAGE</a></li>
+                            {{ $scratch := newScratch }}
+                            {{ $scratch.Set "i" 1 }}
+                            {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ .Name | upper }}</a></li>
+                            {{ $scratch.Add "i" 1 }}
+                            {{ end }}
+                            <li><a href="#" id="lang-trigger">({{ $scratch.Get "i" }})LANGUAGE</a></li>
                         </ul>
-
                     </nav>
+
                 </div>
             </div>
         </header>
@@ -40,8 +44,9 @@
         <footer>
             <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }} | Terminal Theme: rapats-terminal</p>
             <div class="keyboard-help">
-                [<span class="key-hint">H</span>]ome [<span class="key-hint">P</span>]revious [<span class="key-hint">N</span>]ext [<span class="key-hint">R</span>]esume [<span class="key-hint">L</span>]anguage [<span class="key-hint">&uarr;/&darr;</span>] Select/Navigate [<span class="key-hint">Enter</span>] Open
+                [<span class="key-hint">1-4</span>] Menu [<span class="key-hint">P</span>]revious [<span class="key-hint">N</span>]ext [<span class="key-hint">&uarr;/&darr;</span>] Select/Navigate [<span class="key-hint">Enter</span>] Open
             </div>
+
         </footer>
         </div>
 

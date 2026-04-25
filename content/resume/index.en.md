@@ -1,11 +1,11 @@
 ---
-title: "Experiences"
-slug: "experiences"
+title: "Resume"
+slug: "resume"
 type: "simple"
 layout: "simple"
 aliases:
- - "resume"
  - "about"
+ - "experiences"
 ---
 
 {{< stackshare >}}

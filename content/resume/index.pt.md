@@ -1,11 +1,11 @@
 ---
-title: "Conhecimentos"
-slug: "experiences"
+title: "Currículo"
+slug: "resume"
 type: "simple"
 layout: "simple"
 aliases:
-- "/pt/resume"
 - "/pt/about"
+- "/pt/experiences"
 ---
 
 {{< stackshare >}}

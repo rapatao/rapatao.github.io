@@ -138,47 +138,27 @@ document.addEventListener('keydown', function(e) {
         prevLink.click();
     }
 
-    // Global shortcuts (H, P, N, R)
+    // Global shortcuts (1, 2, 3...)
     if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        const key = e.key.toLowerCase();
-        if (key === 'h') {
-            window.location.href = "/";
-        } else if (key === 'p') {
+        const key = e.key;
+        
+        // Menu shortcuts
+        const menuItems = document.querySelectorAll('nav ul li a');
+        if (key >= '1' && key <= '9') {
+            const index = parseInt(key) - 1;
+            if (menuItems[index]) {
+                menuItems[index].click();
+                return;
+            }
+        }
+
+        // Post navigation
+        if (key === 'p') {
             const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
             if (prevLink) prevLink.click();
         } else if (key === 'n') {
             const nextLink = document.querySelector('.pagination .next a, .nav-next a');
             if (nextLink) nextLink.click();
-        } else if (key === 'r') {
-            window.location.href = "/resume/";
-        } else if (key === 'l') {
-            const modal = document.getElementById('lang-modal');
-            const overlay = document.getElementById('modal-overlay');
-            if (modal) {
-                const isOpen = modal.style.display === 'block';
-                modal.style.display = isOpen ? 'none' : 'block';
-                overlay.style.display = isOpen ? 'none' : 'block';
-                
-                if (!isOpen) {
-                    const items = Array.from(modal.querySelectorAll('li'));
-                    const currentPath = window.location.pathname;
-                    
-                    // Clear previous selection
-                    items.forEach(i => i.classList.remove('selected'));
-                    
-                    // Find matching language based on path
-                    let targetIdx = items.findIndex(item => {
-                        const href = item.querySelector('a').getAttribute('href');
-                        // If path is root '/' or specific language subpath
-                        if (currentPath === '/' && href === '/') return true;
-                        if (currentPath.startsWith(href) && href !== '/') return true;
-                        return false;
-                    });
-                    
-                    if (targetIdx === -1) targetIdx = 0;
-                    items[targetIdx].classList.add('selected');
-                }
-            }
         }
     }
 });

@@ -107,7 +107,7 @@ tag = "tags"
 languagename = "English"
 
 [[languages.en.menu.main]]
-name = "Blog"
+name = "Posts"
 weight = 2
 url = "posts/"
 pre = "<i class='far fa-newspaper'></i>"
@@ -128,13 +128,13 @@ pre = "<i class='far fa-file-code'></i>"
 languagename = "Português"
 
 [[languages.pt.menu.main]]
-name = "Blog"
+name = "Posts"
 weight = 2
 url = "pt/posts/"
 pre = "<i class='far fa-newspaper'></i>"
 
 [[languages.pt.menu.main]]
-name = "Experiência"
+name = "Currículo"
 weight = 5
 url = "pt/resume/"
 pre = "<i class='far fa-file-alt'></i>"

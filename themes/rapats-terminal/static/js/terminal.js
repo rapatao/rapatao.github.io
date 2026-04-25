@@ -152,15 +152,6 @@ document.addEventListener('keydown', function(e) {
                 return;
             }
         }
-
-        // Post navigation
-        if (key === 'p') {
-            const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
-            if (prevLink) prevLink.click();
-        } else if (key === 'n') {
-            const nextLink = document.querySelector('.pagination .next a, .nav-next a');
-            if (nextLink) nextLink.click();
-        }
     }
 });
 

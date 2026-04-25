@@ -222,11 +222,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.post-item');
     items.forEach((item, index) => {
         item.addEventListener('click', (e) => {
-            if (selectedIndex >= 0 && items[selectedIndex]) {
-                items[selectedIndex].classList.remove('selected');
+            // Find the link within this item
+            const link = item.querySelector('a');
+            if (link) {
+                // If the user clicked the link or the item container, navigate
+                window.location.href = link.href;
             }
-            selectedIndex = index;
-            item.classList.add('selected');
         });
     });
 });

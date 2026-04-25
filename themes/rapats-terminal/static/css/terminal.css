@@ -115,6 +115,7 @@ nav a:hover, .pagination a:hover {
     margin-bottom: 15px;
     padding: 5px;
     border-left: 3px solid transparent;
+    cursor: pointer;
 }
 
 .post-item.selected {

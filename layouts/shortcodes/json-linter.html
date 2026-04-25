@@ -21,11 +21,23 @@
 </div>
 
 <style>
-    .json-tool { margin: 20px 0; }
+    .json-tool { margin: 20px 0; width: 100%; max-width: 900px; }
+    textarea { width: 100%; box-sizing: border-box; }
     .tool-title { color: var(--prompt-color); margin-bottom: 5px; }
     .tool-actions { margin: 10px 0; display: flex; gap: 10px; }
     .status-container { margin-top: 10px; font-weight: bold; }
-    .tree-view { margin-top: 15px; background: #1e1e1e; padding: 15px; border: 1px solid var(--dim-text); overflow-x: auto; color: #d1d1d1; font-family: monospace; line-height: 1.4; }
+    .tree-view { 
+        margin-top: 15px; 
+        background: #1e1e1e; 
+        padding: 15px; 
+        border: 1px solid var(--dim-text); 
+        overflow-x: auto; 
+        color: #d1d1d1; 
+        font-family: monospace; 
+        line-height: 1.4; 
+        width: 100%; 
+        box-sizing: border-box; 
+    }
     .tree-node { margin-left: 20px; }
     .toggle { cursor: pointer; color: var(--prompt-color); margin-right: 5px; user-select: none; font-weight: bold; }
     .key { color: #569cd6; font-weight: bold; }

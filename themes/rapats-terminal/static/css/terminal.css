@@ -69,12 +69,21 @@ body {
     margin-bottom: 20px;
 }
 
+.avatar-link {
+    background-color: transparent !important;
+}
+
+.avatar-link:hover {
+    background-color: transparent !important;
+}
+
 .terminal-avatar {
     width: 150px;
     height: 150px;
     padding: 4px;
     flex-shrink: 0;
     filter: sepia(0.2) contrast(1.1);
+    display: block;
 }
 
 .banner-text {

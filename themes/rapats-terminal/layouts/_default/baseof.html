@@ -14,7 +14,7 @@
     <div class="terminal-container">
         <header>
             <div class="header-content">
-                <img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar">
+                <a href="{{ .Site.BaseURL }}" class="avatar-link"><img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar"></a>
                 <div class="banner-text">
                     <div class="site-title">RAPATAO.COM</div>
                     <div class="site-subtitle">{{ .Site.Params.description }}</div>

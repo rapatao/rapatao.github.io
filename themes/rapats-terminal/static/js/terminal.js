@@ -152,6 +152,38 @@ document.addEventListener('keydown', function(e) {
                 return;
             }
         }
+        // Post navigation
+        if (key === 'p') {
+            const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
+            if (prevLink) prevLink.click();
+        } else if (key === 'n') {
+            const nextLink = document.querySelector('.pagination .next a, .nav-next a');
+            if (nextLink) nextLink.click();
+        } else if (key.toLowerCase() === 'l') {
+            const modal = document.getElementById('lang-modal');
+            const overlay = document.getElementById('modal-overlay');
+            if (modal) {
+                const isVisible = (modal.style.display === 'block');
+                if (isVisible) {
+                    modal.style.display = 'none';
+                    overlay.style.display = 'none';
+                } else {
+                    modal.style.display = 'block';
+                    overlay.style.display = 'block';
+                    
+                    const items = Array.from(modal.querySelectorAll('li'));
+                    const currentPath = window.location.pathname;
+                    items.forEach(i => i.classList.remove('selected'));
+                    
+                    let targetIdx = items.findIndex(item => {
+                        const href = item.querySelector('a').getAttribute('href');
+                        return currentPath === href || (href !== '/' && currentPath.startsWith(href));
+                    });
+                    if (targetIdx === -1) targetIdx = 0;
+                    items[targetIdx].classList.add('selected');
+                }
+            }
+        }
     }
 });
 

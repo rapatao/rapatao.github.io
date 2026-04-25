@@ -1,6 +1,6 @@
 <div class="json-tool">
     <h2 class="tool-title">JSON Formatter & Validator</h2>
-    <p>Validate, format, or minify your JSON strings instantly.</p>
+    <p>Validate, format, or minify your JSON strings. Use tree-view to expand/collapse.</p>
     
     <form onsubmit="return doOnSubmit(true)" onreset="doOnReset()">
         <label for="json-original">Input JSON:</label>
@@ -17,6 +17,7 @@
     <div class="status-container">
         <span id="json-result-status"></span>
     </div>
+    <div id="json-tree" class="tree-view"></div>
 </div>
 
 <style>
@@ -24,11 +25,15 @@
     .tool-title { color: var(--prompt-color); margin-bottom: 5px; }
     .tool-actions { margin: 10px 0; display: flex; gap: 10px; }
     .status-container { margin-top: 10px; font-weight: bold; }
+    .tree-view { margin-top: 15px; background: #1e1e1e; padding: 15px; border: 1px solid var(--dim-text); overflow-x: auto; color: var(--text-color); font-family: monospace; }
+    .tree-node { margin-left: 20px; }
+    .toggle { cursor: pointer; color: var(--prompt-color); margin-right: 5px; user-select: none; }
 </style>
 
 <script>
     const elSourceJson = document.getElementById("json-original");
     const elTargetStatus = document.getElementById("json-result-status");
+    const elTree = document.getElementById("json-tree");
 
     function getNumRows(text) {
         const rows = (text || "").split("\n").length;
@@ -42,19 +47,63 @@
         elTargetStatus.style.color = "var(--prompt-color)";
     }
 
+    function createTree(obj, container) {
+        if (obj === null || typeof obj !== 'object') {
+            container.appendChild(document.createTextNode(JSON.stringify(obj)));
+            return;
+        }
+
+        const isArray = Array.isArray(obj);
+        for (const key in obj) {
+            const div = document.createElement('div');
+            div.className = 'tree-node';
+            
+            const toggle = document.createElement('span');
+            toggle.className = 'toggle';
+            toggle.innerText = '[-]';
+            toggle.onclick = function() {
+                const child = this.parentNode.querySelector('.children');
+                if (child.style.display === 'none') {
+                    child.style.display = 'block';
+                    this.innerText = '[-]';
+                } else {
+                    child.style.display = 'none';
+                    this.innerText = '[+]';
+                }
+            };
+            
+            div.appendChild(toggle);
+            div.appendChild(document.createTextNode(key + ': '));
+            
+            const children = document.createElement('div');
+            children.className = 'children';
+            createTree(obj[key], children);
+            
+            div.appendChild(children);
+            container.appendChild(div);
+        }
+    }
+
     document.addEventListener("parseJson", function (e) {
         const content = (e.detail || {}).content || "";
         const format = (e.detail || {}).format !== undefined ? e.detail.format : true;
 
         try {
             const jsonAsObj = JSON.parse(content);
-            const json = JSON.stringify(jsonAsObj, undefined, format ? 4 : 0);
+            if (format) {
+                elTree.innerHTML = '';
+                createTree(jsonAsObj, elTree);
+                elTree.style.display = 'block';
+            } else {
+                elTree.style.display = 'none';
+            }
+            elSourceJson.value = JSON.stringify(jsonAsObj, undefined, format ? 4 : 0);
             elTargetStatus.innerText = "✓ Valid JSON";
             elTargetStatus.style.color = "var(--prompt-color)";
-            elSourceJson.value = json;
         } catch (e) {
             elTargetStatus.innerText = "✗ Invalid JSON: " + e.message;
             elTargetStatus.style.color = "#ff6b6b";
+            elTree.style.display = 'none';
         }
         elSourceJson.rows = getNumRows(elSourceJson.value);
     });
@@ -69,6 +118,8 @@
     function doOnReset() {
         elTargetStatus.innerText = "";
         elSourceJson.rows = 8;
+        elTree.innerHTML = '';
+        elTree.style.display = 'none';
     }
 
     function autoGrow(textArea) {

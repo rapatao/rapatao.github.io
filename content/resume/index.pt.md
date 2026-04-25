@@ -8,4 +8,4 @@ aliases:
 - "/pt/experiences"
 ---
 
-{{< stackshare >}}
+{{< pdf-embed file="/resume-luiz.rapatao.pdf" >}}

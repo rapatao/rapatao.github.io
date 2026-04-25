@@ -200,14 +200,15 @@ article h1, article h2, article h3, article h4 {
     margin-bottom: 0.5em;
 }
 
-.content a, .content a:visited {
+article h1 a, article h1 a:visited, article h2 a, article h2 a:visited, article h3 a, article h3 a:visited {
     color: var(--prompt-color);
     text-decoration: underline;
 }
 
-.content a:hover {
+article h1 a:hover, article h2 a:hover, article h3 a:hover {
     background-color: var(--selection-bg);
     color: var(--selection-text);
+    text-decoration: none;
 }
 
 /* Code blocks - Restored dark but muted background */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/terminal.css" | relURL }}">
+    <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+    {{ range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ . | relURL }}">
+    {{- end }}
+</head>
+<body>
+    <div class="terminal-container">
+        <header>
+            <div class="header-content">
+                <img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar">
+                <div class="banner-text">
+                    <div class="site-title">RAPATAO.COM</div>
+                    <div class="site-subtitle">{{ .Site.Params.description }}</div>
+                    <div class="socnet-icons">
+                        {{ partial "socnet-icon" . }}
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="{{ .Site.BaseURL }}">HOME</a></li>
+                            <li><a href="{{ "posts/" | relURL }}">POSTS</a></li>
+                            <li><a href="{{ "resume/" | relURL }}">RESUME</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <footer>
+            <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }} | Terminal Theme: rapats-terminal</p>
+            <div class="keyboard-help">
+                [<span class="key-hint">H</span>]ome [<span class="key-hint">P</span>]revious [<span class="key-hint">N</span>]ext [<span class="key-hint">R</span>]esume [<span class="key-hint">&uarr;/&darr;</span>] Select/Navigate [<span class="key-hint">Enter</span>] Open
+            </div>
+        </footer>
+    </div>
+    <script src="{{ "js/terminal.js" | relURL }}"></script>
+</body>
+</html>
+     </footer>
+    </div>
+    <script src="{{ "js/terminal.js" | relURL }}"></script>
+</body>
+</html>

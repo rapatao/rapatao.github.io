@@ -1,7 +1,8 @@
 baseURL = "https://www.rapatao.com/"
 languageCode = "en-us"
 title = "rapatao.com"
-theme = "rapatao.com"
+#theme = "rapatao.com"
+theme = "rapats-terminal"
 
 languagecode = "en"
 defaultcontentlanguage = "en"

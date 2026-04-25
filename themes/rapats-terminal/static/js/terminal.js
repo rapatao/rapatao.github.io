@@ -72,7 +72,6 @@ document.addEventListener('keydown', function(e) {
         } else if (e.key === 'Enter') {
             if (contentIndex >= 0) {
                 const currentBlock = contentNodes[contentIndex];
-                // If a link is focused, click it
                 if (linkIndex >= 0) {
                     const links = currentBlock.querySelectorAll('a');
                     if (links[linkIndex]) {
@@ -80,13 +79,15 @@ document.addEventListener('keydown', function(e) {
                         links[linkIndex].click();
                     }
                 } else {
-                    // If no link is focused but the block contains a link, click it directly
                     const link = currentBlock.querySelector('a');
                     if (link) {
                         e.preventDefault();
                         link.click();
                     }
                 }
+            } else if (selectedIndex >= 0) {
+                const link = items[selectedIndex].querySelector('a');
+                if (link) link.click();
             }
         }
     }
@@ -115,7 +116,7 @@ document.addEventListener('keydown', function(e) {
         }
     }
 
-    // Pagination/Post Navigation (Horizontal) - Restore functionality
+    // Pagination/Post Navigation (Horizontal)
     const nextLink = document.querySelector('.pagination .next a, .nav-next a');
     const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
     
@@ -125,7 +126,7 @@ document.addEventListener('keydown', function(e) {
         prevLink.click();
     }
 
-    // Global shortcuts (H, P, R, N)
+    // Global shortcuts (H, P, N, R)
     if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         const key = e.key.toLowerCase();
         if (key === 'h') {
@@ -133,7 +134,6 @@ document.addEventListener('keydown', function(e) {
         } else if (key === 'p') {
             const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
             if (prevLink) prevLink.click();
-            else window.location.href = "/posts/";
         } else if (key === 'n') {
             const nextLink = document.querySelector('.pagination .next a, .nav-next a');
             if (nextLink) nextLink.click();
@@ -143,15 +143,12 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Click to Focus logic
 window.addEventListener('DOMContentLoaded', () => {
     const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area > ul, .post-content-area > ol, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
     
     contentNodes.forEach((node, index) => {
         node.addEventListener('click', (e) => {
-            // Don't interfere if they clicked a link directly
             if (e.target.tagName === 'A') return;
-            
             clearContentSelection(contentNodes);
             contentIndex = index;
             linkIndex = -1;

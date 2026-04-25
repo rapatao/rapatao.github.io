@@ -41,9 +41,11 @@
         </main>
 
         <footer>
-            <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }} | {{ i18n "copyright" }}</p>
-            <div class="keyboard-help">
-                [<span class="key-hint">1-{{ $scratch.Get "i" }}</span>] {{ i18n "keyboard_nav" }} [<span class="key-hint">&larr;/&rarr;</span>] {{ i18n "keyboard_navigate" }} [<span class="key-hint">&uarr;/&darr;</span>] {{ i18n "keyboard_select" }} [<span class="key-hint">Enter</span>] {{ i18n "keyboard_open" }}
+            <div class="footer-content">
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}</p>
+                <div class="keyboard-help" style="margin-top: 0;">
+                    [<span class="key-hint">1-{{ $scratch.Get "i" }}</span>] {{ i18n "keyboard_nav" }} [<span class="key-hint">&larr;/&rarr;</span>] {{ i18n "keyboard_navigate" }} [<span class="key-hint">&uarr;/&darr;</span>] {{ i18n "keyboard_select" }} [<span class="key-hint">Enter</span>] {{ i18n "keyboard_open" }}
+                </div>
             </div>
         </footer>
     </div>

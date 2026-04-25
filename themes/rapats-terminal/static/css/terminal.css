@@ -392,6 +392,18 @@ footer {
     font-size: 14px;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
 .keyboard-help {
     margin-top: 10px;
     font-size: 12px;

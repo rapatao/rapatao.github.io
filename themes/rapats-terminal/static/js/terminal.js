@@ -183,7 +183,21 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Modal accessibility: ensure arrow keys navigate modal links
+    // Click trigger for language modal
+    const langTrigger = document.getElementById('lang-trigger');
+    if (langTrigger) {
+        langTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('lang-modal');
+            const overlay = document.getElementById('modal-overlay');
+            if (modal) {
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        });
+    }
+
+    // Modal accessibility: ensure arrow keys navigate modal links
 document.addEventListener('keydown', function(e) {
     const modal = document.getElementById('lang-modal');
     if (modal && modal.style.display === 'block') {

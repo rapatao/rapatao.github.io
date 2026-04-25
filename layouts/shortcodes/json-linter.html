@@ -54,6 +54,8 @@
     function createTree(obj, container) {
         if (obj === null || typeof obj !== 'object') {
             const span = document.createElement('span');
+            const type = (obj === null) ? 'null' : typeof obj;
+            
             if (typeof obj === 'string') {
                 span.className = 'string';
                 span.innerText = '"' + obj + '"';
@@ -66,10 +68,17 @@
             } else {
                 span.innerText = String(obj);
             }
+            
+            const typeSpan = document.createElement('small');
+            typeSpan.style.color = '#777';
+            typeSpan.innerText = ' (' + type + ')';
+            
             container.appendChild(span);
+            container.appendChild(typeSpan);
             return;
         }
 
+        const isArray = Array.isArray(obj);
         for (const key in obj) {
             const div = document.createElement('div');
             div.className = 'tree-node';
@@ -94,6 +103,16 @@
             keySpan.className = 'key';
             keySpan.innerText = key;
             div.appendChild(keySpan);
+            
+            // Only add type hint if it's an object or array
+            if (obj[key] !== null && typeof obj[key] === 'object') {
+                const typeHint = Array.isArray(obj[key]) ? ' (array)' : ' (object)';
+                const typeSpan = document.createElement('small');
+                typeSpan.style.color = '#777';
+                typeSpan.innerText = typeHint;
+                div.appendChild(typeSpan);
+            }
+            
             div.appendChild(document.createTextNode(': '));
             
             const children = document.createElement('div');

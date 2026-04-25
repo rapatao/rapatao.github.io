@@ -9,8 +9,6 @@ images:
 url: "/pt/posts/2023-09/teorema-cap/"
 ---
 
-# Teorema CAP
-
 O teorema CAP é um princípio fundamental nos sistemas de banco de dados distribuídos que afirma que apenas dois dos
 três: consistência, disponibilidade e tolerância a partições, podem ser alcançados a qualquer momento.
 

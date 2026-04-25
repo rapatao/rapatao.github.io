@@ -490,6 +490,10 @@ button:hover {
         gap: 15px;
     }
     
+    .banner-text {
+        text-align: center;
+    }
+
     nav ul {
         justify-content: center;
     }

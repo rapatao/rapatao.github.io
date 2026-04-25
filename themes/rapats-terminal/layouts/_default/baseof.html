@@ -26,45 +26,44 @@
                             {{ $scratch := newScratch }}
                             {{ $scratch.Set "i" 1 }}
                             {{ range .Site.Menus.main }}
-                            <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ .Name | upper }}</a></li>
+                            <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ i18n .Name | default .Name | upper }}</a></li>
                             {{ $scratch.Add "i" 1 }}
                             {{ end }}
-                            <li><a href="#" id="lang-trigger">({{ $scratch.Get "i" }})LANGUAGE</a></li>
+                            <li><a href="#" id="lang-trigger">({{ $scratch.Get "i" }}){{ i18n "language" | upper }}</a></li>
                         </ul>
-                    </nav>
+                        </nav>
+                        </div>
+                        </div>
+                        </header>
 
-                </div>
-            </div>
-        </header>
+                        <main>
+                        {{ block "main" . }}{{ end }}
+                        </main>
 
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
+                        <footer>
+                        <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }} | Terminal Theme: rapats-terminal</p>
+                        <div class="keyboard-help">
+                        [<span class="key-hint">1-4</span>] Menu [<span class="key-hint">P</span>]revious [<span class="key-hint">N</span>]ext [<span class="key-hint">&uarr;/&darr;</span>] Select/Navigate [<span class="key-hint">Enter</span>] Open
+                        </div>
+                        </footer>
+                        </div>
 
-        <footer>
-            <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }} | Terminal Theme: rapats-terminal</p>
-            <div class="keyboard-help">
-                [<span class="key-hint">1-4</span>] Menu [<span class="key-hint">P</span>]revious [<span class="key-hint">N</span>]ext [<span class="key-hint">&uarr;/&darr;</span>] Select/Navigate [<span class="key-hint">Enter</span>] Open
-            </div>
+                        <!-- Language Modal -->
+                        <div class="modal-overlay" id="modal-overlay"></div>
+                        <div class="lang-modal" id="lang-modal">
+                        <h3>{{ i18n "select_language" }}</h3>
+                        <ul>
+                        {{ if .IsTranslated }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                        {{ range .Translations }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                        {{ end }}
+                        {{ else }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                        {{ end }}
+                        </ul>
+                        </div>
 
-        </footer>
-        </div>
-
-        <!-- Language Modal -->
-        <div class="modal-overlay" id="modal-overlay"></div>
-        <div class="lang-modal" id="lang-modal">
-        <h3>SELECT LANGUAGE</h3>
-        <ul>
-            {{ if .IsTranslated }}
-                <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
-                {{ range .Translations }}
-                    <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
-                {{ end }}
-            {{ else }}
-                <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
-            {{ end }}
-        </ul>
-        </div>
 
         <script src="{{ "js/terminal.js" | relURL }}"></script>
         </body>

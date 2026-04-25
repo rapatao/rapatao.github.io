@@ -1,0 +1,8 @@
+[select_language]
+other = "SELECT LANGUAGE"
+[home]
+other = "HOME"
+[resume]
+other = "RESUME"
+[language]
+other = "LANGUAGE"

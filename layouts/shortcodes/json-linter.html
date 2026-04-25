@@ -25,9 +25,13 @@
     .tool-title { color: var(--prompt-color); margin-bottom: 5px; }
     .tool-actions { margin: 10px 0; display: flex; gap: 10px; }
     .status-container { margin-top: 10px; font-weight: bold; }
-    .tree-view { margin-top: 15px; background: #1e1e1e; padding: 15px; border: 1px solid var(--dim-text); overflow-x: auto; color: var(--text-color); font-family: monospace; }
+    .tree-view { margin-top: 15px; background: #1e1e1e; padding: 15px; border: 1px solid var(--dim-text); overflow-x: auto; color: #d1d1d1; font-family: monospace; line-height: 1.4; }
     .tree-node { margin-left: 20px; }
-    .toggle { cursor: pointer; color: var(--prompt-color); margin-right: 5px; user-select: none; }
+    .toggle { cursor: pointer; color: var(--prompt-color); margin-right: 5px; user-select: none; font-weight: bold; }
+    .key { color: #569cd6; font-weight: bold; }
+    .string { color: #ce9178; }
+    .number { color: #b5cea8; }
+    .boolean { color: #569cd6; }
 </style>
 
 <script>
@@ -49,11 +53,23 @@
 
     function createTree(obj, container) {
         if (obj === null || typeof obj !== 'object') {
-            container.appendChild(document.createTextNode(JSON.stringify(obj)));
+            const span = document.createElement('span');
+            if (typeof obj === 'string') {
+                span.className = 'string';
+                span.innerText = '"' + obj + '"';
+            } else if (typeof obj === 'number') {
+                span.className = 'number';
+                span.innerText = obj;
+            } else if (typeof obj === 'boolean') {
+                span.className = 'boolean';
+                span.innerText = obj;
+            } else {
+                span.innerText = String(obj);
+            }
+            container.appendChild(span);
             return;
         }
 
-        const isArray = Array.isArray(obj);
         for (const key in obj) {
             const div = document.createElement('div');
             div.className = 'tree-node';
@@ -73,7 +89,12 @@
             };
             
             div.appendChild(toggle);
-            div.appendChild(document.createTextNode(key + ': '));
+            
+            const keySpan = document.createElement('span');
+            keySpan.className = 'key';
+            keySpan.innerText = key;
+            div.appendChild(keySpan);
+            div.appendChild(document.createTextNode(': '));
             
             const children = document.createElement('div');
             children.className = 'children';

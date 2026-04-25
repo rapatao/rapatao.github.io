@@ -1,3 +1,15 @@
+/* Global Link Consistency */
+a, a:visited, a:active {
+    color: var(--prompt-color) !important;
+    text-decoration: underline !important;
+}
+
+a:hover {
+    background-color: var(--selection-bg) !important;
+    color: var(--selection-text) !important;
+    text-decoration: none !important;
+}
+
 :root {
     --bg-color: #2b2b2b; /* Muted Slate - not too dark */
     --text-color: #d1d1d1; /* Light gray for readability */

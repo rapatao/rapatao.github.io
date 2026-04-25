@@ -362,19 +362,30 @@ footer {
     color: var(--dim-text);
 }
 
-/* Language Modal */
-.lang-modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--bg-color);
+/* Form elements for JSON tool */
+textarea {
+    width: 100%;
+    background-color: #1e1e1e;
+    color: var(--text-color);
+    border: 1px solid var(--dim-text);
+    padding: 10px;
+    font-family: var(--font-family);
+    margin: 10px 0;
+}
+
+button {
+    background-color: transparent;
+    color: var(--prompt-color);
     border: 1px solid var(--prompt-color);
-    padding: 20px;
-    z-index: 2000;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    min-width: 200px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: var(--prompt-color);
+    color: var(--bg-color);
 }
 
 .lang-modal h3 {

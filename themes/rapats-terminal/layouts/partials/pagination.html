@@ -4,11 +4,11 @@
     <nav>
         <ul>
             {{ if $pag.HasPrev }}
-            <li class="prev"><a href="{{ $pag.Prev.URL }}">&lt; PREVIOUS</a></li>
+            <li class="prev"><a href="{{ $pag.Prev.URL }}">&lt; {{ i18n "previous" }}</a></li>
             {{ end }}
-            <li>PAGE {{ $pag.PageNumber }} / {{ $pag.TotalPages }}</li>
+            <li>{{ i18n "page" }} {{ $pag.PageNumber }} / {{ $pag.TotalPages }}</li>
             {{ if $pag.HasNext }}
-            <li class="next"><a href="{{ $pag.Next.URL }}">NEXT &gt;</a></li>
+            <li class="next"><a href="{{ $pag.Next.URL }}">{{ i18n "next" }} &gt;</a></li>
             {{ end }}
         </ul>
     </nav>

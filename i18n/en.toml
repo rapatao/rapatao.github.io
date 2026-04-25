@@ -6,3 +6,21 @@ other = "HOME"
 other = "RESUME"
 [language]
 other = "LANGUAGE"
+[previous]
+other = "PREVIOUS"
+[next]
+other = "NEXT"
+[page]
+other = "PAGE"
+[published]
+other = "Published:"
+[keyboard_nav]
+other = "Menu"
+[keyboard_navigate]
+other = "Navigate"
+[keyboard_select]
+other = "Select/Navigate"
+[keyboard_open]
+other = "Open"
+[copyright]
+other = "Terminal Theme: rapats-terminal"

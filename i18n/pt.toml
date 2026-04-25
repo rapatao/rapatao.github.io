@@ -6,3 +6,21 @@ other = "INÍCIO"
 other = "CURRÍCULO"
 [language]
 other = "IDIOMA"
+[previous]
+other = "ANTERIOR"
+[next]
+other = "PRÓXIMO"
+[page]
+other = "PÁGINA"
+[published]
+other = "Publicado:"
+[keyboard_nav]
+other = "Menu"
+[keyboard_navigate]
+other = "Navegar"
+[keyboard_select]
+other = "Selecionar/Navegar"
+[keyboard_open]
+other = "Abrir"
+[copyright]
+other = "Tema Terminal: rapats-terminal"

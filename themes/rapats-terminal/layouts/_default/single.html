@@ -2,7 +2,7 @@
 <article>
     <h1>{{ .Title }}</h1>
     <div class="post-meta">
-        <span class="post-date">Published: {{ .Date.Format "Jan 02, 2006" }}</span>
+        <span class="post-date">{{ i18n "published" }} {{ .Date.Format "Jan 02, 2006" }}</span>
     </div>
     <div class="content post-content-area">
         {{ .Content }}
@@ -12,12 +12,12 @@
 <div class="post-navigation">
     {{ if .PrevInSection }}
     <div class="nav-prev">
-        <a href="{{ .PrevInSection.RelPermalink }}">&lt; PREVIOUS: {{ .PrevInSection.Title }}</a>
+        <a href="{{ .PrevInSection.RelPermalink }}">&lt; {{ i18n "previous" }}: {{ .PrevInSection.Title }}</a>
     </div>
     {{ end }}
     {{ if .NextInSection }}
     <div class="nav-next">
-        <a href="{{ .NextInSection.RelPermalink }}">NEXT: {{ .NextInSection.Title }} &gt;</a>
+        <a href="{{ .NextInSection.RelPermalink }}">{{ i18n "next" }}: {{ .NextInSection.Title }} &gt;</a>
     </div>
     {{ end }}
 </div>

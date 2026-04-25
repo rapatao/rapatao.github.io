@@ -16,6 +16,10 @@ document.addEventListener('keydown', function(e) {
     
     // Internal Post Content Navigation
     if (contentNodes.length > 0) {
+        // Prevent background navigation if modal is open
+        const modal = document.getElementById('lang-modal');
+        if (modal && modal.style.display === 'block') return;
+
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             const isDown = e.key === 'ArrowDown';
             
@@ -94,6 +98,10 @@ document.addEventListener('keydown', function(e) {
 
     // List Navigation (Vertical)
     if (items.length > 0) {
+        // Prevent list navigation if modal is open
+        const modal = document.getElementById('lang-modal');
+        if (modal && modal.style.display === 'block') return;
+
         if (e.key === 'ArrowDown') {
             e.preventDefault();
             if (selectedIndex < items.length - 1) {
@@ -120,6 +128,10 @@ document.addEventListener('keydown', function(e) {
     const nextLink = document.querySelector('.pagination .next a, .nav-next a');
     const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
     
+    // Prevent pagination if modal is open
+    const modal = document.getElementById('lang-modal');
+    if (modal && modal.style.display === 'block') return;
+
     if (e.key === 'ArrowRight' && nextLink && contentIndex === -1 && selectedIndex === -1) {
         nextLink.click();
     } else if (e.key === 'ArrowLeft' && prevLink && contentIndex === -1 && selectedIndex === -1) {
@@ -139,6 +151,63 @@ document.addEventListener('keydown', function(e) {
             if (nextLink) nextLink.click();
         } else if (key === 'r') {
             window.location.href = "/resume/";
+        } else if (key === 'l') {
+            const modal = document.getElementById('lang-modal');
+            const overlay = document.getElementById('modal-overlay');
+            if (modal) {
+                const isOpen = modal.style.display === 'block';
+                modal.style.display = isOpen ? 'none' : 'block';
+                overlay.style.display = isOpen ? 'none' : 'block';
+                
+                if (!isOpen) {
+                    const items = Array.from(modal.querySelectorAll('li'));
+                    const currentPath = window.location.pathname;
+                    
+                    // Clear previous selection
+                    items.forEach(i => i.classList.remove('selected'));
+                    
+                    // Find matching language based on path
+                    let targetIdx = items.findIndex(item => {
+                        const href = item.querySelector('a').getAttribute('href');
+                        // If path is root '/' or specific language subpath
+                        if (currentPath === '/' && href === '/') return true;
+                        if (currentPath.startsWith(href) && href !== '/') return true;
+                        return false;
+                    });
+                    
+                    if (targetIdx === -1) targetIdx = 0;
+                    items[targetIdx].classList.add('selected');
+                }
+            }
+        }
+    }
+});
+
+// Modal accessibility: ensure arrow keys navigate modal links
+document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('lang-modal');
+    if (modal && modal.style.display === 'block') {
+        const items = Array.from(modal.querySelectorAll('li'));
+        const activeIdx = items.findIndex(item => item.classList.contains('selected'));
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % items.length;
+            if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+            items[nextIdx].classList.add('selected');
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevIdx = (activeIdx <= 0) ? items.length - 1 : activeIdx - 1;
+            if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+            items[prevIdx].classList.add('selected');
+        } else if (e.key === 'Enter' && activeIdx !== -1) {
+            e.preventDefault();
+            items[activeIdx].querySelector('a').click();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            document.getElementById('lang-trigger').focus();
+            document.getElementById('lang-modal').style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
         }
     }
 });

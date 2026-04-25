@@ -362,13 +362,73 @@ footer {
     color: var(--dim-text);
 }
 
-.key-hint {
-    border: 1px solid var(--dim-text);
-    padding: 0 4px;
-    margin: 0 2px;
+/* Language Modal */
+.lang-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    border: 1px solid var(--prompt-color);
+    padding: 20px;
+    z-index: 2000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    min-width: 200px;
 }
 
-/* Responsive adjustments */
+.lang-modal h3 {
+    margin-top: 0;
+    color: var(--header-color);
+    border-bottom: 1px dashed var(--prompt-color);
+    padding-bottom: 10px;
+}
+
+.lang-modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lang-modal li {
+    margin: 10px 0;
+    padding: 5px;
+    border-left: 3px solid transparent;
+}
+
+.lang-modal li.selected {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    border-left: 3px solid var(--prompt-color);
+}
+
+.lang-modal li.selected a {
+    color: var(--selection-text) !important;
+}
+
+.lang-modal a {
+    color: var(--prompt-color);
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.lang-modal a:hover {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1500;
+}
 @media (max-width: 600px) {
     .header-content {
         flex-direction: column;

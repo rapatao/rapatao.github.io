@@ -21,19 +21,19 @@
                     <div class="socnet-icons">
                         {{ partial "socnet-icon" . }}
                     </div>
+                    <nav>
+                        <ul>
+                            {{ $scratch := newScratch }}
+                            {{ $scratch.Set "i" 1 }}
+                            {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ i18n .Name | default .Name | upper }}</a></li>
+                            {{ $scratch.Add "i" 1 }}
+                            {{ end }}
+                            <li><a href="#" id="lang-trigger">({{ $scratch.Get "i" }}){{ i18n "language" | upper }}</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <nav>
-                <ul>
-                    {{ $scratch := newScratch }}
-                    {{ $scratch.Set "i" 1 }}
-                    {{ range .Site.Menus.main }}
-                    <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ i18n .Name | default .Name | upper }}</a></li>
-                    {{ $scratch.Add "i" 1 }}
-                    {{ end }}
-                    <li><a href="#" id="lang-trigger">({{ $scratch.Get "i" }}){{ i18n "language" | upper }}</a></li>
-                </ul>
-            </nav>
         </header>
 
         <main>

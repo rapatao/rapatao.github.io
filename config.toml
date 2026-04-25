@@ -119,7 +119,7 @@ url = "resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
 [[languages.en.menu.main]]
-name = "JSON Formatter & Minifier"
+name = "JSON Toolkit"
 weight = 10
 url = "json/"
 pre = "<i class='far fa-file-code'></i>"
@@ -140,7 +140,7 @@ url = "pt/resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
 [[languages.pt.menu.main]]
-name = "JSON Formatter & Minifier"
+name = "JSON Toolkit"
 weight = 10
 url = "pt/json/"
 pre = "<i class='far fa-file-code'></i>"

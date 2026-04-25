@@ -1,5 +1,5 @@
 ---
-title: "JSON Formatter & Minifier"
+title: "JSON Toolkit: Validator, Formatter & Minifier"
 slug: "json"
 type: "singular"
 layout: "singular"

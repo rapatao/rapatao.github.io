@@ -21,6 +21,7 @@ document.addEventListener('keydown', function(e) {
         if (modal && modal.style.display === 'block') return;
 
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault(); // Stop default scroll immediately
             const isDown = e.key === 'ArrowDown';
             
             if (contentIndex >= 0) {

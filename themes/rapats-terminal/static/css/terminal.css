@@ -1,7 +1,7 @@
 /* Global Link Consistency */
 a, a:visited, a:active {
     color: var(--prompt-color) !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
 }
 
 a:hover {

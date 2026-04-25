@@ -490,6 +490,10 @@ button:hover {
         gap: 15px;
     }
     
+    nav ul {
+        justify-content: center;
+    }
+    
     .socnet-icons {
         justify-content: center;
     }

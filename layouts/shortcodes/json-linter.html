@@ -14,7 +14,7 @@
     <div class="status-container">
         <span id="json-result-status"></span>
     </div>
-    <div id="json-tree" class="tree-view"></div>
+    <div id="json-tree" class="tree-view" style="display: none;"></div>
 </div>
 
 <style>
@@ -53,11 +53,15 @@
         return Math.min(Math.max(rows, 8), 20);
     }
 
-    function copyToClipboard() {
-        elSourceJson.select();
-        document.execCommand("copy");
-        elTargetStatus.innerText = "Copied to clipboard!";
-        elTargetStatus.style.color = "var(--prompt-color)";
+    async function copyToClipboard() {
+        try {
+            await navigator.clipboard.writeText(elSourceJson.value);
+            elTargetStatus.innerText = "Copied to clipboard!";
+            elTargetStatus.style.color = "var(--prompt-color)";
+        } catch (err) {
+            elTargetStatus.innerText = "Error copying text!";
+            elTargetStatus.style.color = "#ff6b6b";
+        }
     }
 
     function createTree(obj, container) {
@@ -141,8 +145,12 @@
             const jsonAsObj = JSON.parse(content);
             if (format) {
                 elTree.innerHTML = '';
-                createTree(jsonAsObj, elTree);
-                elTree.style.display = 'block';
+                if (content.trim().length > 0) {
+                    createTree(jsonAsObj, elTree);
+                    elTree.style.display = 'block';
+                } else {
+                    elTree.style.display = 'none';
+                }
             } else {
                 elTree.style.display = 'none';
             }

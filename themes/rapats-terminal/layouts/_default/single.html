@@ -12,12 +12,12 @@
 <div class="post-navigation">
     {{ if .PrevInSection }}
     <div class="nav-prev">
-        <a href="{{ .PrevInSection.RelPermalink }}">&lt; (P)REVIOUS POST: {{ .PrevInSection.Title }}</a>
+        <a href="{{ .PrevInSection.RelPermalink }}">&lt; (P)REVIOUS: {{ .PrevInSection.Title }}</a>
     </div>
     {{ end }}
     {{ if .NextInSection }}
     <div class="nav-next">
-        <a href="{{ .NextInSection.RelPermalink }}">(N)EXT POST: {{ .NextInSection.Title }} &gt;</a>
+        <a href="{{ .NextInSection.RelPermalink }}">(N)EXT: {{ .NextInSection.Title }} &gt;</a>
     </div>
     {{ end }}
 </div>

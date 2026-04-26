@@ -148,6 +148,8 @@ document.addEventListener('keydown', function(e) {
                 const link = items[selectedIndex].querySelector('a');
                 if (link) { e.preventDefault(); link.click(); }
             }
+        } else if (e.key === 'Backspace') {
+            window.history.back();
         }
     }
 });

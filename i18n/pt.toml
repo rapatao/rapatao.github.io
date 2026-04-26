@@ -22,5 +22,7 @@ other = "Navegar"
 other = "Selecionar/Navegar"
 [keyboard_open]
 other = "Abrir"
+[keyboard_back]
+other = "Voltar"
 [copyright]
 other = "Tema Terminal: rapats-terminal"

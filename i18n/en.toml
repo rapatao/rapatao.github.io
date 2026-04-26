@@ -24,5 +24,3 @@ other = "Select/Navigate"
 other = "Open"
 [keyboard_back]
 other = "Back"
-[copyright]
-other = "Terminal Theme: rapats-terminal"

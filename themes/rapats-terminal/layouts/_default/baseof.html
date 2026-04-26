@@ -3,7 +3,7 @@
 <head>
     {{ partial "meta.html" . }}
     {{ partial "seo.html" . }}
-    <link rel="stylesheet" href="{{ "css/terminal.css" | relURL }}">
+    {{ partial "head-assets" . }}
     <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
     {{ range .Site.Params.customCSS -}}
     <link rel="stylesheet" href="{{ . | relURL }}">
@@ -63,7 +63,5 @@
             {{ end }}
         </ul>
     </div>
-
-    <script src="{{ "js/terminal.js" | relURL }}"></script>
 </body>
 </html>

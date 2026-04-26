@@ -102,18 +102,19 @@ body {
     line-height: 1;
     color: var(--header-color);
     letter-spacing: 4px;
+    margin-bottom: 0;
 }
 
 .site-subtitle {
     font-size: 20px;
     color: var(--dim-text);
-    margin-top: 10px;
+    margin: 5px 0 10px 0;
 }
 
 header {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-bottom: 1px dashed var(--dim-text);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 nav ul {
@@ -122,7 +123,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 nav a, nav a:visited, .pagination a, .pagination a:visited {
@@ -179,7 +180,7 @@ nav a:hover, .pagination a:hover {
     gap: 15px;
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .socnet-icons li {
@@ -414,7 +415,7 @@ blockquote {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 30px;
     border-top: 1px dashed var(--dim-text);
     padding-top: 20px;
     color: var(--dim-text);

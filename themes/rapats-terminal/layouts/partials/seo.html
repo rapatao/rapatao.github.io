@@ -4,3 +4,20 @@
 
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.meta.description }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}" />
+
+{{- if .IsPage -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}"
+}
+</script>
+{{- end -}}

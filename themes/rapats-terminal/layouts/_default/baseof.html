@@ -11,16 +11,16 @@
 </head>
 <body>
     <div class="terminal-container">
-        <header>
+        <header role="banner">
             <div class="header-content">
-                <a href="{{ .Site.BaseURL }}" class="avatar-link"><img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar"></a>
+                <a href="{{ .Site.BaseURL }}" class="avatar-link" aria-label="Go to Home"><img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar" loading="lazy"></a>
                 <div class="banner-text">
-                    <div class="site-title">RAPATAO.COM</div>
-                    <div class="site-subtitle">{{ .Site.Params.description }}</div>
-                    <div class="socnet-icons">
+                    <h1 class="site-title">RAPATAO.COM</h1>
+                    <p class="site-subtitle">{{ .Site.Params.description }}</p>
+                    <nav class="socnet-icons" aria-label="Social media">
                         {{ partial "socnet-icon" . }}
-                    </div>
-                    <nav>
+                    </nav>
+                    <nav aria-label="Main menu">
                         <ul>
                             {{ $scratch := newScratch }}
                             {{ $scratch.Set "i" 1 }}
@@ -35,7 +35,7 @@
             </div>
         </header>
 
-        <main>
+        <main role="main">
             {{ block "main" . }}{{ end }}
         </main>
 

@@ -21,6 +21,11 @@ a:hover {
     --selection-text: #98fb98;
 }
 
+@font-face {
+  font-family: 'Courier New', Courier, monospace;
+  font-display: swap;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);

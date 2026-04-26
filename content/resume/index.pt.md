@@ -1,11 +1,16 @@
 ---
-title: "Conhecimentos"
-slug: "experiences"
-type: "simple"
-layout: "simple"
+title: "Currículo"
+slug: "resume"
+type: "singular"
+layout: "singular"
 aliases:
-- "/pt/resume"
 - "/pt/about"
+- "/pt/experiences"
+
+disable_time: true
+disable_share: true
 ---
 
-{{< stackshare >}}
+Você pode encontrar mais detalhes e se conectar comigo no {{< linkedin >}}.
+
+{{< pdf-embed file="/resume-luiz.rapatao.pdf" >}}

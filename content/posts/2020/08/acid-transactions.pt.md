@@ -8,8 +8,6 @@ images:
 url: "/pt/posts/2020-08/acid-transactions/"
 ---
 
-# Transações ACID
-
 Acrônimo de **A**tomicidade, **C**onsistência, **I**solamento e **D**urabilidade é um conjunto de propriedades de uma transação de bancos de dados que visam garantir a integridade e validade de dados, mesmo após falhas sistêmicas ou até falhas de energia elétrica.
 
 ### Atomicidade

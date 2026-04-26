@@ -5,8 +5,11 @@ all: build images
 serve:
 	hugo serve
 
-build:
+build-docker:
 	@docker run --rm -v .:/src ${image} hugo --gc -d docs --minify --cleanDestinationDir
+
+build:
+	@hugo --gc -d docs --minify --cleanDestinationDir
 
 images:
 	@find docs/images -type f -name "*" -exec magick -verbose {} -strip {} \;

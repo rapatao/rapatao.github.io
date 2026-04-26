@@ -1,0 +1,26 @@
+[select_language]
+other = "SELECIONE O IDIOMA"
+[home]
+other = "INÍCIO"
+[resume]
+other = "CURRÍCULO"
+[language]
+other = "IDIOMA"
+[previous]
+other = "ANTERIOR"
+[next]
+other = "PRÓXIMO"
+[page]
+other = "PÁGINA"
+[published]
+other = "Publicado:"
+[keyboard_nav]
+other = "Menu"
+[keyboard_navigate]
+other = "Navegar"
+[keyboard_select]
+other = "Selecionar/Navegar"
+[keyboard_open]
+other = "Abrir"
+[keyboard_back]
+other = "Voltar"

@@ -1,0 +1,11 @@
+name = "rapats-terminal"
+license = "MIT"
+licenselink = "https://github.com/rapatao/rapatao.github.io/blob/master/LICENSE"
+description = "A terminal-like theme for Hugo"
+homepage = "https://www.rapatao.com"
+tags = ["terminal", "minimalist", "retro"]
+features = ["terminal-look", "responsive"]
+
+[author]
+  name = "Luiz H. Rapatão"
+  homepage = "https://www.rapatao.com"

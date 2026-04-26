@@ -8,8 +8,6 @@ images:
 url: "/posts/2020-08/acid-transactions/"
 ---
 
-# ACID transactions
-
 Acronym for **A**tomicity, **C**consistency, **I**insulation and **D**urability is a set of properties of a database transaction that aim to ensure data integrity and validity, even after systemic failures or electrical power failures.
 
 ### Atomicity

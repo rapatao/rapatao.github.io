@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "meta.html" . }}
+    {{ partial "seo.html" . }}
+    {{ partial "head-assets" . }}
+    <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
+    {{ range .Site.Params.customCSS -}}
+    <link rel="stylesheet" href="{{ . | relURL }}">
+    {{- end }}
+</head>
+<body>
+    <div class="terminal-container">
+        <header role="banner">
+            <div class="header-content">
+                <a href="{{ .Site.BaseURL }}" class="avatar-link" aria-label="Go to Home"><img src="{{ .Site.Params.intro.pic.src | relURL }}" alt="Avatar" class="terminal-avatar" loading="lazy"></a>
+                <div class="banner-text">
+                    <h1 class="site-title">RAPATAO.COM</h1>
+                    <p class="site-subtitle">{{ .Site.Params.description }}</p>
+                    <nav class="socnet-icons" aria-label="Social media">
+                        {{ partial "socnet-icon" . }}
+                    </nav>
+                    <nav aria-label="Main menu">
+                        <ul>
+                            {{ $scratch := newScratch }}
+                            {{ $scratch.Set "i" 1 }}
+                            {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL | relURL }}">({{ $scratch.Get "i" }}){{ i18n .Name | default .Name | upper }}</a></li>
+                            {{ $scratch.Add "i" 1 }}
+                            {{ end }}
+                            <li><a href="#" id="lang-trigger">(L){{ i18n "language" | upper }}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main role="main">
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}</p>
+                <div class="keyboard-help" style="margin-top: 0;">
+                    [<span class="key-hint">1-{{ sub ($scratch.Get "i") 1 }}</span>] {{ i18n "keyboard_nav" }} [<span class="key-hint">&larr;/&rarr;</span>] {{ i18n "keyboard_navigate" }} [<span class="key-hint">L</span>]{{ i18n "language" | lower }} [<span class="key-hint">Backspace</span>] {{ i18n "keyboard_back" }} [<span class="key-hint">Enter</span>] {{ i18n "keyboard_open" }}
+                </div>
+        </footer>
+    </div>
+
+    <!-- Language Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="lang-modal" id="lang-modal">
+        <h3>{{ i18n "select_language" }}</h3>
+        <ul>
+            {{ if .IsTranslated }}
+                <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                {{ range .Translations }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                {{ end }}
+            {{ else }}
+                <li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</body>
+</html>

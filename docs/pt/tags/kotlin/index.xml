@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on rapatao.com</title><link>https://www.rapatao.com/pt/tags/kotlin/</link><description>Recent content in Kotlin on rapatao.com</description><generator>Hugo</generator><language>pt</language><lastBuildDate>Fri, 10 Nov 2023 17:00:00 +0000</lastBuildDate><atom:link href="https://www.rapatao.com/pt/tags/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Destructuring em Kotlin</title><link>https://www.rapatao.com/pt/posts/2023-11/destructuring-em-kotlin/</link><pubDate>Fri, 10 Nov 2023 17:00:00 +0000</pubDate><guid>https://www.rapatao.com/pt/posts/2023-11/destructuring-em-kotlin/</guid><description>&lt;p>&lt;strong>Destructuring&lt;/strong> é um conceito de programação que envolve dividir uma estrutura de dados complexa em seus componentes
-individuais e atribuir esses componentes a variáveis individuais diretamente em uma única instrução.&lt;/p>
-&lt;p>Como muitas outras linguagens modernas suportam, mas &lt;code>Kotlin&lt;/code>, pelo menos quando comparado a &lt;code>JavaScript&lt;/code>, tem um
-comportamento diferente quando usado em classes de dados.&lt;/p>
-&lt;p>O objetivo deste texto é falar sobre essa diferença, e como prevenir, o mais cedo possível, erros que seu uso possa
-causar ao seu código.&lt;/p></description></item><item><title>Construindo testes com Kotlin, JUnit e MockK</title><link>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</guid><description>&lt;p>A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja,
-garantir que um determinado trecho de código faz o que deveria fazer.&lt;/p>
-&lt;p>&lt;a href="https://junit.org/junit5/">JUnit&lt;/a> é um dos frameworks mais utilizados na construção de testes
-em &lt;a href="https://kotlinlang.org/">Kotlin&lt;/a> e &lt;a href="https://mockk.io/">MockK&lt;/a> para construção de &lt;em>mocks&lt;/em>, que seriam como dublês de
-um objeto e tem como função simular o comportamento de um componente.&lt;/p>
-&lt;aside>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kotlin on rapatao.com</title><link>https://www.rapatao.com/pt/tags/kotlin/</link><description>Recent content in Kotlin on rapatao.com</description><generator>Hugo</generator><language>pt</language><lastBuildDate>Fri, 10 Nov 2023 17:00:00 +0000</lastBuildDate><atom:link href="https://www.rapatao.com/pt/tags/kotlin/index.xml" rel="self" type="application/rss+xml"/><item><title>Destructuring em Kotlin</title><link>https://www.rapatao.com/pt/posts/2023-11/destructuring-em-kotlin/</link><pubDate>Fri, 10 Nov 2023 17:00:00 +0000</pubDate><guid>https://www.rapatao.com/pt/posts/2023-11/destructuring-em-kotlin/</guid><description>&lt;p&gt;&lt;strong&gt;Destructuring&lt;/strong&gt; é um conceito de programação que envolve dividir uma estrutura de dados complexa em seus componentes
+individuais e atribuir esses componentes a variáveis individuais diretamente em uma única instrução.&lt;/p&gt;
+&lt;p&gt;Como muitas outras linguagens modernas suportam, mas &lt;code&gt;Kotlin&lt;/code&gt;, pelo menos quando comparado a &lt;code&gt;JavaScript&lt;/code&gt;, tem um
+comportamento diferente quando usado em classes de dados.&lt;/p&gt;
+&lt;p&gt;O objetivo deste texto é falar sobre essa diferença, e como prevenir, o mais cedo possível, erros que seu uso possa
+causar ao seu código.&lt;/p&gt;</description></item><item><title>Construindo testes com Kotlin, JUnit e MockK</title><link>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</link><pubDate>Wed, 19 Jan 2022 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/pt/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/</guid><description>&lt;p&gt;A construção de testes de código em uma aplicação tem como principal objetivo certificar o que foi codificado, ou seja,
+garantir que um determinado trecho de código faz o que deveria fazer.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://junit.org/junit5/"&gt;JUnit&lt;/a&gt; é um dos frameworks mais utilizados na construção de testes
+em &lt;a href="https://kotlinlang.org/"&gt;Kotlin&lt;/a&gt; e &lt;a href="https://mockk.io/"&gt;MockK&lt;/a&gt; para construção de &lt;em&gt;mocks&lt;/em&gt;, que seriam como dublês de
+um objeto e tem como função simular o comportamento de um componente.&lt;/p&gt;
+&lt;aside&gt;
 💡 Os código utilizados nesse texto estão disponíveis no GitHub: https://github.com/rapatao/blog-koltin-junit-mockk
-&lt;/aside>
-&lt;h2 id="dependências-utilizadas">Dependências utilizadas&lt;/h2>
-&lt;p>É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste
+&lt;/aside&gt;
+&lt;h2 id="dependências-utilizadas"&gt;Dependências utilizadas&lt;/h2&gt;
+&lt;p&gt;É importante dizer que, existem diversas formas de adicionar suporte a linguagem e frameworks que iremos utilizar neste
 texto. No exemplo abaixo, será apresentado apenas uma delas, sendo basicamente como o
-&lt;em>&lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a>&lt;/em> inicializa projetos em &lt;em>Kotlin&lt;/em> + &lt;em>&lt;a href="https://gradle.org/">Gradle&lt;/a>&lt;/em>.&lt;/p></description></item></channel></rss>
+&lt;em&gt;&lt;a href="https://www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt;&lt;/em&gt; inicializa projetos em &lt;em&gt;Kotlin&lt;/em&gt; + &lt;em&gt;&lt;a href="https://gradle.org/"&gt;Gradle&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;</description></item></channel></rss>

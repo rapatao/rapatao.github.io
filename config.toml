@@ -1,7 +1,8 @@
 baseURL = "https://www.rapatao.com/"
 languageCode = "en-us"
 title = "rapatao.com"
-theme = "rapatao.com"
+#theme = "rapatao.com"
+theme = "rapats-terminal"
 
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -50,7 +51,11 @@ hideEmptyStats = true
 images = ["/images/avatar-pixel.gif"]
 
 [params.social]
-twitter = "@rapatao"
+github = "rapatao"
+twitter = "rapatao"
+linkedin = "rapatao"
+email = "rapatao@rapatao.com"
+
 
 [params.meta]
 description = "My personal website containing my resume and some insights I have related to the technology area."
@@ -70,7 +75,7 @@ languageMenu = true
 
 [params.intro]
 header = "Luiz H. Rapatão"
-paragraph = "Staff Software Engineer"
+#paragraph = "Staff Software Engineer"
 rssIntro = true
 socialIntro = true
 hideWhenSingleColumn = false
@@ -97,21 +102,12 @@ category = "categories"
 series = "series"
 tag = "tags"
 
-[social]
-github = "rapatao"
-twitter = "rapatao"
-linkedin = "rapatao"
-#medium = "rapatao"
-instagram = "luizrapatao"
-#skype = "rapatao"
-email = "rapatao@rapatao.com"
-
 [languages]
 [languages.en]
 languagename = "English"
 
 [[languages.en.menu.main]]
-name = "Blog"
+name = "Posts"
 weight = 2
 url = "posts/"
 pre = "<i class='far fa-newspaper'></i>"
@@ -123,7 +119,7 @@ url = "resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
 [[languages.en.menu.main]]
-name = "JSON Formatter & Minifier"
+name = "JSON Toolkit"
 weight = 10
 url = "json/"
 pre = "<i class='far fa-file-code'></i>"
@@ -132,19 +128,19 @@ pre = "<i class='far fa-file-code'></i>"
 languagename = "Português"
 
 [[languages.pt.menu.main]]
-name = "Blog"
+name = "Posts"
 weight = 2
 url = "pt/posts/"
 pre = "<i class='far fa-newspaper'></i>"
 
 [[languages.pt.menu.main]]
-name = "Experiência"
+name = "Currículo"
 weight = 5
 url = "pt/resume/"
 pre = "<i class='far fa-file-alt'></i>"
 
 [[languages.pt.menu.main]]
-name = "JSON Formatter & Minifier"
+name = "JSON Toolkit"
 weight = 10
 url = "pt/json/"
 pre = "<i class='far fa-file-code'></i>"
@@ -171,5 +167,5 @@ strict = "0"
 reactions_enabled = "0"
 emit_metadata = "0"
 input_position = "bottom"
-theme = "noborder_light"
+theme = "transparent_dark"
 enabled = true

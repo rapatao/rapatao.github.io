@@ -1,0 +1,38 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+        <span class="post-date">{{ i18n "published" }} {{ .Date.Format "Jan 02, 2006" }}</span>
+        {{ if .Params.tags }}
+        <div class="post-tags">
+            {{ range .Params.tags }}<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+
+        {{ end }}
+    </div>
+    <div class="content post-content-area">
+        {{ .Content }}
+    </div>
+    {{ partial "reaktions.html" . }}
+    {{ if not ( eq .Params.comments false) }}
+    {{ partial "giscuss.html" . }}
+    {{ end }}
+</article>
+
+{{ if eq .Section "posts" }}
+<div class="post-navigation">
+    {{ if .PrevInSection }}
+    <div class="nav-prev">
+        <a href="{{ .PrevInSection.RelPermalink }}">&lt; {{ i18n "previous" }}: {{ .PrevInSection.Title }}</a>
+    </div>
+    {{ end }}
+    {{ if .NextInSection }}
+    <div class="nav-next">
+        <a href="{{ .NextInSection.RelPermalink }}">{{ i18n "next" }}: {{ .NextInSection.Title }} &gt;</a>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+
+
+{{ end }}

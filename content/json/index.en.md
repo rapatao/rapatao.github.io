@@ -1,8 +1,8 @@
 ---
 title: "JSON Toolkit: Validator, Formatter & Minifier"
 slug: "json"
-type: "singular"
-layout: "singular"
+type: "single"
+layout: "single"
 
 disable_time: true
 disable_share: true

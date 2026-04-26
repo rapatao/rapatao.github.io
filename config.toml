@@ -167,5 +167,5 @@ strict = "0"
 reactions_enabled = "0"
 emit_metadata = "0"
 input_position = "bottom"
-theme = "noborder_light"
+theme = "transparent_dark"
 enabled = true

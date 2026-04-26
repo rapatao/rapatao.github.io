@@ -14,6 +14,9 @@
         {{ .Content }}
     </div>
     {{ partial "reaktions.html" . }}
+    {{ if not ( eq .Params.comments false) }}
+    {{ partial "giscuss.html" . }}
+    {{ end }}
 </article>
 
 {{ if eq .Section "posts" }}

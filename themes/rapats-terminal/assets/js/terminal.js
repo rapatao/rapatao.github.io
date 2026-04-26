@@ -22,7 +22,7 @@ document.addEventListener('keydown', function(e) {
         const key = e.key;
 
         // 1-9: Menu shortcuts
-        const menuItems = document.querySelectorAll('nav ul li a');
+        const menuItems = document.querySelectorAll('nav:not(.socnet-icons) ul li a');
         if (key >= '1' && key <= '9') {
             const index = parseInt(key) - 1;
             if (menuItems[index]) {
@@ -179,38 +179,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Keyboard Accessibility
     document.addEventListener('keydown', function(e) {
-        if (modal && modal.classList.contains('is-visible')) {
-            const items = Array.from(modal.querySelectorAll('li a'));
-            const activeIdx = items.findIndex(item => item === document.activeElement);
+        if (modal && modal.style.display === 'block') {
+            const items = Array.from(modal.querySelectorAll('li'));
+            const activeIdx = items.findIndex(item => item.classList.contains('selected'));
 
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
                 const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % items.length;
-                items[nextIdx].focus();
+                if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+                items[nextIdx].classList.add('selected');
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
                 const prevIdx = (activeIdx <= 0) ? items.length - 1 : activeIdx - 1;
-                items[prevIdx].focus();
+                if (activeIdx !== -1) items[activeIdx].classList.remove('selected');
+                items[prevIdx].classList.add('selected');
             } else if (e.key === 'Enter' && activeIdx !== -1) {
-                // Browsers handle link activation on enter key natively
+                e.preventDefault();
+                items[activeIdx].querySelector('a').click();
             } else if (e.key === 'Escape') {
                 e.preventDefault();
                 langTrigger.focus();
-                modal.classList.remove('is-visible');
-                overlay.classList.remove('is-visible');
-            } else if (e.key === 'Tab') {
-                // Focus trap
-                if (e.shiftKey) {
-                    if (activeIdx <= 0) {
-                        e.preventDefault();
-                        items[items.length - 1].focus();
-                    }
-                } else {
-                    if (activeIdx === items.length - 1) {
-                        e.preventDefault();
-                        items[0].focus();
-                    }
-                }
+                modal.style.display = 'none';
+                overlay.style.display = 'none';
             }
         }
     });

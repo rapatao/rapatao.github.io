@@ -1,0 +1,6 @@
+{{ if .Site.Params.Reaktions.enabled }}
+<div id="reaktions"></div>
+{{ $reaktionsScript := .Site.Params.Reaktions.script | default "/js/reaktions.js" | relURL }}
+<script lang="application/javascript" defer src="{{ $reaktionsScript }}"></script>
+<noscript>Please enable JavaScript to react with this post</noscript>
+{{ end }}

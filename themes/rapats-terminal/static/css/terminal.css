@@ -556,3 +556,42 @@ button:hover {
         padding: 10px;
     }
 }
+
+/* Override Reaktions Styles */
+#reaktions, 
+.reaktions, 
+footer.reaktions-footer, 
+header.reaktions-title, 
+main.reaktions-main {
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.reaktions-loader.reaktions-blocker {
+    background-color: var(--bg-color) !important;
+    opacity: 0.8 !important;
+}
+
+.reaktions-button {
+    border: 1px solid var(--prompt-color) !important;
+}
+
+.reaktions-icon, .reaktions-value {
+    border: 1px solid var(--dim-text) !important;
+}
+
+.reaktions-value {
+    background: var(--selection-bg) !important;
+    color: var(--text-color) !important;
+}
+
+.reaktions-selected {
+    background: var(--selection-bg) !important;
+}
+
+/* Spinner border colors */
+.reaktions-loader.reaktions-spin {
+    border: 10px solid var(--dim-text) !important;
+    border-bottom-color: var(--bg-color) !important;
+    border-top-color: var(--bg-color) !important;
+}

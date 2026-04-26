@@ -563,6 +563,13 @@ button:hover {
     }
 }
 
+/* Separator for post interactions */
+#reaktions, .giscus {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--dim-text);
+}
+
 /* Override Reaktions Styles */
 #reaktions, 
 .reaktions, 

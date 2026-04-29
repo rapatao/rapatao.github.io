@@ -12,7 +12,7 @@ function clearContentSelection(nodes) {
 
 document.addEventListener('keydown', function(e) {
     const items = document.querySelectorAll('.post-item');
-    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area > ul, .post-content-area > ol, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
+    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
     
     // Prevent interaction if language modal is open
     const modal = document.getElementById('lang-modal');
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.post-item');
-    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area > ul, .post-content-area > ol, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
+    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
 
     items.forEach((item, index) => {
         item.addEventListener('click', (e) => {

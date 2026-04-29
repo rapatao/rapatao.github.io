@@ -67,13 +67,13 @@ document.addEventListener('keydown', function(e) {
         if (key === 'ArrowDown' || key === 'ArrowUp') {
             e.preventDefault();
             const isDown = key === 'ArrowDown';
-            
+
             // Content Navigation (if inside a post)
             if (contentNodes.length > 0) {
                 if (contentIndex >= 0) {
                     const currentBlock = contentNodes[contentIndex];
                     const links = currentBlock.querySelectorAll('a');
-                    
+
                     if (links.length > 0) {
                         if (isDown && linkIndex < links.length - 1) {
                             if (linkIndex >= 0) links[linkIndex].classList.remove('link-focused');
@@ -134,7 +134,8 @@ document.addEventListener('keydown', function(e) {
                     }
                 }
             }
-        } else if (key === 'Enter') {
+        }
+ else if (key === 'Enter') {
             if (contentIndex >= 0) {
                 const currentBlock = contentNodes[contentIndex];
                 if (linkIndex >= 0) {
@@ -148,7 +149,7 @@ document.addEventListener('keydown', function(e) {
                 const link = items[selectedIndex].querySelector('a');
                 if (link) { e.preventDefault(); link.click(); }
             }
-        } else if (e.key === 'Backspace') {
+        } else if (key === 'Backspace') {
             window.history.back();
         }
     }
@@ -204,15 +205,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
 });
 
 window.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.post-item');
+    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area > ul, .post-content-area > ol, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
+
     items.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            const link = item.querySelector('a');
-            if (link) window.location.href = link.href;
+        item.addEventListener('click', (e) => {
+            const postItem = e.target.closest('.post-item');
+            if (!postItem) return;
+            
+            items.forEach((i, idx) => {
+                i.classList.remove('selected');
+                if (i === postItem) selectedIndex = idx;
+            });
+            postItem.classList.add('selected');
+            contentIndex = -1;
+            
+            const link = postItem.querySelector('a');
+            if (link) {
+                setTimeout(() => { window.location.href = link.href; }, 100);
+            }
+        });
+    });
+
+    contentNodes.forEach((node, index) => {
+        node.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') return;
+            clearContentSelection(contentNodes);
+            contentIndex = index;
+            linkIndex = -1;
+            node.classList.add('selected-content');
         });
     });
 });

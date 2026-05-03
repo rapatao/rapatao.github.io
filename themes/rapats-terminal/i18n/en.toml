@@ -1,17 +1,13 @@
 [select_language]
-other = "SELECT LANGUAGE"
-[home]
-other = "HOME"
-[resume]
-other = "RESUME"
+other = "Select Language"
 [language]
-other = "LANGUAGE"
+other = "Language"
 [previous]
-other = "PREVIOUS"
+other = "Previous"
 [next]
-other = "NEXT"
+other = "Next"
 [page]
-other = "PAGE"
+other = "Page"
 [published]
 other = "Published:"
 [keyboard_nav]
@@ -24,3 +20,5 @@ other = "Select/Navigate"
 other = "Open"
 [keyboard_back]
 other = "Back"
+[keyboard_language]
+other = "Language"

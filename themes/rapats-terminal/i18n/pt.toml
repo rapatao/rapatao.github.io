@@ -1,17 +1,13 @@
 [select_language]
-other = "SELECIONE O IDIOMA"
-[home]
-other = "INÍCIO"
-[resume]
-other = "CURRÍCULO"
+other = "Selecione o Idioma"
 [language]
-other = "IDIOMA"
+other = "Idioma"
 [previous]
-other = "ANTERIOR"
+other = "Anterior"
 [next]
-other = "PRÓXIMO"
+other = "Próximo"
 [page]
-other = "PÁGINA"
+other = "Página"
 [published]
 other = "Publicado:"
 [keyboard_nav]
@@ -24,3 +20,5 @@ other = "Selecionar/Navegar"
 other = "Abrir"
 [keyboard_back]
 other = "Voltar"
+[keyboard_language]
+other = "Idioma"

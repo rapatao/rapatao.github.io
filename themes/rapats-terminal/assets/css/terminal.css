@@ -492,13 +492,78 @@ button:hover {
     cursor: pointer;
 }
 
+/* ... Existing Styles ... */
 #nav-modal li.selected {
     background-color: var(--selection-bg);
     color: var(--selection-text);
     border: 1px solid var(--prompt-color);
 }
 
+#search-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    border: 1px solid var(--prompt-color);
+    padding: 20px;
+    z-index: 2000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 80%;
+    max-width: 800px;
+}
+
+@media (max-width: 600px) {
+    #search-modal {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+}
+
+#search-modal input {
+    width: 100%;
+    background-color: var(--bg-color);
+    color: var(--prompt-color);
+    border: 1px solid var(--prompt-color);
+    padding: 10px;
+    font-family: var(--font-family);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#search-results {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#search-results li {
+    margin: 5px 0;
+    padding: 5px;
+    border-left: 3px solid transparent;
+}
+
+#search-results li.selected {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    border-left: 3px solid var(--prompt-color);
+}
+
+#search-results li a {
+    color: var(--prompt-color);
+    text-decoration: none;
+    display: block;
+}
+
+#search-results li.selected a {
+    color: var(--selection-text);
+}
+
 .lang-modal {
+/* ... Existing Styles ... */
     display: none;
     position: fixed;
     top: 50%;

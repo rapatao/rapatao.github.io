@@ -16,6 +16,8 @@ other = "Menu"
 other = "Navigate"
 [keyboard_select]
 other = "Select/Navigate"
+[keyboard_search]
+other = "Search"
 [keyboard_open]
 other = "Open"
 [keyboard_back]

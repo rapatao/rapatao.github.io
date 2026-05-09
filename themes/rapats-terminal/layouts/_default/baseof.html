@@ -43,7 +43,7 @@
             <div class="footer-content">
                 <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}</p>
                 <div class="keyboard-help" style="margin-top: 0;">
-                    [<span class="key-hint">1-{{ sub ($scratch.Get "i") 1 }}</span>] {{ i18n "keyboard_nav" }} [<span class="key-hint">&larr;/&rarr;</span>] {{ i18n "keyboard_navigate" }} [<span class="key-hint">L</span>] {{ i18n "keyboard_language" }} [<span class="key-hint">Backspace</span>] {{ i18n "keyboard_back" }} [<span class="key-hint">Enter</span>] {{ i18n "keyboard_open" }}
+                    [<span class="key-hint">1-{{ sub ($scratch.Get "i") 1 }}</span>] {{ i18n "keyboard_nav" }} [<span class="key-hint">&larr;/&rarr;</span>] {{ i18n "keyboard_navigate" }} [<span class="key-hint">/</span>] {{ i18n "keyboard_search" }} [<span class="key-hint">L</span>] {{ i18n "keyboard_language" }} [<span class="key-hint">Backspace</span>] {{ i18n "keyboard_back" }} [<span class="key-hint">Enter</span>] {{ i18n "keyboard_open" }}
                 </div>
         </footer>
     </div>
@@ -65,9 +65,9 @@
     </div>
 
     <!-- Navigation Modal -->
-    <div class="lang-modal" id="nav-modal" 
-         data-nav-confirm="{{ i18n "nav_confirm" }}" 
-         data-next-page="{{ i18n "next_page" }}" 
+    <div class="lang-modal" id="nav-modal"
+         data-nav-confirm="{{ i18n "nav_confirm" }}"
+         data-next-page="{{ i18n "next_page" }}"
          data-prev-page="{{ i18n "prev_page" }}">
         <h3 id="nav-message"></h3>
         <ul>
@@ -75,6 +75,12 @@
             <li id="nav-no"><a href="#">{{ i18n "nav_no" }}</a></li>
         </ul>
     </div>
-</body>
-<span style="display:none" data-check="rapatao.com"></span>
+
+    <!-- Search Modal -->
+    <div class="lang-modal" id="search-modal">
+        <h3>Search Posts</h3>
+        <input type="text" id="search-input" placeholder="Type to search...">
+        <ul id="search-results"></ul>
+    </div>
+    </body><span style="display:none" data-check="rapatao.com"></span>
 </html>

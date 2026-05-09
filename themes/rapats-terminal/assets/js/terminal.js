@@ -2,6 +2,7 @@ let selectedIndex = -1;
 let contentIndex = -1;
 let linkIndex = -1;
 let targetUrl = '';
+let searchData = [];
 
 function clearContentSelection(nodes) {
     if (contentIndex >= 0 && nodes[contentIndex]) {
@@ -11,32 +12,62 @@ function clearContentSelection(nodes) {
     }
 }
 
+async function loadSearchData() {
+    try {
+        const path = window.location.pathname;
+        const isPt = path.startsWith('/pt/');
+        const indexPath = isPt ? '/pt/index.json' : '/index.json';
+        const response = await fetch(indexPath);
+        const data = await response.json();
+        searchData = data.filter(item => item.url && item.url.includes('/posts/'));
+    } catch (e) {
+        console.error('Failed to load search data', e);
+        searchData = [];
+    }
+}
+
 document.addEventListener('keydown', function(e) {
     const items = document.querySelectorAll('.post-item');
     const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
     
-    // Check if Language modal is open
     const langModal = document.getElementById('lang-modal');
-    if (langModal && langModal.style.display === 'block') return;
+    const navModal = document.getElementById('nav-modal');
+    const searchModal = document.getElementById('search-modal');
+    
+    // Global Escape Handler for all modals
+    if (e.key === 'Escape') {
+        const activeModal = document.querySelector('.lang-modal[style*="display: block"]');
+        if (activeModal) {
+            e.preventDefault();
+            activeModal.style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
+            if (activeModal.id === 'search-modal') {
+                document.getElementById('search-input').value = '';
+                document.getElementById('search-results').innerHTML = '';
+            }
+            return;
+        }
+    }
+
+    // '/' Hotkey handler
+    if (e.key === '/') {
+        if (!((langModal && langModal.style.display === 'block') || (navModal && navModal.style.display === 'block'))) {
+            e.preventDefault();
+            const overlay = document.getElementById('modal-overlay');
+            searchModal.style.display = 'block';
+            overlay.style.display = 'block';
+            document.getElementById('search-input').focus();
+            loadSearchData();
+            return;
+        }
+    }
 
     // Check if Navigation modal is open
-    const navModal = document.getElementById('nav-modal');
     if (navModal && navModal.style.display === 'block') {
         const key = e.key;
         const navYes = document.getElementById('nav-yes');
         const navNo = document.getElementById('nav-no');
         const overlay = document.getElementById('modal-overlay');
-
-        // Click handlers
-        navYes.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = targetUrl;
-        });
-        navNo.addEventListener('click', (e) => {
-            e.preventDefault();
-            navModal.style.display = 'none';
-            overlay.style.display = 'none';
-        });
 
         if (key === 'ArrowRight') {
             e.preventDefault();
@@ -54,15 +85,13 @@ document.addEventListener('keydown', function(e) {
                 navModal.style.display = 'none';
                 overlay.style.display = 'none';
             }
-        } else if (key === 'Escape') {
-            e.preventDefault();
-            navModal.style.display = 'none';
-            overlay.style.display = 'none';
         }
-        e.preventDefault(); // Block all other keys when modal is open
+        e.preventDefault(); 
         return;
     }
-    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+    
+    // Global Shortcut handler
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !document.querySelector('.lang-modal[style*="display: block"]')) {
         const key = e.key;
 
         // 1-9: Menu shortcuts
@@ -80,24 +109,13 @@ document.addEventListener('keydown', function(e) {
             const langModal = document.getElementById('lang-modal');
             const overlay = document.getElementById('modal-overlay');
             if (langModal) {
-                const isVisible = (langModal.style.display === 'block');
-                if (isVisible) {
-                    langModal.style.display = 'none';
-                    overlay.style.display = 'none';
-                } else {
-                    langModal.style.display = 'block';
-                    overlay.style.display = 'block';
-                    const items = Array.from(langModal.querySelectorAll('li'));
-                    const currentPath = window.location.pathname;
-                    items.forEach(i => i.classList.remove('selected'));
-                    
-                    let targetIdx = items.findIndex(item => {
-                        const href = item.querySelector('a').getAttribute('href');
-                        return currentPath === href || (href !== '/' && currentPath.startsWith(href));
-                    });
-                    if (targetIdx === -1) targetIdx = 0;
-                    items[targetIdx].classList.add('selected');
-                }
+                langModal.style.display = 'block';
+                overlay.style.display = 'block';
+                
+                // Unified selection logic
+                const items = Array.from(langModal.querySelectorAll('li'));
+                items.forEach(i => i.classList.remove('selected'));
+                if (items.length > 0) items[0].classList.add('selected');
             }
             return;
         }
@@ -105,11 +123,8 @@ document.addEventListener('keydown', function(e) {
         // Left/Right: Pagination/Post Navigation
         const nextLink = document.querySelector('.pagination .next a, .nav-next a');
         const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
-        const navModal = document.getElementById('nav-modal');
-        const overlay = document.getElementById('modal-overlay');
-
+        
         if ((key === 'ArrowRight' && nextLink) || (key === 'ArrowLeft' && prevLink)) {
-            if (navModal && navModal.style.display === 'block') return;
             e.preventDefault();
             targetUrl = (key === 'ArrowRight') ? nextLink.href : prevLink.href;
             
@@ -118,7 +133,7 @@ document.addEventListener('keydown', function(e) {
             document.getElementById('nav-message').innerText = confirmTemplate.replace('%s', pageName);
             
             navModal.style.display = 'block';
-            overlay.style.display = 'block';
+            document.getElementById('modal-overlay').style.display = 'block';
             document.getElementById('nav-yes').classList.add('selected');
             document.getElementById('nav-no').classList.remove('selected');
         }
@@ -128,7 +143,6 @@ document.addEventListener('keydown', function(e) {
             e.preventDefault();
             const isDown = key === 'ArrowDown';
 
-            // Content Navigation (if inside a post)
             if (contentNodes.length > 0) {
                 if (contentIndex >= 0) {
                     const currentBlock = contentNodes[contentIndex];
@@ -176,7 +190,6 @@ document.addEventListener('keydown', function(e) {
                     }
                 }
             } 
-            // List Navigation (if in a list)
             else if (items.length > 0) {
                 if (isDown) {
                     if (selectedIndex < items.length - 1) {
@@ -215,31 +228,80 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Language Modal Trigger
 document.addEventListener('DOMContentLoaded', () => {
     const langTrigger = document.getElementById('lang-trigger');
     const modal = document.getElementById('lang-modal');
     const overlay = document.getElementById('modal-overlay');
+    const searchModal = document.getElementById('search-modal');
+    const navModal = document.getElementById('nav-modal');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    // Close modals when clicking the overlay
+    overlay.addEventListener('click', () => {
+        modal.style.display = 'none';
+        navModal.style.display = 'none';
+        searchModal.style.display = 'none';
+        overlay.style.display = 'none';
+        
+        // Reset search state
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+    });
 
     if (langTrigger) {
         langTrigger.addEventListener('click', function(e) {
             e.preventDefault();
             modal.style.display = 'block';
             overlay.style.display = 'block';
+            
+            // Always select the first language option by default
             const items = Array.from(modal.querySelectorAll('li'));
-            const currentPath = window.location.pathname;
             items.forEach(i => i.classList.remove('selected'));
-            let targetIdx = items.findIndex(item => {
-                const href = item.querySelector('a').getAttribute('href');
-                return currentPath === href || (href !== '/' && currentPath.startsWith(href));
-            });
-            if (targetIdx === -1) targetIdx = 0;
-            items[targetIdx].classList.add('selected');
+            if (items.length > 0) {
+                items[0].classList.add('selected');
+            }
         });
     }
 
-    // Modal Keyboard Accessibility
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        searchResults.innerHTML = '';
+        if (query.length < 2) return;
+        
+        const filtered = searchData.filter(item => {
+            const titleMatch = item.title.toLowerCase().includes(query);
+            const tagMatch = item.tags && item.tags.some(tag => tag.toLowerCase().includes(query));
+            return titleMatch || tagMatch;
+        });
+        filtered.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+            searchResults.appendChild(li);
+        });
+    });
+
     document.addEventListener('keydown', function(e) {
+        if (searchModal && searchModal.style.display === 'block') {
+            const results = Array.from(searchResults.querySelectorAll('li'));
+            const activeIdx = results.findIndex(item => item.classList.contains('selected'));
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % results.length;
+                if (activeIdx !== -1) results[activeIdx].classList.remove('selected');
+                results[nextIdx].classList.add('selected');
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIdx = (activeIdx <= 0) ? results.length - 1 : activeIdx - 1;
+                if (activeIdx !== -1) results[activeIdx].classList.remove('selected');
+                results[prevIdx].classList.add('selected');
+            } else if (e.key === 'Enter' && activeIdx !== -1) {
+                e.preventDefault();
+                results[activeIdx].querySelector('a').click();
+            }
+        }
+
         if (modal && modal.style.display === 'block') {
             const items = Array.from(modal.querySelectorAll('li'));
             const activeIdx = items.findIndex(item => item.classList.contains('selected'));
@@ -259,11 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 items[activeIdx].querySelector('a').click();
             } else if (e.key === 'Escape') {
                 e.preventDefault();
-                langTrigger.focus();
+                if (langTrigger) langTrigger.focus();
                 modal.style.display = 'none';
                 overlay.style.display = 'none';
             }
         }
     });
 });
-

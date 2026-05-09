@@ -1,10 +1,8 @@
-baseURL = "https://www.rapatao.com/"
-languageCode = "en-us"
+locale = "en-us"
 title = "rapatao.com"
 #theme = "rapatao.com"
 theme = "rapats-terminal"
 
-languagecode = "en"
 defaultcontentlanguage = "en"
 
 paginate = 5
@@ -104,7 +102,7 @@ tag = "tags"
 
 [languages]
 [languages.en]
-languagename = "English"
+label = "English"
 
 [[languages.en.menu.main]]
 name = "Posts"
@@ -125,7 +123,7 @@ url = "json/"
 pre = "<i class='far fa-file-code'></i>"
 
 [languages.pt]
-languagename = "Português"
+label = "Português"
 
 [[languages.pt.menu.main]]
 name = "Posts"

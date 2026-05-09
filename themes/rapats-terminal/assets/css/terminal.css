@@ -249,10 +249,10 @@ nav a:hover, .pagination a:hover {
     color: var(--selection-text);
     text-decoration: none;
 }
+article h2, article h3, article h4 {
     color: var(--header-color);
-    border-bottom: 1px solid var(--dim-text);
     padding-bottom: 2px;
-    margin: 1em 0 0.5em 0;
+    margin: 0.5em 0 0.25em 0;
 }
 
 .content {
@@ -261,7 +261,7 @@ nav a:hover, .pagination a:hover {
 }
 
 .content p {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
 }
 
 article h1 a, article h1 a:visited, article h2 a, article h2 a:visited, article h3 a, article h3 a:visited {
@@ -474,9 +474,22 @@ button:hover {
 }
 
 #nav-modal li {
-    margin: 10px;
-    padding: 5px;
+    margin: 5px;
+    padding: 0;
     border: 1px solid transparent;
+}
+
+#nav-modal li a {
+    display: block;
+    padding: 5px;
+    color: inherit;
+    text-decoration: none;
+}
+
+#nav-modal li:hover {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    cursor: pointer;
 }
 
 #nav-modal li.selected {

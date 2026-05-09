@@ -27,6 +27,17 @@ document.addEventListener('keydown', function(e) {
         const navNo = document.getElementById('nav-no');
         const overlay = document.getElementById('modal-overlay');
 
+        // Click handlers
+        navYes.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = targetUrl;
+        });
+        navNo.addEventListener('click', (e) => {
+            e.preventDefault();
+            navModal.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
         if (key === 'ArrowRight') {
             e.preventDefault();
             navYes.classList.remove('selected');

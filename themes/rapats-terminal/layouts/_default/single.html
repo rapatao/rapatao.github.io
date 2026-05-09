@@ -2,7 +2,9 @@
 <article>
     <h1>{{ .Title }}</h1>
     <div class="post-meta">
+        {{ if not .Params.disable_time }}
         <span class="post-date">{{ i18n "published" }} {{ .Date.Format "Jan 02, 2006" }}</span>
+        {{ end }}
         {{ if .Params.tags }}
         <div class="post-tags">
             {{ range .Params.tags }}<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}

@@ -22,3 +22,13 @@ other = "Open"
 other = "Back"
 [keyboard_language]
 other = "Language"
+[nav_confirm]
+other = "Navigate to %s?"
+[nav_yes]
+other = "Yes"
+[nav_no]
+other = "No"
+[next_page]
+other = "Next Page"
+[prev_page]
+other = "Previous Page"

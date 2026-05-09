@@ -466,6 +466,25 @@ button:hover {
     color: var(--bg-color);
 }
 
+#nav-modal ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+#nav-modal li {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+#nav-modal li.selected {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    border: 1px solid var(--prompt-color);
+}
+
 .lang-modal {
     display: none;
     position: fixed;

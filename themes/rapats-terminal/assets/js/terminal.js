@@ -1,6 +1,7 @@
 let selectedIndex = -1;
 let contentIndex = -1;
 let linkIndex = -1;
+let targetUrl = '';
 
 function clearContentSelection(nodes) {
     if (contentIndex >= 0 && nodes[contentIndex]) {
@@ -14,10 +15,42 @@ document.addEventListener('keydown', function(e) {
     const items = document.querySelectorAll('.post-item');
     const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
     
-    // Prevent interaction if language modal is open
-    const modal = document.getElementById('lang-modal');
-    if (modal && modal.style.display === 'block') return;
+    // Check if Language modal is open
+    const langModal = document.getElementById('lang-modal');
+    if (langModal && langModal.style.display === 'block') return;
 
+    // Check if Navigation modal is open
+    const navModal = document.getElementById('nav-modal');
+    if (navModal && navModal.style.display === 'block') {
+        const key = e.key;
+        const navYes = document.getElementById('nav-yes');
+        const navNo = document.getElementById('nav-no');
+        const overlay = document.getElementById('modal-overlay');
+
+        if (key === 'ArrowRight') {
+            e.preventDefault();
+            navYes.classList.remove('selected');
+            navNo.classList.add('selected');
+        } else if (key === 'ArrowLeft') {
+            e.preventDefault();
+            navNo.classList.remove('selected');
+            navYes.classList.add('selected');
+        } else if (key === 'Enter') {
+            e.preventDefault();
+            if (navYes.classList.contains('selected')) {
+                window.location.href = targetUrl;
+            } else {
+                navModal.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+        } else if (key === 'Escape') {
+            e.preventDefault();
+            navModal.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+        e.preventDefault(); // Block all other keys when modal is open
+        return;
+    }
     if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         const key = e.key;
 
@@ -33,16 +66,17 @@ document.addEventListener('keydown', function(e) {
 
         // L: Language modal
         if (key.toLowerCase() === 'l') {
+            const langModal = document.getElementById('lang-modal');
             const overlay = document.getElementById('modal-overlay');
-            if (modal) {
-                const isVisible = (modal.style.display === 'block');
+            if (langModal) {
+                const isVisible = (langModal.style.display === 'block');
                 if (isVisible) {
-                    modal.style.display = 'none';
+                    langModal.style.display = 'none';
                     overlay.style.display = 'none';
                 } else {
-                    modal.style.display = 'block';
+                    langModal.style.display = 'block';
                     overlay.style.display = 'block';
-                    const items = Array.from(modal.querySelectorAll('li'));
+                    const items = Array.from(langModal.querySelectorAll('li'));
                     const currentPath = window.location.pathname;
                     items.forEach(i => i.classList.remove('selected'));
                     
@@ -60,8 +94,23 @@ document.addEventListener('keydown', function(e) {
         // Left/Right: Pagination/Post Navigation
         const nextLink = document.querySelector('.pagination .next a, .nav-next a');
         const prevLink = document.querySelector('.pagination .prev a, .nav-prev a');
-        if (key === 'ArrowRight' && nextLink) nextLink.click();
-        if (key === 'ArrowLeft' && prevLink) prevLink.click();
+        const navModal = document.getElementById('nav-modal');
+        const overlay = document.getElementById('modal-overlay');
+
+        if ((key === 'ArrowRight' && nextLink) || (key === 'ArrowLeft' && prevLink)) {
+            if (navModal && navModal.style.display === 'block') return;
+            e.preventDefault();
+            targetUrl = (key === 'ArrowRight') ? nextLink.href : prevLink.href;
+            
+            const confirmTemplate = navModal.getAttribute('data-nav-confirm');
+            const pageName = (key === 'ArrowRight') ? navModal.getAttribute('data-next-page') : navModal.getAttribute('data-prev-page');
+            document.getElementById('nav-message').innerText = confirmTemplate.replace('%s', pageName);
+            
+            navModal.style.display = 'block';
+            overlay.style.display = 'block';
+            document.getElementById('nav-yes').classList.add('selected');
+            document.getElementById('nav-no').classList.remove('selected');
+        }
 
         // Up/Down: Content/List Navigation
         if (key === 'ArrowDown' || key === 'ArrowUp') {
@@ -135,7 +184,7 @@ document.addEventListener('keydown', function(e) {
                 }
             }
         }
- else if (key === 'Enter') {
+        else if (key === 'Enter') {
             if (contentIndex >= 0) {
                 const currentBlock = contentNodes[contentIndex];
                 if (linkIndex >= 0) {
@@ -207,36 +256,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.post-item');
-    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
-
-    items.forEach((item, index) => {
-        item.addEventListener('click', (e) => {
-            const postItem = e.target.closest('.post-item');
-            if (!postItem) return;
-            
-            items.forEach((i, idx) => {
-                i.classList.remove('selected');
-                if (i === postItem) selectedIndex = idx;
-            });
-            postItem.classList.add('selected');
-            contentIndex = -1;
-            
-            const link = postItem.querySelector('a');
-            if (link) {
-                setTimeout(() => { window.location.href = link.href; }, 100);
-            }
-        });
-    });
-
-    contentNodes.forEach((node, index) => {
-        node.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') return;
-            clearContentSelection(contentNodes);
-            contentIndex = index;
-            linkIndex = -1;
-            node.classList.add('selected-content');
-        });
-    });
-});

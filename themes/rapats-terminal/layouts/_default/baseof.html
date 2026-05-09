@@ -63,6 +63,18 @@
             {{ end }}
         </ul>
     </div>
+
+    <!-- Navigation Modal -->
+    <div class="lang-modal" id="nav-modal" 
+         data-nav-confirm="{{ i18n "nav_confirm" }}" 
+         data-next-page="{{ i18n "next_page" }}" 
+         data-prev-page="{{ i18n "prev_page" }}">
+        <h3 id="nav-message"></h3>
+        <ul>
+            <li id="nav-yes" class="selected"><a href="#">{{ i18n "nav_yes" }}</a></li>
+            <li id="nav-no"><a href="#">{{ i18n "nav_no" }}</a></li>
+        </ul>
+    </div>
 </body>
 <span style="display:none" data-check="rapatao.com"></span>
 </html>

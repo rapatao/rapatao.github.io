@@ -236,6 +236,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const navModal = document.getElementById('nav-modal');
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
+    const contentNodes = Array.from(document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next'));
+
+    // Enable mouse click selection for content nodes
+    contentNodes.forEach((node, index) => {
+        node.addEventListener('click', () => {
+            clearContentSelection(contentNodes);
+            contentIndex = index;
+            node.classList.add('selected-content');
+            node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+
+    // Enable mouse click redirection for post items
+    const postItems = document.querySelectorAll('.post-item');
+    postItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            const link = item.querySelector('a');
+            if (link && e.target.tagName !== 'A') {
+                window.location.href = link.href;
+            }
+        });
+    });
 
     // Close modals when clicking the overlay
     overlay.addEventListener('click', () => {
@@ -291,11 +313,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nextIdx = (activeIdx === -1) ? 0 : (activeIdx + 1) % results.length;
                 if (activeIdx !== -1) results[activeIdx].classList.remove('selected');
                 results[nextIdx].classList.add('selected');
+                results[nextIdx].scrollIntoView({ block: 'nearest' });
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
                 const prevIdx = (activeIdx <= 0) ? results.length - 1 : activeIdx - 1;
                 if (activeIdx !== -1) results[activeIdx].classList.remove('selected');
                 results[prevIdx].classList.add('selected');
+                results[prevIdx].scrollIntoView({ block: 'nearest' });
             } else if (e.key === 'Enter' && activeIdx !== -1) {
                 e.preventDefault();
                 results[activeIdx].querySelector('a').click();

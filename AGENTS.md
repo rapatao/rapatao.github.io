@@ -9,13 +9,14 @@ This document outlines the specific tone, structure, and formatting used for blo
 
 ## Structure
 1. **Introduction**: Explain the "Why" before the "How".
-2. **Body**: Use `##` and `###` subheadings. Include frequent code blocks.
+2. **Body**: Use `##` for primary subtitles and `###` for nested subheadings. Include frequent code blocks.
 3. **Conclusion**: Summarize findings or provide a closing thought.
 4. **References/Links**: Provide links to official documentation.
 
 ## Language and Formatting
 - Support for English (`.en.md`) and Portuguese (`.pt.md`).
 - Translations must maintain the same tone and structure.
+- **Tags**: Must always be in English, even in translated posts.
 - **Images**: Use `/images/posts/` path. Center images using the `#center` fragment: `![Alt text](/path/to/image.png#center)`.
 - **Code**: Specify language for syntax highlighting (e.g., `kotlin`, `java`, `bash`).
 
@@ -36,7 +37,7 @@ url: "/posts/YYYY-MM/slug/"
 ```yaml
 ---
 title: "Título"
-date: YYYY-MM-DDTHH:MM:SSZ-03:00
+date: YYYY-MM-DDTHH:MM:SSZ
 tags: [tag1, tag2]
 images: ["/images/posts/image.jpg"]
 url: "/pt/posts/YYYY-MM/slug/"

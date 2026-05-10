@@ -162,7 +162,8 @@ nav a:hover, .pagination a:hover {
     color: var(--selection-text);
 }
 
-.post-date {
+.post-date,
+.post-reading-time {
     color: var(--dim-text);
     margin-right: 15px;
     font-size: 14px;

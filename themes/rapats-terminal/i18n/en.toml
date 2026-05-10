@@ -10,6 +10,8 @@ other = "Next"
 other = "Page"
 [published]
 other = "Published:"
+[reading_time]
+other = "%d min read"
 [keyboard_nav]
 other = "Menu"
 [keyboard_navigate]

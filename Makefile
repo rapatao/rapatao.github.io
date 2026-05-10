@@ -8,7 +8,7 @@ serve:
 build-docker:
 	@docker run --rm -v .:/src ${image} hugo --gc -d docs --minify --cleanDestinationDir
 
-build:
+build: unai
 	@hugo --gc -d docs --minify --cleanDestinationDir
 
 images:

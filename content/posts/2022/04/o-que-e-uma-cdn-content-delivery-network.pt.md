@@ -65,4 +65,4 @@ Fico por aqui, obrigado pela leitura, caso tenham dúvidas ou mesmo encontrem er
 - [What is a CDN? | How do CDNs work?](https://www.cloudflare.com/en-ca/learning/cdn/what-is-a-cdn/)
 - [What is CDN? | How Does a Content Delivery Network Work?](https://www.belugacdn.com/blog/cdn/what-is-cdn/)
 - [AWS: Content Delivery Network (CDN) Caching](https://aws.amazon.com/caching/cdn/)
-- [Cloud CDN: Content Delivery Network | Google Cloud](https://cloud.google.com/cdn)
+- [Cloud CDN: Content Delivery Network | Google Cloud](https://cloud.google.com/cdn)

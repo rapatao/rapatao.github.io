@@ -29,11 +29,11 @@ class Varargs {
 }
 ```
 
-We must consider that the *Varargs* class will be invoked by some *framework* over which we have no control, however, we need to ensure that, knowing the input value, the values ​​to be received in the implementation will also be known.
+We must consider that the *Varargs* class will be invoked by some *framework* over which we have no control, however, we need to ensure that, knowing the input value, the values to be received in the implementation will also be known.
 
-To try to exemplify a scenario, we can consider that the framework will convert values ​​from the consumption response of a *REST API*, perform calculations and consume the implementation with the result of this operation.
+To try to exemplify a scenario, we can consider that the framework will convert values from the consumption response of a *REST API*, perform calculations and consume the implementation with the result of this operation.
 
-Although we cannot control the operations performed by this framework, we can manipulate the execution, sending known values ​​and validating if the implementation's consumption will be done as expected.
+Although we cannot control the operations performed by this framework, we can manipulate the execution, sending known values and validating if the implementation's consumption will be done as expected.
 
 `This type of test is very useful to guarantee that updates of this framework, do not compromise the behavior of our application, allowing constant and safe updates.`
 

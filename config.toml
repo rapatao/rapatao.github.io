@@ -1,3 +1,4 @@
+baseURL = "https://www.rapatao.com/"
 locale = "en-us"
 title = "rapatao.com"
 #theme = "rapatao.com"

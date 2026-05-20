@@ -30,6 +30,11 @@ document.addEventListener('keydown', function(e) {
     const items = document.querySelectorAll('.post-item');
     const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
     
+    const isInputField = e.target.tagName === 'INPUT' || 
+                         e.target.tagName === 'TEXTAREA' || 
+                         e.target.tagName === 'SELECT' || 
+                         e.target.isContentEditable;
+    
     const langModal = document.getElementById('lang-modal');
     const navModal = document.getElementById('nav-modal');
     const searchModal = document.getElementById('search-modal');
@@ -50,7 +55,7 @@ document.addEventListener('keydown', function(e) {
     }
 
     // '/' Hotkey handler
-    if (e.key === '/') {
+    if (e.key === '/' && !isInputField) {
         if (!((langModal && langModal.style.display === 'block') || (navModal && navModal.style.display === 'block'))) {
             e.preventDefault();
             const overlay = document.getElementById('modal-overlay');
@@ -91,7 +96,7 @@ document.addEventListener('keydown', function(e) {
     }
     
     // Global Shortcut handler
-    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !document.querySelector('.lang-modal[style*="display: block"]')) {
+    if (!isInputField && !document.querySelector('.lang-modal[style*="display: block"]')) {
         const key = e.key;
 
         // 1-9: Menu shortcuts

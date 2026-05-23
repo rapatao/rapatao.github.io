@@ -33,6 +33,7 @@ val isEligible = user != null
     && (user.isPremium || (user.points != null && user.points > 500 && user.location == "BR")) 
     && user.active 
     && user.tags?.contains("blocked") == false
+    && user.middleName == null
     && (order != null && (order.total > 100 || user.yearsOfLoyalty >= 2))
 
 if (isEligible) {

@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Design on rapatao.com</title><link>https://www.rapatao.com/tags/system-design/</link><description>Recent content in System Design on rapatao.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2023 09:00:00 +0000</lastBuildDate><atom:link href="https://www.rapatao.com/tags/system-design/index.xml" rel="self" type="application/rss+xml"/><item><title>CAP Theorem</title><link>https://www.rapatao.com/posts/2023-09/cap-theorem/</link><pubDate>Fri, 22 Sep 2023 09:00:00 +0000</pubDate><guid>https://www.rapatao.com/posts/2023-09/cap-theorem/</guid><description>&lt;p&gt;CAP theorem is a fundamental principle in distributed database systems that states only two out of the three:
-consistency, availability, and partition tolerance, can be achieved at any given time.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Design on rapatao.com</title><link>https://www.rapatao.com/tags/system-design/</link><description>Recent content in System Design on rapatao.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2023 09:00:00 +0000</lastBuildDate><atom:link href="https://www.rapatao.com/tags/system-design/index.xml" rel="self" type="application/rss+xml"/><item><title>CAP Theorem</title><link>https://www.rapatao.com/posts/2023-09/cap-theorem/</link><pubDate>Fri, 22 Sep 2023 09:00:00 +0000</pubDate><guid>https://www.rapatao.com/posts/2023-09/cap-theorem/</guid><description>&lt;p&gt;When designing distributed systems, one of the most fundamental questions is: what guarantees can your system actually
+provide? The CAP theorem, formulated by Eric Brewer in 2000 and formally proven by Seth Gilbert and Nancy Lynch in 2002,
+answers this by stating that any distributed data store can only guarantee two out of three properties: &lt;strong&gt;Consistency&lt;/strong&gt;,
+&lt;strong&gt;Availability&lt;/strong&gt;, and &lt;strong&gt;Partition Tolerance&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="consistency"&gt;Consistency&lt;/h2&gt;
 &lt;p&gt;In the context of the CAP theorem, consistency means that every read operation receives the most recent write or an
-error. All database nodes will hold the same data at the same time.&lt;/p&gt;
-&lt;h2 id="availability"&gt;Availability&lt;/h2&gt;
-&lt;p&gt;Availability means that each request made to the system either receives a valid response or error, regardless of the
-state of the system. Every non-failed node returns a response in a reasonable amount of time, therefore maximizing
-uptime.&lt;/p&gt;</description></item></channel></rss>
+error. All database nodes will hold the same data at the same time — there are no stale reads.&lt;/p&gt;</description></item></channel></rss>

@@ -363,6 +363,43 @@ blockquote {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Table styles */
+.post-content-area table,
+.content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.8em 0;
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+}
+
+.post-content-area table th,
+.content table th {
+    color: var(--header-color);
+    background-color: var(--selection-bg);
+    border: 1px solid var(--dim-text);
+    padding: 6px 12px;
+    text-align: left;
+}
+
+.post-content-area table td,
+.content table td {
+    border: 1px solid var(--dim-text);
+    padding: 6px 12px;
+    vertical-align: top;
+}
+
+.post-content-area table tr:nth-child(even),
+.content table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.post-content-area table tr:hover,
+.content table tr:hover {
+    background-color: var(--selection-bg);
+}
+
 .post-navigation {
     margin-top: 40px;
     padding-top: 20px;
@@ -386,20 +423,35 @@ blockquote {
     background-color: var(--selection-bg);
 }
 
-.post-content-area p, 
-.post-content-area ul, 
-.post-content-area ol, 
-.post-content-area pre, 
-.post-content-area blockquote, 
+.post-content-area p,
+.post-content-area ul,
+.post-content-area ol,
+.post-content-area pre,
+.post-content-area blockquote,
 .post-content-area aside,
 .post-content-area h2,
 .post-content-area h3,
 .post-content-area h4,
-.post-content-area table,
 .post-content-area .highlight {
     padding: 5px;
     border-left: 3px solid transparent;
     transition: background-color 0.1s;
+}
+
+.post-content-area table tr {
+    transition: background-color 0.1s;
+}
+
+.post-content-area table tr.selected-content {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+    box-shadow: inset 3px 0 0 var(--prompt-color);
+}
+
+.post-content-area table tr.selected-content th,
+.post-content-area table tr.selected-content td {
+    color: var(--selection-text);
+    background-color: var(--selection-bg);
 }
 
 .post-content-area .selected-content {

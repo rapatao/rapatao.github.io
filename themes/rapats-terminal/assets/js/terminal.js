@@ -28,7 +28,7 @@ async function loadSearchData() {
 
 document.addEventListener('keydown', function(e) {
     const items = document.querySelectorAll('.post-item');
-    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next');
+    const contentNodes = document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table tr, .post-content-area > .highlight, .nav-prev, .nav-next');
     
     const isInputField = e.target.tagName === 'INPUT' || 
                          e.target.tagName === 'TEXTAREA' || 
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navModal = document.getElementById('nav-modal');
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
-    const contentNodes = Array.from(document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table, .post-content-area > .highlight, .nav-prev, .nav-next'));
+    const contentNodes = Array.from(document.querySelectorAll('.post-content-area > p, .post-content-area ul li, .post-content-area ol li, .post-content-area > pre, .post-content-area > blockquote, .post-content-area > aside, .post-content-area > h2, .post-content-area > h3, .post-content-area > h4, .post-content-area > table tr, .post-content-area > .highlight, .nav-prev, .nav-next'));
 
     // Enable mouse click selection for content nodes
     contentNodes.forEach((node, index) => {

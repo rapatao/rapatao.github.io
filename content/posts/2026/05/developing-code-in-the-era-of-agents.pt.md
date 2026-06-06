@@ -2,7 +2,6 @@
 title: "Desenvolvendo Código na Era dos Agentes: O Novo Padrão de Boas Práticas"
 date: 2026-05-10T10:00:00Z
 tags: [ai, agents, productivity, architecture, tdd]
-images: ["/images/posts/pexels-rdne-stock-project-7841410.jpg"]
 url: "/pt/posts/2026-05/developing-code-in-the-era-of-agents/"
 ---
 

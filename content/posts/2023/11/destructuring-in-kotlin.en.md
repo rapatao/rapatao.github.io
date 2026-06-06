@@ -3,8 +3,6 @@ title: "Destructuring in Kotlin"
 date: 2023-11-10T17:00:00Z
 tags:
   - kotlin
-images:
-  - "/images/posts/pexels-cottonbro-studio-3944307.jpg"
 url: "/posts/2023-11/destructuring-in-kotlin/"
 ---
 

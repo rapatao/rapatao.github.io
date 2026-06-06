@@ -3,8 +3,6 @@ title: "Build virtual machines (VM's) using QEMU"
 date: 2020-09-06T21:00:00-03:00
 tags:
   - virtualization
-images:
-  - "/images/posts/qemu.jpg"
 url: "/posts/2020-09/build-virtual-machines-using-qemu/"
 ---
 

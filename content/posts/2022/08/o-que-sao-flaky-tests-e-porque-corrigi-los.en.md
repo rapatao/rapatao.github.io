@@ -3,8 +3,6 @@ title: "What are Flaky Tests and why fix them!"
 date: 2022-08-28T12:00:00-03:00
 tags:
   - tests
-images:
-  - "/images/posts/flaky-pipeline.png"
 url: "/posts/2022-08/what-are-flaky-tests-and-why-fix-them/"
 aliases:
   - "/pt/posts/2022-08/what-are-flaky-tests-and-why-fix-them/"

@@ -4,8 +4,6 @@ date: 2023-09-22T09:00:00Z
 tags:
   - database
   - system design
-images:
-  - "/images/posts/light-bulds.jpg"
 url: "/posts/2023-09/cap-theorem/"
 ---
 

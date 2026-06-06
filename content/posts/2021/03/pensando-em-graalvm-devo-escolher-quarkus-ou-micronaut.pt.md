@@ -5,8 +5,6 @@ tags:
   - quarkus
   - micronaut
   - architecture
-images:
-  - "/images/posts/quarkus-micronaut.png"
 url: "/pt/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/"
 aliases:
   - "/posts/2021-03/pensando-em-graalvm-devo-escolher-quarkus-ou-micronaut/"

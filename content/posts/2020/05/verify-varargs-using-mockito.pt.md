@@ -6,8 +6,6 @@ tags:
   - mockito
   - junit
   - tests
-images:
-  - "/images/posts/pexels-christina-morillo-1181244.jpg"
 url: "/pt/posts/2020-05/verify-varargs-using-mockito/"    
 ---
 

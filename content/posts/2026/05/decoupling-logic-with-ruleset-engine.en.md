@@ -2,7 +2,6 @@
 title: "Decoupling Logic with Ruleset Engine: A Lightweight Approach for the JVM"
 date: 2026-05-23T10:00:00Z
 tags: [kotlin, java, architecture]
-images: ["/images/posts/pexels-energepiccom-313690.jpg"]
 url: "/posts/2026-05/decoupling-logic-with-ruleset-engine/"
 ---
 

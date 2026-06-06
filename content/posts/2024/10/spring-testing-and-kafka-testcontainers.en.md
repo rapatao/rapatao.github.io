@@ -6,8 +6,6 @@ tags:
   - spring
   - testcontainers
   - kafka
-images:
-  - "/images/posts/pexels-bentonphotocinema-1095601.jpg"
 url: "/posts/2024-10/fixing-memory-issues-while-running-tests-on-spring-boot-using-kafka/"
 ---
 

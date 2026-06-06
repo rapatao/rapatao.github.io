@@ -4,8 +4,6 @@ date: 2022-07-31T12:00:00-03:00
 tags:
   - security
   - encryption
-images:
-  - "/images/posts/pexels-lucas-seebacher-5599449.jpeg"
 url: "/pt/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"
 aliases:
   - "/posts/2022-07/gnupg-como-fazer-backup-e-restaurar-suas-chaves/"

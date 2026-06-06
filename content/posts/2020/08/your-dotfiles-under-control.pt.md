@@ -5,8 +5,6 @@ tags:
   - dotfiles
   - yadm
   - shell
-images:
-  - "/images/posts/pexels-pixabay-207580.jpg"
 url: "/pt/posts/2020-08/your-dotfiles-under-control/"
 ---
 

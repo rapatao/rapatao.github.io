@@ -2,7 +2,6 @@
 title: "Developing Code in the Era of Agents: The New Standard of Good Practices"
 date: 2026-05-10T10:00:00Z
 tags: [ai, agents, productivity, architecture, tdd]
-images: ["/images/posts/pexels-rdne-stock-project-7841410.jpg"]
 url: "/posts/2026-05/developing-code-in-the-era-of-agents/"
 ---
 

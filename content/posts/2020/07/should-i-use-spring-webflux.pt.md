@@ -6,8 +6,6 @@ tags:
   - spring mvc
   - spring webflux
   - reactive
-images:
-  - "/images/posts/abandoned-antique-architecture-building-277782.jpg"
 url: "/pt/posts/2020-07/should-i-use-spring-webflux/"
 ---
 

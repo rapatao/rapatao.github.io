@@ -4,8 +4,6 @@ date: 2020-08-21T21:00:00-03:00
 tags:
   - github
   - awesome
-images:
-  - "/images/posts/awesome-brazil.jpg"
 url: "/pt/posts/2020-08/uma-lista-de-projetos-brasileiros/"
 aliases:
   - "/posts/2020-08/uma-lista-de-projetos-brasileiros/"

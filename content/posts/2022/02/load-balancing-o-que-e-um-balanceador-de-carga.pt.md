@@ -4,8 +4,6 @@ date: 2022-02-05T20:00:00-03:00
 tags:
   - architecture
   - network
-images:
-  - "/images/posts/pexels-brett-sayles-7146867.jpg"
 url: "/pt/posts/2022-02/load-balancing-o-que-e-um-balanceador-de-carga/"
 aliases:
   - "/pt/posts/2022-01/load-balancing-o-que-e-um-balanceador-de-carga/"

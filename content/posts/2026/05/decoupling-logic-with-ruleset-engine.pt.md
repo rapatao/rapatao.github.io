@@ -2,7 +2,6 @@
 title: "Desacoplando Lógica com Ruleset Engine: Uma Abordagem Leve para a JVM"
 date: 2026-05-23T10:00:00Z
 tags: [kotlin, java, architecture]
-images: ["/images/posts/pexels-energepiccom-313690.jpg"]
 url: "/pt/posts/2026-05/desacoplando-logica-ruleset-engine/"
 ---
 

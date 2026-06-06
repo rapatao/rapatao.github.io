@@ -6,8 +6,6 @@ tags:
   - junit
   - mockk
   - tests
-images:
-  - "/images/posts/pexels-pixabay-163016.jpg"
 url: "/posts/2022-01/build-tests-using-kotlin-junit-mockk/"
 aliases:
   - "/posts/2022-01/construindo-testes-com-kotlin-junit-mockk/"

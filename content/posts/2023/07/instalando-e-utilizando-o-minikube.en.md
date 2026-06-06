@@ -3,8 +3,6 @@ title: "Installing and using minikube"
 date: 2023-07-09T09:00:00Z
 tags:
   - kubernetes
-images:
-  - "/images/posts/pexels-emmanuel-codden-16853020.jpg"
 url: "/posts/2023-07/installing-and-using-minikube/"
 ---
 

@@ -28,7 +28,6 @@ This document outlines the specific tone, structure, and formatting used for blo
 title: "Title"
 date: YYYY-MM-DDTHH:MM:SSZ
 tags: [tag1, tag2]
-images: ["/images/posts/image.jpg"]
 url: "/posts/YYYY-MM/slug/"
 ---
 ```
@@ -39,7 +38,6 @@ url: "/posts/YYYY-MM/slug/"
 title: "Título"
 date: YYYY-MM-DDTHH:MM:SSZ
 tags: [tag1, tag2]
-images: ["/images/posts/image.jpg"]
 url: "/pt/posts/YYYY-MM/slug/"
 ---
 ```

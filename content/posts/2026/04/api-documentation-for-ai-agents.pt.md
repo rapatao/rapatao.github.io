@@ -7,8 +7,6 @@ tags:
   - ai
   - agents
   - productivity
-images:
-  - "/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg"
 url: "/pt/posts/2026-04/documentacao-de-api-para-agentes-de-ia/"
 ---
 

@@ -11,4 +11,9 @@
 &lt;blockquote&gt;
 &lt;p&gt;Note: When this analysis was performed, &lt;em&gt;Spring&lt;/em&gt; had very limited support for &lt;em&gt;GraalVM&lt;/em&gt; and was disregarded.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Among the options mentioned, several &lt;em&gt;benchmarks&lt;/em&gt; available on the Internet were consulted, in addition to verifying the &lt;strong&gt;compatibility&lt;/strong&gt; with tools and libraries normally used in the company&amp;rsquo;s projects. Other factors were analyzed, such as ease and quality of &lt;strong&gt;documentation&lt;/strong&gt; and &lt;strong&gt;learning curve&lt;/strong&gt; in these technologies.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Among the options mentioned, several &lt;em&gt;benchmarks&lt;/em&gt; available on the Internet were consulted, in addition to verifying the &lt;strong&gt;compatibility&lt;/strong&gt; with tools and libraries normally used in the company&amp;rsquo;s projects. Other factors were analyzed, such as ease and quality of &lt;strong&gt;documentation&lt;/strong&gt; and &lt;strong&gt;learning curve&lt;/strong&gt; in these technologies.&lt;/p&gt;</description></item><item><title>ACID Transactions</title><link>https://www.rapatao.com/posts/2020-08/acid-transactions/</link><pubDate>Tue, 18 Aug 2020 22:00:00 -0300</pubDate><guid>https://www.rapatao.com/posts/2020-08/acid-transactions/</guid><description>&lt;p&gt;When multiple operations need to succeed or fail together — like transferring money between bank accounts — you need
+guarantees that the database will not leave data in a partial or inconsistent state. &lt;strong&gt;ACID&lt;/strong&gt; is the set of properties
+that relational databases provide to ensure exactly that.&lt;/p&gt;
+&lt;p&gt;ACID is an acronym for &lt;strong&gt;A&lt;/strong&gt;tomicity, &lt;strong&gt;C&lt;/strong&gt;onsistency, &lt;strong&gt;I&lt;/strong&gt;solation, and &lt;strong&gt;D&lt;/strong&gt;urability. These four properties define
+the behavior of transactions and protect data integrity even under concurrent access, application crashes, or hardware
+failures.&lt;/p&gt;</description></item></channel></rss>

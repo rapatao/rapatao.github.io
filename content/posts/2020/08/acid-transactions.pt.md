@@ -3,6 +3,7 @@ title: "Transações ACID"
 date: 2020-08-18T22:00:00-03:00
 tags:
   - database
+  - architecture
 url: "/pt/posts/2020-08/acid-transactions/"
 ---
 

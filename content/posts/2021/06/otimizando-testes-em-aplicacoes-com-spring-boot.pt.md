@@ -3,7 +3,6 @@ title: "Otimizando testes em aplicações com Spring Boot"
 date: 2021-06-24T22:00:00-03:00
 tags:
   - spring
-  - springboot
   - java
   - tests
 url: "/pt/posts/2021-06/otimizando-testes-em-aplicacoes-com-spring-boot/"

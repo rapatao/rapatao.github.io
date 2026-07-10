@@ -1,7 +1,7 @@
 ---
 title: "Documenting Decisions with ADRs: Why Your Codebase Needs a Memory"
 date: 2026-07-10T10:00:00Z
-tags: [architecture, adr, documentation, decisions, engineering]
+tags: [adr, architecture, documentation, productivity]
 url: "/posts/2026-07/documenting-decisions-with-adrs/"
 ---
 

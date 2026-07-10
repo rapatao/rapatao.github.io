@@ -3,6 +3,7 @@ title: "Criando maquinas virtuais (VM's) utilizando QEMU"
 date: 2020-09-06T21:00:00-03:00
 tags:
   - virtualization
+  - tools
 url: "/pt/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"
 aliases:
   - "/posts/2020-09/criando-maquinas-virtuais-utilizando-qemu/"

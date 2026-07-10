@@ -3,6 +3,7 @@ title: "Installing and using minikube"
 date: 2023-07-09T09:00:00Z
 tags:
   - kubernetes
+  - tools
 url: "/posts/2023-07/installing-and-using-minikube/"
 ---
 

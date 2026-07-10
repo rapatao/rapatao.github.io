@@ -1,7 +1,7 @@
 ---
 title: "Documentando Decisões com ADRs: Por Que Seu Código Precisa de Memória"
 date: 2026-07-10T10:00:00Z
-tags: [architecture, adr, documentation, decisions, engineering]
+tags: [adr, architecture, documentation, productivity]
 url: "/pt/posts/2026-07/documentando-decisoes-com-adrs/"
 ---
 

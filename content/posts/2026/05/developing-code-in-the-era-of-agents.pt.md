@@ -7,7 +7,7 @@ url: "/pt/posts/2026-05/developing-code-in-the-era-of-agents/"
 
 A forma como construímos software mudou fundamentalmente. Saímos de "escrever código" para "orquestrar intenção". Com agentes de IA como Claude, Gemini e GitHub Copilot integrados aos nossos fluxos de trabalho, o gargalo não é mais a velocidade com que digitamos, mas a precisão com que nos comunicamos.
 
-Desenvolver na era dos agentes não é apenas usar uma nova ferramenta; é adotar uma mentalidade onde precisão, arquitetura e boas práticas estabelecidas não são mais opcionais — elas são a moeda principal para uma colaboração bem-sucedida com a IA.
+Desenvolver na era dos agentes não é apenas usar uma nova ferramenta; é adotar uma mentalidade onde precisão, arquitetura e boas práticas estabelecidas não são mais opcionais, elas são a moeda principal para uma colaboração bem-sucedida com a IA.
 
 ## O Checklist "Antes de Começar"
 
@@ -52,6 +52,6 @@ Para realmente se destacar, você precisa institucionalizar essas práticas.
 
 ## Conclusão
 
-A ascensão dos agentes de IA não mudou o que torna um código "bom"; apenas tornou o custo de um código "ruim" muito mais alto. Ao definirmos nossas próprias restrições — através de tipagem forte, arquitetura modular e um fluxo rigoroso de "testes primeiro" — garantimos que os agentes permaneçam como extensões poderosas da nossa habilidade, e não como caixas-pretas imprevisíveis.
+A ascensão dos agentes de IA não mudou o que torna um código "bom"; apenas tornou o custo de um código "ruim" muito mais alto. Ao definirmos nossas próprias restrições, através de tipagem forte, arquitetura modular e um fluxo rigoroso de "testes primeiro", garantimos que os agentes permaneçam como extensões poderosas da nossa habilidade, e não como caixas-pretas imprevisíveis.
 
 Fundamentalmente, a engenharia de software nesta nova era trata menos de ser um escritor rápido e mais de ser um arquiteto preciso. Quando priorizamos esses fundamentos, não apenas otimizamos para as ferramentas de hoje; construímos uma base resiliente para quaisquer ferramentas que venham a seguir.

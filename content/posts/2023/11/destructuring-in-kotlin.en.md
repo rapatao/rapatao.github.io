@@ -57,7 +57,7 @@ ordering of the elements is important.
 
 In `JavaScript`, as it is in `Kotlin`, destructuring a collection is order-based, which means that the first variable
 declaration will be assigned to the first element of the collection, the second variable to the second element, and so
-on…
+on...
 
 The difference between those two languages is on destructuring objects, where in `JavaScript`, it extracts the
 properties from the object using its declared name and `Kotlin` extracts based on the declaration order.

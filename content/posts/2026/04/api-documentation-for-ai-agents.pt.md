@@ -12,7 +12,7 @@ url: "/pt/posts/2026-04/documentacao-de-api-para-agentes-de-ia/"
 
 Chegamos a um ponto em que a questão não é *se* um agente de IA nos ajudará a construir uma funcionalidade, mas *quanto* dela ele escreverá. Ferramentas como Claude, Gemini e GitHub Copilot tornaram-se nossos companheiros constantes no IDE.
 
-Mas aqui está o detalhe: um agente é tão bom quanto o contexto que fornecemos. Ao integrar com APIs — sejam elas internas ou externas — esse contexto é quase inteiramente derivado da documentação. Se a documentação for 'minimalista', pode ser gerenciável para um humano com um pouco de tentativa e erro, mas para um agente de IA, ela se torna uma fábrica de alucinações.
+Mas aqui está o detalhe: um agente é tão bom quanto o contexto que fornecemos. Ao integrar com APIs, sejam elas internas ou externas, esse contexto é quase inteiramente derivado da documentação. Se a documentação for 'minimalista', pode ser gerenciável para um humano com um pouco de tentativa e erro, mas para um agente de IA, ela se torna uma fábrica de alucinações.
 
 ## A Mudança de Audiência
 
@@ -61,6 +61,6 @@ Ao usar agentes para melhorar a documentação, você está criando um ciclo vir
 
 ## O ROI da Clareza
 
-No momento atual do desenvolvedor, investir em uma boa documentação não é apenas algo 'bom de se ter' — é um multiplicador massivo de produtividade. Quando um agente consegue entender perfeitamente sua API através dos documentos, ele pode gerar código de integração preciso e livre de bugs em segundos.
+No momento atual do desenvolvedor, investir em uma boa documentação não é apenas algo 'bom de se ter', é um multiplicador massivo de produtividade. Quando um agente consegue entender perfeitamente sua API através dos documentos, ele pode gerar código de integração preciso e livre de bugs em segundos.
 
 Se você estiver gastando mais tempo corrigindo código gerado por agentes do que escrevendo-o, dê uma olhada na sua documentação. Pode ser hora de uma atualização.

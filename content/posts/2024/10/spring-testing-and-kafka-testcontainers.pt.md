@@ -61,7 +61,7 @@ public class CasesTests {
 
 Embora não parecesse muito código e provavelmente pudesse ser compartilhado entre as classes de teste compondo o companion object, ainda havia o problema de criar o tópico exigido em cada caso de teste.
 
-Você pode estar começando a se perguntar como resolver todos esses “problemas”, certo? Continue lendo e você terá a resposta.
+Você pode estar começando a se perguntar como resolver todos esses "problemas", certo? Continue lendo e você terá a resposta.
 
 ## Vamos usar o JUnit em vez disso
 

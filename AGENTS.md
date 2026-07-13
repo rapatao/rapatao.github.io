@@ -19,6 +19,7 @@ This document outlines the specific tone, structure, and formatting used for blo
 - **Tags**: Must always be in English, even in translated posts.
 - **Images**: Use `/images/posts/` path. Center images using the `#center` fragment: `![Alt text](/path/to/image.png#center)`.
 - **Code**: Specify language for syntax highlighting (e.g., `kotlin`, `java`, `bash`).
+- **Characters**: Never use typographic characters uncommon in human writing. Replace em-dashes (`—`) with commas, smart quotes (`" " ' '`) with straight quotes (`"`, `'`), and ellipsis (`…`) with `...`. Portuguese accented letters are fine.
 
 ## Front Matter Template
 

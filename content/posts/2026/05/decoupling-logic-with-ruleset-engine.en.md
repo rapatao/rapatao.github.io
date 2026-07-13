@@ -7,7 +7,7 @@ url: "/posts/2026-05/decoupling-logic-with-ruleset-engine/"
 
 It started with a simple request: *"If the user is a premium member, give them free shipping".* We added a quick `if` statement, and everything was fine. A month later, it became: *"If they are premium OR have over 500 points, but only if they are in the US".* Then came the real complexity: active status checks, tag-based exclusions, order minimums, and loyalty requirements.
 
-Before we knew it, our core business logic was buried under a mountain of nested `if/else` blocks. What was once a clean codebase had turned into a "rules nightmare"—hard to read, impossible to test, and terrifying to change. We've all been there, staring at a 50-line conditional block, wondering where it all went wrong.
+Before we knew it, our core business logic was buried under a mountain of nested `if/else` blocks. What was once a clean codebase had turned into a "rules nightmare"-hard to read, impossible to test, and terrifying to change. We've all been there, staring at a 50-line conditional block, wondering where it all went wrong.
 
 This is the story of how we stopped hardcoding logic and started using **Ruleset Engine**.
 
@@ -40,7 +40,7 @@ if (isEligible) {
 }
 ```
 
-While manageable with a few lines, imagine adding five more conditions or nested "OR" blocks. It quickly becomes a readability nightmare that is prone to logic errors—especially when you have to manually handle every potential null pointer.
+While manageable with a few lines, imagine adding five more conditions or nested "OR" blocks. It quickly becomes a readability nightmare that is prone to logic errors-especially when you have to manually handle every potential null pointer.
 
 #### After: The Ruleset Engine DSL
 
@@ -65,9 +65,9 @@ val eligibilityRule = allMatch(
 )
 ```
 
-> **Note on Resilience:** Notice that `ifFail` is placed on the `anyMatch` block itself. This replicates the native short-circuiting behavior: if `order` is null, evaluating `"order.total"` fails, causing the entire group to return `FALSE`—exactly like `order != null && (...)`. If we had placed `ifFail` only on the total expression, the engine would have continued to check the loyalty points even if the order was missing!
+> **Note on Resilience:** Notice that `ifFail` is placed on the `anyMatch` block itself. This replicates the native short-circuiting behavior: if `order` is null, evaluating `"order.total"` fails, causing the entire group to return `FALSE`-exactly like `order != null && (...)`. If we had placed `ifFail` only on the total expression, the engine would have continued to check the loyalty points even if the order was missing!
 
-At first glance, it might look more verbose than a single line of boolean logic. However, this structured approach is significantly easier to read and maintain as the rules grow. It provides a clear, hierarchical view of the business requirements, making it much more accessible for non-developers—like business analysts or product owners—to understand and verify the logic without needing to parse complex code.
+At first glance, it might look more verbose than a single line of boolean logic. However, this structured approach is significantly easier to read and maintain as the rules grow. It provides a clear, hierarchical view of the business requirements, making it much more accessible for non-developers-like business analysts or product owners-to understand and verify the logic without needing to parse complex code.
 
 It wasn't just code anymore; it was documentation.
 
@@ -80,9 +80,9 @@ Ruleset Engine provides a robust way to handle these failures through the `OnFai
 - **`TRUE`**: Swallows the failure and treats the expression as `true`.
 - **`FALSE`**: Swallows the failure and treats the expression as `false`.
 
-This allows you to build resilient rules that can handle imperfect data without crashing your application. It’s particularly powerful for **deep null-checks**: where a native `if` would require `order != null && order.total > 100`, the engine allows you to simply define the path and handle the failure gracefully.
+This allows you to build resilient rules that can handle imperfect data without crashing your application. It's particularly powerful for **deep null-checks**: where a native `if` would require `order != null && order.total > 100`, the engine allows you to simply define the path and handle the failure gracefully.
 
-Using the `ifFail` extension, it’s as simple as:
+Using the `ifFail` extension, it's as simple as:
 
 ```kotlin
 import com.rapatao.projects.ruleset.engine.types.OnFailure
@@ -107,7 +107,7 @@ if (evaluator.evaluate(shippingRule, context)) {
 
 ### Step 3: Moving to the Cloud (or just a JSON)
 
-The real "magic"—and where the real power of this approach lies—happened when we moved these rules out of the code entirely. Because Ruleset Engine supports Jackson, we could store these rules in our database or a configuration service as JSON:
+The real "magic"-and where the real power of this approach lies-happened when we moved these rules out of the code entirely. Because Ruleset Engine supports Jackson, we could store these rules in our database or a configuration service as JSON:
 
 ```json
 {

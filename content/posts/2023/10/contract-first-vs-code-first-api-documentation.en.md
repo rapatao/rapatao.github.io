@@ -21,10 +21,10 @@ strategy upfront. This contract becomes the single source of truth.
 
 The contract is typically expressed in a machine-readable format:
 
-- **[OpenAPI (Swagger)](https://swagger.io)** — the most widely adopted standard, used for REST APIs
-- **[RAML](https://raml.org)** — YAML-based, focused on API modeling
-- **[API Blueprint](https://apiblueprint.org)** — Markdown-based, human-friendly
-- **[AsyncAPI](https://www.asyncapi.com)** — equivalent of OpenAPI for event-driven and message-based APIs
+- **[OpenAPI (Swagger)](https://swagger.io)**, the most widely adopted standard, used for REST APIs
+- **[RAML](https://raml.org)**, YAML-based, focused on API modeling
+- **[API Blueprint](https://apiblueprint.org)**, Markdown-based, human-friendly
+- **[AsyncAPI](https://www.asyncapi.com)**, equivalent of OpenAPI for event-driven and message-based APIs
 
 A minimal OpenAPI contract for a user endpoint looks like this:
 
@@ -72,7 +72,7 @@ components:
   before a single line of implementation exists.
 - **Consumer alignment**: consumers of the API review and sign off on the contract before work begins, reducing
   integration surprises late in the project.
-- **Stable documentation**: docs are always accurate because the contract is the spec — not generated from potentially
+- **Stable documentation**: docs are always accurate because the contract is the spec, not generated from potentially
   drifted code.
 - **Code generation**: server stubs and client SDKs can be generated from the spec using tools like
   [OpenAPI Generator](https://openapi-generator.tech) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/).
@@ -80,23 +80,23 @@ components:
 ### Challenges
 
 - **Upfront cost**: designing a thorough contract requires time and domain knowledge before development can start.
-- **Rigidity**: changes to the contract require coordination across all consuming teams — a good discipline, but
+- **Rigidity**: changes to the contract require coordination across all consuming teams, a good discipline, but
   sometimes a bottleneck in fast-moving projects.
 - **Tooling overhead**: teams need to adopt and maintain spec files, editors, and validation pipelines.
 
 ## Code-First API Documentation
 
 The code-first approach inverts the process: developers write implementation code first and the API documentation is
-generated automatically from it — typically via annotations or reflection at build time or runtime.
+generated automatically from it, typically via annotations or reflection at build time or runtime.
 
 Popular frameworks that support this natively include:
 
-- **Spring Boot + [Springdoc OpenAPI](https://springdoc.org)** — generates OpenAPI 3 docs from `@RestController`
+- **Spring Boot + [Springdoc OpenAPI](https://springdoc.org)**, generates OpenAPI 3 docs from `@RestController`
   annotations (Java/Kotlin)
-- **[FastAPI](https://fastapi.tiangolo.com)** — generates OpenAPI docs automatically from Python type hints
-- **ASP.NET Core + [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)** — OpenAPI generation
+- **[FastAPI](https://fastapi.tiangolo.com)**, generates OpenAPI docs automatically from Python type hints
+- **ASP.NET Core + [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)**, OpenAPI generation
   for .NET
-- **[NestJS](https://docs.nestjs.com/openapi/introduction)** — OpenAPI generation for Node.js via decorators
+- **[NestJS](https://docs.nestjs.com/openapi/introduction)**, OpenAPI generation for Node.js via decorators
 
 A code-first example using Spring Boot annotations:
 
@@ -122,13 +122,13 @@ The OpenAPI spec is then generated and served automatically (e.g., at `/v3/api-d
 
 - **Always in sync**: documentation is derived from the actual code, so it cannot drift out of date as long as
   annotations are maintained.
-- **Faster to start**: no design phase is required — teams can begin coding immediately and let the spec emerge.
+- **Faster to start**: no design phase is required, teams can begin coding immediately and let the spec emerge.
 - **Lower tooling friction**: most frameworks handle generation transparently; developers work in familiar code.
 
 ### Challenges
 
 - **Design as an afterthought**: without an upfront design step, API shape tends to reflect internal implementation
-  details rather than consumer needs — leading to leaky abstractions.
+  details rather than consumer needs, leading to leaky abstractions.
 - **Breaking changes**: because the contract is implicit, it is easier to introduce breaking changes without noticing.
   Versioning discipline must be enforced manually.
 - **Parallel development is harder**: frontend or mobile teams must wait for working backend code before they can
@@ -154,7 +154,7 @@ breaking changes before deployment, complementing both contract-first and code-f
 
 ## Conclusion
 
-Both approaches produce valid, documented APIs — but they make different trade-offs. Contract-first invests upfront in
+Both approaches produce valid, documented APIs, but they make different trade-offs. Contract-first invests upfront in
 design and alignment, rewarding teams with parallel development, stable contracts, and consumer-driven design. Code-first
 prioritizes speed and simplicity, rewarding small teams and rapid iteration. For long-lived public APIs or services with
 many consumers, contract-first is generally the safer foundation. For internal tools and early-stage products, code-first
@@ -165,6 +165,6 @@ stabilizes.
 
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 - [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Pact — Consumer-Driven Contract Testing](https://docs.pact.io)
+- [Pact, Consumer-Driven Contract Testing](https://docs.pact.io)
 - [OpenAPI Generator](https://openapi-generator.tech)
 - [Springdoc OpenAPI](https://springdoc.org)

@@ -5,9 +5,9 @@ tags: [markdown, cli, go, tools, pdf, productivity]
 url: "/pt/posts/2026-06/introducing-md2-markdown-converter/"
 ---
 
-Escrevo quase tudo em Markdown. Anotações, documentação, rascunhos de posts, arquivos README—se aceita texto puro, vira Markdown. O problema aparece no momento em que preciso compartilhar esse conteúdo com alguém que espera um PDF, ou colar uma versão limpa em HTML em algum lugar que não renderiza Markdown. De repente estou copiando texto para um conversor online, brigando com um editor de documentos pesado, ou montando o Pandoc com um monte de flags que nunca lembro.
+Escrevo quase tudo em Markdown. Anotações, documentação, rascunhos de posts, arquivos README-se aceita texto puro, vira Markdown. O problema aparece no momento em que preciso compartilhar esse conteúdo com alguém que espera um PDF, ou colar uma versão limpa em HTML em algum lugar que não renderiza Markdown. De repente estou copiando texto para um conversor online, brigando com um editor de documentos pesado, ou montando o Pandoc com um monte de flags que nunca lembro.
 
-Então construí o [md2](https://github.com/rapatao/md2): uma pequena ferramenta de linha de comando que converte um arquivo Markdown em PDF, HTML ou texto puro sem cerimônia. O nome é literal—Markdown *para* outra coisa.
+Então construí o [md2](https://github.com/rapatao/md2): uma pequena ferramenta de linha de comando que converte um arquivo Markdown em PDF, HTML ou texto puro sem cerimônia. O nome é literal-Markdown *para* outra coisa.
 
 > Os comandos e flags mostrados aqui refletem a **versão 0.3.0**, o release atual no momento em que escrevo. A interface pode mudar em versões futuras, então vale conferir o [README do projeto](https://github.com/rapatao/md2) para confirmar a sintaxe exata antes de depender dela.
 
@@ -44,7 +44,7 @@ brew install rapatao/tap/md2
 }
 ```
 
-É exatamente assim que eu o instalo nas minhas próprias máquinas—ele fica ao lado do resto dos pacotes do sistema e é incluído no próximo rebuild.
+É exatamente assim que eu o instalo nas minhas próprias máquinas-ele fica ao lado do resto dos pacotes do sistema e é incluído no próximo rebuild.
 
 **A partir do código (Go):**
 
@@ -71,15 +71,15 @@ A flag `-f` aceita uma lista separada por vírgulas, então gerar vários format
 
 ## Os Três Formatos
 
-**PDF** é o padrão e o mais interessante por baixo dos panos. O md2 usa uma estratégia em dois estágios: primeiro renderiza com Go puro, que é rápido e sem dependências para documentos típicos. Quando um documento é complexo o suficiente para a renderização em Go puro não dar conta, ele recorre automaticamente a um navegador headless para acertar o layout. Você não escolhe entre os dois—o md2 escolhe o caminho que produz um resultado correto.
+**PDF** é o padrão e o mais interessante por baixo dos panos. O md2 usa uma estratégia em dois estágios: primeiro renderiza com Go puro, que é rápido e sem dependências para documentos típicos. Quando um documento é complexo o suficiente para a renderização em Go puro não dar conta, ele recorre automaticamente a um navegador headless para acertar o layout. Você não escolhe entre os dois-o md2 escolhe o caminho que produz um resultado correto.
 
 **HTML** gera saída autocontida. Imagens locais são embutidas como data URIs, então o arquivo produzido é um único artefato que você pode mover por aí sem arrastar uma pasta de assets atrás.
 
-**Texto** remove a marcação mantendo a estrutura legível—útil quando você precisa do conteúdo em algum lugar que não tem motivo para renderizar formatação.
+**Texto** remove a marcação mantendo a estrutura legível-útil quando você precisa do conteúdo em algum lugar que não tem motivo para renderizar formatação.
 
 ## Diagramas
 
-Markdown é cada vez mais um lugar onde diagramas vivem, especialmente o [Mermaid](https://mermaid.js.org/). O md2 suporta renderizá-los, mas isso está **desligado por padrão**—você habilita por execução:
+Markdown é cada vez mais um lugar onde diagramas vivem, especialmente o [Mermaid](https://mermaid.js.org/). O md2 suporta renderizá-los, mas isso está **desligado por padrão**-você habilita por execução:
 
 ```bash
 md2 -render mermaid -f html input.md
@@ -91,7 +91,7 @@ Há uma flag relacionada, `-flatten`, que converte diagramas HTML em imagens est
 
 ## Usando em CI
 
-Se você quer gerar PDFs como parte de um pipeline—por exemplo, transformar release notes em um documento para download—o fallback do navegador headless precisa de um navegador disponível. A flag `-allow-download` faz o md2 baixar o Chromium automaticamente em ambientes de CI onde ele não está pré-instalado:
+Se você quer gerar PDFs como parte de um pipeline-por exemplo, transformar release notes em um documento para download-o fallback do navegador headless precisa de um navegador disponível. A flag `-allow-download` faz o md2 baixar o Chromium automaticamente em ambientes de CI onde ele não está pré-instalado:
 
 ```bash
 md2 -allow-download -f pdf CHANGELOG.md
@@ -99,7 +99,7 @@ md2 -allow-download -f pdf CHANGELOG.md
 
 ## Por Que Construir Mais um Conversor
 
-O Pandoc existe, e é poderoso. É exatamente esse o ponto—é poderoso, e poder vem com superfície. O md2 não está tentando competir com ele. Está tentando ser a ferramenta que você usa quando quer um PDF de um arquivo Markdown nos próximos cinco segundos, com padrões sensatos e sem ler documentação.
+O Pandoc existe, e é poderoso. É exatamente esse o ponto-é poderoso, e poder vem com superfície. O md2 não está tentando competir com ele. Está tentando ser a ferramenta que você usa quando quer um PDF de um arquivo Markdown nos próximos cinco segundos, com padrões sensatos e sem ler documentação.
 
 A arquitetura também é deliberadamente aberta a extensão. Novos formatos são adicionados ao colocar um pacote conversor em `internal/converter/` que implementa a interface `Converter`, então o conjunto de saídas pode crescer sem reformular o núcleo.
 
@@ -107,4 +107,4 @@ A arquitetura também é deliberadamente aberta a extensão. Novos formatos são
 
 O md2 é uma ferramenta pequena com um trabalho específico: pega Markdown, devolve algo compartilhável. Se você vive em Markdown e fica esbarrando na parede do "agora preciso disso como PDF", ele pode te poupar o mesmo atrito que poupa a mim.
 
-O projeto é open source sob a licença MIT. Código, issues e releases estão no [GitHub](https://github.com/rapatao/md2)—experimente, e me diga o que está faltando.
+O projeto é open source sob a licença MIT. Código, issues e releases estão no [GitHub](https://github.com/rapatao/md2)-experimente, e me diga o que está faltando.

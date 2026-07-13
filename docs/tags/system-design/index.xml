@@ -4,4 +4,4 @@ answers this by stating that any distributed data store can only guarantee two o
 &lt;strong&gt;Availability&lt;/strong&gt;, and &lt;strong&gt;Partition Tolerance&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="consistency"&gt;Consistency&lt;/h2&gt;
 &lt;p&gt;In the context of the CAP theorem, consistency means that every read operation receives the most recent write or an
-error. All database nodes will hold the same data at the same time — there are no stale reads.&lt;/p&gt;</description></item></channel></rss>
+error. All database nodes will hold the same data at the same time, there are no stale reads.&lt;/p&gt;</description></item></channel></rss>

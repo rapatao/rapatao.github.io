@@ -4,4 +4,4 @@ responde a isso afirmando que qualquer banco de dados distribuído só pode gara
 &lt;strong&gt;Consistência&lt;/strong&gt;, &lt;strong&gt;Disponibilidade&lt;/strong&gt; e &lt;strong&gt;Tolerância a Partições&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="consistência"&gt;Consistência&lt;/h2&gt;
 &lt;p&gt;No contexto do teorema CAP, consistência significa que cada operação de leitura recebe a gravação mais recente ou um
-erro. Todos os nós do banco de dados terão os mesmos dados ao mesmo tempo — leituras desatualizadas não ocorrem.&lt;/p&gt;</description></item></channel></rss>
+erro. Todos os nós do banco de dados terão os mesmos dados ao mesmo tempo, leituras desatualizadas não ocorrem.&lt;/p&gt;</description></item></channel></rss>

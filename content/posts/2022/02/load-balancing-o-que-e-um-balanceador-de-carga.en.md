@@ -9,7 +9,7 @@ url: "/posts/2022-02/load-balancing-what-is-a-load-balancer/"
 
 Widely used in applications with high volume of simultaneous access, a load balancer is a computational resource used to perform load distribution between two or more servers of an application.
 
-They are usually implemented using machines dedicated to this work, which can be physical or virtual, or by “*software*”.
+They are usually implemented using machines dedicated to this work, which can be physical or virtual, or by "*software*".
 
 ## Benefits
 

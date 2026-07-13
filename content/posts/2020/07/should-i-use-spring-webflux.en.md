@@ -38,7 +38,7 @@ We developers often have the desire to use something new/different in our day-to
 
 ![Back to topic](/images/posts/green-typewriter-on-brown-wooden-table-4052198.jpg#center)
 
-Among everything I read and had the opportunity to see in practice, I found the efficiency of applications built with *WebFlux* very interesting. It was the famous “a lot with a little”, but what caught my attention was the complexity of building unit/integrated tests as well as the difficulty in performing *debug*, since the call flow is no longer, so to speak, sequential.
+Among everything I read and had the opportunity to see in practice, I found the efficiency of applications built with *WebFlux* very interesting. It was the famous "a lot with a little", but what caught my attention was the complexity of building unit/integrated tests as well as the difficulty in performing *debug*, since the call flow is no longer, so to speak, sequential.
 
 Among the various articles I read, there were several reports of people who categorically stated that *WebFlux* was better, as it was possible to process requests in parallel, while in the model used by *Spring MVC*, only one request was performed at a time , which is false, as parallelism is created with *threads* and controlled by application servers, such as *Tomcat* and *Jetty*.
 

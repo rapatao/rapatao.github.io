@@ -7,11 +7,11 @@ url: "/pt/posts/2026-06/managing-macos-background-tasks-with-btmgr/"
 
 Tudo começou com uma pergunta simples: *o que é essa coisa rodando em segundo plano no meu Mac?*
 
-Eu tinha acabado de desinstalar um aplicativo, mas algo dele claramente ainda estava por lá — aparecendo no Monitor de Atividade, consumindo recursos, e se comportando como se nunca tivesse saído. Abri as Configurações do Sistema, fui em Itens de Login e Extensões, e encontrei a entrada. Desabilitei. Problema resolvido, certo?
+Eu tinha acabado de desinstalar um aplicativo, mas algo dele claramente ainda estava por lá, aparecendo no Monitor de Atividade, consumindo recursos, e se comportando como se nunca tivesse saído. Abri as Configurações do Sistema, fui em Itens de Login e Extensões, e encontrei a entrada. Desabilitei. Problema resolvido, certo?
 
 Nem tanto. Eu ainda não sabia qual executável estava mapeado ali, onde ele ficava no disco, ou se desativar a chave era realmente suficiente. Para responder a essas perguntas, acabei rodando vários comandos no terminal, lendo paredes de JSON e cruzando informações manualmente entre diversas ferramentas.
 
-Foi aí que percebi que o problema não era o aplicativo que eu tinha instalado — era o quão difícil o macOS torna a inspeção de suas próprias informações de tarefas em segundo plano.
+Foi aí que percebi que o problema não era o aplicativo que eu tinha instalado, era o quão difícil o macOS torna a inspeção de suas próprias informações de tarefas em segundo plano.
 
 ## A Lacuna nas Ferramentas Nativas
 
@@ -31,7 +31,7 @@ launchctl print system/com.example.agent
 pluginkit -m -A -v
 ```
 
-Cada ferramenta tem um propósito diferente, fala um formato de saída diferente, e responde apenas parte da pergunta. Obter o quadro completo de um único serviço — seu nome, desenvolvedor, Team ID, caminho do executável e configuração — significa rodar vários comandos e montar o resultado mentalmente.
+Cada ferramenta tem um propósito diferente, fala um formato de saída diferente, e responde apenas parte da pergunta. Obter o quadro completo de um único serviço, seu nome, desenvolvedor, Team ID, caminho do executável e configuração, significa rodar vários comandos e montar o resultado mentalmente.
 
 Para uma investigação pontual, é tolerável. Mas é o tipo de coisa que aparece o tempo todo, e o atrito nunca desaparece.
 
@@ -45,7 +45,7 @@ Ele lê do mesmo banco de dados do Background Task Manager que as Configuraçõe
 
 - **Filtro por tipo**: Login Item, Launch Agent, Daemon, App, Background App Refresh, Developer Tool, QuickLook, Spotlight
 - **Busca** por nomes, identificadores e informações do desenvolvedor
-- **Inspeção** dos detalhes completos de qualquer serviço — incluindo sua configuração plist em um visualizador embutido
+- **Inspeção** dos detalhes completos de qualquer serviço, incluindo sua configuração plist em um visualizador embutido
 - **Habilitar ou desabilitar** serviços individualmente
 - **Remover** serviços por completo, incluindo seus arquivos plist do disco
 
@@ -53,7 +53,7 @@ O que antes exigia vários comandos agora cabe em uma única janela.
 
 ## Experimente
 
-Versões pré-compiladas estão disponíveis na [página de releases do GitHub](https://github.com/rapatao/btmgr/releases). Baixe, abra, e sua lista completa de serviços em segundo plano estará bem ali — sem precisar do terminal.
+Versões pré-compiladas estão disponíveis na [página de releases do GitHub](https://github.com/rapatao/btmgr/releases). Baixe, abra, e sua lista completa de serviços em segundo plano estará bem ali, sem precisar do terminal.
 
 ## Considerações Finais
 

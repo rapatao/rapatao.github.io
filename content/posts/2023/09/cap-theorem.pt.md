@@ -15,7 +15,7 @@ responde a isso afirmando que qualquer banco de dados distribuído só pode gara
 ## Consistência
 
 No contexto do teorema CAP, consistência significa que cada operação de leitura recebe a gravação mais recente ou um
-erro. Todos os nós do banco de dados terão os mesmos dados ao mesmo tempo — leituras desatualizadas não ocorrem.
+erro. Todos os nós do banco de dados terão os mesmos dados ao mesmo tempo, leituras desatualizadas não ocorrem.
 
 Isso é às vezes chamado de **consistência forte** ou **linearizabilidade**: as operações parecem executar
 instantaneamente e em uma ordem total. Se você gravar um valor e imediatamente lê-lo de qualquer nó do cluster, sempre
@@ -26,7 +26,7 @@ consistência no CAP trata estritamente de garantias de leitura após escrita en
 
 ## Disponibilidade
 
-Disponibilidade significa que cada requisição enviada a um nó não falho recebe uma resposta — não será um erro ou um
+Disponibilidade significa que cada requisição enviada a um nó não falho recebe uma resposta, não será um erro ou um
 timeout. A resposta pode não conter a gravação mais recente, mas o sistema sempre responde.
 
 Um sistema com alta disponibilidade maximiza o tempo de atividade e garante que o serviço continue operando mesmo quando
@@ -39,7 +39,7 @@ Uma partição ocorre quando falhas de rede fazem com que alguns nós não consi
 partições significa que o sistema continua operando corretamente mesmo quando isso acontece.
 
 Em qualquer sistema distribuído real implantado em múltiplas máquinas ou data centers, partições de rede são
-**inevitáveis** — hardware falha, cabos são cortados e congestionamentos de rede acontecem. Isso torna a tolerância a
+**inevitáveis**, hardware falha, cabos são cortados e congestionamentos de rede acontecem. Isso torna a tolerância a
 partições menos uma escolha e mais um requisito para qualquer sistema verdadeiramente distribuído.
 
 ## Trade-offs
@@ -53,7 +53,7 @@ Como partições não podem ser evitadas, a escolha real em sistemas distribuíd
 
 - **AP (Disponibilidade + Tolerância a Partições)**: O sistema prioriza a disponibilidade. Quando uma partição ocorre,
   os nós continuam atendendo requisições mesmo que os dados possam estar desatualizados. O sistema eventualmente
-  converge após a recuperação da partição — propriedade conhecida como **consistência eventual**. Exemplos:
+  converge após a recuperação da partição, propriedade conhecida como **consistência eventual**. Exemplos:
   **Apache Cassandra**, **Amazon DynamoDB**, **CouchDB**, **Riak**.
 
 - **CA (Consistência + Disponibilidade)**: Um sistema que oferece tanto consistência quanto disponibilidade só pode
@@ -66,13 +66,13 @@ Como partições não podem ser evitadas, a escolha real em sistemas distribuíd
 A escolha entre CP e AP depende do seu caso de uso:
 
 - **Sistemas financeiros** (bancos, pagamentos) tipicamente exigem CP. Exibir um saldo desatualizado pode levar a
-  overdrafts ou gasto duplo — a correção importa mais do que o tempo de atividade.
+  overdrafts ou gasto duplo, a correção importa mais do que o tempo de atividade.
 
 - **Feeds de redes sociais, motores de recomendação, DNS** geralmente favorecem AP. Mostrar uma timeline ligeiramente
   desatualizada ou uma resposta DNS em cache é aceitável; ficar indisponível não é.
 
 - Muitos sistemas modernos permitem ajustar esse trade-off por operação. O Cassandra, por exemplo, permite configurar
-  níveis de consistência por consulta — leituras/gravações com `QUORUM` tendem ao comportamento CP, enquanto `ONE`
+  níveis de consistência por consulta, leituras/gravações com `QUORUM` tendem ao comportamento CP, enquanto `ONE`
   tende ao AP.
 
 ## Além do CAP: O Teorema PACELC
@@ -91,8 +91,8 @@ relaxar a consistência (por exemplo, retornar dados em cache sem verificar se e
 
 O teorema CAP é um modelo mental poderoso para raciocinar sobre sistemas distribuídos. Como partições de rede são
 inevitáveis, os arquitetos devem escolher entre consistência e disponibilidade com base nos requisitos da aplicação.
-Sistemas CP favorecem a correção; sistemas AP favorecem resiliência e responsividade. Entender esse trade-off — e ser
-explícito sobre ele no seu design — é essencial para construir sistemas distribuídos confiáveis.
+Sistemas CP favorecem a correção; sistemas AP favorecem resiliência e responsividade. Entender esse trade-off, e ser
+explícito sobre ele no seu design, é essencial para construir sistemas distribuídos confiáveis.
 
 ## Referências
 

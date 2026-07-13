@@ -11,7 +11,7 @@ aliases:
 
 Muito utilizado em aplicações com alto volume de acesso simultâneo, um balanceador de carga (*load balancer*) é um recurso computacional utilizado para realizar a distribuição de carga entre dois ou mais servidores de uma aplicação.
 
-Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por “*softwares*”. 
+Normalmente são implementados com uso de máquinas dedicadas para esse trabalho, podendo elas serem físicas ou virtuais, ou por "*softwares*". 
 
 ## Benefícios
 

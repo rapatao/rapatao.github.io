@@ -14,7 +14,7 @@ Apesar de funcionar, existe maneira mais prática para gerenciar esses arquivos,
 
 ## O que são dotfiles
 
-Em sistemas baseados em Unix, é comum as configurações serem mantidas em arquivos iniciados com ponto (.). Estes arquivos ou pastas, são considerados como “ocultos” e normalmente não são listados utilizando-se comandos como *ls*, exceto quando especificado para serem exibidos.
+Em sistemas baseados em Unix, é comum as configurações serem mantidas em arquivos iniciados com ponto (.). Estes arquivos ou pastas, são considerados como "ocultos" e normalmente não são listados utilizando-se comandos como *ls*, exceto quando especificado para serem exibidos.
 
 Exemplos de arquivos e pastas inciados com ponto (.):
 
@@ -25,7 +25,7 @@ Exemplos de arquivos e pastas inciados com ponto (.):
 .zshrc
 ```
 
-Isso não quer dizer que seus arquivos precisam iniciar com ponto (.) e de fato existem diversas pessoas que não o definem assim, separando em pastas com nomes condizentes, como, por exemplo, “*$HOME/etc”*. Particularmente, prefiro manter tais arquivos dentro de uma pasta iniciando com o ponto (.), especificamente “*$HOME/.dotifiles.d*”, pois esta pasta não é listada por padrão, logo não será notada na maioria das vezes, gerando em mim uma sensação de organização.
+Isso não quer dizer que seus arquivos precisam iniciar com ponto (.) e de fato existem diversas pessoas que não o definem assim, separando em pastas com nomes condizentes, como, por exemplo, "*$HOME/etc"*. Particularmente, prefiro manter tais arquivos dentro de uma pasta iniciando com o ponto (.), especificamente "*$HOME/.dotifiles.d*", pois esta pasta não é listada por padrão, logo não será notada na maioria das vezes, gerando em mim uma sensação de organização.
 
 ## Um gerenciador para dotfiles
 
@@ -33,7 +33,7 @@ Como dito anteriormente, existem diversas maneiras para gerenciar seus *dotfiles
 
 Apesar de ser possível versionar seu *$HOME*, ao fazer isso, por padrão, sua lista de arquivos ignorados ficaria extremamente extensa, além do risco de adicionarmos arquivos indevidos em nosso repositório. Utilizando-se da versalidade que o *git* nos oferece, mas sem a dificuldade de termos que adicionar diversos arquivos e diretórios em nosso *gitignore*, o *[yadm (Yet Another Dotfiles Manager)](https://yadm.io/)* nos auxilia na tarefa de gerenciar nossas configurações, com diversos recursos interessantes adicionais.
 
-Como uma espécie de “casca” do *Git*, com o *yadm* você poderá versionar de forma simplificada seu *$HOME*, com a capacidade de adicionar criptografia em arquivos sensíveis, como chave de acesso, utilizar arquivos alternativos conforme o ambiente ao qual seus *dotfiles* estão sendo utilizados, além de claro, saber exatamente o que foi alterado antes de atualizar seu repositório de configurações.
+Como uma espécie de "casca" do *Git*, com o *yadm* você poderá versionar de forma simplificada seu *$HOME*, com a capacidade de adicionar criptografia em arquivos sensíveis, como chave de acesso, utilizar arquivos alternativos conforme o ambiente ao qual seus *dotfiles* estão sendo utilizados, além de claro, saber exatamente o que foi alterado antes de atualizar seu repositório de configurações.
 
 ## Instalando o yadm
 
@@ -133,7 +133,7 @@ O comando irá realizar o clone do repositório localmente e os arquivos version
 
 Uma das grandes vantagens do *yadm* é a possibilidade de ter arquivos com diferentes configurações e estes serem utilizados conforme regra pre-definida. Por exemplo, é possível criar arquivos de configuração do *Git* e conforme ambiente, um destes arquivos será utilizado.
 
-Vamos supor que você utilize em sua casa um *macOS* e em sua empresa um *Linux*. Quando estiver em sua casa, você gostaria de ter seus *commits* assinados com o e-mail “*luiz@example.com*” e quando estiver na empresa com “*luiz.empresa@example.com*”.
+Vamos supor que você utilize em sua casa um *macOS* e em sua empresa um *Linux*. Quando estiver em sua casa, você gostaria de ter seus *commits* assinados com o e-mail "*luiz@example.com*" e quando estiver na empresa com "*luiz.empresa@example.com*".
 
 Para isso, basta criar os arquivos com as devidas diferenças e salva-los utilizando o seguinte padrão:
 
@@ -164,7 +164,7 @@ Como podemos notar, ao adicionarmos o arquivo, o *yadm* criou automaticamente um
 
 ## Conclusão
 
-Como podemos ver até aqui, a utilização do *yadm* pode auxiliar a controlar nossas configurações, unindo todo o potencial que o *Git* nos oferece, como controle de mudanças e distribuição de conteúdo, bem como diversos outros recursos, como o exemplo acima, onde “customizamos” nossas configurações com base no sistema operacional que estamos executando.
+Como podemos ver até aqui, a utilização do *yadm* pode auxiliar a controlar nossas configurações, unindo todo o potencial que o *Git* nos oferece, como controle de mudanças e distribuição de conteúdo, bem como diversos outros recursos, como o exemplo acima, onde "customizamos" nossas configurações com base no sistema operacional que estamos executando.
 
 Além dos recursos citados acima, existem outros e apesar de não os descrever neste texto, acredito que possa ser interessante para quase todos os usuários:
 

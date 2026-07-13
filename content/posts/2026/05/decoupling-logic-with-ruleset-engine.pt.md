@@ -7,7 +7,7 @@ url: "/pt/posts/2026-05/desacoplando-logica-ruleset-engine/"
 
 Tudo começou com um pedido simples: *"Se o usuário for um membro premium, dê a ele frete grátis".* Adicionamos um rápido `if`, e tudo estava bem. Um mês depois, tornou-se: *"Se ele for premium OU tiver mais de 500 pontos, mas apenas se estiver no Brasil".* Depois veio a complexidade real: verificações de status ativo, exclusões baseadas em tags, mínimos de pedido e requisitos de fidelidade.
 
-Antes que percebêssemos, nossa lógica de negócio principal estava enterrada sob uma montanha de blocos `if/else` aninhados. O que antes era um código limpo tinha se transformado em um "pesadelo de regras"—difícil de ler, impossível de testar e aterrorizante de mudar. Todos nós já passamos por isso, encarando um bloco condicional de 50 linhas, imaginando onde foi que erramos.
+Antes que percebêssemos, nossa lógica de negócio principal estava enterrada sob uma montanha de blocos `if/else` aninhados. O que antes era um código limpo tinha se transformado em um "pesadelo de regras"-difícil de ler, impossível de testar e aterrorizante de mudar. Todos nós já passamos por isso, encarando um bloco condicional de 50 linhas, imaginando onde foi que erramos.
 
 Esta é a história de como paramos de codificar regras fixas e começamos a usar o **Ruleset Engine**.
 
@@ -40,7 +40,7 @@ if (isEligible) {
 }
 ```
 
-Embora pareça gerenciável com algumas linhas, imagine adicionar mais cinco condições ou blocos "OR" aninhados. Torna-se rapidamente um pesadelo de legibilidade e propenso a erros de lógica—especialmente quando você precisa lidar manualmente com cada possível "null pointer".
+Embora pareça gerenciável com algumas linhas, imagine adicionar mais cinco condições ou blocos "OR" aninhados. Torna-se rapidamente um pesadelo de legibilidade e propenso a erros de lógica-especialmente quando você precisa lidar manualmente com cada possível "null pointer".
 
 #### Depois: O DSL do Ruleset Engine
 
@@ -65,9 +65,9 @@ val eligibilityRule = allMatch(
 )
 ```
 
-> **Nota sobre Resiliência:** Observe que o `ifFail` está posicionado no próprio bloco `anyMatch`. Isso replica o comportamento de curto-circuito nativo: se o `order` for nulo, a avaliação de `"order.total"` falha, fazendo com que todo o grupo retorne `FALSE`—exatamente como `order != null && (...)`. Se tivéssemos colocado o `ifFail` apenas na expressão do total, a engine teria continuado a verificar os pontos de fidelidade mesmo se o pedido estivesse ausente!
+> **Nota sobre Resiliência:** Observe que o `ifFail` está posicionado no próprio bloco `anyMatch`. Isso replica o comportamento de curto-circuito nativo: se o `order` for nulo, a avaliação de `"order.total"` falha, fazendo com que todo o grupo retorne `FALSE`-exatamente como `order != null && (...)`. Se tivéssemos colocado o `ifFail` apenas na expressão do total, a engine teria continuado a verificar os pontos de fidelidade mesmo se o pedido estivesse ausente!
 
-À primeira vista, pode parecer mais verboso do que uma única linha de lógica booleana. No entanto, essa abordagem estruturada é significativamente mais fácil de ler e manter à medida que as regras crescem. Ela fornece uma visão clara e hierárquica dos requisitos de negócio, tornando-a muito mais acessível para não-desenvolvedores—como analistas de negócio ou product owners—entenderem e verificarem a lógica sem a necessidade de interpretar códigos complexos.
+À primeira vista, pode parecer mais verboso do que uma única linha de lógica booleana. No entanto, essa abordagem estruturada é significativamente mais fácil de ler e manter à medida que as regras crescem. Ela fornece uma visão clara e hierárquica dos requisitos de negócio, tornando-a muito mais acessível para não-desenvolvedores-como analistas de negócio ou product owners-entenderem e verificarem a lógica sem a necessidade de interpretar códigos complexos.
 
 Não era mais apenas código; era documentação.
 
@@ -107,7 +107,7 @@ if (evaluator.evaluate(shippingRule, context)) {
 
 ### Passo 3: Indo para a Nuvem (ou apenas um JSON)
 
-A real "mágica"—e onde reside o verdadeiro poder dessa abordagem—aconteceu quando removemos essas regras inteiramente do código. Como o Ruleset Engine suporta Jackson, pudemos armazenar essas regras em nosso banco de dados ou em um serviço de configuração como JSON:
+A real "mágica"-e onde reside o verdadeiro poder dessa abordagem-aconteceu quando removemos essas regras inteiramente do código. Como o Ruleset Engine suporta Jackson, pudemos armazenar essas regras em nosso banco de dados ou em um serviço de configuração como JSON:
 
 ```json
 {

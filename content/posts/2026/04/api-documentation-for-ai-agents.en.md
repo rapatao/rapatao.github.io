@@ -12,7 +12,7 @@ url: "/posts/2026-04/api-documentation-for-ai-agents/"
 
 We've reached a point where the question isn't *if* an AI agent will help us build a feature, but *how much* of it it will write. Tools like Claude, Gemini, and GitHub Copilot have become our constant companions in the IDE.
 
-But here's the catch: an agent is only as good as the context we provide. When integrating with APIs—whether internal or external—that context is almost entirely derived from documentation. If the documentation is 'minimalist', it might be manageable for a human with some trial and error, but for an AI agent, it becomes a hallucination factory.
+But here's the catch: an agent is only as good as the context we provide. When integrating with APIs-whether internal or external-that context is almost entirely derived from documentation. If the documentation is 'minimalist', it might be manageable for a human with some trial and error, but for an AI agent, it becomes a hallucination factory.
 
 ## The Shift in Audience
 
@@ -61,6 +61,6 @@ By using agents to improve the documentation, you are essentially creating a vir
 
 ## The ROI of Clarity
 
-In the current developer moment, investing in good documentation isn't just a 'nice to have'—it's a massive productivity multiplier. When an agent can perfectly understand your API from its docs, it can generate accurate, bug-free integration code in seconds.
+In the current developer moment, investing in good documentation isn't just a 'nice to have'-it's a massive productivity multiplier. When an agent can perfectly understand your API from its docs, it can generate accurate, bug-free integration code in seconds.
 
 If you find yourself spending more time fixing agent-generated code than writing it, take a look at your documentation. It might be time for an upgrade.

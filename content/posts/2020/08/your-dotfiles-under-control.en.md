@@ -14,7 +14,7 @@ Although it works, there is a more practical way to manage these files, making t
 
 ## What are dotfiles
 
-On Unix-based systems, it is common for settings to be kept in files starting with a period (.). These files or folders are considered to be “hidden” and are not normally listed using commands such as *ls*, unless specified to be displayed.
+On Unix-based systems, it is common for settings to be kept in files starting with a period (.). These files or folders are considered to be "hidden" and are not normally listed using commands such as *ls*, unless specified to be displayed.
 
 Examples of files and folders starting with a dot (.):
 
@@ -25,7 +25,7 @@ Examples of files and folders starting with a dot (.):
 .zshrc
 ```
 
-This doesn't mean that your files need to start with a period (.) and in fact there are many people who don't define it that way, separating them into folders with matching names, like, for example, “*$HOME/etc”*. Particularly, I prefer to keep such files inside a folder starting with a period (.), specifically “*$HOME/.dotifiles.d*”, as this folder is not listed by default, so it will not be noticed most of the time, generating in me a sense of organization.
+This doesn't mean that your files need to start with a period (.) and in fact there are many people who don't define it that way, separating them into folders with matching names, like, for example, "*$HOME/etc"*. Particularly, I prefer to keep such files inside a folder starting with a period (.), specifically "*$HOME/.dotifiles.d*", as this folder is not listed by default, so it will not be noticed most of the time, generating in me a sense of organization.
 
 ## A dotfiles manager
 
@@ -133,7 +133,7 @@ It is important to note that when performing the *clone*, *yadm* will try to per
 
 One of the great advantages of *yadm* is the possibility of having files with different configurations and these being used according to a pre-defined rule. For example, it is possible to create *Git* configuration files and, depending on the environment, one of these files will be used.
 
-Let's assume that you use *macOS* at home and *Linux* at your company. When you are at home, you would like to have your *commits* signed with the email “*luiz@example.com*” and when you are at the company with “*luiz.empresa@example.com*”.
+Let's assume that you use *macOS* at home and *Linux* at your company. When you are at home, you would like to have your *commits* signed with the email "*luiz@example.com*" and when you are at the company with "*luiz.empresa@example.com*".
 
 To do this, just create the files with the appropriate differences and save them using the following pattern:
 
@@ -164,7 +164,7 @@ As we can see, when we added the file, *yadm* automatically created a symbolic l
 
 ## Conclusion
 
-As we can see so far, using *yadm* can help control our settings, bringing together all the potential that *Git* offers us, such as change control and content distribution, as well as several other features, such as the example above , where we “customize” our settings based on the operating system we are running.
+As we can see so far, using *yadm* can help control our settings, bringing together all the potential that *Git* offers us, such as change control and content distribution, as well as several other features, such as the example above , where we "customize" our settings based on the operating system we are running.
 
 In addition to the resources mentioned above, there are others and although I do not describe them in this text, I believe they can be interesting for almost all users:
 

@@ -7,7 +7,7 @@ tags:
 url: "/posts/2020-08/acid-transactions/"
 ---
 
-When multiple operations need to succeed or fail together — like transferring money between bank accounts — you need
+When multiple operations need to succeed or fail together, like transferring money between bank accounts, you need
 guarantees that the database will not leave data in a partial or inconsistent state. **ACID** is the set of properties
 that relational databases provide to ensure exactly that.
 
@@ -20,7 +20,7 @@ failures.
 Atomicity means a transaction is treated as a single, indivisible unit. Either **all** operations in the transaction
 succeed and are committed, or **none** of them take effect. There is no partial success.
 
-Consider a bank transfer: to move $100 from account A to account B, two operations must happen — debit account A and
+Consider a bank transfer: to move $100 from account A to account B, two operations must happen, debit account A and
 credit account B. If the debit succeeds but the credit fails (e.g., due to a network error), atomicity ensures the
 debit is rolled back automatically, leaving both accounts unchanged.
 
@@ -34,7 +34,7 @@ COMMIT;
 ```
 
 If anything goes wrong between `BEGIN` and `COMMIT`, a `ROLLBACK` undoes all changes. The database write-ahead log
-(WAL) makes this possible — changes are recorded to a log before being applied, so incomplete transactions can always
+(WAL) makes this possible, changes are recorded to a log before being applied, so incomplete transactions can always
 be reversed.
 
 ## Consistency
@@ -43,8 +43,8 @@ Consistency guarantees that a transaction brings the database from one **valid s
 "Valid" is defined by all constraints, rules, and integrity checks configured in the schema: foreign key constraints,
 unique constraints, check constraints, triggers, and so on.
 
-If a transaction would violate any of these rules — for instance, inserting a row that references a non-existent
-foreign key — the database rejects it and rolls back the transaction, preserving the valid pre-transaction state.
+If a transaction would violate any of these rules, for instance, inserting a row that references a non-existent
+foreign key, the database rejects it and rolls back the transaction, preserving the valid pre-transaction state.
 
 > Note: the "C" in ACID is different from the "C" in the [CAP theorem](/posts/2023-09/cap-theorem/). ACID consistency
 > is about data integrity rules; CAP consistency is about whether all nodes in a distributed cluster return the same
@@ -76,7 +76,7 @@ Higher isolation levels prevent more anomalies but reduce concurrency and can in
 
 ## Durability
 
-Durability guarantees that once a transaction is committed, its changes are permanent — even if the system crashes
+Durability guarantees that once a transaction is committed, its changes are permanent, even if the system crashes
 immediately afterward. A power outage, OS crash, or application failure cannot cause committed data to disappear.
 
 Databases achieve this through **write-ahead logging (WAL)**: before any data page is modified on disk, the change is
@@ -118,11 +118,11 @@ Some databases sit in between: **MongoDB** added multi-document ACID transaction
 
 ACID properties are the foundation of reliable data management in relational databases. Atomicity prevents partial
 updates. Consistency enforces data rules. Isolation protects concurrent transactions from each other. Durability ensures
-committed data survives failures. Understanding these guarantees — and knowing when a system provides them — is
+committed data survives failures. Understanding these guarantees, and knowing when a system provides them, is
 essential for designing systems that handle data correctly under real-world conditions.
 
 ## References
 
-- [PostgreSQL Documentation — Transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html)
-- [MySQL Documentation — InnoDB and the ACID Model](https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html)
-- [Designing Data-Intensive Applications — Martin Kleppmann (Chapter 7: Transactions)](https://dataintensive.net)
+- [PostgreSQL Documentation, Transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html)
+- [MySQL Documentation, InnoDB and the ACID Model](https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html)
+- [Designing Data-Intensive Applications, Martin Kleppmann (Chapter 7: Transactions)](https://dataintensive.net)

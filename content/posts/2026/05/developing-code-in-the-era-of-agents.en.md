@@ -7,7 +7,7 @@ url: "/posts/2026-05/developing-code-in-the-era-of-agents/"
 
 The way we build software has fundamentally changed. We've moved from "writing code" to "orchestrating intent." With AI agents like Claude, Gemini, and GitHub Copilot integrated into our workflows, the bottleneck is no longer how fast we can type, but how precisely we can communicate.
 
-Developing in the era of agents isn't just about using a new tool; it's about adopting a mindset where precision, architecture, and established good practices are no longer optional—they are the primary currency for successful collaboration with AI.
+Developing in the era of agents isn't just about using a new tool; it's about adopting a mindset where precision, architecture, and established good practices are no longer optional-they are the primary currency for successful collaboration with AI.
 
 ## The "Before You Start" Checklist
 
@@ -52,6 +52,6 @@ To truly excel, you need to institutionalize these practices.
 
 ## Conclusion
 
-The rise of AI agents hasn't changed what makes code "good"; it has simply made the cost of "bad" code much higher. By defining our own constraints—through strong typing, modular architecture, and a strict "test-first" workflow—we ensure that agents remain powerful extensions of our skill rather than unpredictable black boxes.
+The rise of AI agents hasn't changed what makes code "good"; it has simply made the cost of "bad" code much higher. By defining our own constraints-through strong typing, modular architecture, and a strict "test-first" workflow-we ensure that agents remain powerful extensions of our skill rather than unpredictable black boxes.
 
 Ultimately, software engineering in this new era is less about being a fast writer and more about being a precise architect. When we prioritize these fundamentals, we don't just optimize for the tools of today; we build a resilient foundation for whatever tools come next.

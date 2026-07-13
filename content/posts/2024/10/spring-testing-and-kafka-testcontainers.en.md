@@ -74,7 +74,7 @@ public class CasesTests {
 Although it didn't seem like much code and could probably be shared between the test classes by composing the companion
 object, it still has the problem of creating the topic required in each test case.
 
-You may be starting to ask how to address all those “issues”, right? Keep reading, and you will get the answer.
+You may be starting to ask how to address all those "issues", right? Keep reading, and you will get the answer.
 
 ## Let's use JUnit instead
 

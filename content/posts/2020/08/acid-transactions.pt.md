@@ -7,7 +7,7 @@ tags:
 url: "/pt/posts/2020-08/acid-transactions/"
 ---
 
-Quando múltiplas operações precisam ter sucesso ou falhar juntas — como uma transferência bancária entre contas —
+Quando múltiplas operações precisam ter sucesso ou falhar juntas, como uma transferência bancária entre contas -
 é preciso ter garantias de que o banco de dados não deixará os dados em um estado parcial ou inconsistente. **ACID** é
 o conjunto de propriedades que bancos de dados relacionais fornecem para garantir exatamente isso.
 
@@ -20,7 +20,7 @@ aplicação ou falhas de hardware.
 Atomicidade significa que uma transação é tratada como uma única unidade indivisível. Ou **todas** as operações da
 transação são bem-sucedidas e confirmadas, ou **nenhuma** delas tem efeito. Não existe sucesso parcial.
 
-Considere uma transferência bancária: para mover R$100 da conta A para a conta B, duas operações devem acontecer —
+Considere uma transferência bancária: para mover R$100 da conta A para a conta B, duas operações devem acontecer -
 debitar a conta A e creditar a conta B. Se o débito for bem-sucedido mas o crédito falhar (por exemplo, devido a um
 erro de rede), a atomicidade garante que o débito seja desfeito automaticamente, deixando ambas as contas sem
 alteração.
@@ -35,7 +35,7 @@ COMMIT;
 ```
 
 Se algo der errado entre o `BEGIN` e o `COMMIT`, um `ROLLBACK` desfaz todas as mudanças. O log de escrita antecipada
-(WAL — Write-Ahead Log) do banco de dados torna isso possível — as alterações são registradas no log antes de serem
+(WAL, Write-Ahead Log) do banco de dados torna isso possível, as alterações são registradas no log antes de serem
 aplicadas, de forma que transações incompletas sempre possam ser revertidas.
 
 ## Consistência
@@ -44,8 +44,8 @@ Consistência garante que uma transação leve o banco de dados de um **estado v
 "Válido" é definido por todas as restrições, regras e verificações de integridade configuradas no schema: restrições
 de chave estrangeira, restrições de unicidade, restrições de verificação, triggers e assim por diante.
 
-Se uma transação violar qualquer uma dessas regras — por exemplo, inserir uma linha que referencia uma chave
-estrangeira inexistente — o banco de dados a rejeita e reverte a transação, preservando o estado válido anterior à
+Se uma transação violar qualquer uma dessas regras, por exemplo, inserir uma linha que referencia uma chave
+estrangeira inexistente, o banco de dados a rejeita e reverte a transação, preservando o estado válido anterior à
 transação.
 
 > Nota: o "C" do ACID é diferente do "C" do [teorema CAP](/pt/posts/2023-09/teorema-cap/). A consistência do ACID
@@ -79,7 +79,7 @@ aumentar a ocorrência de deadlocks.
 
 ## Durabilidade
 
-Durabilidade garante que, uma vez confirmada uma transação, suas alterações são permanentes — mesmo que o sistema
+Durabilidade garante que, uma vez confirmada uma transação, suas alterações são permanentes, mesmo que o sistema
 falhe imediatamente após. Uma queda de energia, falha do SO ou falha da aplicação não pode fazer com que dados
 confirmados desapareçam.
 
@@ -124,11 +124,11 @@ o **CockroachDB** fornece transações ACID distribuídas por design.
 
 As propriedades ACID são o alicerce do gerenciamento confiável de dados em bancos relacionais. Atomicidade previne
 atualizações parciais. Consistência garante as regras dos dados. Isolamento protege transações concorrentes umas das
-outras. Durabilidade assegura que dados confirmados sobrevivam a falhas. Compreender essas garantias — e saber quando
-um sistema as fornece — é essencial para projetar sistemas que manipulam dados corretamente sob condições reais.
+outras. Durabilidade assegura que dados confirmados sobrevivam a falhas. Compreender essas garantias, e saber quando
+um sistema as fornece, é essencial para projetar sistemas que manipulam dados corretamente sob condições reais.
 
 ## Referências
 
-- [Documentação PostgreSQL — Transações](https://www.postgresql.org/docs/current/tutorial-transactions.html)
-- [Documentação MySQL — InnoDB e o Modelo ACID](https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html)
-- [Designing Data-Intensive Applications — Martin Kleppmann (Capítulo 7: Transações)](https://dataintensive.net)
+- [Documentação PostgreSQL, Transações](https://www.postgresql.org/docs/current/tutorial-transactions.html)
+- [Documentação MySQL, InnoDB e o Modelo ACID](https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html)
+- [Designing Data-Intensive Applications, Martin Kleppmann (Capítulo 7: Transações)](https://dataintensive.net)

@@ -79,7 +79,7 @@ Justamente por se integrar com outros sistemas, temos diversos fatores envolvido
 
 Como dito anteriormente, não existe muito o que se fazer nesses casos, construir uma aplicação resiliente, com re-tentativas pode minimizar esses problemas, porém, não é garantia, dependendo da causa do problema. É exatamente por isso, que nesses casos, é sempre importante analisar o problema para identificar se é algo novo, ou seja, devido uma alteração de código, ou algo externo e que não temos como controlar.
 
-Com certeza, grande parte desses testes poderiam ser convertidos para testes que usam ferramentas que nos forneceriam controle dos cenários, permitindo criar simulações para testar algum caso específico/necessário. Muitas vezes, o uso de uma base de dados real poderia ser substituída por um banco em memória ou uma integração a uma *API REST* poderia ser feita para um *mock* criado utilizando *[WireMock](https://wiremock.org/)* ao invés do *endpoint* "real”.
+Com certeza, grande parte desses testes poderiam ser convertidos para testes que usam ferramentas que nos forneceriam controle dos cenários, permitindo criar simulações para testar algum caso específico/necessário. Muitas vezes, o uso de uma base de dados real poderia ser substituída por um banco em memória ou uma integração a uma *API REST* poderia ser feita para um *mock* criado utilizando *[WireMock](https://wiremock.org/)* ao invés do *endpoint* "real".
 
 De forma geral, esses testes consomem bastante tempo na execução e, demandam outro tempo considerável de análise para confirmar se foi um problema introduzido na mudança ou algum tipo de intermitência externa. Reduzir a quantidade deste tipo de teste, acredito ser uma das melhores soluções para minimizar a ocorrência de falhas inesperadas.
 

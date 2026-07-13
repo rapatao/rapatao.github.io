@@ -57,7 +57,7 @@ elementos é importante.
 
 Em `JavaScript`, assim como em `Kotlin`, a desestruturação de uma coleção é baseada em ordem, o que significa que a
 primeira declaração de variável será atribuída ao primeiro elemento da coleção, a segunda variável ao segundo elemento e
-assim por diante …
+assim por diante ...
 
 A diferença entre essas duas linguagens está na desestruturação de objetos, onde em `JavaScript` extrai as propriedades
 do objeto usando seu nome declarado e `Kotlin` extrai com base na ordem de declaração.

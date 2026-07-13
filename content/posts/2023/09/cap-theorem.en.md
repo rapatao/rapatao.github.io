@@ -15,7 +15,7 @@ answers this by stating that any distributed data store can only guarantee two o
 ## Consistency
 
 In the context of the CAP theorem, consistency means that every read operation receives the most recent write or an
-error. All database nodes will hold the same data at the same time — there are no stale reads.
+error. All database nodes will hold the same data at the same time, there are no stale reads.
 
 This is sometimes referred to as **strong consistency** or **linearizability**: operations appear to execute
 instantaneously and in a total order. If you write a value and immediately read it from any node in the cluster, you
@@ -26,7 +26,7 @@ CAP consistency is strictly about read-after-write guarantees across distributed
 
 ## Availability
 
-Availability means that every request sent to a non-failed node receives a response — it will not be an error or a
+Availability means that every request sent to a non-failed node receives a response, it will not be an error or a
 timeout. The response may not contain the most recent write, but the system always responds.
 
 A highly available system maximizes uptime and ensures that the service continues to operate even when some nodes are
@@ -39,7 +39,7 @@ A partition occurs when network failures cause some nodes to be unable to commun
 means the system continues to operate correctly even when this happens.
 
 In any real-world distributed system deployed across multiple machines or data centers, network partitions are
-**unavoidable** — hardware fails, cables get cut, and network congestion happens. This makes partition tolerance less of
+**unavoidable**, hardware fails, cables get cut, and network congestion happens. This makes partition tolerance less of
 a choice and more of a requirement for any truly distributed system.
 
 ## Trade-offs
@@ -51,7 +51,7 @@ Because partitions cannot be avoided, the real choice in distributed systems com
   stale data. Examples: **Apache ZooKeeper**, **HBase**, **etcd**, **MongoDB** (with strong read concern).
 
 - **AP (Availability + Partition Tolerance)**: The system prioritizes availability. When a partition occurs, nodes
-  continue to serve requests even if the data might be stale. The system eventually converges once the partition heals —
+  continue to serve requests even if the data might be stale. The system eventually converges once the partition heals -
   a property known as **eventual consistency**. Examples: **Apache Cassandra**, **Amazon DynamoDB**, **CouchDB**,
   **Riak**.
 
@@ -65,13 +65,13 @@ Because partitions cannot be avoided, the real choice in distributed systems com
 Choosing between CP and AP depends on your use case:
 
 - **Financial systems** (banking, payments) typically require CP. Serving a stale account balance could lead to
-  overdrafts or double-spending — correctness matters more than uptime.
+  overdrafts or double-spending, correctness matters more than uptime.
 
 - **Social media feeds, recommendation engines, DNS** typically favor AP. Showing a slightly outdated timeline or a
   cached DNS response is acceptable; being unavailable is not.
 
 - Many modern systems allow you to tune the trade-off per operation. Cassandra, for example, lets you configure
-  consistency levels per query — `QUORUM` reads/writes lean toward CP behavior, while `ONE` leans toward AP.
+  consistency levels per query, `QUORUM` reads/writes lean toward CP behavior, while `ONE` leans toward AP.
 
 ## Beyond CAP: The PACELC Theorem
 
@@ -89,8 +89,8 @@ consistency (e.g., returning cached data without verifying it is up to date).
 
 The CAP theorem is a powerful mental model for reasoning about distributed systems. Since network partitions are
 inevitable, architects must choose between consistency and availability based on their application's requirements.
-CP systems favor correctness; AP systems favor resilience and responsiveness. Understanding this trade-off — and being
-explicit about it in your design — is essential for building reliable distributed systems.
+CP systems favor correctness; AP systems favor resilience and responsiveness. Understanding this trade-off, and being
+explicit about it in your design, is essential for building reliable distributed systems.
 
 ## References
 

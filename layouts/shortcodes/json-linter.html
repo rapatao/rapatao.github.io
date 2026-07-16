@@ -2,7 +2,10 @@
     <form onsubmit="return doOnSubmit(true)" onreset="doOnReset()">
         <label for="json-original">Input JSON:</label>
         <textarea id="json-original" rows="8" autofocus required oninput="autoGrow(this);"></textarea>
-        
+
+        <label for="json-filter">Filter (e.g. <code>.data.files[0]</code>):</label>
+        <input id="json-filter" type="text" placeholder="." oninput="doOnSubmit(true)">
+
         <div class="tool-actions">
             <button type="submit">Format</button>
             <button type="button" onclick="doOnSubmit(false)">Minify</button>
@@ -19,7 +22,7 @@
 
 <style>
     .json-tool { margin: 20px 0; width: 100%; max-width: 900px; }
-    textarea { width: 100%; box-sizing: border-box; }
+    textarea, #json-filter { width: 100%; box-sizing: border-box; }
     .tool-title { color: var(--prompt-color); margin-bottom: 5px; }
     .tool-actions { margin: 10px 0; display: flex; gap: 10px; }
     .status-container { margin-top: 10px; font-weight: bold; }
@@ -47,6 +50,18 @@
     const elSourceJson = document.getElementById("json-original");
     const elTargetStatus = document.getElementById("json-result-status");
     const elTree = document.getElementById("json-tree");
+    const elFilter = document.getElementById("json-filter");
+
+    // Walks a jq-like path (".data.files[0]"). Throws if a segment is missing.
+    function applyPath(obj, path) {
+        const parts = path.replace(/\[(\d+)\]/g, ".$1").split(".").filter(p => p.length > 0);
+        return parts.reduce(function (acc, part) {
+            if (acc === null || typeof acc !== "object" || !(part in acc)) {
+                throw new Error('path not found: "' + part + '"');
+            }
+            return acc[part];
+        }, obj);
+    }
 
     function getNumRows(text) {
         const rows = (text || "").split("\n").length;
@@ -137,16 +152,29 @@
         }
     }
 
+    function setError(message) {
+        elTargetStatus.innerText = message;
+        elTargetStatus.style.color = "#ff6b6b";
+        elTree.style.display = 'none';
+    }
+
     document.addEventListener("parseJson", function (e) {
         const content = (e.detail || {}).content || "";
         const format = (e.detail || {}).format !== undefined ? e.detail.format : true;
 
+        let jsonAsObj;
         try {
-            const jsonAsObj = JSON.parse(content);
+            jsonAsObj = JSON.parse(content);
+        } catch (err) {
+            setError("✗ Invalid JSON: " + err.message);
+            return;
+        }
+
+        try {
             if (format) {
                 elTree.innerHTML = '';
                 if (content.trim().length > 0) {
-                    createTree(jsonAsObj, elTree);
+                    createTree(applyPath(jsonAsObj, elFilter.value), elTree);
                     elTree.style.display = 'block';
                 } else {
                     elTree.style.display = 'none';
@@ -154,14 +182,14 @@
             } else {
                 elTree.style.display = 'none';
             }
-            elSourceJson.value = JSON.stringify(jsonAsObj, undefined, format ? 4 : 0);
-            elTargetStatus.innerText = "✓ Valid JSON";
-            elTargetStatus.style.color = "var(--prompt-color)";
-        } catch (e) {
-            elTargetStatus.innerText = "✗ Invalid JSON: " + e.message;
-            elTargetStatus.style.color = "#ff6b6b";
-            elTree.style.display = 'none';
+        } catch (err) {
+            setError("✗ Invalid filter: " + err.message);
+            return;
         }
+
+        elSourceJson.value = JSON.stringify(jsonAsObj, undefined, format ? 4 : 0);
+        elTargetStatus.innerText = "✓ Valid JSON";
+        elTargetStatus.style.color = "var(--prompt-color)";
         elSourceJson.rows = getNumRows(elSourceJson.value);
     });
 
@@ -174,6 +202,7 @@
 
     function doOnReset() {
         elTargetStatus.innerText = "";
+        elFilter.value = "";
         elSourceJson.rows = 8;
         elTree.innerHTML = '';
         elTree.style.display = 'none';

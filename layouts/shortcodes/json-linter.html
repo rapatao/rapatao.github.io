@@ -40,6 +40,8 @@
     }
     .tree-node { margin-left: 20px; }
     .toggle { cursor: pointer; color: var(--prompt-color); margin-right: 5px; user-select: none; font-weight: bold; }
+    .copy-node { cursor: pointer; color: #777; margin-left: 8px; user-select: none; font-size: 0.85em; }
+    .copy-node:hover { color: var(--prompt-color); }
     .key { color: #569cd6; font-weight: bold; }
     .string { color: #ce9178; }
     .number { color: #b5cea8; }
@@ -68,15 +70,30 @@
         return Math.min(Math.max(rows, 8), 20);
     }
 
-    async function copyToClipboard() {
+    async function copyText(text) {
         try {
-            await navigator.clipboard.writeText(elSourceJson.value);
+            await navigator.clipboard.writeText(text);
             elTargetStatus.innerText = "Copied to clipboard!";
             elTargetStatus.style.color = "var(--prompt-color)";
         } catch (err) {
             elTargetStatus.innerText = "Error copying text!";
             elTargetStatus.style.color = "#ff6b6b";
         }
+    }
+
+    function copyToClipboard() {
+        copyText(elSourceJson.value);
+    }
+
+    function copyButton(value) {
+        const btn = document.createElement('span');
+        btn.className = 'copy-node';
+        btn.title = 'Copy value';
+        btn.innerText = '[copy]';
+        btn.onclick = function () {
+            copyText(typeof value === 'string' ? value : JSON.stringify(value, undefined, 4));
+        };
+        return btn;
     }
 
     function createTree(obj, container) {
@@ -103,6 +120,7 @@
             
             container.appendChild(span);
             container.appendChild(typeSpan);
+            container.appendChild(copyButton(obj));
             return;
         }
 
@@ -139,6 +157,7 @@
                 typeSpan.style.color = '#777';
                 typeSpan.innerText = typeHint;
                 div.appendChild(typeSpan);
+                div.appendChild(copyButton(obj[key]));
             }
             
             div.appendChild(document.createTextNode(': '));

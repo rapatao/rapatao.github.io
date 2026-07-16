@@ -10,6 +10,8 @@
             <button type="submit">Format</button>
             <button type="button" onclick="doOnSubmit(false)">Minify</button>
             <button type="button" onclick="copyToClipboard()">Copy</button>
+            <button type="button" onclick="toggleAll(true)">Expand all</button>
+            <button type="button" onclick="toggleAll(false)">Collapse all</button>
             <button type="reset">Clear</button>
         </div>
     </form>
@@ -54,10 +56,19 @@
     const elTree = document.getElementById("json-tree");
     const elFilter = document.getElementById("json-filter");
 
+    // ".data.files[0]" -> ["data", "files", "0"]
+    function pathParts(path) {
+        return path.replace(/\[(\d+)\]/g, ".$1").split(".").filter(p => p.length > 0);
+    }
+
+    // ["data", "files", "0"] -> ".data.files[0]"
+    function pathString(parts) {
+        return parts.map(p => /^\d+$/.test(p) ? "[" + p + "]" : "." + p).join("");
+    }
+
     // Walks a jq-like path (".data.files[0]"). Throws if a segment is missing.
     function applyPath(obj, path) {
-        const parts = path.replace(/\[(\d+)\]/g, ".$1").split(".").filter(p => p.length > 0);
-        return parts.reduce(function (acc, part) {
+        return pathParts(path).reduce(function (acc, part) {
             if (acc === null || typeof acc !== "object" || !(part in acc)) {
                 throw new Error('path not found: "' + part + '"');
             }
@@ -96,7 +107,19 @@
         return btn;
     }
 
-    function createTree(obj, container) {
+    function pathButton(path) {
+        const btn = document.createElement('span');
+        btn.className = 'copy-node';
+        btn.title = 'Filter by ' + path;
+        btn.innerText = '[filter]';
+        btn.onclick = function () {
+            elFilter.value = path;
+            doOnSubmit(true);
+        };
+        return btn;
+    }
+
+    function createTree(obj, container, path) {
         if (obj === null || typeof obj !== 'object') {
             const span = document.createElement('span');
             const type = (obj === null) ? 'null' : typeof obj;
@@ -126,6 +149,7 @@
 
         const isArray = Array.isArray(obj);
         for (const key in obj) {
+            const keyPath = path + (isArray ? '[' + key + ']' : '.' + key);
             const div = document.createElement('div');
             div.className = 'tree-node';
             
@@ -159,22 +183,67 @@
                 div.appendChild(typeSpan);
                 div.appendChild(copyButton(obj[key]));
             }
-            
+            div.appendChild(pathButton(keyPath));
+
             div.appendChild(document.createTextNode(': '));
-            
+
             const children = document.createElement('div');
             children.className = 'children';
-            createTree(obj[key], children);
+            createTree(obj[key], children, keyPath);
             
             div.appendChild(children);
             container.appendChild(div);
         }
     }
 
-    function setError(message) {
+    function toggleAll(expand) {
+        elTree.querySelectorAll('.children').forEach(function (child) {
+            child.style.display = expand ? 'block' : 'none';
+        });
+        elTree.querySelectorAll('.toggle').forEach(function (toggle) {
+            toggle.innerText = expand ? '[-]' : '[+]';
+        });
+    }
+
+    function setError(message, keepTree) {
         elTargetStatus.innerText = message;
         elTargetStatus.style.color = "#ff6b6b";
-        elTree.style.display = 'none';
+        if (!keepTree) {
+            elTree.style.display = 'none';
+        }
+    }
+
+    // Parse error locations come in three shapes across browsers; -1 means unknown.
+    function errorOffset(message, text) {
+        const byPosition = message.match(/position (\d+)/);
+        if (byPosition) {
+            return Number(byPosition[1]);
+        }
+        const byLine = message.match(/line (\d+) column (\d+)/);
+        if (byLine) {
+            const lines = text.split("\n").slice(0, Number(byLine[1]) - 1);
+            return lines.reduce((sum, line) => sum + line.length + 1, 0) + Number(byLine[2]) - 1;
+        }
+        // V8's 'Unexpected token X, ..."snippet"... is not valid JSON' carries no position,
+        // so fall back to the snippet's location when it appears exactly once.
+        const bySnippet = message.match(/"([\s\S]*)"(?:\.\.\.)? is not valid JSON$/);
+        if (bySnippet) {
+            const offset = text.indexOf(bySnippet[1]);
+            if (offset >= 0 && offset === text.lastIndexOf(bySnippet[1])) {
+                return offset;
+            }
+        }
+        return -1;
+    }
+
+    function jumpToError(message, text) {
+        const offset = errorOffset(message, text);
+        // Don't steal the caret while the user is typing a filter.
+        if (offset < 0 || document.activeElement === elFilter) {
+            return;
+        }
+        elSourceJson.focus();
+        elSourceJson.setSelectionRange(offset, Math.min(offset + 1, text.length));
     }
 
     document.addEventListener("parseJson", function (e) {
@@ -186,24 +255,28 @@
             jsonAsObj = JSON.parse(content);
         } catch (err) {
             setError("✗ Invalid JSON: " + err.message);
+            jumpToError(err.message, content);
             return;
         }
 
-        try {
-            if (format) {
-                elTree.innerHTML = '';
-                if (content.trim().length > 0) {
-                    createTree(applyPath(jsonAsObj, elFilter.value), elTree);
-                    elTree.style.display = 'block';
-                } else {
-                    elTree.style.display = 'none';
-                }
+        if (format) {
+            let filtered;
+            try {
+                // Resolve before touching the DOM, so a bad filter leaves the last tree on screen.
+                filtered = applyPath(jsonAsObj, elFilter.value);
+            } catch (err) {
+                setError("✗ Invalid filter: " + err.message, true);
+                return;
+            }
+            elTree.innerHTML = '';
+            if (content.trim().length > 0) {
+                createTree(filtered, elTree, pathString(pathParts(elFilter.value)));
+                elTree.style.display = 'block';
             } else {
                 elTree.style.display = 'none';
             }
-        } catch (err) {
-            setError("✗ Invalid filter: " + err.message);
-            return;
+        } else {
+            elTree.style.display = 'none';
         }
 
         elSourceJson.value = JSON.stringify(jsonAsObj, undefined, format ? 4 : 0);
